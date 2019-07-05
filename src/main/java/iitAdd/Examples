@@ -1,0 +1,113 @@
+Правый клик мыши
+       ====================================click for id====================================
+Actions builder = new Actions(driver);
+builder.contextClick(driver.findElement(By.xpath("/html/body/div[23]/div[1]/div[2]/div[2]/div[4]/div/div/div[2]/div/div[1]"))
+        ).sendKeys(Keys.ARROW_DOWN).build().perform();
+       ====================================click for id====================================
+driver.findElement(By.id("cm-send_text")).click();
+
+       --------------------------------------add driver in a test--------------------------------------
+  //WebDriver add in test
+        driver = drivers.ff();
+   public static WebDriver ff() {
+          FirefoxProfile profile = new FirefoxProfile();
+          profile.setPreference("browser.download.folderList", 2);
+          profile.setPreference("browser.download.dir", "C:\\Tools\\TestFile");
+          profile.setPreference("browser.download.useDownloadDir", true);
+          // Указывает тип документа по умолчанию которые скачиваются без всплывающего окна
+          profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/msword;charset=UTF-8");
+          //Добавление Плазина Крипто про
+          profile.addExtension(
+                  new File("C:\\Tools\\cryptopro_extension_for_cades_browser_plug_in-1.1.1-an+fx-windows.xpi"));
+
+
+          FirefoxOptions firefoxOptions = new FirefoxOptions();
+          firefoxOptions.setProfile(profile);
+
+          //firefoxOptions.addArguments("--headless"); //////////////////////////////////////
+          WebDriver driver = new FirefoxDriver(firefoxOptions);
+
+          driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+          driver.manage().window().maximize();
+          return driver;
+      }
+       --------------------------------------add driver in a test--------------------------------------
+
+
+      ====================================use cmd Windows====================================
+      throws InterruptedException, IOException
+              getRuntime().exec("taskkill /im nmcades.exe");
+      ====================================use cmd Windows====================================
+
+  ====================================cmd zip====================================
+                  test2 ="C:\\Program Files\\7-Zip\\7z.exe x C:\\Tools\\TestFile\\"+test+" -o\"C:\\Tools\\TestFile\\\"";
+                  System.out.println(test2);
+                  getRuntime().exec(test2);
+
+  ====================================cmd zip====================================
+
+
+       --------------------------------------use List Elements--------------------------------------
+       List<WebElement> myElements = driver.findElements(By.cssSelector("#select2-newcontr-persman-results"));
+        Map<Integer, String> map = new HashMap<Integer, String>();
+        int i = 0;
+        for(WebElement e : myElements) {
+            System.out.println(e.getText());
+                //split нарезает над Веб элемент на поля разделенные \n
+            String vals[] = e.getText().split("\\n");
+            for(String s: vals) {
+                i++;
+                map.put(i, s);
+            }
+        }
+        for( Map.Entry<Integer, String> entry : map.entrySet() ){
+            System.out.println( entry.getKey() + " " + entry.getValue() );
+        }
+
+       --------------------------------------use List Elements--------------------------------------
+
+        ==================================== Choose first element in the table and right click ====================================
+          String row;
+                 Me.Sleep(1500);
+                 driver.findElement(By.cssSelector(".createDocument")).click();
+                 Me.Sleep(500);
+                 driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
+                 WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
+                 Me.Sleep(200);
+                 upload.sendKeys("C:\\Tools\\" + fileName);
+                 Me.Sleep(100);
+                 driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
+                 Me.Sleep(3000);
+                 driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+                 // Click and found first element
+                 Me.Sleep(2500);
+                 =====================
+                 row  = driver.findElement(By.cssSelector(".dgrid-content")).getAttribute("textContent");
+                 row = row.substring(0,36);
+           ==============
+           или так
+           ==============
+                 test = driver.findElement(By.cssSelector("#grid-basic2 > div.dgrid-scroller > div")).getAttribute("childNodes");
+                 =====================
+                 driver.findElement(By.cssSelector("#grid-basic2-row-"+row)).click();
+                 Actions builder = new Actions(driver);
+                 builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-"+row))
+                 ).sendKeys(Keys.ARROW_DOWN).build().perform();
+        ========================= Choose first element in the table and right click================================
+
+
+   --------------------------------------contains text--------------------------------------
+      driver.findElement(By.xpath("//*[contains(text(), 'СЧФ 321')]")).click();
+   driver.findElement(By.xpath("//*[contains(text(), 'Admin')][contains(@class, 'select2-results__option')]")).click();
+   --------------------------------------contains text--------------------------------------
+
+     ====================================Tap up====================================
+           ((JavascriptExecutor)driver).executeScript("scroll(0,0)");UP
+           ((JavascriptExecutor)driver).executeScript("scroll(0,400)");DOWN
+
+     ====================================Tap up====================================
+
+          --------------------------------------aria-disabled--------------------------------------
+           test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
+          --------------------------------------aria-disabled--------------------------------------
+
