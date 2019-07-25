@@ -50,7 +50,7 @@ public class Drivers {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setLogLevel(Level.OFF);
         firefoxOptions.setProfile(profile);
-        //firefoxOptions.addArguments("--headless"); //////////////////////////////////////
+        firefoxOptions.addArguments("--headless"); //////////////////////////////////////
 
         WebDriver driver = new FirefoxDriver(firefoxOptions);
 
