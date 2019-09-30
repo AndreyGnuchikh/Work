@@ -62,7 +62,7 @@ public class CompleteForm {
         }
 
         System.out.println(test);
-        Me.Sleep(2000);
+        Me.Sleep(3000);
         driver.findElement(By.id(test)).click();
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //2 Page#
@@ -86,13 +86,14 @@ public class CompleteForm {
         driver.findElement(By.cssSelector("#select2-const-country-results > li:nth-child(6) > option")).click();
         driver.findElement(By.cssSelector("div.col-sm-4:nth-child(3) > input:nth-child(1)")).sendKeys("100500");
         driver.findElement(By.cssSelector("#interSFdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
-        Me.Sleep(1000);
+        Me.Sleep(2000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1)")).click();
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1)")).click();
         driver.findElement(By.id("commentSF")).sendKeys("" + date);
+
         driver.findElement(By.cssSelector("#commentSFModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(3000);
+        Me.Sleep(4000);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         String test2 = "" + date;
         return test2;
@@ -185,7 +186,7 @@ public class CompleteForm {
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1)")).click();
         driver.findElement(By.id("commentSF")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentSFModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(2500);
+        Me.Sleep(4000);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         String test2 = "" + date;
         return test2;
@@ -196,6 +197,7 @@ public class CompleteForm {
         driver.findElement(By.cssSelector("#numberSf")).sendKeys("SCHFNoClick " + date);
         driver.findElement(By.cssSelector("#numbercorSf")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateSf")).click();
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#dateSf_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#datecorSf")).click();
@@ -223,7 +225,6 @@ public class CompleteForm {
         driver.findElement(By.xpath("//*[contains(text(),'Все хорошо 2,0')]")).click();
         driver.findElement(By.cssSelector("#buyer-compokpo")).sendKeys("1231241251");
         driver.findElement(By.cssSelector("#buyer-rusindex")).sendKeys("140057");
-
         driver.findElement(By.cssSelector("#buyer-ruscity")).sendKeys("г. Санкт-Петербург");
         driver.findElement(By.cssSelector("#buyer-ruslocality")).sendKeys("г. Санкт-Петербург");
         driver.findElement(By.cssSelector("#buyer-russtreet")).sendKeys("Адмиралтейский пр-д");
@@ -271,7 +272,7 @@ public class CompleteForm {
         driver.findElement(By.cssSelector("#select2-const-country-results > li:nth-child(6) > option")).click();
         driver.findElement(By.cssSelector("div.col-sm-4:nth-child(3) > input:nth-child(1)")).sendKeys("100500");
         driver.findElement(By.cssSelector("#interSFdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
-        Me.Sleep(1000);
+        Me.Sleep(4000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1)")).click();
 
         String test2 = "" + date;

@@ -2,35 +2,40 @@ package iitFirefox.User;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
+import iitAdd.iit8077;
 import iitFirefox.User.Form.CompleteForm;
 import iitFirefox.User.Form.CompleteFormAct;
 import iitFirefox.User.Form.CompleteFormDopSchF;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-
-public class F_ErrorsCreateFormalDocFromIF_Test6 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
     WebDriver driver;
     String date, test2, save;
 
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.loggingCerts(p.upd, driver);
+        driver.get(url);
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
 
-    }
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
 
     @Test
-    public void A_ErrorsFormSchFFirstPage_Test1() {
+    @Order(1)
+    void A_ErrorsFormSchFFirstPage_Test1() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -57,9 +62,14 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         inn3("#interSFdoc");
 
         driver.quit();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void B_ErrorsFormSchFSecondPage_Test2() {
+    @Order(2)
+    void B_ErrorsFormSchFSecondPage_Test2() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -77,10 +87,14 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         page2NumberCustomDeclaration("#interSFdoc");
         driver.quit();
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void C_ErrorsFormACTFirstPage_Test3() {
-
+    @Order(3)
+    void C_ErrorsFormACTFirstPage_Test3() {
+try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -108,9 +122,14 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         Region3("#interActEWdoc");
         inn3("#interActEWdoc");
         driver.quit();
+    }catch (Throwable e) {
+    Me.Catch(driver,e);
+}
     }
     @Test
-    public void D_ErrorsFormACTSecondPage_Test4() {
+    @Order(4)
+    void D_ErrorsFormACTSecondPage_Test4() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -131,9 +150,14 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         page2NumberCustomDeclaration("#interActEWdoc");
         driver.quit();
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void E_ErrorsFormACTThreePage_Test5_Tap1() {
+    @Order(5)
+    void E_ErrorsFormACTThreePage_Test5_Tap1() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -161,10 +185,15 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         Page3ACT("#shipment-info");
         driver.quit();
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void F_ErrorsFormACTThreePage_Test6_Tap2() {
+    @Order(6)
+    void F_ErrorsFormACTThreePage_Test6_Tap2() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -198,10 +227,15 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         Page3ACTTap2("#org-name");
         driver.quit();
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void G_ErrorsFormACTThreePage_Test7_Tap3() {
+    @Order(7)
+    void G_ErrorsFormACTThreePage_Test7_Tap3() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -232,10 +266,14 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         Page3ACTTap3("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
         driver.quit();
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void H_ErrorsFormSchFDOPFirstPage_Test8() {
-
+    @Order(8)
+    void H_ErrorsFormSchFDOPFirstPage_Test8() {
+        try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         Me.Sleep(500);
@@ -267,9 +305,14 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         inn3DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
 
         driver.quit();
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
     @Test
-    public void I_ErrorsFormSchFDOPSecondPage_Test9() {
+    @Order(9)
+    void I_ErrorsFormSchFDOPSecondPage_Test9() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -297,10 +340,15 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         page2NumberCustomDeclarationDOPSCHF(open, "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)", close);
         driver.quit();
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void K_ErrorsFormSchFDOPThreePage_Test10_Tap1() {
+    @Order(10)
+    void K_ErrorsFormSchFDOPThreePage_Test10_Tap1() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -328,10 +376,15 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         Page3ACT("#shipment-info");
         driver.quit();
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void L_ErrorsFormSchFDOPThreePage_Test11_Tap2() {
+     @Order(11)
+    void L_ErrorsFormSchFDOPThreePage_Test11_Tap2() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -365,10 +418,15 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         Page3ACTTap2("#org-name");
         driver.quit();
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void M_ErrorsFormSchFDOPThreePage_Test12_Tap3() {
+     @Order(12)
+    void M_ErrorsFormSchFDOPThreePage_Test12_Tap3() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -398,9 +456,12 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         Page3ACTTap3("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
         driver.quit();
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
-    public void Check(String s) {
+    void Check(String s) {
         save = null;
         save = driver.findElement(By.cssSelector(s)).getAttribute("value");
         System.out.println(save);
@@ -417,7 +478,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         driver.findElement(By.cssSelector(s)).sendKeys(save);
     }
-    public void CheckACT(String s) {
+    void CheckACT(String s) {
         save = null;
         save = driver.findElement(By.cssSelector(s)).getAttribute("value");
         System.out.println(save);
@@ -428,7 +489,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
 
 
     }
-    public void CheckACTPage3(String s) {
+    void CheckACTPage3(String s) {
         save = null;
         save = driver.findElement(By.cssSelector(s)).getAttribute("value");
         System.out.println(save);
@@ -447,7 +508,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(s)).sendKeys(save);
     }
 
-    public void Checkdate(String s) {
+    void Checkdate(String s) {
         save = null;
         save = driver.findElement(By.cssSelector(s)).getAttribute("value");
         System.out.println(save);
@@ -470,7 +531,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(s + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
     }
-    public void CheckdateFirstPage(String s) {
+    void CheckdateFirstPage(String s) {
         String getId = driver.findElement(By.cssSelector("div.input-group:nth-child(1)")).getAttribute("outerHTML");
         System.out.println(getId);
         getId = getId.substring(209, 220);
@@ -507,7 +568,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(s + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
     }
-    public void CheckdateThreepage(String s) {
+    void CheckdateThreepage(String s) {
         save = null;
         save = driver.findElement(By.cssSelector(s)).getAttribute("value");
         System.out.println(save);
@@ -531,7 +592,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(".picker--opened > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
     }
-    public void Region(String s) {
+    void Region(String s) {
         Me.Sleep(1500);
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(500);
@@ -556,7 +617,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
-    public void inn(String s) {
+    void inn(String s) {
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
         test2 = driver.findElement(By.cssSelector("#seller-compinn")).getAttribute("className");
@@ -579,7 +640,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
-    public void Region2(String s) {
+    void Region2(String s) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(500);
@@ -608,7 +669,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
 
     }
 
-    public void Region3(String s) {
+    void Region3(String s) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(500);
@@ -637,7 +698,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
-    public void inn3(String s) {
+    void inn3(String s) {
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#buyer-compinn")).clear();
@@ -663,7 +724,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
-    public void inn4(String s) {
+    void inn4(String s) {
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#consignee-compinn")).clear();
@@ -691,7 +752,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
 
     }
 
-    public void RegionDOPSCHF(String open, String close) {
+    void RegionDOPSCHF(String open, String close) {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(open)).click();
         Me.Sleep(500);
@@ -716,7 +777,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(close)).click();
 
     }
-    public void innDOPSCHF(String open, String close) {
+    void innDOPSCHF(String open, String close) {
         driver.findElement(By.cssSelector(open)).click();
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
         test2 = driver.findElement(By.cssSelector("#seller-compinn")).getAttribute("className");
@@ -739,7 +800,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(close)).click();
 
     }
-    public void Region2DOPSCHF(String open, String close) {
+    void Region2DOPSCHF(String open, String close) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(open)).click();
         Me.Sleep(500);
@@ -767,7 +828,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(close)).click();
 
     }
-    public void inn2DOPSCHF(String open, String close) {
+    void inn2DOPSCHF(String open, String close) {
         driver.findElement(By.cssSelector(open)).click();
         driver.findElement(By.cssSelector("#shipper-compinn")).clear();
         test2 = driver.findElement(By.cssSelector("#shipper-compinn")).getAttribute("className");
@@ -792,7 +853,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(close)).click();
 
     }
-    public void Region3DOPSCHF(String open, String close) {
+    void Region3DOPSCHF(String open, String close) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(open)).click();
         Me.Sleep(500);
@@ -821,7 +882,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(close)).click();
 
     }
-    public void inn3DOPSCHF(String open, String close) {
+    void inn3DOPSCHF(String open, String close) {
         driver.findElement(By.cssSelector(open)).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#buyer-compinn")).clear();
@@ -847,7 +908,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(close)).click();
 
     }
-    public void inn4DOPSCHF(String open, String close) {
+    void inn4DOPSCHF(String open, String close) {
         driver.findElement(By.cssSelector(open)).click();
         driver.findElement(By.cssSelector("#consignee-compinn")).clear();
         Me.Sleep(500);
@@ -874,7 +935,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
 
     }
 
-    public void page2Name(String s) {
+    void page2Name(String s) {
         Me.Sleep(2500);
         driver.findElement(By.xpath("//*")).sendKeys(Keys.DOWN, Keys.DOWN, Keys.DOWN);
 
@@ -901,7 +962,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
     }
-    public void page2NumberCustomDeclaration(String s) {
+    void page2NumberCustomDeclaration(String s) {
 
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         String Element = s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)";
@@ -925,7 +986,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys(save);
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
     }
-    public void page2NameDOPSCHF(String open, String element, String close) {
+    void page2NameDOPSCHF(String open, String element, String close) {
 
         Me.Sleep(3500);
         driver.findElement(By.cssSelector(open)).click();
@@ -949,7 +1010,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys(save);
         driver.findElement(By.cssSelector(close)).click();
     }
-    public void page2NumberCustomDeclarationDOPSCHF(String open, String element, String close) {
+    void page2NumberCustomDeclarationDOPSCHF(String open, String element, String close) {
         driver.findElement(By.cssSelector(open)).click();
         String Element = element;
         save = null;
@@ -973,7 +1034,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector(close)).click();
     }
 
-    public void Page3ACT(String s) {
+    void Page3ACT(String s) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(".edit_but")).click();
         save = null;
@@ -1002,7 +1063,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
     }
 
-    public void Page3ACTTap2(String s) {
+    void Page3ACTTap2(String s) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(".edit_but")).click();
         Me.Sleep(500);
@@ -1035,7 +1096,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
     }
 
-    public void Page3ACTTap3(String s) {
+    void Page3ACTTap3(String s) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(".edit_but")).click();
         Me.Sleep(500);
@@ -1069,7 +1130,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 {
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
     }
 
-    public void CheckSchFDOPPage3(String s) {
+    void CheckSchFDOPPage3(String s) {
         save = null;
         save = driver.findElement(By.cssSelector(s)).getAttribute("value");
         System.out.println(save);

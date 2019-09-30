@@ -2,28 +2,34 @@ package iitFirefox.User;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
-import org.junit.Before;
-import org.junit.Test;
+import iitAdd.iit8077;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static iitAdd.Me.CreateFirstUDPDocumentAndSignOneAndTwo;
 
-public class L_CompletedEDWithSideCustomer_Test12 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
     WebDriver driver;
     String test,test2;
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.loggingCerts(p.upd, driver);
+        driver.get(url);
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.startEndingCertAndSendingFiles(driver);
-    }
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
     @Test
-    public void A_CompletedCoworker_DOP_Test1(){
-        test2 = CreateFirstUDPDocumentAndSignOneAndTwo("2",driver);
+    @Order(1)
+    void A_CompletedCoworker_DOP_Test1(){
+         try {
+        test2 = CreateFirstUDPDocumentAndSignOneAndTwo(url,upd2,"2",driver);
         Me.Sleep(1000);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
         Me.Sleep(1000);
@@ -42,10 +48,15 @@ public class L_CompletedEDWithSideCustomer_Test12 {
         test = driver.findElement(By.id("shipment-info")).getAttribute("value");
         Me.CheckExit("Замечаний нет",test,driver);
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void B_RepresentativeOfTheOrganization_DOP_Test2(){
-        test2 = CreateFirstUDPDocumentAndSignOneAndTwo("2",driver);
+    @Order(2)
+    void B_RepresentativeOfTheOrganization_DOP_Test2(){
+         try {
+        test2 = CreateFirstUDPDocumentAndSignOneAndTwo(url,upd2,"2",driver);
         Me.Sleep(1000);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
         Me.Sleep(1000);
@@ -67,10 +78,15 @@ public class L_CompletedEDWithSideCustomer_Test12 {
         test = driver.findElement(By.id("shipment-info")).getAttribute("value");
         Me.CheckExit("Замечаний нет",test,driver);
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void C_Individual_DOP_Test3(){
-        test2 = CreateFirstUDPDocumentAndSignOneAndTwo("2",driver);
+    @Order(3)
+    void C_Individual_DOP_Test3(){
+         try {
+        test2 = CreateFirstUDPDocumentAndSignOneAndTwo(url,upd2,"2",driver);
         Me.Sleep(1000);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
         Me.Sleep(1000);
@@ -88,10 +104,15 @@ public class L_CompletedEDWithSideCustomer_Test12 {
         test = driver.findElement(By.id("shipment-info")).getAttribute("value");
         Me.CheckExit("Замечаний нет",test,driver);
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void D_CompletedCoworker_SchfDOP_Test4(){
-        test2 = CreateFirstUDPDocumentAndSignOneAndTwo("3",driver);
+    @Order(4)
+    void D_CompletedCoworker_SchfDOP_Test4(){
+         try {
+        test2 = CreateFirstUDPDocumentAndSignOneAndTwo(url,upd2,"3",driver);
         Me.Sleep(1000);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
         Me.Sleep(1000);
@@ -110,10 +131,15 @@ public class L_CompletedEDWithSideCustomer_Test12 {
         test = driver.findElement(By.id("shipment-info")).getAttribute("value");
         Me.CheckExit("Замечаний нет",test,driver);
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void E_RepresentativeOfTheOrganization_SchfDOP_Test5(){
-        test2 = CreateFirstUDPDocumentAndSignOneAndTwo("3",driver);
+    @Order(5)
+    void E_RepresentativeOfTheOrganization_SchfDOP_Test5(){
+         try {
+        test2 = CreateFirstUDPDocumentAndSignOneAndTwo(url,upd2,"3",driver);
         Me.Sleep(1000);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
         Me.Sleep(1000);
@@ -135,10 +161,15 @@ public class L_CompletedEDWithSideCustomer_Test12 {
         test = driver.findElement(By.id("shipment-info")).getAttribute("value");
         Me.CheckExit("Замечаний нет",test,driver);
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void F_Individual_SchfDOP_Test6(){
-        test2 = CreateFirstUDPDocumentAndSignOneAndTwo("3",driver);
+    @Order(6)
+    void F_Individual_SchfDOP_Test6(){
+         try {
+        test2 = CreateFirstUDPDocumentAndSignOneAndTwo(url,upd2,"3",driver);
         Me.Sleep(1000);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
         Me.Sleep(1000);
@@ -156,5 +187,8 @@ public class L_CompletedEDWithSideCustomer_Test12 {
         test = driver.findElement(By.id("shipment-info")).getAttribute("value");
         Me.CheckExit("Замечаний нет",test,driver);
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 }

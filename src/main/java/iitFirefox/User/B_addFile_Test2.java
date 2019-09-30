@@ -2,9 +2,8 @@ package iitFirefox.User;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
-import org.junit.Before;
-import org.junit.Test;
+import iitAdd.iit8077;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +11,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Date;
 
-
-public class B_addFile_Test2 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class B_addFile_Test2 extends iit8077 {
     public WebDriver driver;
     public String test;
     public String test2;
@@ -21,16 +20,21 @@ public class B_addFile_Test2 {
 
 
 
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.LogPass(p.q1ulog, p.q1upass, driver);
+        driver.get(url);
+        Me.LogPass(logUser, pass, driver);
         Me.Sleep(1500);
-
-    }
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
     @Test
-    public void A_AddFilePositive_Test1() {
+    @Order(1)
+    void A_AddFilePositive_Test1() {
+         try {
         //Проверка имени Сотрудник отправителя и названия файла
         testid = Me.AddFile("1.html", driver);
         test = driver.findElement(By.cssSelector("#grid-basic2-row-" + testid + " > table:nth-child(1) > tr:nth-child(1) > td:nth-child(4)")).getText();
@@ -39,9 +43,14 @@ public class B_addFile_Test2 {
         test2 = driver.findElement(By.cssSelector("#grid-basic2-row-" + testid + "> table:nth-child(1) > tr:nth-child(1) > td:nth-child(3)")).getText();
         System.out.println(test2);
         Me.CheckExit("1.html", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void B_AddFileComment_Test2() {
+    @Order(2)
+    void B_AddFileComment_Test2() {
+         try {
         //Проверка комментария
         Date date = new Date();
         Add();
@@ -57,10 +66,15 @@ public class B_addFile_Test2 {
         row = row.substring(0, 36);
         test = driver.findElement(By.cssSelector("#grid-basic2-row-" + row + " > table:nth-child(1) > tr:nth-child(1) > td:nth-child(13)")).getText();
         Me.CheckExit(date.toString(), test, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void C_AddFileOtherFolder_Test3() {
+    @Order(3)
+    void C_AddFileOtherFolder_Test3() {
+         try {
         //Проверка перемещения файла в другую папку.
         Date date = new Date();
         Add();
@@ -79,15 +93,22 @@ public class B_addFile_Test2 {
         Me.Sleep(3000);
         //Change folder
         driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1) > a:nth-child(1) > i:nth-child(1)")).click();
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("li.collapsed > div:nth-child(2) > a:nth-child(1)")).click();
+        Me.Sleep(500);
         String row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         row = row.substring(0, 36);
         test = driver.findElement(By.cssSelector("#grid-basic2-row-" + row + " > table:nth-child(1) > tr:nth-child(1) > td:nth-child(13)")).getText();
         Me.CheckExit(date.toString(), test, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void D_AddFileMore50mbError_Test4() {
+    @Order(4)
+    void D_AddFileMore50mbError_Test4() {
+         try {
         //Файл больше 50 мегабайт выпадает ошибка
         Add();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
@@ -97,10 +118,15 @@ public class B_addFile_Test2 {
         test = driver.findElement(By.cssSelector("#errorBlock > ul:nth-child(2) > li:nth-child(1)")).getText();
         System.out.println(test);
         Me.CheckExit("Файл \"File2.txt\" (50001.00 KB) превышает максимальный размер 50000 KB.", test, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void E_AddFileMore400files_Test5() {
+    @Order(5)
+    void E_AddFileMore400files_Test5() {
+         try {
         //Загрузка файлов больше 400
         Add();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
@@ -113,10 +139,15 @@ public class B_addFile_Test2 {
         Me.Sleep(100);
         test = driver.findElement(By.cssSelector("#errorBlock > ul:nth-child(2) > li:nth-child(1)")).getText();
         Me.CheckExit("Количество выбранных файлов (406) превышает максимально допустимое количество 400.", test, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void F_AddFile400files_Test6() {
+    @Order(6)
+    void F_AddFile400files_Test6() {
+         try {
         //Загрузка файлов = 400
         Add();
         Me.Sleep(200);
@@ -128,15 +159,20 @@ public class B_addFile_Test2 {
         }
         Me.Sleep(2000);
         driver.findElement(By.cssSelector("#uploadModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(2)")).click();
-        Me.visibleElement60SecToWait(".glyphicon-ok-sign", driver);
+        Me.visibleElement180SecToWait(".glyphicon-ok-sign", driver);
         Me.Sleep(1000);
         test = driver.findElement(By.cssSelector("h3.resptext")).getText();
         System.out.println(test);
         Me.CheckExit("Файлы были успешно загружены", test, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void J_AddWrongFile_Test7() {
+    @Order(7)
+    void J_AddWrongFile_Test7() {
+         try {
         //Загрузка файлов = 400
         Add();
         Me.Sleep(200);
@@ -159,9 +195,12 @@ public class B_addFile_Test2 {
 
         System.out.println(test);
         Me.CheckExit("1", test, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
-    public void Add() {
+    void Add() {
         Me.Sleep(1500);
         driver.findElement(By.cssSelector(".createDocument")).click();
         Me.Sleep(500);

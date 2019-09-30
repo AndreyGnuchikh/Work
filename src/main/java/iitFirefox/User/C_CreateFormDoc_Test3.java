@@ -4,27 +4,33 @@ import iitAdd.*;
 import iitFirefox.User.Form.CompleteForm;
 import iitFirefox.User.Form.CompleteFormAct;
 import iitFirefox.User.Form.CompleteFormDopSchF;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class C_CreateFormDoc_Test3 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class C_CreateFormDoc_Test3 extends iit8077 {
     WebDriver driver;
     String test2;
 
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.loggingCerts(p.upd, driver);
+        driver.get(url);
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.startEndingCertAndSendingFiles(driver);
-    }
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
 
     //Add UPD
     @Test
-    public void A_AddSCHF_Test1() {
+    @Order(1)
+    void A_AddSCHF_Test1() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -47,9 +53,14 @@ public class C_CreateFormDoc_Test3 {
         Me.CheckExit(test2, test, driver);
 
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void B_AddACT_Test2() {
+    @Order(2)
+    void B_AddACT_Test2() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -77,9 +88,14 @@ public class C_CreateFormDoc_Test3 {
         Me.CheckExit(test2, test, driver);
 
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void C_AddSChFDOP_Test3() {
+    @Order(3)
+    void C_AddSChFDOP_Test3() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -106,11 +122,15 @@ public class C_CreateFormDoc_Test3 {
         System.out.println(test);
         Me.CheckExit(test2, test, driver);
 
-
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     //Add UPD IP
     @Test
-    public void D_AddSCHF_IP_Test4() {
+    @Order(4)
+    void D_AddSCHF_IP_Test4() {
+         try {
         Me.Sleep(2500);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -131,11 +151,14 @@ public class C_CreateFormDoc_Test3 {
         test = Me.Krutilka(arrive, numberElement).substring(0, 28);
         System.out.println(test);
         Me.CheckExit(test2, test, driver);
-
-
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void E_AddACT_IP_Test5() {
+    @Order(5)
+    void E_AddACT_IP_Test5() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -161,11 +184,14 @@ public class C_CreateFormDoc_Test3 {
         test = Me.Krutilka(arrive, numberElement).substring(0, 28);
         System.out.println(test);
         Me.CheckExit(test2, test, driver);
-
-
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void F_AddSChFDOP_IP_Test6() {
+    @Order(6)
+    void F_AddSChFDOP_IP_Test6() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -191,12 +217,15 @@ public class C_CreateFormDoc_Test3 {
         test = Me.Krutilka(arrive, numberElement).substring(0, 28);
         System.out.println(test);
         Me.CheckExit(test2, test, driver);
-
-
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     //3 page blocs
     @Test
-    public void G_AddSChFDOP_IP_3Page_2bloc_Test7() {
+    @Order(7)
+    void G_AddSChFDOP_IP_3Page_2bloc_Test7() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -224,9 +253,14 @@ public class C_CreateFormDoc_Test3 {
         Me.CheckExit(test2, test, driver);
 
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void H_AddSChFDOP_IP_3Page_3bloc_Test8() {
+    @Order(8)
+    void H_AddSChFDOP_IP_3Page_3bloc_Test8() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -254,6 +288,9 @@ public class C_CreateFormDoc_Test3 {
         Me.CheckExit(test2, test, driver);
 
 
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
 }

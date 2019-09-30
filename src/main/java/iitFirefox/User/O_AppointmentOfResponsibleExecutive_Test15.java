@@ -2,30 +2,30 @@ package iitFirefox.User;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import iitAdd.iit8077;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import java.util.HashMap;
-import java.util.Map;
-
-public class O_AppointmentOfResponsibleExecutive_Test15 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
     WebDriver driver;
     String test,test2;
-    public String checkbox1, checkbox2, checkbox3;
     public String check;
     public String row;
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         driver = Drivers.ff();
-        driver.get(p.url);
-    }
+        driver.get(url);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
     @Test
-    public void A_AppointmentTable_Test1(){
-        Me.loggingCerts(p.upd, driver);
+    @Order(1)
+    void A_AppointmentTable_Test1(){
+         try {
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.startEndingCertAndSendingFiles(driver);
         Me.AddFileAndClickMenu(7,"1.html",driver);
@@ -45,10 +45,15 @@ public class O_AppointmentOfResponsibleExecutive_Test15 {
         test = driver.findElement(By.cssSelector("#grid-basic2-row-" + row + "> table:nth-child(1) > tr:nth-child(1) > td:nth-child(9)")).getText();
         Me.CheckExit("Иванов",test,driver);
         driver.quit();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     @Test
-    public void B_AppointmentCard_Test2(){
-        Me.loggingCerts(p.upd, driver);
+    @Order(2)
+    void B_AppointmentCard_Test2(){
+         try {
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.startEndingCertAndSendingFiles(driver);
         Me.AddFileAndClickMenu(7,"1.html",driver);
@@ -64,11 +69,16 @@ public class O_AppointmentOfResponsibleExecutive_Test15 {
         test = driver.findElement(By.cssSelector("#cf-perf")).getText();
         Me.CheckExit("Иванов",test,driver);
         driver.quit();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
     /*
     @Test
-    public void C_AppointmentExecutive_Test3(){
-        Me.loggingCerts(p.upd, driver);
+    @Order(3)
+    void C_AppointmentExecutive_Test3(){
+    try {
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.startEndingCertAndSendingFiles(driver);
         Me.AddFileAndClickMenu(7,"1.html",driver);
@@ -88,10 +98,15 @@ public class O_AppointmentOfResponsibleExecutive_Test15 {
 
         Me.CheckExit("Иванов",test,driver);
         driver.quit();
-
+}catch (Throwable e) {
+        Me.Catch(driver,e);
+    }
+}
     @Test
-    public void D_AppointmentEmailSend_Test4() throws Exception{
-    Me.LogPass(p.pass5log, p.pass5log, driver);
+    @Order(4)
+    void D_AppointmentEmailSend_Test4() throws Exception{
+    try {
+    Me.LogPass(pass5log, pass5log, driver);
     Me.Sleep(2000);
     Me.startEndingCertAndSendingFiles(driver);
          driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
@@ -101,11 +116,10 @@ public class O_AppointmentOfResponsibleExecutive_Test15 {
             driver.findElement(By.cssSelector("#not-3")).click();
         }
         driver.findElement(By.cssSelector("#collapseTwo > div:nth-child(2) > button:nth-child(1)")).click();
-        Me.Sleep(1500);
-        driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) > span:nth-child(1)")).click();
+        Me.WaitElementToBeClickableAndClick("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) > span:nth-child(1)",driver);
         ////////////////////////////////////////////////////////////////////////////////
         Me.Exit(driver);
-        Me.loggingCerts(p.upd, driver);
+        Me.loggingCerts(upd, driver);
         Me.Sleep(1500);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
@@ -121,7 +135,7 @@ public class O_AppointmentOfResponsibleExecutive_Test15 {
         Me.SingFirstFile(driver);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////
         Me.Email(driver);
-        Me.visibleElement60SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+        Me.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
         Me.Sleep(500);
         String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
         if (test1.equals("Портал ЭДО ИИТ: Изменение ответственного исполнителя")) {
@@ -133,8 +147,11 @@ public class O_AppointmentOfResponsibleExecutive_Test15 {
         } else {
             System.out.println(test1);
             driver.quit();
-            Assert.fail();
+           Assertions.fail();
         }
+}catch (Throwable e) {
+        Me.Catch(driver,e);
+    }
 }*/
 }
 

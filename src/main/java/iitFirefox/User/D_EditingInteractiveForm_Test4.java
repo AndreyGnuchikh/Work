@@ -3,37 +3,42 @@ package iitFirefox.User;
 import iitAdd.Drivers;
 
 import iitAdd.Me;
-import iitAdd.p;
+import iitAdd.iit8077;
 import iitFirefox.User.Form.CompleteForm;
 import iitFirefox.User.Form.CompleteFormAct;
 import iitFirefox.User.Form.CompleteFormDopSchF;
 import iitFirefox.User.SoapTest1.AddDocumentUPDUserACT;
 import iitFirefox.User.SoapTest1.AddDocumentUPDUserASChFDop_Test3;
 import iitFirefox.User.SoapTest1.AddDocumentUPDUserASChF_Test1;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-public class D_EditingInteractiveForm_Test4 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class D_EditingInteractiveForm_Test4 extends iit8077 {
     public static WebDriver driver;
     public String row;
     String test2;
 
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         row = null;
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.loggingCerts(p.upd, driver);
+        driver.get(url);
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
 
-    }
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
 
     @Test
-    public void A_EditingSCHF_Test1() {
+    @Order(1)
+    void A_EditingSCHF_Test1() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -52,17 +57,22 @@ public class D_EditingInteractiveForm_Test4 {
         driver.findElement(By.cssSelector("#commentSFModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(".glyphicon-ok")).click();
-        Me.Sleep(1500);
+        Me.Sleep(2000);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         System.out.println(row);
         System.out.println(row);
         row = row.substring(36, 59);
         System.out.println(row);
         Me.CheckExit("Счет-Фактура № Тест.xml", row, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void B_EditingACT_Test2() {
+    @Order(2)
+    void B_EditingACT_Test2() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -79,25 +89,30 @@ public class D_EditingInteractiveForm_Test4 {
         Me.Sleep(1500);
         driver.findElement(By.cssSelector("#numberActEW")).clear();
         driver.findElement(By.cssSelector("#numberActEW")).sendKeys("Тест");
-        Me.Sleep(500);
+        Me.Sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(500);
+        Me.Sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(500);
+        Me.Sleep(1000);
         driver.findElement(By.cssSelector("#commentActEWModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Me.Sleep(1000);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(1500);
+        Me.Sleep(2000);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         System.out.println(row);
         System.out.println(row);
         row = row.substring(36, 68);
         System.out.println(row);
         Me.CheckingContainsExit("Акт выполненных работ №", row, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void C_EditingSChFDOP_Test3() {
+    @Order(3)
+    void C_EditingSChFDOP_Test3() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -120,18 +135,23 @@ public class D_EditingInteractiveForm_Test4 {
         driver.findElement(By.cssSelector(".glyphicon-cloud-upload")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(1500);
+        Me.Sleep(2000);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         System.out.println(row);
         System.out.println(row);
         row = row.substring(36, 79);
         System.out.println(row);
         Me.CheckingContainsExit("Универсальный передаточный документ №", row, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     // Not New
     @Test
-    public void D_EditingSCHF_NotNew_Test4() {
+    @Order(4)
+    void D_EditingSCHF_NotNew_Test4() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -140,10 +160,15 @@ public class D_EditingInteractiveForm_Test4 {
         Me.Sleep(1000);
         test2 = CompleteForm.SCHF(driver);
         CheckDisableButtonSing();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void E_EditingACT_NotNew_Test5() {
+    @Order(5)
+    void E_EditingACT_NotNew_Test5() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -156,10 +181,15 @@ public class D_EditingInteractiveForm_Test4 {
         Me.Sleep(1000);
         test2 = CompleteFormAct.Act(driver);
         CheckDisableButtonSing();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void F_EditingSChFDOP_NotNew_Test6() {
+    @Order(6)
+    void F_EditingSChFDOP_NotNew_Test6() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -173,71 +203,99 @@ public class D_EditingInteractiveForm_Test4 {
         // Add act
         test2 = CompleteFormDopSchF.DopSchF(driver);
         CheckDisableButtonSing();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     // add Soap
     @Test
-    public void G_EditingSCHF_Soap_Test7() {
+    @Order(7)
+    void G_EditingSCHF_Soap_Test7() {
+         try {
         Me.startEndingCertAndSendingFiles(driver);
 
         test2 = AddDocumentUPDUserASChF_Test1.add();
-        driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1) > a:nth-child(1) > i:nth-child(1)")).click();
-        Me.Sleep(1000);
-        driver.findElement(By.xpath("//*[contains(text(), 'СЧФ 321')]")).click();
+        Me.OpenNameFolder("СЧФ 321",driver);
         Me.Sleep(500);
         CheckDisableButton();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void H_EditingACT_Soap_Test8() {
+    @Order(8)
+    void H_EditingACT_Soap_Test8() {
+         try {
         Me.startEndingCertAndSendingFiles(driver);
 
         test2 = AddDocumentUPDUserACT.add();
-        driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1) > a:nth-child(1) > i:nth-child(1)")).click();
-        Me.Sleep(1000);
-        driver.findElement(By.xpath("//*[contains(text(), 'АКТ')]")).click();
+        Me.OpenNameFolder("АКТ",driver);
+
         Me.Sleep(500);
         CheckDisableButton();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void I_EditingSChFDOP_Soap_Test9() {
+    @Order(9)
+    void I_EditingSChFDOP_Soap_Test9() {
+         try {
         Me.startEndingCertAndSendingFiles(driver);
 
         test2 = AddDocumentUPDUserASChFDop_Test3.add();
-        driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1) > a:nth-child(1) > i:nth-child(1)")).click();
-        Me.Sleep(1000);
-        driver.findElement(By.xpath("//*[contains(text(), 'Тест 3')]")).click();
+        Me.OpenNameFolder("Тест 3",driver);
         Me.Sleep(500);
         CheckDisableButton();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     // add files
     @Test
-    public void J_EditingSChF_addFiles_Test10() {
+    @Order(10)
+    void J_EditingSChF_addFiles_Test10() {
+         try {
         Me.AddFileUPDError("0.xml", driver);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
         CheckDisableButton();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void K_EditingDop_addFiles_Test11() {
+     @Order(11)
+    void K_EditingDop_addFiles_Test11() {
+         try {
         Me.AddFileUPDError("Dop.xml", driver);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
         CheckDisableButton();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void L_EditingSchFDop_addFiles_Test12() {
+     @Order(12)
+    void L_EditingSchFDop_addFiles_Test12() {
+         try {
         Me.AddFileUPDError("SchfDop.xml", driver);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
         CheckDisableButton();
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
-    public void CheckDisableButtonSing() {
+    void CheckDisableButtonSing() {
         Me.SingFirstFile(driver);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
         Me.startEndingCertAndSendingFiles(driver);
@@ -246,7 +304,7 @@ public class D_EditingInteractiveForm_Test4 {
         Me.CheckExit("dijitReset dijitMenuItemLabel", test2, driver);
     }
 
-    public void CheckDisableButton() {
+    void CheckDisableButton() {
 
         Me.ClickMenuFirstElement(3, driver);
         test2 = driver.findElement(By.cssSelector("#cm-edit_text")).getAttribute("class");

@@ -2,107 +2,167 @@ package iitFirefox.User;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
-import org.junit.Before;
-import org.junit.Test;
+import iitAdd.iit8077;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-
-public class C_Download_Files_Test3 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class C_Download_Files_Test3 extends iit8077 {
     WebDriver driver;
     String test2;
 
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.loggingCerts(p.upd, driver);
+        driver.get(url);
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
 
-    }
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
 
     @Test
-    public void A_AddFileUPDDownload_Successful_Test1() throws NoSuchElementException {
+    @Order(1)
+    void A_AddFileUPDDownload_Successful_Test1() throws NoSuchElementException {
+         try {
         Me.AddFileUPDError("0.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Файл 0.xml был успешно сохранен", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     //Download Wrong
     @Test
-    public void B_AddFileUPDDownloadWrong_Seller_Test2() {
+    @Order(2)
+    void B_AddFileUPDDownloadWrong_Seller_Test2() {
+         try {
         Me.AddFileUPDError("1.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Не удалось найти данные продавца в системе. Файл 1.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void C_AddFileUPDDownloadWrong_Validation156651_Test3() {
+    @Order(3)
+    void C_AddFileUPDDownloadWrong_Validation156651_Test3() {
+         try {
         Me.AddFileUPDError("2.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Ошибка валидации: cvc-pattern-valid: Value '156651' is not facet-valid with respect to pattern '([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}' for type 'ИННЮЛТип'. Файл 2.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void D_AddFileUPDDownloadWrong_IDOTPR_Test4() {
+    @Order(4)
+    void D_AddFileUPDDownloadWrong_IDOTPR_Test4() {
+         try {
         Me.AddFileUPDError("3.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Ошибка валидации, ИдФайла указан не правильно. Файл 3.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void E_AddFileUPDDownloadWrong_IDPOL_Test5() {
+    @Order(5)
+    void E_AddFileUPDDownloadWrong_IDPOL_Test5() {
+         try {
         Me.AddFileUPDError("4.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("ИдПол не соответствует реквизитам покупателя. Файл 4.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void F_AddFileUPDDownloadWrong_DoesNotFindSellerInSystem_Test6() {
+    @Order(6)
+    void F_AddFileUPDDownloadWrong_DoesNotFindSellerInSystem_Test6() {
+         try {
         Me.AddFileUPDError("5.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Не удалось найти данные продавца в системе. Файл 5.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void G_AddFileUPDDownloadWrong_DoesNotFindTypeDocument_Test7() {
+    @Order(7)
+    void G_AddFileUPDDownloadWrong_DoesNotFindTypeDocument_Test7() {
+         try {
         Me.AddFileUPDError("6.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Не удалось опознать тип формализованного документа. Файл 6.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void H_AddFileUPDDownloadWrong_IDEDO_Test8() {
+    @Order(8)
+    void H_AddFileUPDDownloadWrong_IDEDO_Test8() {
+         try {
         Me.AddFileUPDError("7.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Ошибка валидации, в xml отсутствует поле ИдЭДО Файл 7.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void I_AddFileUPDDownloadWrong_IDFILE_Test9() {
+    @Order(9)
+    void I_AddFileUPDDownloadWrong_IDFILE_Test9() {
+         try {
         Me.AddFileUPDError("8.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Ошибка валидации, в xml отсутствует поле ИдФайл Файл 8.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void J_AddFileUPDDownloadWrong_IDFILEWrongFilled_Test10() {
+    @Order(10)
+    void J_AddFileUPDDownloadWrong_IDFILEWrongFilled_Test10() {
+         try {
         Me.AddFileUPDError("9.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Ошибка валидации, ИдФайла указан не правильно. Файл 9.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void K_AddFileUPDDownloadWrong__Test11() {
+     @Order(11)
+    void K_AddFileUPDDownloadWrong__Test11() {
+         try {
         Me.AddFileUPDError("10.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Ошибка валидации: cvc-complex-type.4: Attribute 'ИННЮЛ' must appear on element 'СвОЭДОтпр'. Файл 10.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void L_AddFileUPDDownloadWrong_ValidationFile_Test12() {
+     @Order(12)
+    void L_AddFileUPDDownloadWrong_ValidationFile_Test12() {
+         try {
         Me.Sleep(1500);
         driver.findElement(By.cssSelector(".createDocument")).click();
         Me.Sleep(500);
@@ -116,10 +176,15 @@ public class C_Download_Files_Test3 {
         Me.Sleep(3000);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.CheckExit("Файлы были успешно загружены Файлы 10.xml не прошли проверку на валидность. Файлы были успешно сохранены на Портал как неформализованный документ.", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void M_AddFileUPDDownloadWrong_andCheckReceipts_Test13() {
+     @Order(13)
+    void M_AddFileUPDDownloadWrong_andCheckReceipts_Test13() {
+         try {
         Me.AddFileUPDError("2.xml", driver);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
@@ -136,6 +201,9 @@ public class C_Download_Files_Test3 {
         test2 = driver.findElement(By.id("cm-operator")).getAttribute("className");
         System.out.println(test2);
         Me.CheckExit("dijitReset dijitMenuItem dijitMenuItemDisabled dijitDisabled", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
 }

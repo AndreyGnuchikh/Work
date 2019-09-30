@@ -1,9 +1,26 @@
+Что нужно попробовать
+Что нужно попробовать
+Что нужно попробовать
+Что нужно попробовать
+Что нужно попробоватьЧто нужно попробовать
+Что нужно попробовать
+
+Для выпадающих списков.
+       Select select = (Select)driver.findElement(By.name("select"));
+       select.selectByValue("1");
+       либо
+       select.selectByVisibleText("Машина");
+       либо
+       select.selectByIndex(1);
+
+
+
 Правый клик мыши
-       ====================================click for id====================================
+       ****************************************click for id****************************************
 Actions builder = new Actions(driver);
 builder.contextClick(driver.findElement(By.xpath("/html/body/div[23]/div[1]/div[2]/div[2]/div[4]/div/div/div[2]/div/div[1]"))
         ).sendKeys(Keys.ARROW_DOWN).build().perform();
-       ====================================click for id====================================
+       ****************************************click for id****************************************
 driver.findElement(By.id("cm-send_text")).click();
 
        --------------------------------------add driver in a test--------------------------------------
@@ -34,17 +51,27 @@ driver.findElement(By.id("cm-send_text")).click();
        --------------------------------------add driver in a test--------------------------------------
 
 
-      ====================================use cmd Windows====================================
+      ****************************************use cmd Windows****************************************
       throws InterruptedException, IOException
               getRuntime().exec("taskkill /im nmcades.exe");
-      ====================================use cmd Windows====================================
+      ****************************************use cmd Windows****************************************
 
-  ====================================cmd zip====================================
+     --------------------------------------IOException--------------------------------------
+            try {
+                      getRuntime().exec("taskkill /im geckodriver");
+                      }
+                   catch(IOException ie) {
+                      ie.printStackTrace();
+                  }
+     --------------------------------------IOException--------------------------------------
+
+  ****************************************cmd zip****************************************
+        throws InterruptedException, IOException
                   test2 ="C:\\Program Files\\7-Zip\\7z.exe x C:\\Tools\\TestFile\\"+test+" -o\"C:\\Tools\\TestFile\\\"";
                   System.out.println(test2);
                   getRuntime().exec(test2);
 
-  ====================================cmd zip====================================
+  ****************************************cmd zip****************************************
 
 
        --------------------------------------use List Elements--------------------------------------
@@ -66,7 +93,7 @@ driver.findElement(By.id("cm-send_text")).click();
 
        --------------------------------------use List Elements--------------------------------------
 
-        ==================================== Choose first element in the table and right click ====================================
+        **************************************** Choose first element in the table and right click ****************************************
           String row;
                  Me.Sleep(1500);
                  driver.findElement(By.cssSelector(".createDocument")).click();
@@ -81,33 +108,63 @@ driver.findElement(By.id("cm-send_text")).click();
                  driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
                  // Click and found first element
                  Me.Sleep(2500);
-                 =====================
+                 ************************************
                  row  = driver.findElement(By.cssSelector(".dgrid-content")).getAttribute("textContent");
                  row = row.substring(0,36);
-           ==============
+           **********************
            или так
-           ==============
+           **********************
                  test = driver.findElement(By.cssSelector("#grid-basic2 > div.dgrid-scroller > div")).getAttribute("childNodes");
-                 =====================
+                 ************************************
                  driver.findElement(By.cssSelector("#grid-basic2-row-"+row)).click();
                  Actions builder = new Actions(driver);
                  builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-"+row))
                  ).sendKeys(Keys.ARROW_DOWN).build().perform();
-        ========================= Choose first element in the table and right click================================
+        ******************* Choose first element in the table and right click******************************
 
 
-   --------------------------------------contains text--------------------------------------
-      driver.findElement(By.xpath("//*[contains(text(), 'СЧФ 321')]")).click();
+   --------------------------------------contains text and class--------------------------------------
+   text
+   driver.findElement(By.xpath("//*[contains(text(), 'СЧФ 321')]")).click();
    driver.findElement(By.xpath("//*[contains(text(), 'Admin')][contains(@class, 'select2-results__option')]")).click();
-   --------------------------------------contains text--------------------------------------
+   class
+   WebElement parentEle =  driver.findElement(By.xpath("//div[@class='v-caption v-caption-captionInsertKKT v-caption-text-field-input']"));
 
-     ====================================Tap up====================================
+   Точное указание имени  driver.findElement(By.cssSelector("[foldername="+name+"]")).click();
+   --------------------------------------contains text and class--------------------------------------
+
+     ****************************************Tap up and down****************************************
            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");UP
            ((JavascriptExecutor)driver).executeScript("scroll(0,400)");DOWN
 
-     ====================================Tap up====================================
+           //Прокрутит до элемента button.
+                    driver.executeScript("return arguments[0].scrollIntoView(true);", button)
+     ****************************************Tap up and down****************************************
 
           --------------------------------------aria-disabled--------------------------------------
            test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
           --------------------------------------aria-disabled--------------------------------------
 
+
+          **************************************** Date ****************************************
+        Date currentDate = new Date();
+        SimpleDateFormat dateFormat = null;
+
+   dateFormat = new SimpleDateFormat("dd MMMM", Locale.ENGLISH);
+          System.out.println("Constructor 4: " + dateFormat.format( currentDate ) );
+
+          http://www.seostella.com/ru/article/2012/02/05/formatirovanie-daty-v-java.html
+
+          **************************************** Date ****************************************
+
+         --------------------------------------DoubleClick--------------------------------------
+        WebElement element = driver.findElement(By.cssSelector("#grid-basic2-row-" + row));
+        new Actions(driver).doubleClick(element).perform(); // без build
+         --------------------------------------DoubleClick--------------------------------------
+
+         ********************************** Switch Windows ****************************************
+              test = String.valueOf(driver.getWindowHandles());
+              test = test.substring(13,23);
+              System.out.println(test);
+              driver.switchTo().window(test);
+         ********************************** Switch Windows ****************************************

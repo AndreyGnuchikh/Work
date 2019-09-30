@@ -2,25 +2,25 @@ package iitChrome.login;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
-import org.junit.Before;
-import org.junit.Test;
+import iitAdd.iit8077;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class H_ChangeRoles_Test8 {
+public class H_ChangeRoles_Test8 extends iit8077{
     private WebDriver driver;
     public String checking;
 
-    @Before
-    public void upSet() {
+     @BeforeEach
+    void upSet() {
         driver = Drivers.chrome();
-        driver.get(p.url);
+        driver.get(url);
     }
 
     @Test
-    public void A_TestChangeRoleAdminToUser_Test1() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void A_TestChangeRoleAdminToUser_Test1() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(1, driver);
         Admin();
 
@@ -30,8 +30,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void B_TestChangeRoleAdminToSupport_Test2() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void B_TestChangeRoleAdminToSupport_Test2() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(1, driver);
         Admin();
 
@@ -41,8 +41,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void C_TestChangeRoleAdminToBillingEditor_Test3() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void C_TestChangeRoleAdminToBillingEditor_Test3() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(1, driver);
         Admin();
 
@@ -52,8 +52,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void D_TestChangeRoleUserTo_Admin_Test4() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void D_TestChangeRoleUserTo_Admin_Test4() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(2, driver);
         User();
 
@@ -63,8 +63,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void E_TestChangeRoleUserTo_Support_Test5() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void E_TestChangeRoleUserTo_Support_Test5() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(2, driver);
         User();
 
@@ -74,8 +74,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void F_TestChangeRoleUserTo_BillingEditor_Test6() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void F_TestChangeRoleUserTo_BillingEditor_Test6() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(2, driver);
         User();
 
@@ -85,8 +85,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void G_TestChangeRoleSupportTo_Admin_Test7() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void G_TestChangeRoleSupportTo_Admin_Test7() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(3, driver);
         Support();
 
@@ -96,8 +96,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void H_TestChangeRoleSupportTo_User_Test8() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void H_TestChangeRoleSupportTo_User_Test8() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(3, driver);
         Support();
 
@@ -107,8 +107,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void I_TestChangeRoleSupportTo_BillingEditor_Test9() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void I_TestChangeRoleSupportTo_BillingEditor_Test9() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(3, driver);
         Support();
 
@@ -119,8 +119,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void J_TestChangeRoleBillingEditorToAdmin__Test10() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void J_TestChangeRoleBillingEditorToAdmin__Test10() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(4, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
         Me.Sleep(1000);
@@ -132,8 +132,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void K_TestChangeRoleBillingEditorToUser__Test11() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void K_TestChangeRoleBillingEditorToUser__Test11() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(4, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
         Me.Sleep(1000);
@@ -145,8 +145,8 @@ public class H_ChangeRoles_Test8 {
     }
 
     @Test
-    public void L_TestChangeRoleBillingEditorToSupport__Test12() {
-        Me.LogPass(p.q7log1, p.q7pass1, driver);
+    void L_TestChangeRoleBillingEditorToSupport__Test12() {
+        Me.LogPass(LogAll, pass, driver);
         Me.RoleSwitch(4, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
         Me.Sleep(1000);
@@ -158,7 +158,7 @@ public class H_ChangeRoles_Test8 {
 
     }
 
-    public void Admin() {
+    void Admin() {
         checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
         Me.Check("Управление сертификатами", checking, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
@@ -167,7 +167,7 @@ public class H_ChangeRoles_Test8 {
 
     }
 
-    public void User() {
+    void User() {
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Me.Check("Кабинет Все хорошо", checking, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
@@ -175,7 +175,7 @@ public class H_ChangeRoles_Test8 {
         driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
     }
 
-    public void Support() {
+    void Support() {
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Me.Check("ЖАСО - Нижегородский филиал", checking, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();

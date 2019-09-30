@@ -2,10 +2,11 @@ package iitFirefox.User;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
-import org.junit.Test;
+import iitAdd.iit8077;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,15 +14,17 @@ import java.util.Arrays;
 import java.util.List;
 
 import static java.lang.Runtime.getRuntime;
-
-public class J_SigningDocument_Test10 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class J_SigningDocument_Test10 extends iit8077 {
 
     public WebDriver driver;
     public String test, test2, checking;
 
 
     @Test
-    public void A_Signing_Schf_Document_Test1() {
+    @Order(1)
+    void A_Signing_Schf_Document_Test1() {
+        try {
         setUp();
         Me.AddFile("upd\\0.xml", driver);
         Me.ClickMenuFirstElement(5, driver);
@@ -33,14 +36,19 @@ public class J_SigningDocument_Test10 {
         Me.ClickMenuFirstElement(5, driver);
         test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
         Me.CheckExit("true", test2, driver);
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
     @Test
-    public void B_Signing_Dop_Document_Test2() {
+    @Order(2)
+    void B_Signing_Dop_Document_Test2() {
+        try {
         setUp();
         Me.AddFile("upd\\Dop.xml", driver);
         Me.ClickMenuFirstElement(5, driver);
-        Me.Sleep(1500);
+        Me.Sleep(2000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
         Me.Sleep(5000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
@@ -48,10 +56,15 @@ public class J_SigningDocument_Test10 {
         Me.ClickMenuFirstElement(5, driver);
         test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
         Me.CheckExit("true", test2, driver);
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
     @Test
-    public void C_Signing_Schf_DopDocument_Test3() {
+    @Order(3)
+    void C_Signing_Schf_DopDocument_Test3() {
+        try {
         setUp();
         Me.AddFile("upd\\SchfDop.xml", driver);
         Me.ClickMenuFirstElement(5, driver);
@@ -64,10 +77,15 @@ public class J_SigningDocument_Test10 {
         test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
         Me.CheckExit("true", test2, driver);
 
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
     @Test
-    public void D_SigningDocument_Test4() {
+    @Order(4)
+    void D_SigningDocument_Test4() {
+        try {
         setUp();
         Me.AddFile("1.html", driver);
         Me.ClickMenuFirstElement(5, driver);
@@ -80,10 +98,15 @@ public class J_SigningDocument_Test10 {
         test2 = driver.findElement(By.cssSelector("#cm-del-full")).getAttribute("aria-disabled");
         System.out.println(test2);
         Me.CheckExit("true", test2, driver);
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
     @Test
-    public void E_Signing_Dop_Documentml2_Test5() throws InterruptedException, IOException {
+    @Order(5)
+    void E_Signing_Dop_Documentml2_Test5(){
+        try {
         setUp();
         Me.AddFile("upd\\Dop.xml", driver);
         Me.ClickMenuFirstElement(5, driver);
@@ -98,6 +121,7 @@ public class J_SigningDocument_Test10 {
         driver.findElement(By.cssSelector("#downloadp7s")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#queued-download-button")).click();
+        Me.Sleep(1500);
         File dir = new File("C:\\Tools\\TestFile");
         File[] arrFiles = dir.listFiles();
         List<File> lst = Arrays.asList(arrFiles);
@@ -117,10 +141,15 @@ public class J_SigningDocument_Test10 {
         getingLst2 = getingLst2.substring(18, 45);
         System.out.println(getingLst2);
         Me.CheckExit("ON_SCHFDOPPOK_2JH333_2JH444", getingLst2, driver);
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
     @Test
-    public void F_Signing_SchfDop_Documentxml2_Test6() throws InterruptedException, IOException {
+    @Order(6)
+    void F_Signing_SchfDop_Documentxml2_Test6(){
+        try {
         setUp();
         Me.AddFile("upd\\SchfDop.xml", driver);
         Me.ClickMenuFirstElement(5, driver);
@@ -132,8 +161,9 @@ public class J_SigningDocument_Test10 {
         Me.ClickMenuFirstElement(6, driver);
         Me.Sleep(1500);
         driver.findElement(By.cssSelector("#downloadp7s")).click();
-        Me.Sleep(500);
+        Me.Sleep(1500);
         driver.findElement(By.cssSelector("#queued-download-button")).click();
+        Me.Sleep(1500);
         File dir = new File("C:\\Tools\\TestFile");
         File[] arrFiles = dir.listFiles();
         List<File> lst = Arrays.asList(arrFiles);
@@ -163,28 +193,37 @@ public class J_SigningDocument_Test10 {
         }
         System.out.println(getingLst2);
         Me.CheckExit("ON_SCHFDOPPOK_2JH333_2JH444", getingLst2, driver);
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
     @Test
-    public void G_NoCerts_Test7() {
-        driver = Drivers.ff();
-        driver.get(p.url);
-        Me.LogPass(p.pass5log, p.pass5log, driver);
-        Me.Sleep(2000);
-        Me.startEndingCertAndSendingFiles(driver);
-        Me.AddFile("upd\\SchfDop.xml", driver);
-        Me.ClickMenuFirstElement(5, driver);
-        Me.Sleep(1500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        System.out.println(test2);
-        Me.CheckExit("Для авторизованного пользователя Тест 5ть отсутствуют сведения о сертификате. Для прикрепления сертификата к Вашей учетной записи обратитесь в техническую поддержку ООО \"ИИТ\":\n" +
-                "тел: 8 (499) 262 24 25\n" +
-                "e-mail: support@iit.ru", test2, driver);
+    @Order(7)
+    void G_NoCerts_Test7() {
+        try {
+            driver = Drivers.ff();
+            driver.get(url);
+            Me.LogPass(pass5log, pass5log, driver);
+            Me.Sleep(2000);
+            Me.startEndingCertAndSendingFiles(driver);
+            Me.AddFile("1.html", driver);
+            Me.ClickMenuFirstElement(5, driver);
+            Me.Sleep(1500);
+            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+            System.out.println(test2);
+            Me.CheckingContainsExit("Для прикрепления сертификата к Вашей учетной записи обратитесь", test2, driver);
 
+        }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
+
     @Test
-    public void H_No_Second_Signing_Test8() {
+    @Order(8)
+    void H_No_Second_Signing_Test8() {
+    try {
         setUp();
         Me.AddFile("1.html", driver);
         Me.ClickMenuFirstElement(5, driver);
@@ -196,12 +235,17 @@ public class J_SigningDocument_Test10 {
         Me.ClickMenuFirstElement(5, driver);
         test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
         Me.CheckExit("true", test2, driver);
+    }catch (Throwable e) {
+        Me.Catch(driver,e);
+    }
     }
 
     @Test
-    public void I_Error_Test9() throws InterruptedException, IOException {
+    @Order(9)
+    void I_Error_Test9(){
+    try {
         driver = Drivers.ff();
-        driver.get(p.url);
+        driver.get(url);
         Me.LogPass("вваываыв", "вваываыв", driver);
         Me.AddFile("1.html", driver);
         Me.ClickMenuFirstElement(5, driver);
@@ -212,10 +256,15 @@ public class J_SigningDocument_Test10 {
         Me.Sleep(1000);
         test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getText();
         Me.CheckExit("3: Ошибка при создании подписи", test2, driver);
+    }catch (Throwable e) {
+        Me.Catch(driver,e);
+    }
     }
 
     @Test
-    public void J_CloseWindow_Test10() {
+    @Order(10)
+    void J_CloseWindow_Test10() {
+    try {
         setUp();
         Me.AddFile("1.html", driver);
         Me.ClickMenuFirstElement(5, driver);
@@ -224,32 +273,45 @@ public class J_SigningDocument_Test10 {
         Me.Sleep(1500);
         test2 = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Me.CheckExit("Переименованный кабинет", test2, driver);
+    }catch (Throwable e) {
+        Me.Catch(driver,e);
+    }
     }
 
     @Test
-    public void K_NoPermitSingingUPD_Test11() {
+     @Order(11)
+    void K_NoPermitSingingUPD_Test11() {
+    try {
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.loggingCerts(p.fio11, driver);
+        driver.get(url);
+        Me.loggingCerts(fio11, driver);
         Me.RoleSwitch(2, driver);
-        driver.findElement(By.cssSelector("#enter")).click();
+        Me.Sleep(1000);
+        driver.findElement(By.id("enter")).click();
         Me.startEndingCertAndSendingFiles(driver);
         Me.AddFile("upd\\Dop.xml", driver);
         Me.ClickMenuFirstElement(5, driver);
         Me.Sleep(1500);
         test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
         Me.CheckExit("true", test2, driver);
+    }catch (Throwable e) {
+        Me.Catch(driver,e);
+    }
     }
 
-    public void setUp() {
+    void setUp() {
+    try {
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.loggingCerts(p.upd, driver);
+        driver.get(url);
+        Me.loggingCerts(upd, driver);
         Me.Sleep(1500);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
         File dir = new File("C:\\Tools\\TestFile");
         Me.DeletedFiles(dir);
+    }catch (Throwable e) {
+        Me.Catch(driver,e);
+    }
     }
 }

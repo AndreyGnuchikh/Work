@@ -3,90 +3,133 @@ package iitFirefox.login;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import org.junit.Before;
-import org.junit.Test;
+import iitAdd.iit8077;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import iitAdd.p;
-
-public class A_LoginLogPass_Test1 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class A_LoginLogPass_Test1 extends iit8077 {
     public WebDriver driver;
     public String checking;
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         // TODO WebDriver add in test
         driver = Drivers.ff();
-        driver.get(p.url1);
-    }
+        driver.get(url);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
 
     @Test
-    public void A_AllRightTest1() {
-        Me.LogPass(p.log1log, p.pass1log, driver);
-        checking = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[2]/button")).getText();
-
+    @Order(1)
+     void A_AllRightTest1() {
+        try {
+        Me.LogPass(log1log, pass, driver);
+        checking = driver.findElement(By.className("auth__button")).getText();
         System.out.println(checking);
         Me.CheckExit("Выбрать", checking, driver);
+        } catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
     @Test
-    public void B_ContragentIsDisconnectedTest2() {
-        Me.LogPass(p.log2log, p.pass1log, driver);
-        checking = driver.findElement(By.xpath("//*[@id=\"alertText\"]")).getText();
+    @Order(2)
+    void B_ContragentIsDisconnectedTest2() {
+        try {
+        Me.LogPass(log2log, pass, driver);
+        checking = driver.findElement(By.id("alertMessage")).getText();
 
         System.out.println(checking);
-        Me.CheckExit("Не удалось войти на портал. Контрагент отключен.", checking, driver);
+        Me.CheckExit("Внимание! Не удалось войти на портал. Контрагент отключен.", checking, driver);
+    }catch (Throwable e) {
+        Me.Catch(driver,e);
     }
+}
 
     @Test
-    public void C_ContragentIsBlockedTest3() {
-        Me.LogPass(p.log3log, p.pass1log, driver);
-        checking = driver.findElement(By.xpath("//*[@id=\"alertText\"]/p[1]")).getText();
+    @Order(3)
+    void C_ContragentIsBlockedTest3() {
+        try {
+        Me.LogPass(log3log, pass, driver);
+        checking = driver.findElement(By.cssSelector("#alertMessage > p:nth-child(3)")).getText();
 
         System.out.println(checking);
         Me.CheckExit("УВАЖАЕМЫЙ ПОЛЬЗОВАТЕЛЬ УСЛУГ ОПЕРАТОРА ЭДО!", checking, driver);
+    }catch (Throwable e) {
+        Me.Catch(driver,e);
     }
+}
 
     @Test
-    public void D_UserDontCatchtoContragentTest4() {
-        Me.LogPass(p.log4log, p.pass1log, driver);
-        checking = driver.findElement(By.xpath("//*[@id=\"alertText\"]")).getText();
+    @Order(4)
+    void D_UserDontCatchtoContragentTest4() {
+        try {
+        Me.LogPass(log4log, pass, driver);
+        checking = driver.findElement(By.id("alertMessage")).getText();
 
         System.out.println(checking);
-        Me.CheckExit("Вход в личный кабинет невозможен. Пользователь не прикреплен ни к одному контрагенту.", checking, driver);
+        Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь не прикреплен ни к одному контрагенту.", checking, driver);
+        }catch (Throwable e) {
+        Me.Catch(driver,e);
+    }
+}
+
+    @Test
+    @Order(5)
+    void E_UserIsBlockedTest5() {
+        try {
+            Me.LogPass(log5log, pass, driver);
+            checking = driver.findElement(By.id("alertMessage")).getText();
+
+            System.out.println(checking);
+            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован", checking, driver);
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
 
     @Test
-    public void E_UserIsBlockedTest5() {
-        Me.LogPass(p.log5log, p.pass1log, driver);
-        checking = driver.findElement(By.xpath("//*[@id=\"alertText\"]")).getText();
+    @Order(6)
+    void F_UserDontHaveRole6() {
+         try {
+        Me.LogPass(log6log, pass, driver);
+        checking = driver.findElement(By.id("alertMessage")).getText();
 
         System.out.println(checking);
-        Me.CheckExit("Вход в личный кабинет невозможен. Пользователь заблокирован", checking, driver);
+        Me.CheckExit("Внимание! У пользователя не назначена роль.", checking, driver);
+    } catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
     }
 
     @Test
-    public void F_UserDontHaveRole6() {
-        Me.LogPass(p.log6log, p.pass1log, driver);
-        checking = driver.findElement(By.xpath("//*[@id=\"alertText\"]")).getText();
-
-        System.out.println(checking);
-        Me.CheckExit("У пользователя не назначена роль.", checking, driver);
-    }
-
-    @Test
-    public void G_UserDontHaveCabinet7() {
-        Me.LogPass(p.log7log, p.pass1log, driver);
-        checking = driver.findElement(By.xpath("/html/body/div[2]/div/a")).getText();
+    @Order(7)
+    void G_UserDontHaveCabinet7() {
+         try {
+        Me.LogPass(log7log, pass, driver);
+        checking = driver.findElement(By.cssSelector("#alertMessage > a:nth-child(5)")).getText();
         System.out.println(checking);
         Me.CheckExit("support@iit.ru", checking, driver);
+    } catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
     }
 
     @Test
-    public void H_WrongLogPass8() {
-        Me.LogPass(p.wrong7log, p.wrong7log, driver);
-        checking = driver.findElement(By.xpath("//*[@id=\"alertText\"]")).getText();
+    @Order(8)
+    void H_WrongLogPass8() {
+         try {
+        Me.LogPass(wrong7log, wrong7log, driver);
+        checking = driver.findElement(By.id("alertMessage")).getText();
         System.out.println(checking);
-        Me.CheckExit("Авторизоваться не получилось. Проверьте правильность логина и пароля или подключение ключа ЭП", checking, driver);
+        Me.CheckExit("Внимание! Авторизоваться не получилось.\n" +
+                "Проверьте правильность логина и пароля или подключение ключа ЭП", checking, driver);
+    } catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
     }
 
 }

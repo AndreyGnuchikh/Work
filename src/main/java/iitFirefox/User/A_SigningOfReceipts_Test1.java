@@ -3,41 +3,42 @@ package iitFirefox.User;
 import iitFirefox.User.SoapTest1.*;
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
-import org.junit.Before;
-import org.junit.Test;
+import iitAdd.iit8077;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class A_SigningOfReceipts_Test1 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class A_SigningOfReceipts_Test1 extends iit8077 {
     public WebDriver driver;
     public String test;
-
     public String test2;
 
 
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         driver = Drivers.ff();
-        driver.get(p.url);
+        driver.get(url);
         test = null;
-    }
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
 
     @Test
-    public void A_UPDSigningObviouslySChF_Test1() {
-
-        Me.loggingCerts(p.upd, driver);
+    @Order(1)
+    void A_UPDSigningObviouslySChF_Test1() {
+try {
+        Me.loggingCerts(upd, driver);
         Me.Sleep(1500);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
         test = AddDocumentUPDUserASChF_Test1.add();
-        driver.findElement(By.cssSelector(".directory > a:nth-child(1)")).click();
-        Me.Sleep(2500);
-        //If we use folder we need find element by xpath and found for contains
-        driver.findElement(By.xpath("//*[contains(text(), 'СЧФ 321')]")).click();
+        Me.OpenNameFolder("СЧФ 321",driver);
         Me.Sleep(1500);
         Me.SingFirstFileUDP(test, driver);
         Me.Sleep(30000);
@@ -46,21 +47,23 @@ public class A_SigningOfReceipts_Test1 {
         test = driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > b:nth-child(1)")).getText();
         System.out.println(test);
         Me.CheckExit("У вас есть неподписанные квитанции для следующих документов:", test, driver);
+    }catch (Throwable e) {
+    Me.Catch(driver,e);
+}
     }
 
     @Test
-    public void B_UPDSigningNoObviouslySChF_Test2() {
-        Me.loggingCerts(p.upd2, driver);
+    @Order(2)
+    void B_UPDSigningNoObviouslySChF_Test2() {
+         try {
+        Me.loggingCerts(upd2, driver);
         Me.Sleep(1500);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
         test = AddDocumentUPDUserASChF_Test2.add();
         Me.Sleep(1500);
-        driver.findElement(By.cssSelector(".directory > a:nth-child(1)")).click();
-        Me.Sleep(1500);
-
-        driver.findElement(By.xpath("//*[contains(text(), 'СЧФ Наименование')]")).click();
+        Me.OpenNameFolder("СЧФ Наименование",driver);
         Me.SingFirstFileUDP(test, driver);
         Me.Sleep(60000);
         Me.ClickMenuFirstElement(9, driver);
@@ -68,11 +71,16 @@ public class A_SigningOfReceipts_Test1 {
         test = driver.findElement(By.cssSelector("#file-operator-bi > td:nth-child(1) > span:nth-child(1)")).getAttribute("className");
         System.out.println(test);
         Me.CheckExit("td-operator-number numbergreen", test, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void C_UPDSigningObviouslySChFDOP_Test3() {
-        Me.loggingCerts(p.upd, driver);
+    @Order(3)
+    void C_UPDSigningObviouslySChFDOP_Test3() {
+        try {
+        Me.loggingCerts(upd, driver);
         Me.Sleep(1500);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
@@ -80,11 +88,7 @@ public class A_SigningOfReceipts_Test1 {
 
         test = AddDocumentUPDUserASChFDop_Test3.add();
         Me.Sleep(1500);
-        driver.findElement(By.cssSelector(".directory > a:nth-child(1)")).click();
-        Me.Sleep(1500);
-
-        driver.findElement(By.xpath("//*[contains(text(), 'Тест 3')]")).click();
-        Me.Sleep(500);
+        Me.OpenNameFolder("Тест 3",driver);
         Me.SingFirstFileUDP(test, driver);
         Me.Sleep(30000);
         driver.findElement(By.cssSelector(".active-file")).click();
@@ -92,21 +96,24 @@ public class A_SigningOfReceipts_Test1 {
         test = driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > b:nth-child(1)")).getText();
         System.out.println(test);
         Me.CheckExit("У вас есть неподписанные квитанции для следующих документов:", test, driver);
+
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
     @Test
-    public void D_UPDSigningNoObviouslySChFDOP_Test4() {
-        Me.loggingCerts(p.upd2, driver);
+    @Order(4)
+    void D_UPDSigningNoObviouslySChFDOP_Test4() {
+         try {
+        Me.loggingCerts(upd2, driver);
         Me.Sleep(1500);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
         test = AddDocumentUPDUserASChFDop_Test4.add();
-        Me.Sleep(1500);
-        driver.findElement(By.cssSelector(".directory > a:nth-child(1)")).click();
-        Me.Sleep(1500);
-        driver.findElement(By.xpath("//*[contains(text(), 'УПД 123')]")).click();
-        Me.Sleep(1500);
+        Me.OpenNameFolder("УПД 123",driver);
+
         Me.SingFirstFileUDP(test, driver);
         Me.Sleep(25000);
         Me.ClickMenuFirstElement(9, driver);
@@ -114,11 +121,16 @@ public class A_SigningOfReceipts_Test1 {
         test = driver.findElement(By.cssSelector("#file-operator-bi > td:nth-child(1) > span:nth-child(1)")).getAttribute("className");
         System.out.println(test);
         Me.CheckExit("td-operator-number numbergreen", test, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void E_UPDNoSigningSChF_Test5() {
-        Me.LogPass(p.q9log1, p.q9pass1, driver);
+    @Order(5)
+    void E_UPDNoSigningSChF_Test5() {
+         try {
+        Me.LogPass(LogAll, pass, driver);
         Me.Sleep(1500);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
@@ -134,29 +146,36 @@ public class A_SigningOfReceipts_Test1 {
         test2 = driver.findElement(By.id("cm-sign")).getAttribute("class");
         System.out.println(test2);
         Me.CheckExit("dijitReset dijitMenuItem dijitMenuItemDisabled dijitDisabled", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void F_PushRememberMyLate_Test6() {
-        Me.loggingCerts(p.upd, driver);
+    @Order(6)
+    void F_PushRememberMyLate_Test6() {
+         try {
+        Me.loggingCerts(upd, driver);
         Me.Sleep(1500);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
         test = AddDocumentUPDUserASChF_Test1.add();
-        driver.findElement(By.cssSelector(".directory > a:nth-child(1)")).click();
-        Me.Sleep(1500);
-        driver.findElement(By.xpath("//*[contains(text(), 'СЧФ 321')]")).click();
+        Me.OpenNameFolder("СЧФ 321",driver);
+
         Me.SingFirstFileUDP(test, driver);
-        Me.Sleep(20000);
+        Me.Sleep(15000);
         driver.findElement(By.cssSelector(".active-file")).click();
         Me.Sleep(1000);
         driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Me.Sleep(1000);
         driver.findElement(By.cssSelector(".active-file")).click();
-        Me.Sleep(500);
+        Me.Sleep(2000);
         test = driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > b:nth-child(1)")).getText();
         System.out.println(test);
         Me.CheckExit("У вас есть неподписанные квитанции для следующих документов:", test, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 }

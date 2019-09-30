@@ -1,9 +1,12 @@
 package iitAdd;
 
-import org.junit.Assert;
+
+
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -12,33 +15,43 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import static iitAdd.p.urlsert;
-import static iitAdd.p8080.urlsert8080;
 import static java.lang.Runtime.getRuntime;
+import static org.junit.jupiter.api.Assertions.fail;
+
 
 public class Me {
 
+
     //SetUp ===========================================================================================================
 
-    // logging log pass driver
+    // logging log1log pass driver
     public static void LogPass(String login, String pass, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        System.out.println("Login: "+login);
+        System.out.println("Password: "+pass);
+        Sleep(200);
         driver.findElement(By.xpath("//*[@id=\"username-login\"]")).sendKeys(login);
+        Sleep(200);
         driver.findElement(By.xpath("//*[@id=\"passwordfield\"]")).sendKeys(pass);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[1]/form/div[3]/button")).click();
-        Me.Sleep(2000);
+        Sleep(200);
+        driver.findElement(By.className("auth__button")).click();
+        Sleep(2000);
     }
 
     // loggingCerts logCert driver
     public static void loggingCerts(String login, WebDriver driver) {
-
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/ul/li[2]/a")).click();
-        Me.Sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"keyModal_body\"]/option[" + login + "]")).click();
-        Me.Sleep(500);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/button")).click();
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        System.out.println("Login: " + login);
+        Sleep(1500);
+        driver.findElement(By.className("auth__tab-item--right")).click();
+        Me.WaitElementToBeClickableAndClick(1,"//*[@id=\"keyModal_body\"]/option[" + login + "]",driver);
+        Sleep(500);
+        driver.findElement(By.className("btnSelectKey")).click();
         Sleep(6000);
         String url = driver.getCurrentUrl();
-        if (!url.equals(urlsert)) {
+        System.out.println(url);
+
+        if (!url.equals(iit8077.urlsert)) {
             String test;
             Sleep(1000);
             test = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-footer > button")).getAttribute("clientTop");
@@ -53,13 +66,16 @@ public class Me {
     }
 
     public static void loggingCerts8080(String login, WebDriver driver) {
-
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/ul/li[2]/a")).click();
-        driver.findElement(By.xpath("//*[@id=\"keyModal_body\"]/option[" + login + "]")).click();
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/button")).click();
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        System.out.println("Login: "+login);
+        Sleep(1200);
+        driver.findElement(By.className("auth__tab-item--right")).click();
+        Me.WaitElementToBeClickableAndClick(1,"//*[@id=\"keyModal_body\"]/option[" + login + "]",driver);
+        Sleep(500);
+        driver.findElement(By.className("btnSelectKey")).click();
         Sleep(6000);
         String url = driver.getCurrentUrl();
-        if (!url.equals(urlsert8080)) {
+        if (!url.equals(testedo.urlsert)) {
             String test;
             Sleep(400);
             test = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-footer > button")).getAttribute("clientTop");
@@ -72,61 +88,62 @@ public class Me {
     }
 
     public static void RoleSwitch(int i, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         switch (i) {
             case 1:
-                // One Admin
-                Sleep(300);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[2]/button")).click();
+                // One
+                System.out.println("Role:"+ i);
+                Sleep(1000);
+                driver.findElement(By.cssSelector("#selectRole")).click();
                 break;
             case 2:
-                // Two User
-                Sleep(300);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span/span[2]")).click();
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.DOWN);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.ENTER);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[2]/button")).click();
+                // Two
+                System.out.println("Role:"+ i);
+                Sleep(1000);
+                driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
+                Sleep(1000);
+                driver.findElement(By.cssSelector(".select2-results__option:nth-child(2)")).click();
+                driver.findElement(By.cssSelector("#selectRole")).click();
                 break;
             case 3:
-                // Three Billing editor
-                Sleep(300);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span/span[2]")).click();
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.DOWN);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.DOWN);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.ENTER);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[2]/button")).click();
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.DOWN);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.ENTER);
-                Me.Sleep(1000);
-                driver.findElement(By.xpath("/html/body/span/span/span[2]/ul/li[1]")).click();
-                driver.findElement(By.xpath("//*[@id=\"enter\"]")).click();
+                System.out.println("Role:"+ i);
+                // Three
+                Sleep(1000);
+                driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
+                driver.findElement(By.cssSelector(".select2-results__option:nth-child(3)")).click();
+                Sleep(1000);
+                driver.findElement(By.cssSelector("#selectRole")).click();
+                Sleep(1000);
+                driver.findElement(By.xpath("/html/body/main/section/div/div[2]/Form/div[2]/div/div/span/span[1]/span")).click();
+                driver.findElement(By.cssSelector("li.select2-results__option:nth-child(1)")).click();
+                driver.findElement(By.cssSelector("#enter")).click();
                 break;
             case 4:
-                // Support
-                Me.Sleep(500);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span/span[2]")).click();
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.DOWN);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.DOWN);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.DOWN);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span")).sendKeys(Keys.ENTER);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[2]/button")).click();
+                System.out.println("Role:"+ i);
+                // Four
+                Sleep(500);
+                driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
+                driver.findElement(By.cssSelector(".select2-results__option:nth-child(4)")).click();
+                driver.findElement(By.cssSelector("#selectRole")).click();
                 break;
         }
     }
 
     public static void startEndingCertAndSendingFiles(WebDriver driver) {
-        Me.Sleep(2000);
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        Sleep(2000);
         if (driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).isDisplayed()) {
-            Me.Sleep(500);
+            Sleep(500);
             driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(2)")).click();
-            Me.Sleep(2000);
+            Sleep(2000);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-            Me.Sleep(5000);
+            Sleep(5000);
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
             System.out.println("receipts signing");
         }
         if (driver.findElement(By.cssSelector("#userAlertModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1)")).isDisplayed()) {
             driver.findElement(By.cssSelector("#userAlertModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1)")).click();
-            Me.Sleep(1000);
+            Sleep(1000);
         }
     }
     //SetUp ============================================================================================================
@@ -134,22 +151,24 @@ public class Me {
     //Check /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Checking  whatHave whatGet driver
     public static void CheckExit(String textStringForTest, String checking, WebDriver driver) {
-        System.out.println("Запрос "+ textStringForTest);
-        System.out.println("Ответ  "+ checking);
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        System.out.println("Request  "+ textStringForTest);
+        System.out.println("Response "+ checking);
         if (checking.equals(textStringForTest)) {
             System.out.println("Test is Successful");
+
             driver.quit();
         } else {
             driver.quit();
-            System.out.println("Test is false");
-            Assert.fail();
+            fail("Test is Failing.");
         }
     }
 
     // Checking  whatHave whatGet driver //Don't  driver.quit();
     public static void Check(String test, String checking, WebDriver driver) {
-        System.out.println("Запрос "+ test);
-        System.out.println("Ответ  "+ checking);
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        System.out.println("Request  "+ test);
+        System.out.println("Response "+ checking);
         if (checking.equals(test)) {
             System.out.println(test);
             System.out.println("Test check is Successful");
@@ -157,11 +176,19 @@ public class Me {
         } else {
             driver.quit();
             System.out.println("Test is false");
-            Assert.fail();
+           Assertions.fail();
         }
+    }
+
+    public static void Catch(WebDriver driver,Throwable e){
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        driver.quit();
+        e.printStackTrace();
+        Assertions.fail();
     }
 
     public static void CheckingContains(String test, String checking, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         System.out.println(test);
         if (checking.contains(test)) {
             System.out.println("Test check is Successful");
@@ -169,10 +196,11 @@ public class Me {
         } else {
             driver.quit();
             System.out.println("Test is false");
-            Assert.fail();
+           Assertions.fail();
         }
     }
     public static void CheckingContainsExit(String test, String checking, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         System.out.println(test);
         if (checking.contains(test)) {
             System.out.println("Test check is Successful");
@@ -180,7 +208,7 @@ public class Me {
         } else {
             driver.quit();
             System.out.println("Test is false");
-            Assert.fail();
+           Assertions.fail();
         }
     }
     //Check ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -194,42 +222,183 @@ public class Me {
             e.printStackTrace();
         }
     }
+    public static void SleepUpd() {
+        try {
+            Thread.sleep(Settings.ToWaitUpd);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    //https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/support/ui/ExpectedConditions.html
+    public static void WaitElementToBeClickableAndClick(String link, WebDriver driver){
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName()+" "+ link);
+        WebDriverWait wait = new WebDriverWait(driver, 10000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector(link))));
+        Sleep(300);
+        driver.findElement(By.cssSelector(link)).click();
+    }
+    public static void WaitElementToBeClickableAndClick(int xpath,String link, WebDriver driver){
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName()+" "+ link);
+        WebDriverWait wait = new WebDriverWait(driver, 10000);
+        Sleep(200);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(link))));
+        Sleep(300);
+        driver.findElement(By.xpath(link)).click();
+    }
+
     //Email sleep
-    public static void Email(WebDriver driver) {
-        Me.Sleep(2000);
-        Boolean isPresentLog,isPresentPass;
+    public static void Email(String email,String pass,WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        Sleep(2000);
+        boolean	isPresentLog,isPresentPass,isNormal;
         driver.get("https://passport.yandex.ru/auth?from=mail&origin=hostroot_homer_auth_ru&retpath=https%3A%2F%2Fmail.yandex.ru%2F%3Fnoretpath%3D1&backpath=https%3A%2F%2Fmail.yandex.ru%3Fnoretpath%3D1");
-        Me.Sleep(1000);
+        Sleep(1000);
 
         // Если элемент не виден на странице вернет false если винед true
+        isNormal = driver.findElements(By.className(".button2_theme_normal")).size() > 0;
+        System.out.println("Уже есть ак "+isNormal);
+        if (isNormal) {
+        driver.findElement(By.className(".button2_theme_normal")).click();
+        }
         isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
-        System.out.println(isPresentLog);
+        System.out.println("Логин Пароль "+isPresentLog);
         //==============
-        if (isPresentLog == true) {
-            driver.findElement(By.id("passp-field-login")).sendKeys(p.q5email);
-            driver.findElement(By.cssSelector("button.button2:nth-child(1)")).click();
-            Me.Sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"passp-field-passwd\"]")).sendKeys(p.q5emailpass);
+        if (isPresentLog) {
+            Me.Sleep(500);
+            driver.findElement(By.id("passp-field-login")).sendKeys(email);
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("button.button2_type_submit")).click();
+            Sleep(1500);
+            driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(pass);
+            Sleep(1500);
             driver.findElement(By.cssSelector(".button2")).click();
-            Me.Sleep(1500);
+        }else{
+            Sleep(1500);
+            isPresentPass = driver.findElements(By.id("passp-field-passwd")).size() > 0;
+            System.out.println("Только Пароль "+isPresentPass);
+            if(isPresentPass){
+                Sleep(1000);
+                driver.findElement(By.id("passp-field-passwd")).sendKeys(pass);
+                Sleep(1000);
+                driver.findElement(By.cssSelector("button.button2_type_submit")).click();
+            }
+        }
+
+    }
+    public static void EmailTest3(String testIitTest3, String EmailPass, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        Sleep(2000);
+        boolean isPresentLog,isPresentPass,isNormal,SecondPart;
+        driver.get("https://passport.yandex.ru/auth?from=mail&origin=hostroot_homer_auth_ru&retpath=https%3A%2F%2Fmail.yandex.ru%2F%3Fnoretpath%3D1&backpath=https%3A%2F%2Fmail.yandex.ru%3Fnoretpath%3D1");
+        SecondPart = driver.findElements(By.xpath("//*[contains(text(),'testiit.test3')]")).size() > 0;
+        System.out.println("Выбор Тест 3 "+SecondPart);
+        if (SecondPart) {
+            driver.findElement(By.xpath("//*[contains(test(),'testiit.test3')]")).click();
+        }
+
+        Sleep(1000);
+        SecondPart = driver.findElements(By.cssSelector("li.passp-account-list-item_block:nth-child(3) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) > span:nth-child(2)")).size() > 0;
+        System.out.println(SecondPart);
+        if (SecondPart) {
+            driver.findElement(By.cssSelector("li.passp-account-list-item_block:nth-child(3) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) > span:nth-child(2)")).click();
+        }
+
+        Sleep(1000);
+        // Если элемент не виден на странице вернет false если винед true
+        isNormal = driver.findElements(By.className(".button2_theme_normal")).size() > 0;
+        System.out.println("Уже есть ак "+isNormal);
+        if (isNormal) {
+            driver.findElement(By.className(".button2_theme_normal")).click();
+        }
+        isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
+        System.out.println("Логин Пароль "+isPresentLog);
+        //==============
+        if (isPresentLog) {
+            driver.findElement(By.id("passp-field-login")).sendKeys(testIitTest3);
+            driver.findElement(By.cssSelector("button.button2_type_submit")).click();
+            Sleep(1500);
+            driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(EmailPass);
+            driver.findElement(By.cssSelector(".button2")).click();
+            Sleep(1500);
         }
         isPresentPass = driver.findElements(By.id("passp-field-passwd")).size() > 0;
-        if(isPresentPass == true){
-            driver.findElement(By.id("passp-field-passwd")).sendKeys(p.q5emailpass);
+        System.out.println("Только Пароль "+isPresentPass);
+        if(isPresentPass){
+            driver.findElement(By.id("passp-field-passwd")).sendKeys(EmailPass);
             driver.findElement(By.cssSelector(".button2")).click();
         }
     }
+    public static void EmailTest4(String testIitTest4, String EmailPass,WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        Sleep(2000);
+        boolean isPresentLog,isPresentPass,isNormal,SecondPart;
+        driver.get("https://passport.yandex.ru/auth?from=mail&origin=hostroot_homer_auth_ru&retpath=https%3A%2F%2Fmail.yandex.ru%2F%3Fnoretpath%3D1&backpath=https%3A%2F%2Fmail.yandex.ru%3Fnoretpath%3D1");
+        SecondPart = driver.findElements(By.xpath("//*[contains(text(),'testiit.test4')]")).size() > 0;
+        System.out.println("Выбор Тест 4 "+SecondPart);
+        if (SecondPart) {
+            driver.findElement(By.xpath("//*[contains(text(),'testiit.test4')][contains(@class, 'passp-account-list-item__login')]")).click();
+        }
 
-    public static void visibleElement60SecToWait(String link, WebDriver driver) {
+        Sleep(1000);
+        SecondPart = driver.findElements(By.cssSelector("li.passp-account-list-item_block:nth-child(3) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) > span:nth-child(2)")).size() > 0;
+        System.out.println(SecondPart);
+        if (SecondPart) {
+            driver.findElement(By.cssSelector("li.passp-account-list-item_block:nth-child(3) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) > span:nth-child(2)")).click();
+        }
+
+        Sleep(1000);
+        // Если элемент не виден на странице вернет false если винед true
+        isNormal = driver.findElements(By.className(".button2_theme_normal")).size() > 0;
+        System.out.println("Уже есть ак "+isNormal);
+        if (isNormal) {
+            driver.findElement(By.className(".button2_theme_normal")).click();
+        }
+        isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
+        System.out.println("Логин Пароль "+isPresentLog);
+        //==============
+        if (isPresentLog) {
+            driver.findElement(By.id("passp-field-login")).sendKeys(testIitTest4);
+            driver.findElement(By.cssSelector("button.button2_type_submit")).click();
+            Sleep(1500);
+            driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(EmailPass);
+            driver.findElement(By.cssSelector(".button2")).click();
+            Sleep(1500);
+        }
+        isPresentPass = driver.findElements(By.id("passp-field-passwd")).size() > 0;
+        System.out.println("Только Пароль "+isPresentPass);
+        if(isPresentPass){
+            driver.findElement(By.id("passp-field-passwd")).sendKeys(EmailPass);
+            driver.findElement(By.cssSelector(".button2")).click();
+        }
+    }
+    public static void visibleElement180SecToWait(String link, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         for (int i = 0; i < 30; i++) {
             System.out.println(i);
             if (i == 2 || i == 28) {
                 driver.findElement(By.xpath("//*")).sendKeys(Keys.F5);
                 System.out.println("F5");
             }
-            Boolean bool = driver.findElements(By.cssSelector(link)).size() > 0;
-            if (bool == false) {
-                Me.Sleep(2000);
+            boolean bool = driver.findElements(By.cssSelector(link)).size() > 0;
+            if (!bool) {
+                Sleep(1000);
+            } else {
+                i = 31;
+            }
+
+        }
+    }
+    public static void visibleElement180SecToWait(Integer sec,String link, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        for (int i = 0; i < sec; i++) {
+            System.out.println(i);
+            if (i == 2 || i == 28) {
+                driver.findElement(By.xpath("//*")).sendKeys(Keys.F5);
+                System.out.println("F5");
+            }
+            boolean bool = driver.findElements(By.cssSelector(link)).size() > 0;
+            if (!bool) {
+                Sleep(1000);
             } else {
                 i = 31;
             }
@@ -238,6 +407,7 @@ public class Me {
     }
 
     public static void MenuAdmin(int i, String string, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         Actions builder = new Actions(driver);
         Sleep(500);
         builder.contextClick(driver.findElement(By.xpath(string))).sendKeys(
@@ -265,148 +435,145 @@ public class Me {
 
     //Add and Signing --------------------------------------------------------------------------------------------------
     public static void SingFirstFile(WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         String row;
-        Me.Sleep(2500);
+        Sleep(2500);
         // Click and found first element
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         row = row.substring(0, 36);
         Actions builder = new Actions(driver);
-        Sleep(1500);
-        driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).click();
+        Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row,driver);
+        builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
+        ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
+        Sleep(500);
+        driver.findElement(By.id("cm-sign_text")).click();
+        Sleep(4000);
+        driver.findElement(By.cssSelector(".glyphicon-edit")).click();
+        Sleep(10000);
+    }
+
+    public static void SingFirstFileUDP(String row, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        Actions builder = new Actions(driver);
+        Sleep(3000);
+        driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
+        Sleep(1000);
+        driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
+        Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row,driver);
+        Sleep(1000);
+
         builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
         ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
         driver.findElement(By.id("cm-sign_text")).click();
-        Me.Sleep(2000);
+        Sleep(4000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-        Me.Sleep(10000);
-    }
-
-    public static void SingFirstFileUDP(String strd, WebDriver driver) {
-
-        Actions builder = new Actions(driver);
-        Sleep(3000);
-        driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
-        Sleep(1000);
-        driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
-        Sleep(1000);
-        System.out.println(strd);
-
-        driver.findElement(By.cssSelector("#grid-basic2-row-" + strd)).click();
-        Sleep(1000);
-
-        builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + strd))
-        ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
-        driver.findElement(By.id("cm-sign_text")).click();
-        Me.Sleep(1500);
-        driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-        Me.Sleep(10000);
+        Sleep(10000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
-        Me.startEndingCertAndSendingFiles(driver);
+        startEndingCertAndSendingFiles(driver);
     }
 
-    public static void SingFirstFileUDPSecondSing(String strd, WebDriver driver) {
-
+    public static void SingFirstFileUDPSecondSing(String row, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         Actions builder = new Actions(driver);
         Sleep(3000);
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
         Sleep(1000);
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
-        Sleep(1000);
-        System.out.println(strd);
-
-        driver.findElement(By.cssSelector("#grid-basic2-row-" + strd)).click();
+        Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row,driver);
         Sleep(1000);
 
-        builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + strd))
+        builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
         ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
         driver.findElement(By.id("cm-sign_text")).click();
-        Me.Sleep(1500);
+        Sleep(4000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).click();
-        Me.Sleep(500);
+        Sleep(500);
         driver.findElement(By.cssSelector("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("2");
-        Me.Sleep(500);
+        Sleep(500);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalSign")).click();
         Sleep(6000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
-        Me.Sleep(500);
-        Me.startEndingCertAndSendingFiles(driver);
+        Sleep(500);
+        startEndingCertAndSendingFiles(driver);
     }
 
     public static String AddFile(String fileName, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file
         String row;
-        Me.Sleep(1500);
+        Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
-        Me.Sleep(500);
+        Sleep(500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-        Me.Sleep(200);
+        Sleep(200);
         System.out.println(fileName);
         upload.sendKeys("C:\\Tools\\" + fileName);
-        Me.Sleep(500);
+        Sleep(500);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
-        Me.Sleep(3000);
+        Sleep(4000);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+        Me.startEndingCertAndSendingFiles(driver);
         // Click and found first element
-        Me.Sleep(2500);
+        Sleep(2500);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
-        Me.Sleep(500);
+        Sleep(500);
         row = row.substring(0, 36);
-        System.out.println(row);
-        driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).click();
+        Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row,driver);
         return row;
     }
 
     public static void AddFileUPDError(String fileName, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file UPD Error
-        Me.Sleep(1500);
+        Sleep(1500);
         driver.findElement(By.cssSelector(".createDocument")).click();
-        Me.Sleep(500);
+        Sleep(500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-        Me.Sleep(200);
+        Sleep(200);
         upload.sendKeys("C:\\Tools\\upd\\" + fileName);
-        Me.Sleep(500);
+        Sleep(500);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
-        Me.Sleep(3000);
+        Sleep(3000);
     }
 
-    public static void AddFileUPDError8080(String fileName, WebDriver driver) {
+/*    public static void AddFileUPDError8080(String fileName, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file UPD Error
-        Me.Sleep(1500);
+        Sleep(1500);
         driver.findElement(By.cssSelector(".createDocument")).click();
-        Me.Sleep(500);
+        Sleep(500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-        Me.Sleep(200);
+        Sleep(200);
         upload.sendKeys("C:\\Tools\\upd8080\\" + fileName);
-        Me.Sleep(500);
+        Sleep(500);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
-        Me.Sleep(3000);
-    }
+        Sleep(3000);
+    }*/
 
     public static String AddFileAndClickMenu(int NumButtonsMenu, String fileName, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file
-        String row = null;
-        Me.Sleep(1500);
+        String row;
+        Sleep(1500);
         driver.findElement(By.cssSelector(".createDocument")).click();
-        Me.Sleep(500);
+        Sleep(500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-        Me.Sleep(200);
+        Sleep(200);
         upload.sendKeys("C:\\Tools\\" + fileName);
-        Me.Sleep(1000);
+        Sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
-        Me.Sleep(3000);
+        Sleep(3500);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         // Click and found first element
-        Me.Sleep(2500);
+        Sleep(2500);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
-        System.out.println(row);
         row = row.substring(0, 36);
-        System.out.println(row);
-        driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).click();
+        Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row,driver);
         Actions builder = new Actions(driver);
         builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
         ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
@@ -417,10 +584,10 @@ public class Me {
                 break;
             case (2):
                 //Удалить файлы в папке
+
                 File dir = new File("C:\\Tools\\TestFile\\"); //path указывает на директорию
-                for (File file : dir.listFiles())
-                    if (!file.isDirectory())
-                        file.delete();
+                DeletedFiles(dir);
+
                 driver.findElement(By.id("cm-open_text")).click();
                 break;
             case (3):
@@ -466,8 +633,9 @@ public class Me {
     }
 
     public static String CreateFirstUPDDocumentAndSign(String upd, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         // 1 SchF 2 DOP 3 SchFDOP
-        String test, test2;
+        String test2;
         switch (upd) {
             case ("1"):
                 upd = "upd\\0.xml";
@@ -479,25 +647,26 @@ public class Me {
                 upd = "upd\\SchfDop.xml";
                 break;
         }
-        test2 = Me.AddFile(upd, driver);
-        Me.ClickMenuFirstElement(5, driver);
+        test2 = AddFile(upd, driver);
+        ClickMenuFirstElement(5, driver);
 
-        Sleep(1500);
+        Sleep(4000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-        Sleep(5000);
+        Sleep(6000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
         Sleep(1000);
-        Me.startEndingCertAndSendingFiles(driver);
-        if (upd != "upd\\Dop.xml") {
-            Sleep(12000);
+        startEndingCertAndSendingFiles(driver);
+        if (!upd.equals("upd\\Dop.xml")){
+            Sleep(15000);
             driver.findElement(By.cssSelector(".active-file")).click();
             Sleep(1500);
-            Me.startEndingCertAndSendingFiles(driver);
+            startEndingCertAndSendingFiles(driver);
         }
         return test2;
     }
 
     public static String CreateFirstUPDDocumentAndSignAndSand(String upd, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         // 1 SchF 2 DOP 3 SchFDOP
         String test, test2;
         switch (upd) {
@@ -511,44 +680,41 @@ public class Me {
                 upd = "upd\\SchfDop.xml";
                 break;
         }
-        test2 = Me.AddFile(upd, driver);
-        Me.ClickMenuFirstElement(5, driver);
-
-        Sleep(1500);
+        test2 = AddFile(upd, driver);
+        ClickMenuFirstElement(5, driver);
+        Me.Sleep(5000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
         Sleep(5000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
         Sleep(1000);
-        Me.startEndingCertAndSendingFiles(driver);
-        if (upd != "upd\\Dop.xml") {
+        startEndingCertAndSendingFiles(driver);
+        if (!upd.equals("upd\\Dop.xml")) {
             Sleep(12000);
             driver.findElement(By.cssSelector(".active-file")).click();
             Sleep(1500);
-            Me.startEndingCertAndSendingFiles(driver);
+            startEndingCertAndSendingFiles(driver);
         }
-        Me.ClickMenuFirstElement(12, driver);
+        ClickMenuFirstElement(12, driver);
         Sleep(1500);
         driver.findElement(By.cssSelector(".selectize-input")).click();
         driver.findElement(By.cssSelector(".selectize-input > input:nth-child(1)")).sendKeys("Все хорошо 2");
-        Sleep(1000);
-        driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
-        Sleep(500);
-        driver.findElement(By.cssSelector("#select2-sn-recivercabinet-container")).click();
-        Sleep(500);
-        test = driver.findElement(By.cssSelector("#select2-sn-recivercabinet-results")).getAttribute("innerHTML");
-        test = test.substring(244, 318);
-        System.out.println(test);
-        driver.findElement(By.cssSelector("#" + test + "")).click();
         Sleep(1500);
+        driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
+        Sleep(1500);
+        driver.findElement(By.cssSelector("#select2-sn-recivercabinet-container")).click();
+        Sleep(1000);
+        driver.findElement(By.xpath("//*[contains(text(), 'Все хорошо 2.0')][contains(@class, 'select2-results__option')]")).click();
+        Sleep(2000);
         driver.findElement(By.cssSelector("#modalSendButton")).click();
-        Sleep(2500);
+        Sleep(4000);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) > span:nth-child(1)")).click();
         return test2;
     }
 
-    public static String CreateFirstUDPDocumentAndSignOneAndTwo(String upd, WebDriver driver) {
+    public static String CreateFirstUDPDocumentAndSignOneAndTwo(String url,String upd2,String upd, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         // 1 SchF 2 DOP 3 SchFDOP
-        String test, nameFile;
+        String test, row;
         switch (upd) {
             case ("1"):
                 upd = "upd\\0.xml";
@@ -560,67 +726,66 @@ public class Me {
                 upd = "upd\\SchfDop.xml";
                 break;
         }
-        nameFile = Me.AddFile(upd, driver);
-        Me.ClickMenuFirstElement(5, driver);
+        row = AddFile(upd, driver);
+        ClickMenuFirstElement(5, driver);
 
-        Sleep(1500);
+        Sleep(4000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-        Sleep(5000);
+        Sleep(6000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
         Sleep(1000);
-        Me.startEndingCertAndSendingFiles(driver);
-        if (upd != "upd\\Dop.xml") {
+        startEndingCertAndSendingFiles(driver);
+        if (!upd.equals("upd\\Dop.xml")) {
             Sleep(12000);
             driver.findElement(By.cssSelector(".active-file")).click();
             Sleep(1500);
-            Me.startEndingCertAndSendingFiles(driver);
+            startEndingCertAndSendingFiles(driver);
         }
-        Me.ClickMenuFirstElement(12, driver);
-        Sleep(1500);
+        ClickMenuFirstElement(12, driver);
+        Sleep(2000);
         driver.findElement(By.cssSelector(".selectize-input")).click();
         driver.findElement(By.cssSelector(".selectize-input > input:nth-child(1)")).sendKeys("Все хорошо 2");
-        Sleep(1000);
+        Sleep(1500);
         driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
-        Sleep(500);
+        Sleep(1500);
         driver.findElement(By.cssSelector("#select2-sn-recivercabinet-container")).click();
-        Sleep(500);
+        Sleep(1500);
         test = driver.findElement(By.cssSelector("#select2-sn-recivercabinet-results")).getAttribute("innerHTML");
         test = test.substring(244, 318);
         System.out.println(test);
+        Sleep(1500);
         driver.findElement(By.cssSelector("#" + test + "")).click();
         Sleep(500);
         driver.findElement(By.cssSelector("#modalSendButton")).click();
-        Sleep(2500);
+        Sleep(3500);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Exit(driver);
-        driver.get(p.url);
-        Me.loggingCerts(p.upd2, driver);
-        Me.RoleSwitch(2, driver);
-        Me.startEndingCertAndSendingFiles(driver);
+        Me.Sleep(500);
+        Exit(driver);
+        driver.get(url);
+        loggingCerts(upd2, driver);
+        RoleSwitch(2, driver);
+        startEndingCertAndSendingFiles(driver);
         Sleep(1500);
-        driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1) > a:nth-child(1) > i:nth-child(1)")).click();
-        Sleep(2500);
+
+
         switch (upd) {
             case ("upd\\0.xml"):
-                driver.findElement(By.xpath("//*[contains(text(),'СЧФ Наименование')]")).click();
+                OpenNameFolder("СЧФ Наименование",driver);
                 break;
             case ("upd\\Dop.xml"):
-                driver.findElement(By.xpath("//*[contains(text(),'АКТ')]")).click();
+                OpenNameFolder("АКТ",driver);
                 break;
             case ("upd\\SchfDop.xml"):
-                driver.findElement(By.xpath("//*[contains(text(),'УПД 123')]")).click();
+                OpenNameFolder("УПД 123",driver);
                 break;
         }
         Sleep(3000);
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
         Sleep(1000);
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
+        Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row,driver);
         Sleep(1000);
-        System.out.println(nameFile);
-
-        driver.findElement(By.cssSelector("#grid-basic2-row-" + nameFile)).click();
-        Sleep(1000);
-        if (upd != "upd\\0.xml") {
+        if (!upd.equals("upd\\0.xml") ) {
             for (int i = 0; i < 20; i++) {
                 Sleep(500);
                 driver.findElement(By.cssSelector(".active-file")).click();
@@ -628,9 +793,9 @@ public class Me {
                 driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
                 Sleep(2000);
                 Actions builder2 = new Actions(driver);
-                driver.findElement(By.cssSelector("#grid-basic2-row-" + nameFile)).click();
+                Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row,driver);
                 Sleep(500);
-                builder2.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + nameFile))
+                builder2.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
                 ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
                 test = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
                 System.out.println(test);
@@ -641,22 +806,22 @@ public class Me {
                     System.out.println(i);
                 }
             }
-            Sleep(1500);
+            Sleep(4000);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
+
         }
-        return nameFile;
+        return row;
     }
 
     //Add and Signing --------------------------------------------------------------------------------------------------
 
-    public static void ClickMenuFirstElement(int NumButtonsMenu, WebDriver driver) {
-        String row = null;
-        Me.Sleep(2500);
+    public static String ClickMenuFirstElement(int NumButtonsMenu, WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        String row;
+        Sleep(2500);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         row = row.substring(0, 36);
-        System.out.println(row);
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).click();
+        Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row,driver);
         Actions builder = new Actions(driver);
         builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
         ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
@@ -668,9 +833,8 @@ public class Me {
             case (2):
                 //Удалить файлы в папке
                 File dir = new File("C:\\Tools\\TestFile\\"); //path указывает на директорию
-                for (File file : dir.listFiles())
-                    if (!file.isDirectory())
-                        file.delete();
+                DeletedFiles(dir);
+
                 driver.findElement(By.id("cm-open_text")).click();
                 break;
             case (3):
@@ -698,22 +862,25 @@ public class Me {
                 driver.findElement(By.id("cm-apply_text")).click();
                 break;
             case (11):
-                driver.findElement(By.id("compliance-protocol_accel")).click();
+                driver.findElement(By.id("compliance-protocol_text")).click();
                 break;
             case (12):
                 driver.findElement(By.id("cm-send_text")).click();
                 break;
             case (13):
-                driver.findElement(By.id("cm-folder_accel")).click();
+                driver.findElement(By.id("cm-folder_text")).click();
                 break;
             case (14):
                 driver.findElement(By.id("cm-del-full_text")).click();
                 break;
 
         }
+        Me.Sleep(500);
+        return row;
     }
 
     public static String Krutilka(String str, Integer number) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         String rerurningTest = null;
         String[] dre = new String[500];
         for (int i = 0; i < 1; i++) {
@@ -730,20 +897,24 @@ public class Me {
     }
 
     public static void DeletedFiles(File dir) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         for (File file : dir.listFiles())
             if (!file.isDirectory())
                 file.delete();
     }
 
     public static void Exit(WebDriver driver) {
-        Me.Sleep(1500);
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        Sleep(2000);
         driver.findElement(By.cssSelector("#user-nav")).click();
-        driver.findElement(By.cssSelector("form.text-right > button:nth-child(1)")).click();
-        Me.Sleep(1000);
+        Sleep(1000);
+        driver.findElement(By.cssSelector("Form.text-right > button:nth-child(1)")).click();
+        Sleep(1000);
     }
 
     // return Number List or Path file
     public static String Rezip(Integer numElementsFileList) throws IOException {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         Sleep(2000);
         String NameFile,test,out;
         File dir = new File("C:\\Tools\\TestFile");
@@ -774,28 +945,32 @@ public class Me {
     }
 
     public static String Time() {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         Date currentDate = new Date();
-        SimpleDateFormat dateFormat = null;
+        SimpleDateFormat dateFormat;
 
         dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
         System.out.println("Constructor 4: " + dateFormat.format( currentDate ) );
         return dateFormat.format(currentDate);
     }
 
-    public static void DeletedCabinetMarkerAndDeletedEmail(WebDriver driver){
+    public static void DeletedCabinetMarkerAndDeletedEmail(String url,String pass5log,String EmailName,String EmailPass, WebDriver driver){
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         String checkbox1, checkbox2, checkbox3;
         String check;
         check = "true";
         driver = Drivers.ff();
-        driver.get(p.url3);
-        Me.LogPass(p.pass5log, p.pass5log, driver);
-        Me.startEndingCertAndSendingFiles(driver);
+        driver.get(url);
+        Me.Sleep(1000);
+        LogPass(pass5log, pass5log, driver);
+        startEndingCertAndSendingFiles(driver);
 
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
         driver.findElement(By.cssSelector("div.statistic:nth-child(4) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
         checkbox1 = driver.findElement(By.xpath("//*[@id=\"not-1\"]")).getAttribute("checked");
         checkbox2 = driver.findElement(By.xpath("//*[@id=\"not-2\"]")).getAttribute("checked");
         checkbox3 = driver.findElement(By.xpath("//*[@id=\"not-3\"]")).getAttribute("checked");
+
         if (check.equals(checkbox1)) {
             driver.findElement(By.cssSelector("#not-1")).click();
         }
@@ -806,15 +981,38 @@ public class Me {
             driver.findElement(By.cssSelector("#not-3")).click();
         }
         driver.findElement(By.cssSelector("#collapseTwo > div:nth-child(2) > button:nth-child(1)")).click();
-        Me.Sleep(1000);
-        Me.Email(driver);
-        Me.Sleep(4000);
-        if (!driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).isEnabled()) {
-        } else {
-            Me.Sleep(500);
-            driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
-            driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
-        }
+        Sleep(1000);
+        Email(EmailName, EmailPass,driver);
+        Sleep(4500);
+        DeletedEmail(driver);
         driver.quit();
     }
+    public static void DeletedEmail(WebDriver driver){
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        Me.Sleep(500);
+        if (!driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).isEnabled()) {
+            System.out.println("isEnabled");
+        } else {
+            Sleep(500);
+            driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
+            driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
+            boolean boo = driver.findElements(By.cssSelector("button.control:nth-child(2)")).size() > 0;
+            System.out.println("Много писем "+boo);
+            if (boo) {
+                driver.findElement(By.cssSelector("button.control:nth-child(2)")).click();
+            }
+        }
+    }
+    public static void OpenNameFolder(String name,WebDriver driver) {
+        System.out.println("-----Start method "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        Sleep(1000);
+        driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1) > a:nth-child(1) > i:nth-child(1)")).click();
+        Sleep(1500);
+        ((JavascriptExecutor)driver).executeScript("scroll(0,100)");
+        Sleep(3000);
+        driver.findElement(By.cssSelector("[foldername=\""+name+"\"]")).click();
+        Sleep(4000);
+        driver.findElement(By.cssSelector("[foldername=\""+name+"\"]")).click();
+    }
+
 }

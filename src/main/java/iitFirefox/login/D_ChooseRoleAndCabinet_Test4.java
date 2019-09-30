@@ -2,84 +2,131 @@ package iitFirefox.login;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import org.junit.Before;
-import org.junit.Test;
+import iitAdd.iit8077;
+import iitAdd.testedo;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import iitAdd.p;
-
-public class D_ChooseRoleAndCabinet_Test4 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     private WebDriver driver;
     public String checking;
 
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         driver = Drivers.ff();
-        driver.get(p.url2);
-    }
+        driver.get(url);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
 
     @Test
-    public void A_UserWithOneCabinet_Test1() {
-        Me.LogPass(p.q4log, p.pass1log, driver);
+    @Order(1)
+    void A_UserWithOneCabinet_Test1() {
+         try {
+        Me.LogPass(logUser, pass, driver);
         Me.Sleep(500);
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Me.CheckExit("Кабинет 1", checking, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
     }
 
     @Test
-    public void B_WithOneCabinet_Test2() {
-        Me.LogPass(p.q4log2, p.pass1log, driver);
+    @Order(2)
+    void B_WithOneCabinet_Test2() {
+         try {
+        Me.LogPass(logAdmin, pass, driver);
         Me.Sleep(2000);
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Me.CheckExit("Все контрагенты", checking, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
     }
 
     @Test
-    public void C_WithOneSupport_Test3() {
-        Me.LogPass(p.q4log3, p.pass1log, driver);
-        checking = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div/div/div/div[1]/label")).getText();
+    @Order(3)
+    void C_WithOneSupport_Test3() {
+         try {
+        Me.LogPass(logSupport, pass, driver);
+        checking = driver.findElement(By.cssSelector(".cabinets > div:nth-child(1) > label:nth-child(1)")).getText();
         System.out.println(checking + "/");
         Me.CheckExit("Выберите кабинет:", checking, driver);
     }
-
-    @Test
-    public void D_WithOneBylling_Test4() {
-        Me.LogPass(p.q4log4, p.pass1log, driver);
-        Me.Sleep(2000);
-        checking = driver.findElement(By.cssSelector("#billing")).getText();
-        System.out.println(checking);
-        Me.CheckExit("Биллинг", checking, driver);
+         catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
     }
 
     @Test
-    public void E_WithAB_Test5() {
-        Me.LogPass(p.q4log5, p.pass1log, driver);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span/span[2]/b")).click();
+    @Order(4)
+    void D_WithOneBylling_Test4() {
+         try {
+        Me.LogPass(logBilling, pass, driver);
+        Me.Sleep(2000);
+        checking = driver.findElement(By.cssSelector("#bilLev1")).getText();
+        System.out.println(checking);
+        Me.CheckExit("Биллинг", checking, driver);
+    } catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
+    }
+
+    @Test
+    @Order(5)
+    void E_WithAB_Test5() {
+         try {
+        Me.LogPass(logAdminBilling, pass, driver);
+        driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
         checking = driver.findElement(By.id("select2-role-results")).getText();
         System.out.println(checking + "/");
         Me.CheckExit("Admin\n" +
                 "BillingEditor", checking, driver);
+    } catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
     }
 
     @Test
-    public void F_WithALL_Test6() {
-        Me.LogPass(p.q4log6, p.pass1log, driver);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div/div/div/div[1]/span")).click();
+    @Order(6)
+    void F_WithALL_Test6() {
+         try {
+        Me.LogPass(LogAll, pass, driver);
+        driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
         checking = driver.findElement(By.id("select2-role-results")).getText();
         System.out.println(checking + "/");
-        Me.CheckExit("Admin\nUser\nSupport\nBillingEditor", checking, driver);
-
+        Me.CheckExit("Admin\n" +
+                "User\n" +
+                "Support\n" +
+                "BillingEditor", checking, driver);
+    } catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
     }
 
     @Test
-    public void G_User5cabinet_Test7() {
-        Me.LogPass(p.q4log7, p.pass1log, driver);
-        Me.Sleep(500);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span/span[2]/b")).click();
-        checking = driver.findElement(By.id("cabinet")).getText();
-        System.out.println(checking + "/");
-        Me.CheckExit("Переименованный кабинет\nВсе хорошо кабинет\nКабинет Все хорошо\nТест 150\nВсе хорошо тест бд", checking, driver);
-    }
+    @Order(7)
+        void G_User4cabinet_Test7() {
+         try {
+            Me.LogPass(logManyCabinets, pass, driver);
 
+            Me.Sleep(2500);
+            driver.findElement(By.id("select2-cabinet-container")).click();
+            Me.Sleep(1000);
+            checking = driver.findElement(By.className("select2-results__options")).getAttribute("innerText");
+            System.out.println(checking + "/");
+            Me.CheckExit("Переименованный кабинет\n" +
+                    "Все хорошо кабинет\n" +
+                    "Кабинет Все хорошо\n" +
+                    "Тест 150\n" +
+                    "Все хорошо тест бд", checking, driver);
+        } catch (Throwable e) {
+             Me.Catch(driver, e);
+         }
+    }
 
 }

@@ -1,19 +1,19 @@
 package iitFirefox.User.SoapTest1;
 
 
-import iitAdd.p;
+import iitAdd.iit8077;
 
 import javax.xml.soap.*;
 import java.io.ByteArrayOutputStream;
 import java.util.Date;
 
-public class AddDocumentUPDUserASChFDop_Test3 {
+public class AddDocumentUPDUserASChFDop_Test3 extends iit8077{
     static String DocumentAddResult;
 
     public static String add() {
 
-        String soapEndpointUrl = p.urlsoap;
-        String soapAction = p.urlsoap;
+        String soapEndpointUrl = urlsoap;
+        String soapAction = urlsoap;
         callSoapWebService(soapEndpointUrl, soapAction);
 
 

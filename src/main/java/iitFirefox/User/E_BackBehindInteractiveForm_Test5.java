@@ -2,32 +2,36 @@ package iitFirefox.User;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
+import iitAdd.iit8077;
 import iitFirefox.User.Form.CompleteForm;
 import iitFirefox.User.Form.CompleteFormAct;
 import iitFirefox.User.Form.CompleteFormDopSchF;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-public class E_BackBehindInteractiveForm_Test5 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
     WebDriver driver;
     String test2;
 
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
+         try {
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.loggingCerts(p.upd, driver);
+        driver.get(url);
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
-
-    }
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
+     }
 
     @Test
-    public void A_BackBehindInteractiveFormSchF_Test1() {
+    @Order(1)
+    void A_BackBehindInteractiveFormSchF_Test1() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -46,10 +50,15 @@ public class E_BackBehindInteractiveForm_Test5 {
         test2 = driver.findElement(By.cssSelector(".doc_title")).getText();
         System.out.println(test2);
         Me.CheckExit("Счет-фактура №  ", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void B_BackBehindInteractiveFormACT_Test2() {
+    @Order(2)
+    void B_BackBehindInteractiveFormACT_Test2() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -72,10 +81,15 @@ public class E_BackBehindInteractiveForm_Test5 {
         test2 = driver.findElement(By.cssSelector(".doc_title")).getText();
         System.out.println(test2);
         Me.CheckExit("Счет-фактура №  ", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 
     @Test
-    public void C_BackBehindInteractiveFormSCHFDOP_Test3() {
+    @Order(3)
+    void C_BackBehindInteractiveFormSCHFDOP_Test3() {
+         try {
         Me.Sleep(2000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -98,5 +112,8 @@ public class E_BackBehindInteractiveForm_Test5 {
         test2 = driver.findElement(By.cssSelector(".doc_title")).getText();
         System.out.println(test2);
         Me.CheckExit("Счет-фактура №  ", test2, driver);
+    }catch (Throwable e) {
+             Me.Catch(driver,e);
+         }
     }
 }

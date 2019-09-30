@@ -98,7 +98,9 @@ public class CompleteFormAct {
         driver.findElement(By.cssSelector("div.delivery-info-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)")).click();
         driver.findElement(By.cssSelector(".picker--opened > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#delivery-info-additional")).sendKeys("Дополнительные сведения");
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#itemTransfer-info")).sendKeys("Сведения о  передаче вещи");
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#itemTransfer-date")).click();
         driver.findElement(By.cssSelector("div.acceptanceCert-table-row:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)")).click();
         //Работник организации
@@ -253,7 +255,9 @@ public class CompleteFormAct {
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Me.Sleep(7000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#commentActEW")).sendKeys("" + date);
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#commentActEWModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
@@ -296,11 +300,9 @@ public class CompleteFormAct {
         driver.findElement(By.xpath("//*[contains(text(),'Все хорошо 2,0')]")).click();
         driver.findElement(By.cssSelector("#buyer-compokpo")).sendKeys("1231241251");
         driver.findElement(By.cssSelector("#buyer-rusindex")).sendKeys("140057");
-
         driver.findElement(By.cssSelector("#buyer-ruscity")).sendKeys("г. Санкт-Петербург");
         driver.findElement(By.cssSelector("#buyer-ruslocality")).sendKeys("г. Санкт-Петербург");
-        driver.findElement(By.cssSelector("#buyer-russtreet")).sendKeys("Адмиралтейский пр-д");
-        driver.findElement(By.cssSelector("#buyer-rushouse")).sendKeys("3");
+       driver.findElement(By.cssSelector("#buyer-rushouse")).sendKeys("3");
         driver.findElement(By.cssSelector("#buyer-rusbuild")).sendKeys("4");
         driver.findElement(By.cssSelector("#buyer-rusflat")).sendKeys("2020");
         driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();

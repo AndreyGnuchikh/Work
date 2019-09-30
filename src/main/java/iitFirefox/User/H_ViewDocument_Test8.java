@@ -2,10 +2,14 @@ package iitFirefox.User;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
+
+import iitAdd.iit8077;
+import iitAdd.testedo;
 import iitFirefox.User.Form.CompleteFormDopSchF;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -16,15 +20,23 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-public class H_ViewDocument_Test8 {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class H_ViewDocument_Test8 extends iit8077 {
     public WebDriver driver;
     public String test2;
 
 
     @Test
-    public void A_DownloadFile_Test1() {
+    @Order(1)
+    void A_DownloadFile_Test1() {
+        try {
         setUP();
-        Me.AddFileAndClickMenu(2, "1.html", driver);
+        Me.AddFileAndClickMenu(6, "1.html", driver);
+        Me.Sleep(1500);
+        driver.findElement(By.cssSelector("#downloadDocument")).click();
+        Me.Sleep(500);
+        driver.findElement(By.cssSelector("#queued-download-button")).click();
+        Me.Sleep(2000);
         File dir = new File("C:\\Tools\\TestFile\\");
         File[] arrFiles = dir.listFiles();
         List<File> lst = Arrays.asList(arrFiles);
@@ -32,17 +44,28 @@ public class H_ViewDocument_Test8 {
         test = test.substring(18);
         System.out.println(test);
         Me.DeletedFiles(dir);
-        Me.CheckExit("1.html", test, driver);
+        Me.CheckingContainsExit(".zip", test, driver);
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
+
     @Test
-    public void B_DownloadFileSecondWindow_Test2() {
+    @Order(2)
+    void B_DownloadFileSecondWindow_Test2() {
+        try {
         driver = ffWithoutAddon();
-        driver.get(p.url);
-        Me.loggingCerts(p.upd, driver);
+        driver.get(url);
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
-        Me.AddFileAndClickMenu(2, "1.html", driver);
+        Me.AddFileAndClickMenu(6, "1.html", driver);
+        Me.Sleep(1500);
+        driver.findElement(By.cssSelector("#downloadDocument")).click();
+        Me.Sleep(500);
+        driver.findElement(By.cssSelector("#queued-download-button")).click();
+        Me.Sleep(2000);
         File dir = new File("C:\\Tools\\TestFile\\");
         File[] arrFiles = dir.listFiles();
         List<File> lst = Arrays.asList(arrFiles);
@@ -54,10 +77,15 @@ public class H_ViewDocument_Test8 {
             System.out.println("Test succesful");
             driver.quit();
         }
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
 
     @Test
-    public void C_OpenUPD_Test3() {
+    @Order(3)
+    void C_OpenUPD_Test3() {
+        try {
         setUP();
         driver.findElement(By.cssSelector(".createDocument")).click();
         driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -76,14 +104,21 @@ public class H_ViewDocument_Test8 {
         Me.Sleep(1000);
         test2 = driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).getText();
         Me.CheckExit("Все документы", test2, driver);
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
-    public void setUP() {
+    void setUP() {
+        try {
         driver = Drivers.ff();
-        driver.get(p.url);
-        Me.loggingCerts(p.upd, driver);
+        driver.get(url);
+        Me.loggingCerts(upd, driver);
         Me.RoleSwitch(2, driver);
         Me.Sleep(2000);
         Me.startEndingCertAndSendingFiles(driver);
+    }catch (Throwable e) {
+            Me.Catch(driver,e);
+        }
     }
     public static WebDriver ffWithoutAddon() {
         FirefoxProfile profile = new FirefoxProfile();
@@ -103,8 +138,9 @@ public class H_ViewDocument_Test8 {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setLogLevel(Level.OFF);
         firefoxOptions.setProfile(profile);
-
-        //firefoxOptions.addArguments("--headless"); //////////////////////////////////////
+        if (Drivers.headless){
+            firefoxOptions.addArguments("--headless"); //////////////////////////////////////
+        }
         WebDriver driver = new FirefoxDriver(firefoxOptions);
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

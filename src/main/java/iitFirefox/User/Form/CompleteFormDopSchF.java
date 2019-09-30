@@ -65,8 +65,9 @@ public class CompleteFormDopSchF {
         }
 
         System.out.println(test);
-        Me.Sleep(500);
+        Me.Sleep(1000);
         driver.findElement(By.id(test)).click();
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //2 Page#
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
@@ -124,6 +125,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Me.Sleep(7000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
+        Me.Sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
@@ -138,6 +140,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("DopSchF_IP " + date);
         driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#dateUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#datecorUPD")).click();
@@ -252,6 +255,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Me.Sleep(7000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
+        Me.Sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
@@ -384,9 +388,10 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Me.Sleep(7000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
+        Me.Sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Me.Sleep(1500);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(3000);
         String test2 = "" + date;
@@ -514,6 +519,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Me.Sleep(7000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
+        Me.Sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(500);
@@ -580,8 +586,11 @@ public class CompleteFormDopSchF {
         if (test.contains("\"")) {
             test = test.substring(0, 8);
         }
+        if (test.contains("\"")) {
+            test = test.substring(0, 7);
+        }
         System.out.println(test);
-        Me.Sleep(500);
+        Me.Sleep(1500);
 
         driver.findElement(By.id(test)).click();
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();

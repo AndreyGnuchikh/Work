@@ -2,49 +2,49 @@ package iitChrome.login;
 
 import iitAdd.Drivers;
 import iitAdd.Me;
-import iitAdd.p;
-import org.junit.Before;
-import org.junit.Test;
+import iitAdd.iit8077;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class D_ChooseRoleAndCabinet_Test4 {
+public class D_ChooseRoleAndCabinet_Test4 extends iit8077{
     private WebDriver driver;
     public String checking;
 
-    @Before
-    public void setUp() {
+     @BeforeEach
+    void setUp() {
         driver = Drivers.chrome();
-        driver.get(p.url2);
+        driver.get(url);
     }
 
     @Test
-    public void A_UserWithOneCabinet_Test1() {
-        Me.LogPass(p.q4log, p.pass1log, driver);
+    void A_UserWithOneCabinet_Test1() {
+        Me.LogPass(logUser, pass, driver);
         Me.Sleep(500);
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Me.CheckExit("Кабинет 1", checking, driver);
     }
 
     @Test
-    public void B_WithOneCabinet_Test2() {
-        Me.LogPass(p.q4log2, p.pass1log, driver);
+    void B_WithOneCabinet_Test2() {
+        Me.LogPass(logAdmin, pass, driver);
         Me.Sleep(2000);
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Me.CheckExit("Все контрагенты", checking, driver);
     }
 
     @Test
-    public void C_WithOneSupport_Test3() {
-        Me.LogPass(p.q4log3, p.pass1log, driver);
-        checking = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div/div/div/div[1]/label")).getText();
+    void C_WithOneSupport_Test3() {
+        Me.LogPass(logSupport, pass, driver);
+        checking = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/Form/div/div/div/div[1]/label")).getText();
         System.out.println(checking + "/");
         Me.CheckExit("Выберите кабинет:", checking, driver);
     }
 
     @Test
-    public void D_WithOneBylling_Test4() {
-        Me.LogPass(p.q4log4, p.pass1log, driver);
+    void D_WithOneBylling_Test4() {
+        Me.LogPass(logBilling, pass, driver);
         Me.Sleep(2000);
         checking = driver.findElement(By.cssSelector("#billing")).getText();
         System.out.println(checking);
@@ -52,9 +52,9 @@ public class D_ChooseRoleAndCabinet_Test4 {
     }
 
     @Test
-    public void E_WithAB_Test5() {
-        Me.LogPass(p.q4log5, p.pass1log, driver);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span/span[2]/b")).click();
+    void E_WithAB_Test5() {
+        Me.LogPass(logAdminBilling, pass, driver);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/Form/div[1]/div/div/div[1]/span/span[1]/span/span[2]/b")).click();
         checking = driver.findElement(By.id("select2-role-results")).getText();
         System.out.println(checking + "/");
         Me.CheckExit("Admin\n" +
@@ -62,9 +62,9 @@ public class D_ChooseRoleAndCabinet_Test4 {
     }
 
     @Test
-    public void F_WithALL_Test6() {
-        Me.LogPass(p.q4log6, p.pass1log, driver);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div/div/div/div[1]/span")).click();
+    void F_WithALL_Test6() {
+        Me.LogPass(LogAll, pass, driver);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/Form/div/div/div/div[1]/span")).click();
         checking = driver.findElement(By.id("select2-role-results")).getText();
         System.out.println(checking + "/");
         Me.CheckExit("Admin\nUser\nSupport\nBillingEditor", checking, driver);
@@ -72,10 +72,10 @@ public class D_ChooseRoleAndCabinet_Test4 {
     }
 
     @Test
-    public void G_User5cabinet_Test7() {
-        Me.LogPass(p.q4log7, p.pass1log, driver);
+    void G_User5cabinet_Test7() {
+        Me.LogPass(logManyCabinets, pass, driver);
         Me.Sleep(500);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/div/div/div[1]/span/span[1]/span/span[2]/b")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/Form/div[1]/div/div/div[1]/span/span[1]/span/span[2]/b")).click();
         checking = driver.findElement(By.id("cabinet")).getText();
         System.out.println(checking + "/");
         Me.CheckExit("Переименованный кабинет\nВсе хорошо кабинет\nКабинет Все хорошо\nТест 150\nВсе хорошо тест бд", checking, driver);

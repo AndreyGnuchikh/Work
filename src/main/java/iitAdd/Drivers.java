@@ -10,10 +10,14 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-public class Drivers {
+
+public class Drivers extends Settings{
+
+
     // TODO WebDriver add
     public static WebDriver ie() {
         System.setProperty("webdriver.ie.driver", "C:\\Tools\\IEDriverServer.exe");
@@ -30,31 +34,38 @@ public class Drivers {
         driver.manage().window().maximize();
         return driver;
     }
+        public static WebDriver ff() {
 
-    public static WebDriver ff() {
+        Me.Sleep(1000);
         FirefoxProfile profile = new FirefoxProfile();
         System.setProperty("webdriver.gecko.driver", "C:\\Tools\\geckodriver.exe");
-        // Убрать вывод
-        //System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
-        //System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
+
+        if (logs) {
+               System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
+               System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
+            }
 
         profile.setPreference("browser.download.folderList", 2);
         profile.setPreference("browser.download.dir", "C:\\Tools\\TestFile");
         profile.setPreference("browser.download.useDownloadDir", true);
         // Указывает тип документа по умолчанию которые скачиваются без всплывающего окна
-        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "image/png, exe, application/zip, text/html,application/msword;charset=UTF-8");
-        //Добавление Плазина Крипто про
+        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "image/png, exe, application/zip, application/msword, application/xml, text/html ;charset=UTF-8");
+        profile.setPreference("browser.helperApps.neverAsk.openFile", "image/png, exe, application/zip, application/msword,text/html,application/xml,text/plain;charset=UTF-8");
+
+            //Добавление Плазина Крипто про
         profile.addExtension(
                 new File("C:\\Tools\\cryptopro_extension_for_cades_browser_plug_in-1.1.1-an+fx-windows.xpi"));
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setLogLevel(Level.OFF);
         firefoxOptions.setProfile(profile);
-        firefoxOptions.addArguments("--headless"); //////////////////////////////////////
+
+        if (headless){
+            firefoxOptions.addArguments("--headless"); //////////////////////////////////////
+        }
 
         WebDriver driver = new FirefoxDriver(firefoxOptions);
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }
@@ -70,5 +81,7 @@ public class Drivers {
         d.manage().window().maximize();
         return d;
     }
+    void Test()    throws IOException{
 
+    }
 }
