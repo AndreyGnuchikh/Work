@@ -1,0 +1,32 @@
+start
+mvn clean
+mvn allure:serve
+
+git push
+git status
+
+
+Ctrl+alt+L refactoring code
+
+INSTALL
+
+jdk 1.8
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+git
+https://www.git-scm.com/
+
+maven add in path
+http://maven.apache.org/download.cgi
+
+CriptoPRO
+https://edo.iit.ru/info.html
+
+certs
+C:\Users\fors\IdeaProjects\aisa2\Tools\certs.rar
+
+re rar password
+C:\Users\fors\IdeaProjects\aisa2\src\main\java\iitAdd\p.rar
+
+and put Tools in C:\
+C:\Users\fors\IdeaProjects\aisa2\Tools
