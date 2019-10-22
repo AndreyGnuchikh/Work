@@ -6,6 +6,7 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import iitAdd.iit8077;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class H_ChangeRoles_Test8 extends iit8077 {
     private WebDriver driver;
@@ -14,10 +15,10 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @BeforeEach
     void upSet() {
         try {
-        driver = Drivers.ff();
-        driver.get(url);
-    }catch (Throwable e) {
-            Me.Catch(driver,e);
+            driver = Drivers.ff();
+            driver.get(url);
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
         }
     }
 
@@ -25,14 +26,14 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(1)
     void A_TestChangeRoleAdminToUser_Test1() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(1, driver);
-        Admin();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(1, driver);
+            Admin();
 
-        Me.RoleSwitch(2, driver);
-        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Me.CheckExit("Кабинет Все хорошо", checking, driver);
-    }catch (Throwable e) {
+            Me.RoleSwitch(2, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("Кабинет Все хорошо", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
@@ -41,14 +42,14 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(2)
     void B_TestChangeRoleAdminToSupport_Test2() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(1, driver);
-        Admin();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(1, driver);
+            Admin();
 
-        Me.RoleSwitch(3, driver);
-        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Me.CheckExit("ЖАСО - Нижегородский филиал", checking, driver);
-    }catch (Throwable e) {
+            Me.RoleSwitch(3, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("ЖАСО - Нижегородский филиал", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
@@ -57,15 +58,15 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(3)
     void C_TestChangeRoleAdminToBillingEditor_Test3() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(1, driver);
-        Admin();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(1, driver);
+            Admin();
 
-        Me.RoleSwitch(4, driver);
+            Me.RoleSwitch(4, driver);
 
-        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Me.CheckExit("Биллинг", checking, driver);
-    }catch (Throwable e) {
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("Биллинг", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
@@ -74,14 +75,14 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(4)
     void D_TestChangeRoleUserTo_Admin_Test4() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(2, driver);
-        User();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(2, driver);
+            User();
 
-        Me.RoleSwitch(1, driver);
-        checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
-        Me.CheckExit("Управление сертификатами", checking, driver);
-    }catch (Throwable e) {
+            Me.RoleSwitch(1, driver);
+            checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
+            Me.CheckExit("Управление сертификатами", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
@@ -90,13 +91,13 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(5)
     void E_TestChangeRoleUserTo_Support_Test5() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(2, driver);
-        User();
-        Me.RoleSwitch(3, driver);
-        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Me.CheckExit("ЖАСО - Нижегородский филиал", checking, driver);
-    }catch (Throwable e) {
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(2, driver);
+            User();
+            Me.RoleSwitch(3, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("ЖАСО - Нижегородский филиал", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
@@ -105,14 +106,14 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(6)
     void F_TestChangeRoleUserTo_BillingEditor_Test6() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(2, driver);
-        User();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(2, driver);
+            User();
 
-        Me.RoleSwitch(4, driver);
-        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Me.CheckExit("Биллинг", checking, driver);
-    }catch (Throwable e) {
+            Me.RoleSwitch(4, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("Биллинг", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
@@ -121,15 +122,15 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(7)
     void G_TestChangeRoleSupportTo_Admin_Test7() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(3, driver);
-        Me.Sleep(2000);
-        Support();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(3, driver);
+            Me.Sleep(2000);
+            Support();
 
-        Me.RoleSwitch(1, driver);
-        checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
-        Me.CheckExit("Управление сертификатами", checking, driver);
-    }catch (Throwable e) {
+            Me.RoleSwitch(1, driver);
+            checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
+            Me.CheckExit("Управление сертификатами", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
@@ -138,14 +139,14 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(8)
     void H_TestChangeRoleSupportTo_User_Test8() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(3, driver);
-        Support();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(3, driver);
+            Support();
 
-        Me.RoleSwitch(2, driver);
-        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Me.CheckExit("Кабинет Все хорошо", checking, driver);
-    }catch (Throwable e) {
+            Me.RoleSwitch(2, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("Кабинет Все хорошо", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
@@ -154,14 +155,14 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(9)
     void I_TestChangeRoleSupportTo_BillingEditor_Test9() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(3, driver);
-        Support();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(3, driver);
+            Support();
 
-        Me.RoleSwitch(4, driver);
-        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Me.CheckExit("Биллинг", checking, driver);
-    }catch (Throwable e) {
+            Me.RoleSwitch(4, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("Биллинг", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
@@ -170,54 +171,54 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     @Order(10)
     void J_TestChangeRoleBillingEditorToAdmin__Test10() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(4, driver);
-        driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
-        Me.Sleep(1000);
-        driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(4, driver);
+            driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
+            Me.Sleep(1000);
+            driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
 
-        Me.RoleSwitch(1, driver);
-        checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
-        Me.CheckExit("Управление сертификатами", checking, driver);
-    }catch (Throwable e) {
+            Me.RoleSwitch(1, driver);
+            checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
+            Me.CheckExit("Управление сертификатами", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
 
     @Test
-     @Order(11)
+    @Order(11)
     void K_TestChangeRoleBillingEditorToUser__Test11() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(4, driver);
-        driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
-        Me.Sleep(1000);
-        driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(4, driver);
+            driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
+            Me.Sleep(1000);
+            driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
 
-        Me.RoleSwitch(2, driver);
-        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Me.CheckExit("Кабинет Все хорошо", checking, driver);
-    }catch (Throwable e) {
+            Me.RoleSwitch(2, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("Кабинет Все хорошо", checking, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
 
 
     @Test
-     @Order(12)
+    @Order(12)
     void L_TestChangeRoleBillingEditorToSupport__Test12() {
         try {
-        Me.LogPass(LogAll, pass, driver);
-        Me.RoleSwitch(4, driver);
-        driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
-        Me.Sleep(1000);
-        driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
+            Me.LogPass(LogAll, pass, driver);
+            Me.RoleSwitch(4, driver);
+            driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
+            Me.Sleep(1000);
+            driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
 
-        Me.RoleSwitch(3, driver);
-        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Me.CheckExit("ЖАСО - Нижегородский филиал", checking, driver);
+            Me.RoleSwitch(3, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("ЖАСО - Нижегородский филиал", checking, driver);
 
-    }catch (Throwable e) {
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }

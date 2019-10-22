@@ -11,16 +11,18 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 
-public class Drivers extends Settings{
+public class Drivers extends Settings {
 
 
     // TODO WebDriver add
     public static WebDriver ie() {
         System.setProperty("webdriver.ie.driver", "C:\\Tools\\IEDriverServer.exe");
+
         DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
         // Чистая сессия
         capabilities.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
@@ -34,16 +36,17 @@ public class Drivers extends Settings{
         driver.manage().window().maximize();
         return driver;
     }
-        public static WebDriver ff() {
+
+    public static WebDriver ff() {
 
         Me.Sleep(1000);
         FirefoxProfile profile = new FirefoxProfile();
         System.setProperty("webdriver.gecko.driver", "C:\\Tools\\geckodriver.exe");
 
         if (logs) {
-               System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
-               System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
-            }
+            System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+        }
 
         profile.setPreference("browser.download.folderList", 2);
         profile.setPreference("browser.download.dir", "C:\\Tools\\TestFile");
@@ -52,7 +55,7 @@ public class Drivers extends Settings{
         profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "image/png, exe, application/zip, application/msword, application/xml, text/html ;charset=UTF-8");
         profile.setPreference("browser.helperApps.neverAsk.openFile", "image/png, exe, application/zip, application/msword,text/html,application/xml,text/plain;charset=UTF-8");
 
-            //Добавление Плазина Крипто про
+        //Добавление Плазина Крипто про
         profile.addExtension(
                 new File("C:\\Tools\\cryptopro_extension_for_cades_browser_plug_in-1.1.1-an+fx-windows.xpi"));
 
@@ -60,9 +63,12 @@ public class Drivers extends Settings{
         firefoxOptions.setLogLevel(Level.OFF);
         firefoxOptions.setProfile(profile);
 
-        if (headless){
+        if (headless) {
             firefoxOptions.addArguments("--headless"); //////////////////////////////////////
         }
+/*        firefoxOptions.addArguments("--window-size=1920,1080");
+        firefoxOptions.addArguments("--width=1920");
+        firefoxOptions.addArguments("--height=1080");*/
 
         WebDriver driver = new FirefoxDriver(firefoxOptions);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -72,8 +78,19 @@ public class Drivers extends Settings{
 
     public static WebDriver chrome() {
         System.setProperty("webdriver.chrome.driver", "C:\\Tools\\chromedriver.exe");
+        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+
+        chromePrefs.put("download.default_directory", "C:\\Tools\\TestFile");
+        chromePrefs.put("profile.default_content_settings.popups", 0);
+        chromePrefs.put("download.directory_upgrade", true);
+        chromePrefs.put("browser.helperApps.neverAsk.saveToDisk", "image/png, exe, application/zip, application/msword, application/xml, text/html ;charset=UTF-8");
+        chromePrefs.put("browser.helperApps.neverAsk.openFile", "image/png, exe, application/zip, application/msword,text/html,application/xml,text/plain;charset=UTF-8");
+
         ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("prefs", chromePrefs);
         options.addExtensions(new File("C:\\Tools\\cryptopro_extension_for_cades_browser_plug_in-1.1.1-an+fx-windows.xpi"));
+        ///////// Don't work options.setHeadless(true);
+
         WebDriver d = new ChromeDriver(options);
 
 
@@ -81,7 +98,6 @@ public class Drivers extends Settings{
         d.manage().window().maximize();
         return d;
     }
-    void Test()    throws IOException{
 
-    }
+
 }

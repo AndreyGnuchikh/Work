@@ -250,6 +250,7 @@ public class CompleteForm {
         System.out.println(test);
         Me.Sleep(500);
         driver.findElement(By.id(test)).click();
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //2 Page#
         Me.Sleep(500);

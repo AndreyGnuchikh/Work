@@ -18,441 +18,452 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
     WebDriver driver;
     String date, test2, save;
 
-     @BeforeEach
+    @BeforeEach
     void setUp() {
-         try {
-        driver = Drivers.ff();
-        driver.get(url);
-        Me.loggingCerts8080(upd, driver);
-        Me.RoleSwitch(2, driver);
-        Me.Sleep(2000);
-        Me.startEndingCertAndSendingFiles(driver);
+        try {
+            driver = Drivers.ff();
+            driver.get(url);
+            Me.loggingCerts8080(upd, driver);
+            Me.RoleSwitch(2, driver);
+            Me.Sleep(2000);
+            Me.startEndingCertAndSendingFiles(driver);
 
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
-     }
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
+    }
 
     @Test
     @Order(1)
     void A_ErrorsFormSchFFirstPage_Test1() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteForm.SCHFNoClick(driver);
-        System.out.println(date);
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
-        Me.Sleep(500);
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteForm.SCHFNoClick(driver);
+            System.out.println(date);
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
+            Me.Sleep(500);
 
-        Region("#interSFdoc");
-        inn("#interSFdoc");
-        CheckdateFirstPage("#");
-        Check("#numberSf");
-        Check("#numbercorSf");
-        Checkdate("#dateSf");
-        Checkdate("#datecorSf");
-        Check("input.col-md-12");
-        Region2("#interSFdoc");
-        Region3("#interSFdoc");
-        inn3("#interSFdoc");
+            Region("#interSFdoc");
+            inn("#interSFdoc");
+            CheckdateFirstPage("#");
+            Check("#numberSf");
+            Check("#numbercorSf");
+            Checkdate("#dateSf");
+            Checkdate("#datecorSf");
+            Check("input.col-md-12");
+            Region2("#interSFdoc");
+            Region3("#interSFdoc");
+            inn3("#interSFdoc");
 
-        driver.quit();
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+            driver.quit();
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
     @Order(2)
     void B_ErrorsFormSchFSecondPage_Test2() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteForm.SCHFNoClick(driver);
-        System.out.println(date);
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
-        Me.Sleep(1500);
-        driver.findElement(By.cssSelector("#interSFdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        page2Name("#interSFdoc");
-        page2NumberCustomDeclaration("#interSFdoc");
-        driver.quit();
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteForm.SCHFNoClick(driver);
+            System.out.println(date);
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
+            Me.Sleep(1500);
+            driver.findElement(By.cssSelector("#interSFdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            page2Name("#interSFdoc");
+            page2NumberCustomDeclaration("#interSFdoc");
+            driver.quit();
 
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
     @Order(3)
     void C_ErrorsFormACTFirstPage_Test3() {
         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormAct.ActClick(driver);
-        System.out.println(date);
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
-        Me.Sleep(500);
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormAct.ActClick(driver);
+            System.out.println(date);
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
+            Me.Sleep(500);
 
-        Region("#interActEWdoc");
-        inn("#interActEWdoc");
-        CheckdateFirstPage("#");
-        CheckACT("#numberActEW");
-        Check("#numbercorActEW");
-        Checkdate("#dateActEW");
-        Checkdate("#datecorActEW");
-        Check("input.col-md-12");
-        Region2("#interActEWdoc");
-        Region3("#interActEWdoc");
-        inn3("#interActEWdoc");
-        driver.quit();
-    }catch (Throwable e) {
-            Me.Catch(driver,e);
+            Region("#interActEWdoc");
+            inn("#interActEWdoc");
+            CheckdateFirstPage("#");
+            CheckACT("#numberActEW");
+            Check("#numbercorActEW");
+            Checkdate("#dateActEW");
+            Checkdate("#datecorActEW");
+            Check("input.col-md-12");
+            Region2("#interActEWdoc");
+            Region3("#interActEWdoc");
+            inn3("#interActEWdoc");
+            driver.quit();
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
         }
     }
+
     @Test
     @Order(4)
     void D_ErrorsFormACTSecondPage_Test4() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormAct.ActClick(driver);
-        System.out.println(date);
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
-        Me.Sleep(1000);
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        Me.Sleep(500);
-        page2Name("#interActEWdoc");
-        page2NumberCustomDeclaration("#interActEWdoc");
-        driver.quit();
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormAct.ActClick(driver);
+            System.out.println(date);
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
+            Me.Sleep(1000);
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            Me.Sleep(500);
+            page2Name("#interActEWdoc");
+            page2NumberCustomDeclaration("#interActEWdoc");
+            driver.quit();
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
     @Order(5)
     void E_ErrorsFormACTThreePage_Test5_Tap1() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormAct.ActClick(driver);
-        System.out.println(date);
-        Me.Sleep(1500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        CheckACTPage3("div.delivery-info-table-row:nth-child(2) > div:nth-child(1) > input:nth-child(1)");
-        CheckdateThreepage("div.delivery-info-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)");
-        Checkdate("#dateActEW");
-        Page3ACT("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACT("#recvInfo_worker > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACT("#recvInfo_worker > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACT("#shipment-info");
-        driver.quit();
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormAct.ActClick(driver);
+            System.out.println(date);
+            Me.Sleep(1500);
+            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            CheckACTPage3("div.delivery-info-table-row:nth-child(2) > div:nth-child(1) > input:nth-child(1)");
+            CheckdateThreepage("div.delivery-info-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)");
+            Checkdate("#dateActEW");
+            Page3ACT("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACT("#recvInfo_worker > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACT("#recvInfo_worker > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACT("#shipment-info");
+            driver.quit();
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
     @Order(6)
     void F_ErrorsFormACTThreePage_Test6_Tap2() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormAct.ActClick(driver);
-        System.out.println(date);
-        Me.Sleep(1500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormAct.ActClick(driver);
+            System.out.println(date);
+            Me.Sleep(1500);
+            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
 
-        driver.findElement(By.cssSelector(".edit_but")).click();
-        driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
-        driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя");
-        driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Должность");
-        driver.findElement(By.cssSelector("#org-name")).sendKeys("Наименование");
-        driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > i:nth-child(1)")).click();
-        Page3ACTTap2("#recvInfo_representative > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACTTap2("#recvInfo_representative > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACTTap2("#recvInfo_representative > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACTTap2("#org-name");
-        driver.quit();
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+            driver.findElement(By.cssSelector(".edit_but")).click();
+            driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
+            driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя");
+            driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Должность");
+            driver.findElement(By.cssSelector("#org-name")).sendKeys("Наименование");
+            driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > i:nth-child(1)")).click();
+            Page3ACTTap2("#recvInfo_representative > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACTTap2("#recvInfo_representative > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACTTap2("#recvInfo_representative > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACTTap2("#org-name");
+            driver.quit();
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
     @Order(7)
     void G_ErrorsFormACTThreePage_Test7_Tap3() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormAct.ActClick(driver);
-        System.out.println(date);
-        Me.Sleep(1500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(2)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormAct.ActClick(driver);
+            System.out.println(date);
+            Me.Sleep(1500);
+            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
 
-        driver.findElement(By.cssSelector(".edit_but")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#receiverInfo_groupSelector_3")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
-        driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя");
-        driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > i:nth-child(1)")).click();
-        Page3ACTTap3("#recvInfo_individual > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACTTap3("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
-        driver.quit();
+            driver.findElement(By.cssSelector(".edit_but")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#receiverInfo_groupSelector_3")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
+            driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя");
+            driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > i:nth-child(1)")).click();
+            Page3ACTTap3("#recvInfo_individual > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACTTap3("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
+            driver.quit();
 
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
     @Order(8)
     void H_ErrorsFormSchFDOPFirstPage_Test8() {
-         try {
+        try {
 
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormDopSchF.DopSchFClick(driver);
-        System.out.println(date);
-        Me.Sleep(1000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
-        Me.Sleep(1000);
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormDopSchF.DopSchFClick(driver);
+            System.out.println(date);
+            Me.Sleep(1000);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
+            Me.Sleep(1000);
 
-        RegionDOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
-        innDOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
-        CheckdateFirstPage("#");
-        Check("#numberUPD");
-        Check("#numbercorUPD");
-        Checkdate("#dateUPD");
-        Checkdate("#datecorUPD");
-        Check("input.col-md-12");
-        Region2DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
-        Region3DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
-        inn3DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
+            RegionDOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
+            innDOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
+            CheckdateFirstPage("#");
+            Check("#numberUPD");
+            Check("#numbercorUPD");
+            Checkdate("#dateUPD");
+            Checkdate("#datecorUPD");
+            Check("input.col-md-12");
+            Region2DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
+            Region3DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
+            inn3DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
 
-        driver.quit();
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+            driver.quit();
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
     @Order(9)
     void I_ErrorsFormSchFDOPSecondPage_Test9() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormDopSchF.DopSchFClick(driver);
-        System.out.println(date);
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
-        Me.Sleep(1000);
-        ((JavascriptExecutor) driver).executeScript("scroll(0,400)");
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        String open, close;
-        Me.Sleep(500);
-        open = "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)";
-        Me.Sleep(500);
-        close = "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)";
-        Me.Sleep(500);
-        page2NameDOPSCHF(open, "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)", close);
-        Me.Sleep(500);
-        page2NumberCustomDeclarationDOPSCHF(open, "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)", close);
-        driver.quit();
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormDopSchF.DopSchFClick(driver);
+            System.out.println(date);
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
+            Me.Sleep(1000);
+            ((JavascriptExecutor) driver).executeScript("scroll(0,400)");
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            String open, close;
+            Me.Sleep(500);
+            open = "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)";
+            Me.Sleep(500);
+            close = "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)";
+            Me.Sleep(500);
+            page2NameDOPSCHF(open, "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)", close);
+            Me.Sleep(500);
+            page2NumberCustomDeclarationDOPSCHF(open, "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)", close);
+            driver.quit();
 
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
     @Order(10)
     void K_ErrorsFormSchFDOPThreePage_Test10_Tap1() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormDopSchF.DopSchFClick(driver);
-        System.out.println(date);
-        Me.Sleep(1500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        CheckSchFDOPPage3("div.delivery-info-table-row:nth-child(2) > div:nth-child(1) > input:nth-child(1)");
-        CheckdateThreepage("div.delivery-info-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)");
-        Checkdate("#dateUPD");
-        Page3ACT("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACT("#recvInfo_worker > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACT("#recvInfo_worker > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACT("#shipment-info");
-        driver.quit();
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormDopSchF.DopSchFClick(driver);
+            System.out.println(date);
+            Me.Sleep(1500);
+            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            CheckSchFDOPPage3("div.delivery-info-table-row:nth-child(2) > div:nth-child(1) > input:nth-child(1)");
+            CheckdateThreepage("div.delivery-info-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)");
+            Checkdate("#dateUPD");
+            Page3ACT("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACT("#recvInfo_worker > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACT("#recvInfo_worker > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACT("#shipment-info");
+            driver.quit();
 
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
-     @Order(11)
+    @Order(11)
     void L_ErrorsFormSchFDOPThreePage_Test11_Tap2() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormDopSchF.DopSchFClick(driver);
-        System.out.println(date);
-        Me.Sleep(1500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormDopSchF.DopSchFClick(driver);
+            System.out.println(date);
+            Me.Sleep(1500);
+            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
 
-        driver.findElement(By.cssSelector(".edit_but")).click();
-        driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
-        driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя");
-        driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Должность");
-        driver.findElement(By.cssSelector("#org-name")).sendKeys("Наименование");
-        driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > i:nth-child(1)")).click();
-        Page3ACTTap2("#recvInfo_representative > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACTTap2("#recvInfo_representative > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACTTap2("#recvInfo_representative > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACTTap2("#org-name");
-        driver.quit();
+            driver.findElement(By.cssSelector(".edit_but")).click();
+            driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
+            driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя");
+            driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Должность");
+            driver.findElement(By.cssSelector("#org-name")).sendKeys("Наименование");
+            driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > i:nth-child(1)")).click();
+            Page3ACTTap2("#recvInfo_representative > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACTTap2("#recvInfo_representative > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACTTap2("#recvInfo_representative > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACTTap2("#org-name");
+            driver.quit();
 
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
-    @Test
-     @Order(12)
-    void M_ErrorsFormSchFDOPThreePage_Test12_Tap3() {
-         try {
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#editorFiles")).click();
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1000);
-        // Add счф
-        CompleteFormDopSchF.DopSchFClick(driver);
-        System.out.println(date);
-        Me.Sleep(1500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector(".edit_but")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#receiverInfo_groupSelector_3")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
-        driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя");
-        driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > i:nth-child(1)")).click();
-        Page3ACTTap3("#recvInfo_individual > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
-        Page3ACTTap3("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
-        driver.quit();
 
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
+    @Test
+    @Order(12)
+    void M_ErrorsFormSchFDOPThreePage_Test12_Tap3() {
+        try {
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#editorFiles")).click();
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1000);
+            // Add счф
+            CompleteFormDopSchF.DopSchFClick(driver);
+            System.out.println(date);
+            Me.Sleep(1500);
+            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector(".edit_but")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#receiverInfo_groupSelector_3")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
+            driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя");
+            driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > i:nth-child(1)")).click();
+            Page3ACTTap3("#recvInfo_individual > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
+            Page3ACTTap3("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
+            driver.quit();
+
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
 
     void Check(String s) {
@@ -472,6 +483,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(".subbtn")).click();
         driver.findElement(By.cssSelector(s)).sendKeys(save);
     }
+
     void CheckACT(String s) {
         save = null;
         save = driver.findElement(By.cssSelector(s)).getAttribute("value");
@@ -483,6 +495,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
 
 
     }
+
     void CheckACTPage3(String s) {
         save = null;
         save = driver.findElement(By.cssSelector(s)).getAttribute("value");
@@ -525,6 +538,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(s + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
     }
+
     void CheckdateFirstPage(String s) {
         String getId = driver.findElement(By.cssSelector("div.input-group:nth-child(1)")).getAttribute("outerHTML");
         System.out.println(getId);
@@ -562,6 +576,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(s + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
     }
+
     void CheckdateThreepage(String s) {
         save = null;
         save = driver.findElement(By.cssSelector(s)).getAttribute("value");
@@ -586,6 +601,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(".picker--opened > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
     }
+
     void Region(String s) {
         Me.Sleep(1500);
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
@@ -611,15 +627,16 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
+
     void inn(String s) {
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
         test2 = driver.findElement(By.cssSelector("#seller-compinn")).getAttribute("className");
         System.out.println(test2);
         Me.CheckingContains("inputFormat-error", test2, driver);
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(1000);
+        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        Me.Sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Me.Sleep(500);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
@@ -634,6 +651,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
+
     void Region2(String s) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
@@ -692,6 +710,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
+
     void inn3(String s) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
@@ -772,6 +791,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(close)).click();
 
     }
+
     void innDOPSCHF(String open, String close) {
         driver.findElement(By.cssSelector(open)).click();
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
@@ -795,6 +815,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(close)).click();
 
     }
+
     void Region2DOPSCHF(String open, String close) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(open)).click();
@@ -823,31 +844,32 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(close)).click();
 
     }
-/*    void inn2DOPSCHF(String open, String close) {
-        driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#shipper-compinn")).clear();
-        test2 = driver.findElement(By.cssSelector("#shipper-compinn")).getAttribute("className");
-        System.out.println(test2);
-        Me.CheckingContains("inputFormat-error", test2, driver);
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector(close)).click();
-        Me.Sleep(1000);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
-        Me.Sleep(1000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        Me.Sleep(500);
-        Me.Check("Одно или несколько обязательных полей не были заполнены!", test2, driver);
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("1561561651");
-        driver.findElement(By.cssSelector("#shipper-rusreg")).sendKeys("в");
-        driver.findElement(By.cssSelector(close)).click();
 
-    }*/
+    /*    void inn2DOPSCHF(String open, String close) {
+            driver.findElement(By.cssSelector(open)).click();
+            driver.findElement(By.cssSelector("#shipper-compinn")).clear();
+            test2 = driver.findElement(By.cssSelector("#shipper-compinn")).getAttribute("className");
+            System.out.println(test2);
+            Me.CheckingContains("inputFormat-error", test2, driver);
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector(close)).click();
+            Me.Sleep(1000);
+            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
+            Me.Sleep(1000);
+            driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
+            Me.Sleep(500);
+            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+            Me.Sleep(500);
+            Me.Check("Одно или несколько обязательных полей не были заполнены!", test2, driver);
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector(".subbtn")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector(open)).click();
+            driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("1561561651");
+            driver.findElement(By.cssSelector("#shipper-rusreg")).sendKeys("в");
+            driver.findElement(By.cssSelector(close)).click();
+
+        }*/
     void Region3DOPSCHF(String open, String close) {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(open)).click();
@@ -877,6 +899,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(close)).click();
 
     }
+
     void inn3DOPSCHF(String open, String close) {
         driver.findElement(By.cssSelector(open)).click();
         Me.Sleep(500);
@@ -957,6 +980,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
     }
+
     void page2NumberCustomDeclaration(String s) {
 
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
@@ -981,6 +1005,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys(save);
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
     }
+
     void page2NameDOPSCHF(String open, String element, String close) {
 
         Me.Sleep(3500);
@@ -1005,6 +1030,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys(save);
         driver.findElement(By.cssSelector(close)).click();
     }
+
     void page2NumberCustomDeclarationDOPSCHF(String open, String element, String close) {
         driver.findElement(By.cssSelector(open)).click();
         String Element = element;

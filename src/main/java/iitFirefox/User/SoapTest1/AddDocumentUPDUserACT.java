@@ -7,7 +7,7 @@ import javax.xml.soap.*;
 import java.io.ByteArrayOutputStream;
 import java.util.Date;
 
-public class AddDocumentUPDUserACT extends iit8077{
+public class AddDocumentUPDUserACT extends iit8077 {
     static String DocumentAddResult;
 
     public static String add() {

@@ -6,62 +6,65 @@ import iitAdd.testedo;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class G_ChangePassword_Test7 extends testedo {
     private WebDriver driver;
     public String sleep;
 
-     @BeforeEach
+    @BeforeEach
     void Before() {
-         try {
-        driver = Drivers.ff();
-        driver.get(url);
-        Me.LogPass(q7log, pass7log, driver);
-        Me.Sleep(1000);
-        driver.findElement(By.id("user-nav")).click();
-        Me.Sleep(2000);
-        driver.findElement(By.cssSelector("#user-panel > div:nth-child(6) > div > div.nav-title.collapsed")).click();
-    }catch (Throwable e) {
-             Me.Catch(driver,e);
-         }
-     }
+        try {
+            driver = Drivers.ff();
+            driver.get(url);
+            Me.LogPass(q7log, pass7log, driver);
+            Me.Sleep(1000);
+            driver.findElement(By.id("user-nav")).click();
+            Me.Sleep(2000);
+            driver.findElement(By.cssSelector("#user-panel > div:nth-child(6) > div > div.nav-title.collapsed")).click();
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
+    }
 
     @Test
     @Order(1)
     void A_ChengePasswordInCabinet_Test1() {
         try {
-        log(pass7log, pass7log, pass7log);
-        String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
-        System.out.println(checkingTest);
-        Me.CheckExit("Пароль был успешно изменен", checkingTest, driver);
-    } catch (Throwable e) {
+            log(pass7log, pass7log, pass7log);
+            String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
+            System.out.println(checkingTest);
+            Me.CheckExit("Пароль был успешно изменен", checkingTest, driver);
+        } catch (Throwable e) {
             Me.Catch(driver, e);
         }
     }
+
     @Test
     @Order(2)
     void B_PasswordWritesecontWrong_Test2() {
-         try {
-        log(pass7log, pass7log, wrong7log);
-        String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
-        System.out.println(checkingTest);
-        Me.CheckExit("Новый пароль введен повторно неверно!", checkingTest, driver);
-    } catch (Throwable e) {
-             Me.Catch(driver, e);
-         }
+        try {
+            log(pass7log, pass7log, wrong7log);
+            String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
+            System.out.println(checkingTest);
+            Me.CheckExit("Новый пароль введен повторно неверно!", checkingTest, driver);
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
+
     @Test
     @Order(3)
     void C_OldPasswordWrittenWrong_Test3() {
-         try {
-        log(wrong7log, pass7log, pass7log);
+        try {
+            log(wrong7log, pass7log, pass7log);
 
-        String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
-        System.out.println(checkingTest);
-        Me.CheckExit("Старый пароль введен неверно", checkingTest, driver);
-    } catch (Throwable e) {
-             Me.Catch(driver, e);
-         }
+            String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
+            System.out.println(checkingTest);
+            Me.CheckExit("Старый пароль введен неверно", checkingTest, driver);
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
 
     void log(String log1, String log2, String log3) {
@@ -72,7 +75,6 @@ public class G_ChangePassword_Test7 extends testedo {
         driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[2]/button")).click();
         Me.Sleep(2000);
     }
-
 
 
 }

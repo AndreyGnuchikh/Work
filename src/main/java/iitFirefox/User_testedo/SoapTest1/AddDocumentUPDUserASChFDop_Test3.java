@@ -7,7 +7,7 @@ import javax.xml.soap.*;
 import java.io.ByteArrayOutputStream;
 import java.util.Date;
 
-public class AddDocumentUPDUserASChFDop_Test3 extends testedo{
+public class AddDocumentUPDUserASChFDop_Test3 extends testedo {
     static String DocumentAddResult;
 
     public static String add() {

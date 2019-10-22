@@ -30,23 +30,23 @@ public class H_ViewDocument_Test8 extends iit8077 {
     @Order(1)
     void A_DownloadFile_Test1() {
         try {
-        setUP();
-        Me.AddFileAndClickMenu(6, "1.html", driver);
-        Me.Sleep(1500);
-        driver.findElement(By.cssSelector("#downloadDocument")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#queued-download-button")).click();
-        Me.Sleep(2000);
-        File dir = new File("C:\\Tools\\TestFile\\");
-        File[] arrFiles = dir.listFiles();
-        List<File> lst = Arrays.asList(arrFiles);
-        String test = lst.get(0).toString();
-        test = test.substring(18);
-        System.out.println(test);
-        Me.DeletedFiles(dir);
-        Me.CheckingContainsExit(".zip", test, driver);
-    }catch (Throwable e) {
-            Me.Catch(driver,e);
+            setUP();
+            Me.AddFileAndClickMenu(6, "1.html", driver);
+            Me.Sleep(1500);
+            driver.findElement(By.cssSelector("#downloadDocument")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#queued-download-button")).click();
+            Me.Sleep(2000);
+            File dir = new File("C:\\Tools\\TestFile\\");
+            File[] arrFiles = dir.listFiles();
+            List<File> lst = Arrays.asList(arrFiles);
+            String test = lst.get(0).toString();
+            test = test.substring(18);
+            System.out.println(test);
+            Me.DeletedFiles(dir);
+            Me.CheckingContainsExit(".zip", test, driver);
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
         }
     }
 
@@ -54,31 +54,31 @@ public class H_ViewDocument_Test8 extends iit8077 {
     @Order(2)
     void B_DownloadFileSecondWindow_Test2() {
         try {
-        driver = ffWithoutAddon();
-        driver.get(url);
-        Me.loggingCerts(upd, driver);
-        Me.RoleSwitch(2, driver);
-        Me.Sleep(2000);
-        Me.startEndingCertAndSendingFiles(driver);
-        Me.AddFileAndClickMenu(6, "1.html", driver);
-        Me.Sleep(1500);
-        driver.findElement(By.cssSelector("#downloadDocument")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#queued-download-button")).click();
-        Me.Sleep(2000);
-        File dir = new File("C:\\Tools\\TestFile\\");
-        File[] arrFiles = dir.listFiles();
-        List<File> lst = Arrays.asList(arrFiles);
-        try {
-            test2 = arrFiles[0].getName();
-            Me.DeletedFiles(dir);
-            Me.CheckExit("No File", test2, driver);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Test succesful");
-            driver.quit();
-        }
-    }catch (Throwable e) {
-            Me.Catch(driver,e);
+            driver = ffWithoutAddon();
+            driver.get(url);
+            Me.loggingCerts(upd, driver);
+            Me.RoleSwitch(2, driver);
+            Me.Sleep(2000);
+            Me.startEndingCertAndSendingFiles(driver);
+            Me.AddFileAndClickMenu(6, "1.html", driver);
+            Me.Sleep(1500);
+            driver.findElement(By.cssSelector("#downloadDocument")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#queued-download-button")).click();
+            Me.Sleep(2000);
+            File dir = new File("C:\\Tools\\TestFile\\");
+            File[] arrFiles = dir.listFiles();
+            List<File> lst = Arrays.asList(arrFiles);
+            try {
+                test2 = arrFiles[0].getName();
+                Me.DeletedFiles(dir);
+                Me.CheckExit("No File", test2, driver);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Test succesful");
+                driver.quit();
+            }
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
         }
     }
 
@@ -86,40 +86,42 @@ public class H_ViewDocument_Test8 extends iit8077 {
     @Order(3)
     void C_OpenUPD_Test3() {
         try {
-        setUP();
-        driver.findElement(By.cssSelector(".createDocument")).click();
-        driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#uploadForm")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
-        Me.Sleep(500);
-        driver.findElement(By.cssSelector("#create")).click();
-        Me.Sleep(1500);
-        CompleteFormDopSchF.DopSchF(driver);
-        Me.ClickMenuFirstElement(2, driver);
-        test2 = driver.findElement(By.cssSelector("#butPrintUPD > button:nth-child(1)")).getText();
-        Me.Check("Закрыть", test2, driver);
-        driver.findElement(By.cssSelector("#butPrintUPD > button:nth-child(1) > span:nth-child(1)")).click();
-        Me.Sleep(1000);
-        test2 = driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).getText();
-        Me.CheckExit("Все документы", test2, driver);
-    }catch (Throwable e) {
-            Me.Catch(driver,e);
+            setUP();
+            driver.findElement(By.cssSelector(".createDocument")).click();
+            driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#uploadForm")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
+            Me.Sleep(500);
+            driver.findElement(By.cssSelector("#create")).click();
+            Me.Sleep(1500);
+            CompleteFormDopSchF.DopSchF(driver);
+            Me.ClickMenuFirstElement(2, driver);
+            test2 = driver.findElement(By.cssSelector("#butPrintUPD > button:nth-child(1)")).getText();
+            Me.Check("Закрыть", test2, driver);
+            driver.findElement(By.cssSelector("#butPrintUPD > button:nth-child(1) > span:nth-child(1)")).click();
+            Me.Sleep(1000);
+            test2 = driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).getText();
+            Me.CheckExit("Все документы", test2, driver);
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
         }
     }
+
     void setUP() {
         try {
-        driver = Drivers.ff();
-        driver.get(url);
-        Me.loggingCerts(upd, driver);
-        Me.RoleSwitch(2, driver);
-        Me.Sleep(2000);
-        Me.startEndingCertAndSendingFiles(driver);
-    }catch (Throwable e) {
-            Me.Catch(driver,e);
+            driver = Drivers.ff();
+            driver.get(url);
+            Me.loggingCerts(upd, driver);
+            Me.RoleSwitch(2, driver);
+            Me.Sleep(2000);
+            Me.startEndingCertAndSendingFiles(driver);
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
         }
     }
+
     public static WebDriver ffWithoutAddon() {
         FirefoxProfile profile = new FirefoxProfile();
         // Убрать вывод
@@ -138,7 +140,7 @@ public class H_ViewDocument_Test8 extends iit8077 {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setLogLevel(Level.OFF);
         firefoxOptions.setProfile(profile);
-        if (Drivers.headless){
+        if (Drivers.headless) {
             firefoxOptions.addArguments("--headless"); //////////////////////////////////////
         }
         WebDriver driver = new FirefoxDriver(firefoxOptions);

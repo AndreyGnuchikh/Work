@@ -3,35 +3,49 @@ package iitChrome.login;
 import iitAdd.Drivers;
 import iitAdd.Me;
 import iitAdd.iit8077;
+import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class Z_TestSleep60min_For_Test9 extends iit8077{
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class Z_TestSleep60min_For_Test9 extends iit8077 {
     private WebDriver driver;
     public String text;
     public int qty;
 
-     @BeforeEach
+    @BeforeEach
     void setUp() {
-        driver = Drivers.chrome();
+
+        try {
+            driver = Drivers.chrome();
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
+        }
     }
 
-    @Test
+    @Ignore
+    @Order(1)
     void A_Exit_LongTime_Test2() {
-        driver.get(url);
-        Me.LogPass(LogAll, pass, driver);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/Form/div[1]/div/div/div[2]/button")).click();
-        for (int i = 0; i < 61; i++) {
-            Me.Sleep(60000);
-            qty += 1;
-            System.out.println(qty + " minut");
+        try {
+            driver.get(url);
+            Me.LogPass(LogAll, pass, driver);
+            driver.findElement(By.id("selectRole")).click();
+            for (int i = 0; i < 61; i++) {
+                Me.Sleep(60000);
+                qty += 1;
+                System.out.println(qty + " minut");
+            }
+            driver.findElement(By.xpath("//*")).sendKeys(Keys.F5);
+            text = driver.findElement(By.className("auth__title")).getText();
+            System.out.println(text);
+            Me.CheckExit("¬ход в личный кабинет", text, driver);
+        } catch (Throwable e) {
+            Me.Catch(driver, e);
         }
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.F5);
-        text = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/h2")).getText();
-        System.out.println(text);
-        Me.CheckExit("¬ход в личный кабинет", text, driver);
     }
 }

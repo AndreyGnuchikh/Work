@@ -22,6 +22,7 @@ public class CompleteFormAct {
         //Seller
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
         driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("г. Москва");
@@ -117,14 +118,14 @@ public class CompleteFormAct {
         //Связанный документ не заполненно.
         driver.findElement(By.cssSelector("#acceptanceCert-block > div:nth-child(2) > div:nth-child(8) > div > div.col-md-10.col-sm-10 > span > span.selection > span")).click();
         driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("1.html");
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("li.select2-results__option:nth-child(1) > option:nth-child(1)")).click();
-
-
+        Me.Sleep(500);
         driver.findElement(By.cssSelector(".inputFormat-docConnectDescriptions-group-optional")).sendKeys("Описание");
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(7000);
+        Me.Sleep(4000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#commentActEW")).sendKeys("" + date);
@@ -259,7 +260,7 @@ public class CompleteFormAct {
         driver.findElement(By.cssSelector("#commentActEW")).sendKeys("" + date);
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#commentActEWModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Me.Sleep(2000);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Me.Sleep(3000);
         String test2 = "" + date;
@@ -302,7 +303,7 @@ public class CompleteFormAct {
         driver.findElement(By.cssSelector("#buyer-rusindex")).sendKeys("140057");
         driver.findElement(By.cssSelector("#buyer-ruscity")).sendKeys("г. Санкт-Петербург");
         driver.findElement(By.cssSelector("#buyer-ruslocality")).sendKeys("г. Санкт-Петербург");
-       driver.findElement(By.cssSelector("#buyer-rushouse")).sendKeys("3");
+        driver.findElement(By.cssSelector("#buyer-rushouse")).sendKeys("3");
         driver.findElement(By.cssSelector("#buyer-rusbuild")).sendKeys("4");
         driver.findElement(By.cssSelector("#buyer-rusflat")).sendKeys("2020");
         driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
@@ -371,7 +372,9 @@ public class CompleteFormAct {
         driver.findElement(By.cssSelector("#shipment-date_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //Связанный документ не заполненно.
         driver.findElement(By.cssSelector("#acceptanceCert-block > div:nth-child(2) > div:nth-child(8) > div > div.col-md-10.col-sm-10 > span > span.selection > span")).click();
+        Me.Sleep(500);
         driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("1.html");
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("li.select2-results__option:nth-child(1) > option:nth-child(1)")).click();
 
 
