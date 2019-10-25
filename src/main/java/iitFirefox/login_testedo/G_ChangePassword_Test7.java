@@ -18,9 +18,9 @@ public class G_ChangePassword_Test7 extends testedo {
             driver = Drivers.ff();
             driver.get(url);
             Me.LogPass(q7log, pass7log, driver);
-            Me.Sleep(1000);
+            Me.Sleep(2500);
             driver.findElement(By.id("user-nav")).click();
-            Me.Sleep(2000);
+            Me.Sleep(5000);
             driver.findElement(By.cssSelector("#user-panel > div:nth-child(6) > div > div.nav-title.collapsed")).click();
         } catch (Throwable e) {
             Me.Catch(driver, e);

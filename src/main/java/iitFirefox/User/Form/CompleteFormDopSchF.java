@@ -123,8 +123,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(7000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
+        Me.WaitElementToBeClickableAndClick(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)",driver);
         Me.Sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
@@ -515,9 +514,9 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector(".inputFormat-docConnectDescriptions-group-optional")).sendKeys("Описание");
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Me.Sleep(500);
+        Me.Sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(7000);
+        Me.Sleep(8000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
         Me.Sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);

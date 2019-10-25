@@ -251,6 +251,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             System.out.println(date);
             Me.Sleep(1500);
             driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            Me.Sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(2000);
             driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
@@ -329,7 +330,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             // Add счф
             CompleteFormDopSchF.DopSchFClick(driver);
             System.out.println(date);
-            Me.Sleep(500);
+            Me.Sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
             Me.Sleep(1000);
             ((JavascriptExecutor) driver).executeScript("scroll(0,400)");
@@ -401,7 +402,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             // Add счф
             CompleteFormDopSchF.DopSchFClick(driver);
             System.out.println(date);
-            Me.Sleep(1500);
+            Me.Sleep(2500);
             driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(2000);
@@ -1072,7 +1073,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
         Me.Sleep(500);
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Me.Sleep(500);
+        Me.Sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.Check("Одно или несколько обязательных полей не были заполнены!", test2, driver);

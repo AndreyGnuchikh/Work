@@ -3,10 +3,7 @@ package iitFirefox.User_testedo;
 import iitAdd.Drivers;
 import iitAdd.Me;
 import iitAdd.testedo;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -133,6 +130,7 @@ public class J_SigningDocument_Test10 extends testedo {
             System.out.println(test);
             test2 = "C:\\Program Files\\7-Zip\\7z.exe e C:\\Tools\\TestFile\\" + test + " -o\"C:\\Tools\\TestFile\\\"";
             System.out.println(test2);
+            Me.Sleep(2000);
             getRuntime().exec(test2);
             Me.Sleep(1500);
             File dir2 = new File("C:\\Tools\\TestFile");
@@ -174,6 +172,7 @@ public class J_SigningDocument_Test10 extends testedo {
             test = test.substring(18);
             System.out.println(test);
             test2 = "C:\\Program Files\\7-Zip\\7z.exe e C:\\Tools\\TestFile\\" + test + " -o\"C:\\Tools\\TestFile\\\"";
+            Me.Sleep(1000);
             System.out.println(test2);
             getRuntime().exec(test2);
             Me.Sleep(3500);

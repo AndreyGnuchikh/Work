@@ -813,6 +813,7 @@ public class Me {
         Sleep(2500);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         row = row.substring(0, 36);
+        Me.Sleep(1000);
         Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
         Actions builder = new Actions(driver);
         builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
@@ -955,6 +956,7 @@ public class Me {
         driver.get(url);
         Me.Sleep(1000);
         LogPass(pass5log, pass5log, driver);
+        Me.Sleep(2000);
         startEndingCertAndSendingFiles(driver);
 
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
