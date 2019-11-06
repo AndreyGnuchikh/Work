@@ -239,9 +239,9 @@ public class Me {
     public static void WaitElementToBeClickableAndClick(String link, WebDriver driver) {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName() + " " + link);
         WebDriverWait wait = new WebDriverWait(driver, 60);
-        Sleep(900);
+        Sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector(link))));
-        Sleep(400);
+        Sleep(500);
         driver.findElement(By.cssSelector(link)).click();
     }
 
@@ -459,7 +459,7 @@ public class Me {
         ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
         Sleep(500);
         driver.findElement(By.id("cm-sign_text")).click();
-        Sleep(4000);
+        Sleep(5000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
         Sleep(10000);
     }
@@ -505,7 +505,7 @@ public class Me {
         driver.findElement(By.cssSelector("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("2");
         Sleep(500);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalSign")).click();
-        Sleep(6000);
+        Sleep(7000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
         Sleep(500);
         startEndingCertAndSendingFiles(driver);
@@ -735,7 +735,7 @@ public class Me {
         row = AddFile(upd, driver);
         ClickMenuFirstElement(5, driver);
 
-        Sleep(4000);
+        Sleep(4200);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
         Sleep(6000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
@@ -768,6 +768,7 @@ public class Me {
                 break;
             case ("upd\\SchfDop.xml"):
             case ("upd\\IPSchfDop.xml"):
+                Me.Sleep(500);
                 OpenNameFolder("сод 123", driver);
                 break;
         }
@@ -813,12 +814,12 @@ public class Me {
         Sleep(2500);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         row = row.substring(0, 36);
-        Me.Sleep(1000);
+        Me.Sleep(2000);
         Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
         Actions builder = new Actions(driver);
         builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
         ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
-        Me.Sleep(500);
+        Me.Sleep(1000);
         switch (NumButtonsMenu) {
             case (1):
                 driver.findElement(By.id("cm-upl_text")).click();
@@ -984,7 +985,7 @@ public class Me {
 
     public static void DeletedEmail(WebDriver driver) {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        Me.Sleep(500);
+        Me.Sleep(1500);
         if (!driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).isEnabled()) {
             System.out.println("isEnabled");
         } else {
@@ -1008,7 +1009,7 @@ public class Me {
             Sleep(1500);
             ((JavascriptExecutor) driver).executeScript("scroll(0,100)");
         }
-        Sleep(3000);
+        Sleep(3500);
         driver.findElement(By.cssSelector("[foldername=\"" + name + "\"]")).click();
         Sleep(4000);
         driver.findElement(By.cssSelector("[foldername=\"" + name + "\"]")).click();
@@ -1032,7 +1033,7 @@ public class Me {
     public static void SendCabinet(String who, String cabinet, String coworker, WebDriver driver) {
         driver.findElement(By.cssSelector(".selectize-input")).click();
         driver.findElement(By.cssSelector(".selectize-input > input:nth-child(1)")).sendKeys(who);
-        Sleep(1500);
+        Sleep(2000);
         driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
         Sleep(1500);
         driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1)")).click();

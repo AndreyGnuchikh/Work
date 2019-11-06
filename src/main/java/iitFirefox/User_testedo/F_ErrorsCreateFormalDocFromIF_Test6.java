@@ -147,7 +147,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             System.out.println(date);
             Me.Sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
-            Me.Sleep(1000);
+            Me.Sleep(1500);
             driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
             Me.Sleep(500);
             page2Name("#interActEWdoc");
@@ -173,8 +173,9 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             // Add счф
             CompleteFormAct.ActClick(driver);
             System.out.println(date);
-            Me.Sleep(1500);
-            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            Me.Sleep(2500);
+            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Me.Sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(2000);
             driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
@@ -209,7 +210,8 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             CompleteFormAct.ActClick(driver);
             System.out.println(date);
             Me.Sleep(1500);
-            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Me.Sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(2000);
             driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
@@ -250,7 +252,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             CompleteFormAct.ActClick(driver);
             System.out.println(date);
             Me.Sleep(1500);
-            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
             Me.Sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(2000);
@@ -330,7 +332,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             // Add счф
             CompleteFormDopSchF.DopSchFClick(driver);
             System.out.println(date);
-            Me.Sleep(1500);
+            Me.Sleep(2000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
             Me.Sleep(1000);
             ((JavascriptExecutor) driver).executeScript("scroll(0,400)");
@@ -367,7 +369,8 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             CompleteFormDopSchF.DopSchFClick(driver);
             System.out.println(date);
             Me.Sleep(1500);
-            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Me.Sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(2000);
             driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
@@ -403,7 +406,8 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             CompleteFormDopSchF.DopSchFClick(driver);
             System.out.println(date);
             Me.Sleep(2500);
-            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Me.Sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(2000);
             driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
@@ -445,7 +449,8 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             CompleteFormDopSchF.DopSchFClick(driver);
             System.out.println(date);
             Me.Sleep(1500);
-            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Me.Sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(2000);
             driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
@@ -476,8 +481,8 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         System.out.println(test2);
         Me.CheckingContains("inputFormat-error", test2, driver);
         Me.Sleep(500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
-        Me.Sleep(500);
+        ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+        Me.Sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.Check("Одно или несколько обязательных полей не были заполнены!", test2, driver);
@@ -795,6 +800,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
 
     void innDOPSCHF(String open, String close) {
         driver.findElement(By.cssSelector(open)).click();
+        Me.Sleep(500);
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
         test2 = driver.findElement(By.cssSelector("#seller-compinn")).getAttribute("className");
         System.out.println(test2);
@@ -902,8 +908,9 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
     }
 
     void inn3DOPSCHF(String open, String close) {
+        Me.Sleep(1500);
         driver.findElement(By.cssSelector(open)).click();
-        Me.Sleep(500);
+        Me.Sleep(1500);
         driver.findElement(By.cssSelector("#buyer-compinn")).clear();
         driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys(Keys.ENTER);
         test2 = driver.findElement(By.cssSelector("#buyer-compinn")).getAttribute("className");
@@ -1103,10 +1110,10 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         System.out.println(test2);
         Me.CheckingContains("inputFormat-error", test2, driver);
         Me.Sleep(500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
+        ((JavascriptExecutor) driver).executeScript("scroll(0,0)");
         Me.Sleep(500);
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Me.Sleep(500);
+        Me.Sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Me.Check("Одно или несколько обязательных полей не были заполнены!", test2, driver);

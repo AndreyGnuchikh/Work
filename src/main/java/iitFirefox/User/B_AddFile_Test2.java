@@ -135,7 +135,7 @@ public class B_AddFile_Test2 extends iit8077 {
             for (int i = 0; i < 27; i++) {
                 upload.sendKeys("C:\\Tools\\" + "1.html");
             }
-            Me.Sleep(11000);
+            Me.Sleep(220000);
             upload.sendKeys("C:\\Tools\\" + "1.html");
             Me.Sleep(100);
             test = driver.findElement(By.cssSelector("#errorBlock > ul:nth-child(2) > li:nth-child(1)")).getText();

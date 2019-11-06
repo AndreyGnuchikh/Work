@@ -236,9 +236,9 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             secondSing();
             test = null;
-            Sleep(500);
+            Sleep(1000);
             test = driver.findElement(By.id("surname")).getAttribute("value");
-            Sleep(500);
+            Sleep(1000);
             Me.Check("сод", test, driver);
             Sleep(500);
             test = driver.findElement(By.id("name")).getAttribute("value");
@@ -282,6 +282,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Sleep(1000);
             secondSing();
+            Sleep(1500);
             test = null;
             test = driver.findElement(By.id("surname")).getAttribute("value");
             Me.Check("сод", test, driver);

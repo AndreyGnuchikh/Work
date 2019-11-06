@@ -74,7 +74,10 @@ public class B_LoginCerts_Test2 extends testedo {
             Me.Sleep(1500);
             checking = driver.findElement(By.id("alertMessage")).getText();
             System.out.println(checking);
-            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь не прикреплен ни к одному контрагенту.", checking, driver);
+            Me.CheckExit("Внимание! Для текущего пользователя отсутствуют кабинеты для выбора.\\n\" +\n" +
+                    "                    \"Для получения доступа к личному кабинету обратитесь в техническую поддержку ООО \\\"ИИТ\\\":\\n\" +\n" +
+                    "                    \"тел: 8 (499) 262 24 25\\n\" +\n" +
+                    "                    \"e-mail: support@iit.ru", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }

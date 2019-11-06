@@ -144,7 +144,7 @@ public class I_RenamingDocument_Test9 extends iit8077 {
             driver.findElement(By.cssSelector("#rename-newName")).sendKeys(" ");
             Me.Sleep(1000);
             driver.findElement(By.cssSelector("#rename-btn")).click();
-            Me.Sleep(400);
+            Me.Sleep(1000);
             test = driver.findElement(By.cssSelector("h3.resptext")).getText();
             System.out.println(test);
             Me.CheckExit("Введите новое имя документа!", test, driver);

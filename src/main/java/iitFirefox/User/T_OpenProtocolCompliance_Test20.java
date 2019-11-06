@@ -124,6 +124,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
         try {
             test2 = Me.AddFile("1.html", driver);
             Me.ClickMenuFirstElement(11, driver);
+            Me.Sleep(500);
             test = String.valueOf(driver.getWindowHandles());
             test = test.substring(13, 23);
             System.out.println(test);

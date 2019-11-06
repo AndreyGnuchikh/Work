@@ -36,7 +36,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
             Me.Sleep(1000);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).click();
-            Me.Sleep(500);
+            Me.Sleep(1000);
             test = driver.findElement(By.id("surname")).getAttribute("value");
             Me.Check("сод", test, driver);
             test = driver.findElement(By.id("name")).getAttribute("value");

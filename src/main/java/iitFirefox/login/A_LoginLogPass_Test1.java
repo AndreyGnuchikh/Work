@@ -133,7 +133,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
             checking = driver.findElement(By.id("alertMessage")).getText();
             System.out.println(checking);
             Me.CheckExit("Внимание! Авторизоваться не получилось.\n" +
-                    "Проверьте правильность логина и пароля или подключение ключа ЭП", checking, driver);
+                    "Проверьте правильность логина и пароля", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }

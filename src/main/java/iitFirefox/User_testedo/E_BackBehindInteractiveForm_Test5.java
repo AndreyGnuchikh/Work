@@ -105,7 +105,7 @@ public class E_BackBehindInteractiveForm_Test5 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Me.Sleep(1500);
             CompleteFormDopSchF.DopSchFClick(driver);
-            Me.Sleep(1000);
+            Me.Sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();

@@ -144,9 +144,10 @@ public class I_RenamingDocument_Test9 extends testedo {
             driver.findElement(By.cssSelector("#rename-newName")).sendKeys(" ");
             Me.Sleep(1000);
             driver.findElement(By.cssSelector("#rename-btn")).click();
-            Me.Sleep(400);
+            Me.Sleep(1500);
             test = driver.findElement(By.cssSelector("h3.resptext")).getText();
             System.out.println(test);
+            Me.Sleep(500);
             Me.CheckExit("Введите новое имя документа!", test, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);

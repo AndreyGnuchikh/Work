@@ -241,6 +241,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
     void L_DOP_SaveP7SFormatAndDocument_Test12() {
         try {
             test2 = Me.CreateFirstUPDDocumentAndSign("2", driver);
+            Me.Sleep(500);
             Me.ClickMenuFirstElement(6, driver);
             Me.Sleep(1000);
             driver.findElement(By.cssSelector("#downloadp7s")).click();

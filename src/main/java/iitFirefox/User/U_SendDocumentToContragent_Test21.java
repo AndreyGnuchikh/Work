@@ -126,6 +126,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             test();
             Me.Sleep(500);
             driver.findElement(By.name("id51890")).click();
+            Me.Sleep(500);
             test = driver.findElement(By.cssSelector("#grid-basic2-row-"+test2+" > table:nth-child(1) > tr:nth-child(1) > td:nth-child(13)")).getText();
             String DateText = date.toString();
             Me.CheckExit(DateText,test,driver);

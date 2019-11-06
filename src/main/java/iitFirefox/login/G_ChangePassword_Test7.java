@@ -21,7 +21,7 @@ public class G_ChangePassword_Test7 extends iit8077 {
             Me.LogPass(q7log, pass7log, driver);
             Me.Sleep(1000);
             driver.findElement(By.id("user-nav")).click();
-            Me.Sleep(2000);
+            Me.Sleep(2500);
             driver.findElement(By.cssSelector("#user-panel > div:nth-child(6) > div > div.nav-title.collapsed")).click();
         } catch (Throwable e) {
             Me.Catch(driver, e);

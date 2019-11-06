@@ -55,6 +55,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
             Me.Sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
+            Me.Sleep(500);
             driver.findElement(By.cssSelector("#commentSFModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Me.Sleep(500);
             driver.findElement(By.cssSelector(".glyphicon-ok")).click();

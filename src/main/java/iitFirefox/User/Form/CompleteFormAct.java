@@ -125,7 +125,7 @@ public class CompleteFormAct {
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(4000);
+        Me.Sleep(4500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#commentActEW")).sendKeys("" + date);
