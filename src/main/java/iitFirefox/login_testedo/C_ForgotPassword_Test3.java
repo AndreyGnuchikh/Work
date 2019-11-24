@@ -50,7 +50,7 @@ public class C_ForgotPassword_Test3 extends testedo {
             System.out.println(isPresent);
             //==============
             if (isPresent == true) {
-                driver.findElement(By.xpath("//*[@id=\"passp-field-login8077\"]")).sendKeys(testIitTest);
+                driver.findElement(By.xpath("//*[@id=\"passp-field-login\"]")).sendKeys(testIitTest);
                 Me.Sleep(1000);
                 driver.findElement(By.cssSelector("button.button2_theme_action:nth-child(1)")).click();
                 Me.Sleep(1500);
@@ -58,7 +58,7 @@ public class C_ForgotPassword_Test3 extends testedo {
                 Me.Sleep(1500);
                 driver.findElement(By.cssSelector(".button2")).click();
             } else {
-                driver.findElement(By.xpath("//*[@id=\"passp-field-login8077\"]")).sendKeys(testIitTest);
+                driver.findElement(By.xpath("//*[@id=\"passp-field-login\"]")).sendKeys(testIitTest);
                 Me.Sleep(1000);
                 driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(EmailPass);
                 Me.Sleep(1000);

@@ -49,7 +49,7 @@ public class C_ForgotPassword_Test3 extends iit8077 {
             System.out.println(isPresent);
             //==============
             if (isPresent == true) {
-                driver.findElement(By.xpath("//*[@id=\"passp-field-login8077\"]")).sendKeys(testIitTest);
+                driver.findElement(By.xpath("//*[@id=\"passp-field-login\"]")).sendKeys(testIitTest);
                 Me.Sleep(1500);
                 driver.findElement(By.cssSelector(".passp-button.passp-sign-in-button button.button2:nth-child(1)")).click();
                 Me.Sleep(500);
@@ -57,7 +57,7 @@ public class C_ForgotPassword_Test3 extends iit8077 {
                 Me.Sleep(500);
                 driver.findElement(By.cssSelector(".button2")).click();
             } else {
-                driver.findElement(By.xpath("//*[@id=\"passp-field-login8077\"]")).sendKeys(testIitTest);
+                driver.findElement(By.xpath("//*[@id=\"passp-field-login\"]")).sendKeys(testIitTest);
                 Me.Sleep(500);
                 driver.findElement(By.xpath("//*[@id=\"passp-field-passwd\"]")).sendKeys(EmailPass);
                 Me.Sleep(500);

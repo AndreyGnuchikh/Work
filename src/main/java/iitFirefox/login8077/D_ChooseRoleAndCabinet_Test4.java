@@ -99,7 +99,7 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
             checking = driver.findElement(By.id("select2-role-results")).getText();
             System.out.println(checking + "/");
             Me.CheckExit("Admin\n" +
-                    "User8077\n" +
+                    "User\n" +
                     "Support\n" +
                     "BillingEditor", checking, driver);
         } catch (Throwable e) {
