@@ -31,7 +31,7 @@ public class Me {
         System.out.println("Login: " + login);
         System.out.println("Password: " + pass);
         Sleep(200);
-        driver.findElement(By.xpath("//*[@id=\"username-login8077\"]")).sendKeys(login);
+        driver.findElement(By.xpath("//*[@id=\"username-login\"]")).sendKeys(login);
         Sleep(200);
         driver.findElement(By.xpath("//*[@id=\"passwordfield\"]")).sendKeys(pass);
         Sleep(200);
@@ -268,12 +268,12 @@ public class Me {
         if (isNormal) {
             driver.findElement(By.className(".button2_theme_normal")).click();
         }
-        isPresentLog = driver.findElements(By.id("passp-field-login8077")).size() > 0;
+        isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
         System.out.println("Логин Пароль " + isPresentLog);
         //==============
         if (isPresentLog) {
             Me.Sleep(500);
-            driver.findElement(By.id("passp-field-login8077")).sendKeys(email);
+            driver.findElement(By.id("passp-field-login")).sendKeys(email);
             Me.Sleep(500);
             driver.findElement(By.cssSelector("button.button2_type_submit")).click();
             Sleep(1500);
@@ -319,11 +319,11 @@ public class Me {
         if (isNormal) {
             driver.findElement(By.className(".button2_theme_normal")).click();
         }
-        isPresentLog = driver.findElements(By.id("passp-field-login8077")).size() > 0;
+        isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
         System.out.println("Логин Пароль " + isPresentLog);
         //==============
         if (isPresentLog) {
-            driver.findElement(By.id("passp-field-login8077")).sendKeys(testIitTest3);
+            driver.findElement(By.id("passp-field-login")).sendKeys(testIitTest3);
             driver.findElement(By.cssSelector("button.button2_type_submit")).click();
             Sleep(1500);
             driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(EmailPass);
@@ -363,11 +363,11 @@ public class Me {
         if (isNormal) {
             driver.findElement(By.className(".button2_theme_normal")).click();
         }
-        isPresentLog = driver.findElements(By.id("passp-field-login8077")).size() > 0;
+        isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
         System.out.println("Логин Пароль " + isPresentLog);
         //==============
         if (isPresentLog) {
-            driver.findElement(By.id("passp-field-login8077")).sendKeys(testIitTest4);
+            driver.findElement(By.id("passp-field-login")).sendKeys(testIitTest4);
             driver.findElement(By.cssSelector("button.button2_type_submit")).click();
             Sleep(1500);
             driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(EmailPass);
