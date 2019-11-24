@@ -1,4 +1,4 @@
-package iitChrome.login;
+package iitFirefox.login8077;
 
 
 import iitAdd.Drivers;
@@ -20,7 +20,7 @@ public class C_ForgotPassword_Test3 extends iit8077 {
     @BeforeEach
     void setUp() {
         try {
-            driver = Drivers.chrome();
+            driver = Drivers.ff();
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }

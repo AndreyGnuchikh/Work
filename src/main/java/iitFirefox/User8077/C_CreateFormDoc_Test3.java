@@ -1,4 +1,4 @@
-package iitFirefox.User_testedo;
+package iitFirefox.User8077;
 
 import iitAdd.*;
 import iitFirefox.User8077.Form.CompleteForm;
@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class C_CreateFormDoc_Test3 extends testedo {
+public class C_CreateFormDoc_Test3 extends iit8077 {
     WebDriver driver;
     String test2;
 
@@ -18,7 +18,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            Me.loggingCerts8080(upd, driver);
+            Me.loggingCerts(upd, driver);
             Me.RoleSwitch(2, driver);
             Me.startEndingCertAndSendingFiles(driver);
         } catch (Throwable e) {
@@ -51,6 +51,8 @@ public class C_CreateFormDoc_Test3 extends testedo {
             test = Me.Krutilka(arrive, numberElement).substring(0, 28);
             System.out.println(test);
             Me.CheckExit(test2, test, driver);
+
+
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -85,6 +87,8 @@ public class C_CreateFormDoc_Test3 extends testedo {
             test = Me.Krutilka(arrive, numberElement).substring(0, 28);
             System.out.println(test);
             Me.CheckExit(test2, test, driver);
+
+
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -119,6 +123,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             test = Me.Krutilka(arrive, numberElement).substring(0, 28);
             System.out.println(test);
             Me.CheckExit(test2, test, driver);
+
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -252,6 +257,8 @@ public class C_CreateFormDoc_Test3 extends testedo {
             test = Me.Krutilka(arrive, numberElement).substring(0, 28);
             System.out.println(test);
             Me.CheckExit(test2, test, driver);
+
+
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -286,6 +293,8 @@ public class C_CreateFormDoc_Test3 extends testedo {
             test = Me.Krutilka(arrive, numberElement).substring(0, 28);
             System.out.println(test);
             Me.CheckExit(test2, test, driver);
+
+
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
