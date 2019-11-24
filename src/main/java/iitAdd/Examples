@@ -1,11 +1,9 @@
+
 Что нужно попробовать
 Что нужно попробовать
-Что нужно попробовать
-Что нужно попробовать
-Что нужно попробоватьЧто нужно попробовать
 Что нужно попробовать
 
-Для выпадающих списков.
+   ***  Для выпадающих списков.
        Select select = (Select)driver.findElement(By.name("select"));
        select.selectByValue("1");
        либо
@@ -13,7 +11,9 @@
        либо
        select.selectByIndex(1);
 
-
+   ***  Замена Thread.sleep
+https://github.com/awaitility/awaitility
+await().atMost(5, SECONDS).until(customerStatusIsUpdated());
 
 Правый клик мыши
        ****************************************click for id****************************************

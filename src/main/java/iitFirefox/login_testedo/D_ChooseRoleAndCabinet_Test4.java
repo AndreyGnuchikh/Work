@@ -113,7 +113,7 @@ public class D_ChooseRoleAndCabinet_Test4 extends testedo {
         try {
             Me.LogPass(logManyCabinets, pass, driver);
             Me.Sleep(1000);
-            driver.findElement(By.id("selectRole")).click();
+            Me.RoleSwitch(2,driver);
             Me.Sleep(1000);
             driver.findElement(By.id("select2-cabinet-container")).click();
             checking = driver.findElement(By.className("select2-results__options")).getAttribute("innerText");

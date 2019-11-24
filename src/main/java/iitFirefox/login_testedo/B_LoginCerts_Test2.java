@@ -58,7 +58,7 @@ public class B_LoginCerts_Test2 extends testedo {
     void C_ContragentIsBlock_Test3() {
         try {
             Me.loggingCerts(fio3, driver);
-            checking = driver.findElement(By.cssSelector("#alertMessage > p:nth-child(3)")).getText();
+            checking = driver.findElement(By.cssSelector("#alertMessage > div:nth-child(3)")).getText();
             System.out.println(checking);
             Me.CheckExit("УВАЖАЕМЫЙ ПОЛЬЗОВАТЕЛЬ УСЛУГ ОПЕРАТОРА ЭДО!", checking, driver);
         } catch (Throwable e) {
@@ -66,7 +66,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-    @Test
+   /* @Test
     @Order(4)
     void D_UserNoCabinet_Test4() {
         try {
@@ -81,7 +81,7 @@ public class B_LoginCerts_Test2 extends testedo {
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
-    }
+    }*/
 
     @Test
     @Order(5)
@@ -91,7 +91,7 @@ public class B_LoginCerts_Test2 extends testedo {
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
-            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован", checking, driver);
+            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован.", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -111,7 +111,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-    @Test
+  /*  @Test
     @Order(7)
     void G_UserNoHaveCabinetTest7() {
         try {
@@ -123,7 +123,7 @@ public class B_LoginCerts_Test2 extends testedo {
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
-    }
+    }*/
 
     //    @Test
     //      @Order(8)

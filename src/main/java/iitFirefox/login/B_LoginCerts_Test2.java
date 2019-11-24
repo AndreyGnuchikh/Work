@@ -65,7 +65,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
         }
     }
 
-    @Test
+/*    @Test
     @Order(4)
     void D_UserNoCabinet_Test4() {
         try {
@@ -82,7 +82,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
-    }
+    }*/
 
     @Test
     @Order(5)
@@ -92,7 +92,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
-            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован", checking, driver);
+            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован.", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -112,7 +112,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
         }
     }
 
-    @Test
+   /* @Test
     @Order(7)
     void G_UserNoHaveCabinetTest7() {
         try {
@@ -123,7 +123,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
-    }
+    }*/
 
     //    @Test
     //@Order(8)

@@ -113,8 +113,9 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     void G_User4cabinet_Test7() {
         try {
             Me.LogPass(logManyCabinets, pass, driver);
-
-            Me.Sleep(2500);
+            Me.Sleep(1000);
+            Me.RoleSwitch(2,driver);
+            Me.Sleep(1000);
             driver.findElement(By.id("select2-cabinet-container")).click();
             Me.Sleep(1000);
             checking = driver.findElement(By.className("select2-results__options")).getAttribute("innerText");

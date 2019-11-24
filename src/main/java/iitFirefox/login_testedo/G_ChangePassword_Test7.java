@@ -7,6 +7,9 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.awaitility.Awaitility.await;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class G_ChangePassword_Test7 extends testedo {
     private WebDriver driver;
@@ -26,7 +29,6 @@ public class G_ChangePassword_Test7 extends testedo {
             Me.Catch(driver, e);
         }
     }
-
     @Test
     @Order(1)
     void A_ChengePasswordInCabinet_Test1() {
