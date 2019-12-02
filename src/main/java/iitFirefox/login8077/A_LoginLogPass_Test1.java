@@ -27,7 +27,6 @@ public class A_LoginLogPass_Test1 extends iit8077 {
             Me.Catch(driver, e);
         }
     }
-    @DisplayName("Checking when we open the correct cabinet")
     @Test
     @Order(1)
     void A_AllRightTest1() {
@@ -36,7 +35,6 @@ public class A_LoginLogPass_Test1 extends iit8077 {
             checking = driver.findElement(By.className("auth__button")).getText();
             System.out.println(checking);
             Me.CheckExit("Выбрать", checking, driver);
-            //assertEquals("Выбрать", checking);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -61,7 +59,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
     void C_ContragentIsBlockedTest3() {
         try {
             Me.LogPass(log3log, pass, driver);
-            checking = driver.findElement(By.cssSelector("#alertMessage > p:nth-child(3)")).getText();
+            checking = driver.findElement(By.cssSelector("#alertMessage > div:nth-child(3)")).getText();
 
             System.out.println(checking);
             Me.CheckExit("УВАЖАЕМЫЙ ПОЛЬЗОВАТЕЛЬ УСЛУГ ОПЕРАТОРА ЭДО!", checking, driver);
@@ -70,7 +68,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         }
     }
 
-    @Test
+/*    @Test
     @Order(4)
     void D_UserDontCatchtoContragentTest4() {
         try {
@@ -82,7 +80,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
-    }
+    }*/
 
     @Test
     @Order(5)
@@ -92,7 +90,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
-            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован", checking, driver);
+            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован.", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -112,7 +110,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         }
     }
 
-    @Test
+ /*   @Test
     @Order(7)
     void G_UserDontHaveCabinet7() {
         try {
@@ -123,7 +121,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
-    }
+    }*/
 
     @Test
     @Order(8)
@@ -132,8 +130,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
             Me.LogPass(wrong7log, wrong7log, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
             System.out.println(checking);
-            Me.CheckExit("Внимание! Авторизоваться не получилось.\n" +
-                    "Проверьте правильность логина и пароля", checking, driver);
+            Me.CheckExit("Внимание! Авторизоваться не получилось. Проверьте правильность логина и пароля", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }

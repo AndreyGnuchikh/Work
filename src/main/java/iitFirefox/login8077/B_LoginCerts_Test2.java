@@ -32,6 +32,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
             Me.loggingCerts(fio, driver);
             checking = driver.findElement(By.id("selectRole")).getText();
             System.out.println(checking);
+            Me.Sleep(500);
             Me.CheckExit("бШАПЮРЭ", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
@@ -56,7 +57,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
     void C_ContragentIsBlock_Test3() {
         try {
             Me.loggingCerts(fio3, driver);
-            checking = driver.findElement(By.cssSelector("#alertMessage > p:nth-child(3)")).getText();
+            checking = driver.findElement(By.cssSelector("#alertMessage > div:nth-child(3)")).getText();
             System.out.println(checking);
             Me.CheckExit("сбюфюелши онкэгнбюрекэ сяксц ноепюрнпю щдн!", checking, driver);
         } catch (Throwable e) {

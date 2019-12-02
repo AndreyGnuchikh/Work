@@ -102,7 +102,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            Me.loggingCerts8080(fio9, driver);
+            Me.loggingCerts8080(fio11, driver);
             Sleep(1500);
             Me.startEndingCertAndSendingFiles(driver);
             Sleep(500);

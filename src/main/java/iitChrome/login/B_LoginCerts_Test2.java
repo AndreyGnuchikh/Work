@@ -64,7 +64,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
         }
     }
 
-    @Test
+/*    @Test
     @Order(4)
     void D_UserNoCabinet_Test4() {
         try {
@@ -76,7 +76,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
-    }
+    }*/
 
     @Test
     @Order(5)
@@ -106,6 +106,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
         }
     }
 
+/*
     @Test
     @Order(7)
     void G_UserNoHaveCabinetTest7() {
@@ -118,6 +119,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
             Me.Catch(driver, e);
         }
     }
+*/
 
     //    @Test
     //@Order(8)

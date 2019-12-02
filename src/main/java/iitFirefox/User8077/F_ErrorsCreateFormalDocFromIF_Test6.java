@@ -613,7 +613,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("1561561651");
+        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020");
         test2 = driver.findElement(By.cssSelector("#seller-rusreg")).getAttribute("className");
         System.out.println(test2);
         Me.CheckingContains("inputFormat-error", test2, driver);
@@ -652,7 +652,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("1561561651");
+        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020");
         driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("â");
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
@@ -664,7 +664,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#shipper-compinn")).clear();
         Me.Sleep(500);
-        driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("1561561651", Keys.ENTER);
+        driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("5047071020", Keys.ENTER);
         test2 = driver.findElement(By.cssSelector("#shipper-rusreg")).getAttribute("className");
         System.out.println(test2);
         Me.CheckingContains("inputFormat-error", test2, driver);
@@ -712,7 +712,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("5555555555", Keys.ENTER);
+        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("1653001883", Keys.ENTER);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
@@ -739,7 +739,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("5555555555");
+        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("1653001883");
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
@@ -767,7 +767,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#consignee-compinn")).sendKeys("5555555555", Keys.ENTER);
+        driver.findElement(By.cssSelector("#consignee-compinn")).sendKeys("1653001883", Keys.ENTER);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
@@ -777,7 +777,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(open)).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("1561561651");
+        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020");
         test2 = driver.findElement(By.cssSelector("#seller-rusreg")).getAttribute("className");
         System.out.println(test2);
         Me.CheckingContains("inputFormat-error", test2, driver);
@@ -816,7 +816,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("1561561651");
+        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020");
         driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("â");
         driver.findElement(By.cssSelector(close)).click();
 
@@ -828,7 +828,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         Me.Sleep(500);
         driver.findElement(By.cssSelector("#shipper-compinn")).clear();
         Me.Sleep(500);
-        driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("1561561651", Keys.ENTER);
+        driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("5047071020", Keys.ENTER);
         test2 = driver.findElement(By.cssSelector("#shipper-rusreg")).getAttribute("className");
         System.out.println(test2);
         Me.CheckingContains("inputFormat-error", test2, driver);
@@ -871,7 +871,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("1561561651");
+        driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("5047071020");
         driver.findElement(By.cssSelector("#shipper-rusreg")).sendKeys("â");
         driver.findElement(By.cssSelector(close)).click();
 
@@ -902,7 +902,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("5555555555", Keys.ENTER);
+        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("1653001883", Keys.ENTER);
         driver.findElement(By.cssSelector(close)).click();
 
     }
@@ -929,7 +929,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("5555555555");
+        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("1653001883");
         driver.findElement(By.cssSelector(close)).click();
 
     }
@@ -956,7 +956,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Me.Sleep(500);
         driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#consignee-compinn")).sendKeys("5555555555", Keys.ENTER);
+        driver.findElement(By.cssSelector("#consignee-compinn")).sendKeys("1653001883", Keys.ENTER);
         driver.findElement(By.cssSelector(close)).click();
 
     }

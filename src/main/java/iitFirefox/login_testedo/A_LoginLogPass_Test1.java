@@ -60,7 +60,7 @@ public class A_LoginLogPass_Test1 extends testedo {
     void C_ContragentIsBlockedTest3() {
         try {
             Me.LogPass(log3log, pass, driver);
-            checking = driver.findElement(By.cssSelector("#alertMessage > p:nth-child(3)")).getText();
+            checking = driver.findElement(By.cssSelector("#alertMessage > div:nth-child(3)")).getText();
 
             System.out.println(checking);
             Me.CheckExit("УВАЖАЕМЫЙ ПОЛЬЗОВАТЕЛЬ УСЛУГ ОПЕРАТОРА ЭДО!", checking, driver);
@@ -69,7 +69,7 @@ public class A_LoginLogPass_Test1 extends testedo {
         }
     }
 
-    @Test
+/*    @Test
     @Order(4)
     void D_UserDontCatchtoContragentTest4() {
         try {
@@ -81,7 +81,7 @@ public class A_LoginLogPass_Test1 extends testedo {
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
-    }
+    }*/
 
     @Test
     @Order(5)
@@ -91,7 +91,7 @@ public class A_LoginLogPass_Test1 extends testedo {
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
-            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован", checking, driver);
+            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован.", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -111,6 +111,7 @@ public class A_LoginLogPass_Test1 extends testedo {
         }
     }
 
+/*
     @Test
     @Order(7)
     void G_UserDontHaveCabinet7() {
@@ -123,6 +124,7 @@ public class A_LoginLogPass_Test1 extends testedo {
             Me.Catch(driver, e);
         }
     }
+*/
 
     @Test
     @Order(8)
@@ -131,8 +133,7 @@ public class A_LoginLogPass_Test1 extends testedo {
             Me.LogPass(wrong7log, wrong7log, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
             System.out.println(checking);
-            Me.CheckExit("Внимание! Авторизоваться не получилось.\n" +
-                    "Проверьте правильность логина и пароля или подключение ключа ЭП", checking, driver);
+            Me.CheckExit("Внимание! Авторизоваться не получилось. Проверьте правильность логина и пароля", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }

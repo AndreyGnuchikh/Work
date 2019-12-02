@@ -212,7 +212,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
     }
 
     // add Soap
-    @Test
+    @RepeatedTest(20)
     @Order(7)
     void G_EditingSCHF_Soap_Test7() {
         try {
@@ -243,7 +243,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
         }
     }
 
-    @RepeatedTest(10)
+    @Test
     @Order(9)
     void I_EditingSChFDOP_Soap_Test9() {
         try {

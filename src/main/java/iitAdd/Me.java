@@ -832,6 +832,7 @@ public class Me {
                 driver.findElement(By.id("cm-open_text")).click();
                 break;
             case (3):
+                Me.Sleep(500);
                 driver.findElement(By.id("cm-edit_text")).click();
                 break;
             case (4):
@@ -1009,7 +1010,7 @@ public class Me {
             Sleep(1500);
             ((JavascriptExecutor) driver).executeScript("scroll(0,100)");
         }
-        Sleep(3500);
+        Sleep(3800);
         driver.findElement(By.cssSelector("[foldername=\"" + name + "\"]")).click();
         Sleep(4000);
         driver.findElement(By.cssSelector("[foldername=\"" + name + "\"]")).click();
