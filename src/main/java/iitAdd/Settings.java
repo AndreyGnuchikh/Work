@@ -2,7 +2,7 @@ package iitAdd;
 
 public class Settings {
     //FireFox
-    public static Boolean headless = true;
+    public static Boolean headless = false;
     public static Boolean logs = true;
 
     //Ждем формирование квитанций UPD

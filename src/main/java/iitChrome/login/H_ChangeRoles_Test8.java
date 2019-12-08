@@ -80,8 +80,8 @@ public class H_ChangeRoles_Test8 extends iit8077 {
             User();
 
             Me.RoleSwitch(1, driver);
-            checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
-            Me.CheckExit("Управление сертификатами", checking, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("Все контрагенты", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -128,8 +128,8 @@ public class H_ChangeRoles_Test8 extends iit8077 {
             Support();
 
             Me.RoleSwitch(1, driver);
-            checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
-            Me.CheckExit("Управление сертификатами", checking, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("Все контрагенты", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -178,8 +178,8 @@ public class H_ChangeRoles_Test8 extends iit8077 {
             driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
 
             Me.RoleSwitch(1, driver);
-            checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
-            Me.CheckExit("Управление сертификатами", checking, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Me.CheckExit("Все контрагенты", checking, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
@@ -224,8 +224,8 @@ public class H_ChangeRoles_Test8 extends iit8077 {
     }
 
     void Admin() {
-        checking = driver.findElement(By.cssSelector("#certcenter > span")).getText();
-        Me.Check("Управление сертификатами", checking, driver);
+        checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+        Me.Check("Все контрагенты", checking, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
         Me.Sleep(1000);
         driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();

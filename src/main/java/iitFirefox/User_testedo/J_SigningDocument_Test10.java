@@ -200,7 +200,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-    @Test
+    /*@Test
     @Order(7)
     void G_NoCerts_Test7() {
         try {
@@ -213,14 +213,14 @@ public class J_SigningDocument_Test10 extends testedo {
             Me.AddFile("1.html", driver);
             Me.ClickMenuFirstElement(5, driver);
             Me.Sleep(1500);
-            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+            test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getText();
             System.out.println(test2);
-            Me.CheckingContainsExit("Для прикрепления сертификата к Вашей учетной записи обратитесь", test2, driver);
+            Me.CheckingContainsExit("10: Ошибка! Сертификат не принадлежит пользователю testiit.test2@yandex.ru!", test2, driver);
 
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }
-    }
+    }*/
 
     @Test
     @Order(8)
@@ -235,8 +235,10 @@ public class J_SigningDocument_Test10 extends testedo {
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
             Me.startEndingCertAndSendingFiles(driver);
             Me.ClickMenuFirstElement(5, driver);
-            test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
-            Me.CheckExit("true", test2, driver);
+            Me.Sleep(1500);
+            driver.findElement(By.cssSelector(".glyphicon-edit")).click();
+            test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("textContent");
+            Me.CheckExit("14: Ошибка! Документ уже подписан Вами.", test2, driver);
         } catch (Throwable e) {
             Me.Catch(driver, e);
         }

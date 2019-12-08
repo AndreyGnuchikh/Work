@@ -818,7 +818,7 @@ public class Me {
         Me.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
         Actions builder = new Actions(driver);
         builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
-        ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
+        ).moveByOffset(-10, -10).sendKeys(Keys.ARROW_DOWN).build().perform();
         Me.Sleep(1000);
         switch (NumButtonsMenu) {
             case (1):
@@ -867,6 +867,8 @@ public class Me {
                 break;
             case (14):
                 driver.findElement(By.id("cm-del-full_text")).click();
+                break;
+            case (15):
                 break;
 
         }
