@@ -1,8 +1,10 @@
 package iitChrome.login;
 
-import iitAdd.Drivers;
-import iitAdd.Me;
+import iitAdd.Drivers; 
+import methods.Cabinet;
+import methods.EnterAndExit;
 import iitAdd.iit8077;
+import methods.Check;
 import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.MethodOrderer;
@@ -24,7 +26,7 @@ public class Z_TestSleep60min_For_Test9 extends iit8077 {
         try {
             driver = Drivers.chrome();
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -33,19 +35,19 @@ public class Z_TestSleep60min_For_Test9 extends iit8077 {
     void A_Exit_LongTime_Test2() {
         try {
             driver.get(url);
-            Me.LogPass(LogAll, pass, driver);
+            EnterAndExit.LogPass(LogAll, pass, driver);
             driver.findElement(By.id("selectRole")).click();
             for (int i = 0; i < 61; i++) {
-                Me.Sleep(60000);
+                Thread.sleep(60000);
                 qty += 1;
                 System.out.println(qty + " minut");
             }
             driver.findElement(By.xpath("//*")).sendKeys(Keys.F5);
             text = driver.findElement(By.className("auth__title")).getText();
             System.out.println(text);
-            Me.CheckExit("¬ход в личный кабинет", text, driver);
+            Check.CheckExit("¬ход в личный кабинет", text, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 }

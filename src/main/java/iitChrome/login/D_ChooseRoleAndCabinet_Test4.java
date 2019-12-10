@@ -1,8 +1,10 @@
 package iitChrome.login;
 
-import iitAdd.Drivers;
-import iitAdd.Me;
+import iitAdd.Drivers; 
+import methods.Cabinet;
+import methods.EnterAndExit;
 import iitAdd.iit8077;
+import methods.Check;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +20,7 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
             driver = Drivers.chrome();
             driver.get(url);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -26,12 +28,12 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     @Order(1)
     void A_UserWithOneCabinet_Test1() {
         try {
-            Me.LogPass(logUser, pass, driver);
-            Me.Sleep(500);
+            EnterAndExit.LogPass(logUser, pass, driver);
+            Thread.sleep(500);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Me.CheckExit("Кабинет 1", checking, driver);
+            Check.CheckExit("Кабинет 1", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -39,12 +41,12 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     @Order(2)
     void B_WithOneCabinet_Test2() {
         try {
-            Me.LogPass(logAdmin, pass, driver);
-            Me.Sleep(2000);
+            EnterAndExit.LogPass(logAdmin, pass, driver);
+            Thread.sleep(2000);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Me.CheckExit("Все контрагенты", checking, driver);
+            Check.CheckExit("Все контрагенты", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -52,12 +54,12 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     @Order(3)
     void C_WithOneSupport_Test3() {
         try {
-            Me.LogPass(logSupport, pass, driver);
+            EnterAndExit.LogPass(logSupport, pass, driver);
             checking = driver.findElement(By.cssSelector(".cabinets > div:nth-child(1) > label:nth-child(1)")).getText();
             System.out.println(checking + "/");
-            Me.CheckExit("Выберите кабинет:", checking, driver);
+            Check.CheckExit("Выберите кабинет:", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -65,13 +67,13 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     @Order(4)
     void D_WithOneBylling_Test4() {
         try {
-            Me.LogPass(logBilling, pass, driver);
-            Me.Sleep(2000);
+            EnterAndExit.LogPass(logBilling, pass, driver);
+            Thread.sleep(2000);
             checking = driver.findElement(By.cssSelector("#bilLev1")).getText();
             System.out.println(checking);
-            Me.CheckExit("Биллинг", checking, driver);
+            Check.CheckExit("Биллинг", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -79,14 +81,14 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     @Order(5)
     void E_WithAB_Test5() {
         try {
-            Me.LogPass(logAdminBilling, pass, driver);
+            EnterAndExit.LogPass(logAdminBilling, pass, driver);
             driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
             checking = driver.findElement(By.id("select2-role-results")).getText();
             System.out.println(checking + "/");
-            Me.CheckExit("Admin\n" +
+            Check.CheckExit("Admin\n" +
                     "BillingEditor", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -94,16 +96,16 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     @Order(6)
     void F_WithALL_Test6() {
         try {
-            Me.LogPass(LogAll, pass, driver);
+            EnterAndExit.LogPass(LogAll, pass, driver);
             driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
             checking = driver.findElement(By.id("select2-role-results")).getText();
             System.out.println(checking + "/");
-            Me.CheckExit("Admin\n" +
+            Check.CheckExit("Admin\n" +
                     "User8077\n" +
                     "Support\n" +
                     "BillingEditor", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -111,20 +113,20 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     @Order(7)
     void G_User4cabinet_Test7() {
         try {
-            Me.LogPass(logManyCabinets, pass, driver);
+            EnterAndExit.LogPass(logManyCabinets, pass, driver);
 
-            Me.Sleep(2500);
+            Thread.sleep(2500);
             driver.findElement(By.id("select2-cabinet-container")).click();
-            Me.Sleep(1000);
+            Thread.sleep(1000);
             checking = driver.findElement(By.className("select2-results__options")).getAttribute("innerText");
             System.out.println(checking + "/");
-            Me.CheckExit("Переименованный кабинет\n" +
+            Check.CheckExit("Переименованный кабинет\n" +
                     "Все хорошо кабинет\n" +
                     "Кабинет Все хорошо\n" +
                     "Тест 150\n" +
                     "Все хорошо тест бд", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 

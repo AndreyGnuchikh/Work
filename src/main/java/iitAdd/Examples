@@ -1,3 +1,8 @@
+Как передать свойство по умолчанию
+Boolean.parseBoolean(System.getProperty("headless", "true"))
+
+Как передать их в конфиг запуска
+для Vm options: -ea -Dheadless=false
 
 Что нужно попробовать
 Что нужно попробовать
@@ -95,19 +100,19 @@ driver.findElement(By.id("cm-send_text")).click();
 
         **************************************** Choose first element in the table and right click ****************************************
           String row;
-                 Me.Sleep(1500);
+                 Thread.sleep(1500);
                  driver.findElement(By.cssSelector(".createDocument")).click();
-                 Me.Sleep(500);
+                 Thread.sleep(500);
                  driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
                  WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-                 Me.Sleep(200);
+                 Thread.sleep(200);
                  upload.sendKeys("C:\\Tools\\" + fileName);
-                 Me.Sleep(100);
+                 Thread.sleep(100);
                  driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
-                 Me.Sleep(3000);
+                 Thread.sleep(3000);
                  driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
                  // Click and found first element
-                 Me.Sleep(2500);
+                 Thread.sleep(2500);
                  ************************************
                  row  = driver.findElement(By.cssSelector(".dgrid-content")).getAttribute("textContent");
                  row = row.substring(0,36);

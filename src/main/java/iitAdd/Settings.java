@@ -2,7 +2,7 @@ package iitAdd;
 
 public class Settings {
     //FireFox
-    public static Boolean headless = false;
+    public static Boolean headless = true;
     public static Boolean logs = true;
 
     //Ждем формирование квитанций UPD
@@ -18,7 +18,7 @@ public class Settings {
     //public static String fio8 = "7"; это у нас тест 10 не испрользуется.	5047071020	Тест Все хорошо	ФИО 10 (2001 гост)
     //"ID маркера 67350 Пароль q5gbwf2h "
 
-    public static String fio11 = "1";  //ФИО 9 Гнучих Андрей 5047071020 Тест Все хорошо	ФИО 9 (2001 гост) // "ID маркера 67346 Пароль 967by1qp "
+    public static String fio9 = "1";  //ФИО 9 Гнучих Андрей 5047071020 Тест Все хорошо	ФИО 9 (2001 гост) // "ID маркера 67346 Пароль 967by1qp "
     public static String fio6 = "2";  //ФИО6 (2001)	5032291707	Тест Вход	ФИО 6 (2001 гост)             // "ID маркера 67345 Пароль c8wtk1xu "
     public static String fio = "3";   //ФИО1 (2001)	5047071020	Тест Все хорошо	ФИО 1 (2001 гост)         // "ID маркера 67357 Пароль h6b9g6dz "
     public static String fio5 = "4";  //ФИО5 (2001)	7812029408	Тест Вход 21	ФИО 5 (2001 гост)         // "ID маркера 67353 Пароль ma3x3xuf "

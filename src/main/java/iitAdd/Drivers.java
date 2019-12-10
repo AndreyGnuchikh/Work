@@ -37,9 +37,9 @@ public class Drivers extends Settings {
         return driver;
     }
 
-    public static WebDriver ff() {
+    public static WebDriver ff() throws InterruptedException {
 
-        Me.Sleep(1000);
+        Thread.sleep(1000);
         FirefoxProfile profile = new FirefoxProfile();
         System.setProperty("webdriver.gecko.driver", "C:\\Tools\\geckodriver.exe");
 
@@ -77,7 +77,7 @@ public class Drivers extends Settings {
     }
 
     public static WebDriver chrome() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Tools\\chromedriver.exe");
+        System.setProperty("webdriver.chroHelpUser.driver", "C:\\Tools\\chromedriver.exe");
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
 
         chromePrefs.put("download.default_directory", "C:\\Tools\\TestFile");

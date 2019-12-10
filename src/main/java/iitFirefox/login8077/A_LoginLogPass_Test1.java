@@ -1,9 +1,11 @@
 package iitFirefox.login8077;
 
 
-import iitAdd.Drivers;
-import iitAdd.Me;
+import iitAdd.Drivers; 
+import methods.Cabinet;
+import methods.EnterAndExit;
 import iitAdd.iit8077;
+import methods.Check;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,19 +26,19 @@ public class A_LoginLogPass_Test1 extends iit8077 {
             driver = Drivers.ff();
             driver.get(url);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
     @Test
     @Order(1)
     void A_AllRightTest1() {
         try {
-            Me.LogPass(log1log, pass, driver);
+            EnterAndExit.LogPass(log1log, pass, driver);
             checking = driver.findElement(By.className("auth__button")).getText();
             System.out.println(checking);
-            Me.CheckExit("Выбрать", checking, driver);
+            Check.CheckExit("Выбрать", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -44,13 +46,13 @@ public class A_LoginLogPass_Test1 extends iit8077 {
     @Order(2)
     void B_ContragentIsDisconnectedTest2() {
         try {
-            Me.LogPass(log2log, pass, driver);
+            EnterAndExit.LogPass(log2log, pass, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
-            Me.CheckExit("Внимание! Не удалось войти на портал. Контрагент отключен.", checking, driver);
+            Check.CheckExit("Внимание! Не удалось войти на портал. Контрагент отключен.", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -58,13 +60,13 @@ public class A_LoginLogPass_Test1 extends iit8077 {
     @Order(3)
     void C_ContragentIsBlockedTest3() {
         try {
-            Me.LogPass(log3log, pass, driver);
+            EnterAndExit.LogPass(log3log, pass, driver);
             checking = driver.findElement(By.cssSelector("#alertMessage > div:nth-child(3)")).getText();
 
             System.out.println(checking);
-            Me.CheckExit("УВАЖАЕМЫЙ ПОЛЬЗОВАТЕЛЬ УСЛУГ ОПЕРАТОРА ЭДО!", checking, driver);
+            Check.CheckExit("УВАЖАЕМЫЙ ПОЛЬЗОВАТЕЛЬ УСЛУГ ОПЕРАТОРА ЭДО!", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -72,13 +74,13 @@ public class A_LoginLogPass_Test1 extends iit8077 {
     @Order(4)
     void D_UserDontCatchtoContragentTest4() {
         try {
-            Me.LogPass(log4log, pass, driver);
+            Enter.LogPass(log4log, pass, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
-            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь не прикреплен ни к одному контрагенту.", checking, driver);
+            Check.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь не прикреплен ни к одному контрагенту.", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }*/
 
@@ -86,13 +88,13 @@ public class A_LoginLogPass_Test1 extends iit8077 {
     @Order(5)
     void E_UserIsBlockedTest5() {
         try {
-            Me.LogPass(log5log, pass, driver);
+            EnterAndExit.LogPass(log5log, pass, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
-            Me.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован.", checking, driver);
+            Check.CheckExit("Внимание! Вход в личный кабинет невозможен. Пользователь заблокирован.", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -100,13 +102,13 @@ public class A_LoginLogPass_Test1 extends iit8077 {
     @Order(6)
     void F_UserDontHaveRole6() {
         try {
-            Me.LogPass(log6log, pass, driver);
+            EnterAndExit.LogPass(log6log, pass, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
-            Me.CheckExit("Внимание! У пользователя не назначена роль.", checking, driver);
+            Check.CheckExit("Внимание! У пользователя не назначена роль.", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -114,12 +116,12 @@ public class A_LoginLogPass_Test1 extends iit8077 {
     @Order(7)
     void G_UserDontHaveCabinet7() {
         try {
-            Me.LogPass(log7log, pass, driver);
+            Enter.LogPass(log7log, pass, driver);
             checking = driver.findElement(By.cssSelector("#alertMessage > a:nth-child(5)")).getText();
             System.out.println(checking);
-            Me.CheckExit("support@iit.ru", checking, driver);
+            Check.CheckExit("support@iit.ru", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }*/
 
@@ -127,12 +129,12 @@ public class A_LoginLogPass_Test1 extends iit8077 {
     @Order(8)
     void H_WrongLogPass8() {
         try {
-            Me.LogPass(wrong7log, wrong7log, driver);
+            EnterAndExit.LogPass(wrong7log, wrong7log, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
             System.out.println(checking);
-            Me.CheckExit("Внимание! Авторизоваться не получилось. Проверьте правильность логина и пароля", checking, driver);
+            Check.CheckExit("Внимание! Авторизоваться не получилось. Проверьте правильность логина и пароля", checking, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 

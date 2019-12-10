@@ -1,8 +1,12 @@
 package iitFirefox.User8077;
 
-import iitAdd.Drivers;
-import iitAdd.Me;
+import iitAdd.Drivers; 
+import methods.Cabinet;
+import methods.HelpUser;
+import methods.EnterAndExit;
 import iitAdd.iit8077;
+import methods.Check;
+import methods.FileCreateAndLoading;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,11 +21,11 @@ public class R_WatchReceipts_Test18 extends iit8077 {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            Me.loggingCerts(upd, driver);
-            Me.RoleSwitch(2, driver);
-            Me.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.loggingCerts(upd, driver);
+            EnterAndExit.RoleSwitch(2, driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -29,19 +33,19 @@ public class R_WatchReceipts_Test18 extends iit8077 {
     @Order(1)
     void A_ReceiptOneSignAndDataSchF_Test1() {
         try {
-            Me.CreateFirstUPDDocumentAndSign("1", driver);
-            Me.ClickMenuFirstElement(9, driver);
-            Me.Sleep(1000);
+            FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
+            Cabinet.ClickMenuFirstElement(9, driver);
+            Thread.sleep(1000);
             CheckGreen("#file-operator-sc");
             CheckGreen("#file-operator-snc");
             CheckGreen("#file-operator-bi");
-            test = Me.Time();
+            test = HelpUser.Time();
             System.out.println(test);
             test2 = driver.findElement(By.cssSelector("#file-operator-sc > td:nth-child(3) > span:nth-child(1)")).getAttribute("textContent");
             test2 = test2.substring(0, 10);
-            Me.CheckExit(test, test2, driver);
+            Check.CheckExit(test, test2, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -49,22 +53,22 @@ public class R_WatchReceipts_Test18 extends iit8077 {
     @Order(2)
     void B_ReceiptOneSignAndDataSchFDop_Test2() {
         try {
-            Me.CreateFirstUPDDocumentAndSign("3", driver);
-            Me.ClickMenuFirstElement(9, driver);
-            Me.Sleep(1000);
+            FileCreateAndLoading.CreateFirstUPDDocumentAndSign("3", driver);
+            Cabinet.ClickMenuFirstElement(9, driver);
+            Thread.sleep(1000);
             test = driver.findElement(By.cssSelector("#file-operator-sc > td:nth-child(1) > span:nth-child(1)")).getAttribute("className");
-            Me.Check("td-operator-number numbergreen", test, driver);
+            Check.Check("td-operator-number numbergreen", test, driver);
             test = driver.findElement(By.cssSelector("#file-operator-snc > td:nth-child(1) > span:nth-child(1)")).getAttribute("className");
-            Me.Check("td-operator-number numbergreen", test, driver);
+            Check.Check("td-operator-number numbergreen", test, driver);
             test = driver.findElement(By.cssSelector("#file-operator-bi > td:nth-child(1) > span:nth-child(1)")).getAttribute("className");
-            Me.Check("td-operator-number numbergreen", test, driver);
-            test = Me.Time();
+            Check.Check("td-operator-number numbergreen", test, driver);
+            test = HelpUser.Time();
             System.out.println(test);
             test2 = driver.findElement(By.cssSelector("#file-operator-sc > td:nth-child(3) > span:nth-child(1)")).getAttribute("textContent");
             test2 = test2.substring(0, 10);
-            Me.CheckExit(test, test2, driver);
+            Check.CheckExit(test, test2, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -72,15 +76,15 @@ public class R_WatchReceipts_Test18 extends iit8077 {
     @Order(3)
     void C_NoReceiptAndDataDop_Test3() {
         try {
-            Me.CreateFirstUPDDocumentAndSign("2", driver);
-            Me.ClickMenuFirstElement(9, driver);
+            FileCreateAndLoading.CreateFirstUPDDocumentAndSign("2", driver);
+            Cabinet.ClickMenuFirstElement(9, driver);
 
             test2 = driver.findElement(By.id("cm-operator")).getAttribute("className");
 
             System.out.println(test2);
-            Me.CheckingContainsExit("dijitDisabled", test2, driver);
+            Check.CheckingContainsExit("dijitDisabled", test2, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -88,16 +92,16 @@ public class R_WatchReceipts_Test18 extends iit8077 {
     @Order(4)
     void D_AllReceiptAndDataSchF_Test4() {
         try {
-            Me.CreateFirstUPDDocumentAndSignAndSand("1", driver);
-            Me.Exit(driver);
-            Me.loggingCerts(upd2, driver);
-            Me.RoleSwitch(2, driver);
-            Me.startEndingCertAndSendingFiles(driver);
-            Me.Sleep(20000);
-            Me.OpenNameFolder("Ñ×Ô Íàèìåíîâàíèå", driver);
+            FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("1", driver);
+            EnterAndExit.Exit(driver);
+            EnterAndExit.loggingCerts(upd2, driver);
+            EnterAndExit.RoleSwitch(2, driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(20000);
+            Cabinet.OpenNameFolder("Ñ×Ô Íàèìåíîâàíèå", driver);
 
-            Me.ClickMenuFirstElement(9, driver);
-            Me.Sleep(2000);
+            Cabinet.ClickMenuFirstElement(9, driver);
+            Thread.sleep(2000);
             CheckGreen("#file-operator-sc");
             CheckGreen("#file-operator-snc");
             CheckGreen("#file-operator-bi");
@@ -114,7 +118,7 @@ public class R_WatchReceipts_Test18 extends iit8077 {
             CheckName("#file-operator-bc", "ÏÎÈ ?");
             CheckName("#file-operator-bnc", "ÈÎÈ ?");
 
-            test = Me.Time();
+            test = HelpUser.Time();
             System.out.println(test);
 
             CheckTime("#file-operator-sc", test);
@@ -125,9 +129,9 @@ public class R_WatchReceipts_Test18 extends iit8077 {
             CheckTime("#file-operator-bc", test);
             test2 = driver.findElement(By.cssSelector("#file-operator-bnc > td:nth-child(3) > span:nth-child(1)")).getAttribute("textContent");
             test2 = test2.substring(0, 10);
-            Me.CheckExit(test, test2, driver);
+            Check.CheckExit(test, test2, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -135,16 +139,16 @@ public class R_WatchReceipts_Test18 extends iit8077 {
     @Order(5)
     void E_AllReceiptAndDataSchFDOP_Test5() {
         try {
-            Me.CreateFirstUPDDocumentAndSignAndSand("3", driver);
-            Me.Exit(driver);
-            Me.loggingCerts(upd2, driver);
-            Me.RoleSwitch(2, driver);
-            Me.startEndingCertAndSendingFiles(driver);
-            Me.Sleep(20000);
-            Me.OpenNameFolder("ÓÏÄ 123", driver);
+            FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("3", driver);
+            EnterAndExit.Exit(driver);
+            EnterAndExit.loggingCerts(upd2, driver);
+            EnterAndExit.RoleSwitch(2, driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(20000);
+            Cabinet.OpenNameFolder("ÓÏÄ 123", driver);
 
-            Me.ClickMenuFirstElement(9, driver);
-            Me.Sleep(1000);
+            Cabinet.ClickMenuFirstElement(9, driver);
+            Thread.sleep(1000);
             CheckGreen("#file-operator-sc");
             CheckGreen("#file-operator-snc");
             CheckGreen("#file-operator-bi");
@@ -161,7 +165,7 @@ public class R_WatchReceipts_Test18 extends iit8077 {
             CheckName("#file-operator-bc", "ÏÎÈ ?");
             CheckName("#file-operator-bnc", "ÈÎÈ ?");
 
-            test = Me.Time();
+            test = HelpUser.Time();
             System.out.println(test);
 
             CheckTime("#file-operator-sc", test);
@@ -172,9 +176,9 @@ public class R_WatchReceipts_Test18 extends iit8077 {
             CheckTime("#file-operator-bc", test);
             test2 = driver.findElement(By.cssSelector("#file-operator-bnc > td:nth-child(3) > span:nth-child(1)")).getAttribute("textContent");
             test2 = test2.substring(0, 10);
-            Me.CheckExit(test, test2, driver);
+            Check.CheckExit(test, test2, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -182,33 +186,33 @@ public class R_WatchReceipts_Test18 extends iit8077 {
     @Order(6)
     void F_NoReceiptAndDataNoFormalDocument_Test6() {
         try {
-            Me.AddFile("1.html", driver);
-            Me.ClickMenuFirstElement(9, driver);
+            FileCreateAndLoading.AddFile("1.html", driver);
+            Cabinet.ClickMenuFirstElement(9, driver);
 
             test2 = driver.findElement(By.id("cm-operator")).getAttribute("className");
 
             System.out.println(test2);
-            Me.CheckingContainsExit("dijitDisabled", test2, driver);
+            Check.CheckingContainsExit("dijitDisabled", test2, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
-    void CheckGreen(String str) {
-        Me.Sleep(200);
+    void CheckGreen(String str) throws InterruptedException {
+        Thread.sleep(200);
         test = driver.findElement(By.cssSelector(str + " > td:nth-child(1) > span:nth-child(1)")).getAttribute("className");
-        Me.Check("td-operator-number numbergreen", test, driver);
-        Me.Sleep(200);
+        Check.Check("td-operator-number numbergreen", test, driver);
+        Thread.sleep(200);
     }
 
-    void CheckName(String str, String str2) {
+    void CheckName(String str, String str2) throws InterruptedException {
         test = driver.findElement(By.cssSelector(str + " > td:nth-child(2)")).getText();
-        Me.Check(str2, test, driver);
+        Check.Check(str2, test, driver);
     }
 
-    void CheckTime(String str, String test) {
+    void CheckTime(String str, String test) throws InterruptedException {
         test2 = driver.findElement(By.cssSelector(str + " > td:nth-child(3) > span:nth-child(1)")).getAttribute("textContent");
         test2 = test2.substring(0, 10);
-        Me.Check(test, test2, driver);
+        Check.Check(test, test2, driver);
     }
 }

@@ -1,8 +1,10 @@
 package iitFirefox.login8077;
 
-import iitAdd.Drivers;
-import iitAdd.Me;
+import iitAdd.Drivers; 
+import methods.Cabinet;
+import methods.EnterAndExit;
 import iitAdd.iit8077;
+import methods.Check;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +20,7 @@ public class I_ExitCabinet_Test9 extends iit8077 {
         try {
             driver = Drivers.ff();
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -27,15 +29,15 @@ public class I_ExitCabinet_Test9 extends iit8077 {
     void A_Exit_Test1() {
         try {
             driver.get(url);
-            Me.LogPass(LogAll, pass, driver);
+            EnterAndExit.LogPass(LogAll, pass, driver);
             driver.findElement(By.id("selectRole")).click();
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
-            Me.Sleep(2000);
+            Thread.sleep(2000);
             driver.findElement(By.cssSelector("Form.text-right > button:nth-child(1)")).click();
             text = driver.findElement(By.className("auth__title")).getText();
-            Me.CheckExit("¬ход в личный кабинет", text, driver);
+            Check.CheckExit("¬ход в личный кабинет", text, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 

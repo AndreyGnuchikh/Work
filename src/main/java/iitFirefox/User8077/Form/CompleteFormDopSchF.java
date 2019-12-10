@@ -1,6 +1,6 @@
 package iitFirefox.User8077.Form;
 
-import iitAdd.Me;
+import methods.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -10,17 +10,17 @@ import java.util.Date;
 public class CompleteFormDopSchF {
     public static WebDriver driver;
 
-    public static String DopSchF(WebDriver driver) {
+    public static String DopSchF(WebDriver driver) throws InterruptedException {
         Date date = new Date();
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("DopSchF " + date);
         driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();
         driver.findElement(By.cssSelector("#dateUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#datecorUPD")).click();
         driver.findElement(By.cssSelector("#datecorUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //Seller
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
@@ -41,7 +41,7 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector("#buyer-block > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div.col-md-9.col-sm-9 > span > span.selection > span")).click();
         driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("Все хорошо 2,0");
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//*[contains(text(),'Все хорошо 2,0')]")).click();
         driver.findElement(By.cssSelector("#buyer-compokpo")).sendKeys("1231241251");
         driver.findElement(By.cssSelector("#buyer-rusindex")).sendKeys("140057");
@@ -65,9 +65,9 @@ public class CompleteFormDopSchF {
         }
 
         System.out.println(test);
-        Me.Sleep(1000);
+        Thread.sleep(1000);
         driver.findElement(By.id(test)).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //2 Page#
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
@@ -86,7 +86,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("#select2-const-country-results > li:nth-child(6) > option")).click();
         driver.findElement(By.cssSelector("div.col-sm-4:nth-child(3) > input:nth-child(1)")).sendKeys("100500");
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
-        Me.Sleep(1000);
+        Thread.sleep(1000);
         //3 page
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Наименование документа");
@@ -121,31 +121,31 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector(".inputFormat-docConnectDescriptions-group-optional")).sendKeys("Описание");
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.WaitElementToBeClickableAndClick(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)",driver);
-        Me.Sleep(1000);
+        Element.WaitElementToBeClickableAndClick(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)",driver);
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(3000);
+        Thread.sleep(3000);
         String test2 = "" + date;
         return test2;
     }
 
-    public static String DopSchF_IP(WebDriver driver) {
+    public static String DopSchF_IP(WebDriver driver) throws InterruptedException {
         Date date = new Date();
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("DopSchF_IP " + date);
         driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#dateUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#datecorUPD")).click();
         driver.findElement(By.cssSelector("#datecorUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //Seller
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
@@ -166,10 +166,10 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector("#buyer-formaction")).click();
         driver.findElement(By.cssSelector("#buyer-formaction > option:nth-child(2)")).click();
-        Me.Sleep(2000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("#buyer-block > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div.col-md-9.col-sm-9 > span > span.selection > span")).click();
         driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("Г");
-        Me.Sleep(500);
+        Thread.sleep(500);
 
         driver.findElement(By.xpath("//*[contains(text(),'Гнучих')]")).click();
         driver.findElement(By.cssSelector("#buyer-rusreg")).click();
@@ -195,7 +195,7 @@ public class CompleteFormDopSchF {
         }
 
         System.out.println(test);
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.id(test)).click();
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //2 Page#
@@ -215,7 +215,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("#select2-const-country-results > li:nth-child(6) > option")).click();
         driver.findElement(By.cssSelector("div.col-sm-4:nth-child(3) > input:nth-child(1)")).sendKeys("100500");
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
-        Me.Sleep(1000);
+        Thread.sleep(1000);
         //3 page
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Наименование документа");
@@ -250,31 +250,31 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector(".inputFormat-docConnectDescriptions-group-optional")).sendKeys("Описание");
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Me.Sleep(1500);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(7000);
+        Thread.sleep(7000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(1000);
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(3000);
+        Thread.sleep(3000);
         String test2 = "" + date;
         return test2;
     }
 
-    public static String DopSchF_IP_3Page(WebDriver driver) {
+    public static String DopSchF_IP_3Page(WebDriver driver) throws InterruptedException {
         Date date = new Date();
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("DopSchF_IP_3Page " + date);
         driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();
         driver.findElement(By.cssSelector("#dateUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#datecorUPD")).click();
         driver.findElement(By.cssSelector("#datecorUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //Seller
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
@@ -295,10 +295,10 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector("#buyer-formaction")).click();
         driver.findElement(By.cssSelector("#buyer-formaction > option:nth-child(2)")).click();
-        Me.Sleep(2000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("#buyer-block > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div.col-md-9.col-sm-9 > span > span.selection > span")).click();
         driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("Г");
-        Me.Sleep(500);
+        Thread.sleep(500);
 
         driver.findElement(By.xpath("//*[contains(text(),'Гнучих')]")).click();
         driver.findElement(By.cssSelector("#buyer-rusreg")).click();
@@ -324,7 +324,7 @@ public class CompleteFormDopSchF {
         }
 
         System.out.println(test);
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.id(test)).click();
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //2 Page#
@@ -344,7 +344,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("#select2-const-country-results > li:nth-child(6) > option")).click();
         driver.findElement(By.cssSelector("div.col-sm-4:nth-child(3) > input:nth-child(1)")).sendKeys("100500");
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
-        Me.Sleep(1000);
+        Thread.sleep(1000);
         //3 page
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Наименование документа");
@@ -362,7 +362,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("div.acceptanceCert-table-row:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)")).click();
         //Представитель организации, которой доверена отгрузка
         driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия 2");
         driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя 2 ");
         driver.findElement(By.cssSelector("#recvInfo_representative > div:nth-child(4) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Отчество 2 ");
@@ -383,31 +383,31 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector(".inputFormat-docConnectDescriptions-group-optional")).sendKeys("Описание");
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.Sleep(500);
-        Me.WaitElementToBeClickableAndClick(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)",driver);
-        Me.Sleep(1000);
+        Thread.sleep(500);
+        Element.WaitElementToBeClickableAndClick(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)",driver);
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(1500);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(3000);
+        Thread.sleep(3000);
         String test2 = "" + date;
         return test2;
     }
 
-    public static String DopSchF_IP_3Page_bloc3(WebDriver driver) {
+    public static String DopSchF_IP_3Page_bloc3(WebDriver driver) throws InterruptedException {
         Date date = new Date();
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("DopSchF_IP_3Page_bloc3 " + date);
         driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();
         driver.findElement(By.cssSelector("#dateUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#datecorUPD")).click();
         driver.findElement(By.cssSelector("#datecorUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //Seller
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
@@ -428,10 +428,10 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector("#buyer-formaction")).click();
         driver.findElement(By.cssSelector("#buyer-formaction > option:nth-child(2)")).click();
-        Me.Sleep(2000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("#buyer-block > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div.col-md-9.col-sm-9 > span > span.selection > span")).click();
         driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("Г");
-        Me.Sleep(500);
+        Thread.sleep(500);
 
         driver.findElement(By.xpath("//*[contains(text(),'Гнучих')]")).click();
         driver.findElement(By.cssSelector("#buyer-rusreg")).click();
@@ -457,7 +457,7 @@ public class CompleteFormDopSchF {
         }
 
         System.out.println(test);
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.id(test)).click();
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //2 Page#
@@ -477,7 +477,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("#select2-const-country-results > li:nth-child(6) > option")).click();
         driver.findElement(By.cssSelector("div.col-sm-4:nth-child(3) > input:nth-child(1)")).sendKeys("100500");
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
-        Me.Sleep(1000);
+        Thread.sleep(1000);
         //3 page
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Наименование документа");
@@ -494,9 +494,9 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("#itemTransfer-date")).click();
         driver.findElement(By.cssSelector("div.acceptanceCert-table-row:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)")).click();
         //Работник организации
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#receiverInfo_groupSelector_3")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия 3");
         driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя 3");
         driver.findElement(By.cssSelector("#recvInfo_individual > div:nth-child(4) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Отчество 3");
@@ -514,30 +514,30 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector(".inputFormat-docConnectDescriptions-group-optional")).sendKeys("Описание");
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Me.Sleep(1500);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Me.WaitElementToBeClickableAndClick(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)",driver);
-        Me.Sleep(1000);
+        Element.WaitElementToBeClickableAndClick(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)",driver);
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(3000);
+        Thread.sleep(3000);
         String test2 = "" + date;
         return test2;
     }
 
-    public static String DopSchFClick(WebDriver driver) {
+    public static String DopSchFClick(WebDriver driver) throws InterruptedException {
         Date date = new Date();
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();
         driver.findElement(By.cssSelector("#dateUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#datecorUPD")).click();
         driver.findElement(By.cssSelector("#datecorUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //Seller
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
@@ -558,7 +558,7 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector("#buyer-block > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div.col-md-9.col-sm-9 > span > span.selection > span")).click();
         driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("Все хорошо 2,0");
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//*[contains(text(),'Все хорошо 2,0')]")).click();
         driver.findElement(By.cssSelector("#buyer-compokpo")).sendKeys("1231241251");
         driver.findElement(By.cssSelector("#buyer-rusindex")).sendKeys("140057");
@@ -588,7 +588,7 @@ public class CompleteFormDopSchF {
             test = test.substring(0, 7);
         }
         System.out.println(test);
-        Me.Sleep(1500);
+        Thread.sleep(1500);
 
         driver.findElement(By.id(test)).click();
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
@@ -609,7 +609,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("#select2-const-country-results > li:nth-child(6) > option")).click();
         driver.findElement(By.cssSelector("div.col-sm-4:nth-child(3) > input:nth-child(1)")).sendKeys("100500");
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
-        Me.Sleep(1000);
+        Thread.sleep(1000);
         //3 page
         driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Наименование документа");
@@ -644,7 +644,7 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector(".inputFormat-docConnectDescriptions-group-optional")).sendKeys("Описание");
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Me.Sleep(1000);
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
 
         String test2 = "" + date;

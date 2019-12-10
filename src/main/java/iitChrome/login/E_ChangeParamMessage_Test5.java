@@ -1,8 +1,12 @@
 package iitChrome.login;
 
-import iitAdd.Drivers;
-import iitAdd.Me;
+import iitAdd.Drivers; 
+import methods.Cabinet;
+import methods.Element;
+import methods.EnterAndExit;
 import iitAdd.iit8077;
+import methods.Email;
+import methods.FileCreateAndLoading;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,9 +23,9 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
     @BeforeEach
     void A_DelatedCheckboxs() {
         try {
-            Me.DeletedCabinetMarkerAndDeletedEmail(url, pass5log, testIitTest2, EmailPass, driver);
+            Email.DeletedCabinetMarkerAndDeletedEmail(url, pass5log, testIitTest2, EmailPass, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -31,28 +35,28 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
         try {
             driver = Drivers.chrome();
             driver.get(url);
-            Me.LogPass(pass5log, pass5log, driver);
-            Me.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.LogPass(pass5log, pass5log, driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
             driver.findElement(By.cssSelector("div.statistic:nth-child(4) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
             driver.findElement(By.cssSelector("#not-1")).click();
             driver.findElement(By.cssSelector("#collapseTwo > div:nth-child(2) > button:nth-child(1)")).click();
-            Me.Sleep(1000);
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
             //add file
-            Me.AddFileAndClickMenu(12, "1.html", driver);
-            Me.Sleep(1000);
-            Me.SendCabinet("Тест все хорошо", "Переименованный кабинет", driver);
-            Me.Sleep(1000);
-            Me.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
-            Me.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
-            Me.Sleep(500);
+            FileCreateAndLoading.AddFileAndClickMenu(12, "1.html", driver);
+            Thread.sleep(1000);
+            Cabinet.SendCabinet("Тест все хорошо", "Переименованный кабинет", driver);
+            Thread.sleep(1000);
+            Email.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
+            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Thread.sleep(500);
             String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
             System.out.println(test1);
             if (test1.equals("Портал ЭДО ИИТ: Извещение о пересылке документа")) {
                 System.out.println("Successful");
-                Me.Sleep(500);
+                Thread.sleep(500);
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
                 driver.quit();
@@ -61,7 +65,7 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
                 Assertions.fail();
             }
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -72,30 +76,30 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
             Date date = new Date();
             driver = Drivers.chrome();
             driver.get(url);
-            Me.LogPass(pass5log, pass5log, driver);
-            Me.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.LogPass(pass5log, pass5log, driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
             driver.findElement(By.cssSelector("div.statistic:nth-child(4) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
             driver.findElement(By.cssSelector("#not-2")).click();
             driver.findElement(By.cssSelector("#collapseTwo > div:nth-child(2) > button:nth-child(1)")).click();
-            Me.Sleep(500);
+            Thread.sleep(500);
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
             //add file
-            Me.AddFileAndClickMenu(10, "1.html", driver);
-            Me.Sleep(1500);
+            FileCreateAndLoading.AddFileAndClickMenu(10, "1.html", driver);
+            Thread.sleep(1500);
             driver.findElement(By.xpath("//*[@id=\"cn-comment\"]")).sendKeys("Саглосование ", date.toString());
-            Me.Sleep(1500);
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector("#modalSendConfirm")).click();
-            Me.Sleep(1000);
-            Me.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
-            Me.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
-            Me.Sleep(500);
+            Thread.sleep(1000);
+            Email.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
+            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Thread.sleep(500);
             String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
             System.out.println(test1);
             if (test1.equals("Портал ЭДО ИИТ: Извещение о согласовании документа")) {
                 System.out.println("Successful");
-                Me.Sleep(500);
+                Thread.sleep(500);
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
 
@@ -105,7 +109,7 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
                 Assertions.fail();
             }
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -115,29 +119,29 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
         try {
             driver = Drivers.chrome();
             driver.get(url);
-            Me.LogPass(pass5log, pass5log, driver);
-            Me.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.LogPass(pass5log, pass5log, driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
             driver.findElement(By.cssSelector("div.statistic:nth-child(4) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
             driver.findElement(By.cssSelector("#not-3")).click();
             driver.findElement(By.cssSelector("#collapseTwo > div:nth-child(2) > button:nth-child(1)")).click();
-            Me.Sleep(500);
+            Thread.sleep(500);
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
             //add file
-            Me.AddFileAndClickMenu(7, "1.html", driver);
-            Me.Sleep(1500);
+            FileCreateAndLoading.AddFileAndClickMenu(7, "1.html", driver);
+            Thread.sleep(1500);
             driver.findElement(By.xpath("//*[@id=\"modalSetTrust\"]")).click();
-            Me.Sleep(1000);
-            Me.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
-            Me.Sleep(1000);
-            Me.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
-            Me.Sleep(1000);
+            Thread.sleep(1000);
+            Email.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
+            Thread.sleep(1000);
+            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Thread.sleep(1000);
             String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
             System.out.println(test1);
             if (test1.equals("Портал ЭДО ИИТ: Изменение ответственного исполнителя")) {
                 System.out.println("Successful");
-                Me.Sleep(500);
+                Thread.sleep(500);
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
                 driver.quit();
@@ -146,7 +150,7 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
                 Assertions.fail();
             }
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 }

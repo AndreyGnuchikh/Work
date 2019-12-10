@@ -1,8 +1,10 @@
 package iitChrome.login;
 
-import iitAdd.Drivers;
-import iitAdd.Me;
+import iitAdd.Drivers; 
+import methods.Cabinet;
+import methods.EnterAndExit;
 import iitAdd.iit8077;
+import methods.Check;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,13 +19,13 @@ public class G_ChangePassword_Test7 extends iit8077 {
         try {
             driver = Drivers.chrome();
             driver.get(url);
-            Me.LogPass(q7log, pass7log, driver);
-            Me.Sleep(1000);
+            EnterAndExit.LogPass(q7log, pass7log, driver);
+            Thread.sleep(1000);
             driver.findElement(By.id("user-nav")).click();
-            Me.Sleep(2000);
+            Thread.sleep(2000);
             driver.findElement(By.cssSelector("#user-panel > div:nth-child(6) > div > div.nav-title.collapsed")).click();
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -34,9 +36,9 @@ public class G_ChangePassword_Test7 extends iit8077 {
             log(pass7log, pass7log, pass7log);
             String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
             System.out.println(checkingTest);
-            Me.CheckExit("Пароль был успешно изменен", checkingTest, driver);
+            Check.CheckExit("Пароль был успешно изменен", checkingTest, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -47,9 +49,9 @@ public class G_ChangePassword_Test7 extends iit8077 {
             log(pass7log, pass7log, wrong7log);
             String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
             System.out.println(checkingTest);
-            Me.CheckExit("Новый пароль введен повторно неверно!", checkingTest, driver);
+            Check.CheckExit("Новый пароль введен повторно неверно!", checkingTest, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
@@ -61,19 +63,19 @@ public class G_ChangePassword_Test7 extends iit8077 {
 
             String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
             System.out.println(checkingTest);
-            Me.CheckExit("Старый пароль введен неверно", checkingTest, driver);
+            Check.CheckExit("Старый пароль введен неверно", checkingTest, driver);
         } catch (Throwable e) {
-            Me.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
-    void log(String log1, String log2, String log3) {
+    void log(String log1, String log2, String log3) throws InterruptedException {
         driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[1]/div[1]/input")).sendKeys(log1);
         driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[1]/div[2]/input")).sendKeys(log2);
         driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[1]/div[3]/input")).sendKeys(log3);
-        Me.Sleep(500);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[2]/button")).click();
-        Me.Sleep(2000);
+        Thread.sleep(2000);
     }
 
 
