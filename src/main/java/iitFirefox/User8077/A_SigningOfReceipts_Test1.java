@@ -65,7 +65,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             test = AddDocumentUPDUserASChF_Test2.add();
-            Thread.sleep(1500);
+            Thread.sleep(2500);
             Cabinet.OpenNameFolder("СЧФ Наименование", driver);
             Sign.SignFirstFileUDP(test, driver);
             Thread.sleep(60000);

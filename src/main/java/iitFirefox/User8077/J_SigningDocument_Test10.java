@@ -202,27 +202,27 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-    @Test
+     /*@Test
     @Order(7)
     void G_NoCerts_Test7() {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.LogPass(pass5log, pass5log, driver);
+            Thread.sleep(500);
+            Enter.LogPass(pass5log, pass5log, driver);
             Thread.sleep(2000);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Enter.startEndingCertAndSendingFiles(driver);
             FileCreateAndLoading.AddFile("1.html", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
-            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+            test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getText();
             System.out.println(test2);
-            Check.CheckingContainsExit("Для прикрепления сертификата к Вашей учетной записи обратитесь", test2, driver);
+            Check.CheckingContainsExit("10: Ошибка! Сертификат не принадлежит пользователю testiit.test2@yandex.ru!", test2, driver);
 
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
-    }
-
+    }*/
 
     @Test
     @Order(8)
@@ -237,8 +237,10 @@ public class J_SigningDocument_Test10 extends iit8077 {
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Cabinet.ClickMenuFirstElement(5, driver);
-            test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
-            Check.CheckExit("true", test2, driver);
+            Thread.sleep(1500);
+            driver.findElement(By.cssSelector(".glyphicon-edit")).click();
+            test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("textContent");
+            Check.CheckExit("14: Ошибка! Документ уже подписан Вами.", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -259,7 +261,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
             getRuntime().exec("taskkill /im nmcades.exe");
             Thread.sleep(1000);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getText();
-            Check.CheckExit("3: Ошибка при создании подписи", test2, driver);
+            Check.CheckExit("10: Ошибка! Сертификат не принадлежит пользователю Нет автопароля!", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

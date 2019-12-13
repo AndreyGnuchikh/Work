@@ -59,7 +59,7 @@ public class AddDocumentUPDUserACT extends iit8077 {
         SOAPElement xml = CreateUPDseller.addChildElement("xml", tem);
         serviceId.addTextNode("00000000-0000-0000-0000-000000000059");
         cabinetId.addTextNode("02cfa741-4b64-45cc-a5fa-c0964a9c0335");
-        name.addTextNode("ACT.xml");
+        name.addTextNode("820ACT.xml");
         comment.addTextNode("" + date);
         orgName.addTextNode("Тест Все хорошо");
         inn.addTextNode("5047071020");

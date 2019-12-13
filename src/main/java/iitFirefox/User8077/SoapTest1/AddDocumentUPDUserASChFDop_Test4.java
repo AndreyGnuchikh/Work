@@ -59,7 +59,7 @@ public class AddDocumentUPDUserASChFDop_Test4 extends iit8077 {
         SOAPElement xml = CreateUPDseller.addChildElement("xml", tem);
         serviceId.addTextNode("00000000-0000-0000-0000-000000000060");
         cabinetId.addTextNode("718c47e2-c08a-43e6-88e9-6053750e7581");
-        name.addTextNode("oldÑ×ÔDOP.xml");
+        name.addTextNode("820Ñ×ÔDOP.xml");
         comment.addTextNode("" + date);
         orgName.addTextNode("Âñå õîðîøî 2,0");
         inn.addTextNode("1653001883");

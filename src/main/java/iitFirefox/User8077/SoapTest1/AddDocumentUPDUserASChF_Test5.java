@@ -59,7 +59,7 @@ public class AddDocumentUPDUserASChF_Test5 extends iit8077 {
         SOAPElement xml = CreateUPDseller.addChildElement("xml", tem);
         serviceId.addTextNode("00000000-0000-0000-0000-000000000059");
         cabinetId.addTextNode("0f95391c-1129-459b-a7d9-1af8f80df38d");
-        name.addTextNode("oldСЧФ.xml");
+        name.addTextNode("820СЧФ.xml");
         comment.addTextNode("" + date);
         orgName.addTextNode("Тест Все хорошо");
         inn.addTextNode("5047071020");
