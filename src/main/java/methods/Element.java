@@ -22,7 +22,7 @@ public class Element {
     public static void WaitElementToBeClickableAndClick(int xpath, String link, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName() + " " + link);
         WebDriverWait wait = new WebDriverWait(driver, 60);
-        Thread.sleep(1000);
+        Thread.sleep(1100);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(link))));
         Thread.sleep(500);
         driver.findElement(By.xpath(link)).click();

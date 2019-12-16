@@ -123,6 +123,7 @@ public class EnterAndExit {
             driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(2)")).click();
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+            Thread.sleep(500);
             Element.WaitElementToBeClickableAndClick(20,"button.btn:nth-child(5)",driver);
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
             System.out.println("receipts Signing");
