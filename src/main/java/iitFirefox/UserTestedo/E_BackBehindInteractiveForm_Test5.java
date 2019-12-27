@@ -44,7 +44,7 @@ public class E_BackBehindInteractiveForm_Test5 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteForm.SCHFNoClick(driver);
+            CompleteForm.SCHF("NO",driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);
@@ -75,7 +75,7 @@ public class E_BackBehindInteractiveForm_Test5 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormAct.ActClick(driver);
+            CompleteFormAct.Act("NO",driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);
@@ -105,7 +105,7 @@ public class E_BackBehindInteractiveForm_Test5 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
-            CompleteFormDopSchF.DopSchFClick(driver);
+            CompleteFormDopSchF.DopSchF("NO",driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);

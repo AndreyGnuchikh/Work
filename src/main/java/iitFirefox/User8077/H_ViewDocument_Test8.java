@@ -99,7 +99,7 @@ public class H_ViewDocument_Test8 extends iit8077 {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
-            CompleteFormDopSchF.DopSchF(driver);
+            CompleteFormDopSchF.DopSchF("YES",driver);
             Cabinet.ClickMenuFirstElement(2, driver);
             test2 = driver.findElement(By.cssSelector("#butPrintUPD > button:nth-child(1)")).getText();
             Check.Check("Закрыть", test2, driver);

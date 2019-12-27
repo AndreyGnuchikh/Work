@@ -190,7 +190,7 @@ public class A_CreateContrAgentset extends iit8077{
         contract(driver, "#newcontr-bankBIK", "044525225");
         contract(driver, "#newcontr-bankKS", "30101810400000000222");
         contract(driver, "#newcontr-servicename", "Название сервиса");
-        ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+        Cabinet.Up(driver);
         contract(driver, "#newcontr-edoiden", "Идентификатор участника ЭДО");
 
     }

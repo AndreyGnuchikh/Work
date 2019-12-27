@@ -107,6 +107,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             driver.get(url);
             EnterAndExit.loggingCerts(fio9, driver);
             Thread.sleep(1500);
+            EnterAndExit.RoleSwitch(2,driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Thread.sleep(500);
             FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
@@ -114,7 +115,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Thread.sleep(1500);
             test2 = driver.findElement(By.cssSelector(".resptext")).getAttribute("innerText");
             System.out.println(test2);
-            Check.CheckExit("D_Signing_Schf_Error_Test4, для Вас не заполнена информация, необходимая для подписания УПД.\n" +
+            Check.CheckExit("ФИО 9 (2012), для Вас не заполнена информация, необходимая для подписания УПД.\n" +
                     "Для добавления необходимых сведений нажмите на Ваше ФИО в правом верхнем углу Личного кабинета и заполните блок \"Настроить область полномочий\" и сохраните изменения.\n" +
                     "Либо свяжитесь с технической поддержкой ООО \"ИИТ\":\n" +
                     "e-mail: support@iit.ru\n" +
@@ -143,7 +144,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Thread.sleep(500);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("textContent");
             System.out.println(test2);
-            Check.CheckExit("Ошибка! В сертификате Пользователя отсутствует информация о должности", test2, driver);
+            Check.CheckExit("9: Ошибка! У Вас отсутствует допуск для подписания формализованных документов", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -167,7 +168,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Thread.sleep(500);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("textContent");
             System.out.println(test2);
-            Check.CheckExit("Ошибка! В сертификате Пользователя отсутствует информация о должности", test2, driver);
+            Check.CheckExit("9: Ошибка! У Вас отсутствует допуск для подписания формализованных документов", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -246,10 +247,6 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Thread.sleep(1000);
             Check.Check("УПД", test, driver);
             Thread.sleep(500);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Thread.sleep(500);
-            Check.Check("2", test, driver);
-            Thread.sleep(500);
             test = driver.findElement(By.id("position")).getAttribute("value");
             Thread.sleep(500);
             Check.Check("Должность 2", test, driver);
@@ -292,7 +289,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             test = driver.findElement(By.id("surname")).getAttribute("value");
             Check.Check("УПД", test, driver);
             test = driver.findElement(By.id("name")).getAttribute("value");
-            Check.Check("2", test, driver);
+            Check.Check(" ", test, driver);
             test = driver.findElement(By.id("position")).getAttribute("value");
             Check.Check("Должность 2", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");

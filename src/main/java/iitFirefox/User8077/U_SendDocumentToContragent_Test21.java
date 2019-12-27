@@ -428,7 +428,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
                 driver.findElement(By.cssSelector("#create")).click();
                 Thread.sleep(1000);
                 // Add act
-                test2 = CompleteFormAct.Act(driver);
+                test2 = CompleteFormAct.Act("Yes",driver);
                 Cabinet.ClickMenuFirstElement(3, driver);
                 Thread.sleep(500);
                 test2 = driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(2)")).getAttribute("outerHTML");

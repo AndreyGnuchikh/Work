@@ -58,6 +58,10 @@ public class I_RenamingDocument_Test9 extends iit8077 {
     @Order(2)
     void B_SignDocumentAndCheck_Test2() {
         try {
+            EnterAndExit.Exit(driver);
+            EnterAndExit.loggingCerts(upd,driver);
+            EnterAndExit.RoleSwitch(2,driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
             row = null;
             row = FileCreateAndLoading.AddFile("1.html", driver);
             Sign.SignFirstFile(driver);
@@ -70,7 +74,7 @@ public class I_RenamingDocument_Test9 extends iit8077 {
             ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
             // Get perentElement Disabled menu
             Thread.sleep(2000);
-            test = driver.findElement(By.id("cm-sign")).getAttribute("class");
+            test = driver.findElement(By.id("cm-rename")).getAttribute("class");
             System.out.println(test);
             Check.CheckExit("dijitReset dijitMenuItem dijitMenuItemDisabled dijitDisabled", test, driver);
         } catch (Throwable e) {

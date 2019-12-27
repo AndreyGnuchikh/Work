@@ -55,16 +55,18 @@ public class Sign {
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
         Thread.sleep(1000);
         Element.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
-        Thread.sleep(1000);
+        Thread.sleep(1200);
 
         builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
         ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
         driver.findElement(By.id("cm-sign_text")).click();
-        Thread.sleep(4000);
+        Thread.sleep(4300);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("2");
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector("#recvInfo_worker > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Èìÿ2");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalSign")).click();
         Thread.sleep(7000);

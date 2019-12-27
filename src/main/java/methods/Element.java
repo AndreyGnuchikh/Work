@@ -15,7 +15,7 @@ public class Element {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         Thread.sleep(1200);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector(link))));
-        Thread.sleep(500);
+        Thread.sleep(600);
         driver.findElement(By.cssSelector(link)).click();
     }
 

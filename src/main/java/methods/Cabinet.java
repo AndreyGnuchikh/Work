@@ -113,6 +113,7 @@ public class Cabinet {
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) > span:nth-child(1)")).click();
     }
     public static void SendCabinet(String who, String cabinet, String coworker, WebDriver driver) throws InterruptedException {
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".selectize-input")).click();
         driver.findElement(By.cssSelector(".selectize-input > input:nth-child(1)")).sendKeys(who);
         Thread.sleep(2000);
@@ -130,5 +131,12 @@ public class Cabinet {
 
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) > span:nth-child(1)")).click();
+    }
+
+    public static void Up(WebDriver driver){
+        ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+    }
+    public static void Down(WebDriver driver){
+        ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
     }
 }

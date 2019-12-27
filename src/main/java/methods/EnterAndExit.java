@@ -27,6 +27,7 @@ public class EnterAndExit {
         System.out.println("Login: " + login);
         Thread.sleep(1500);
         driver.findElement(By.className("auth__tab-item--right")).click();
+        Thread.sleep(500);
         Element.WaitElementToBeClickableAndClick(1, "//*[@id=\"keyModal_body\"]/option[" + login + "]", driver);
         Thread.sleep(500);
         driver.findElement(By.className("btnSelectKey")).click();
@@ -36,7 +37,7 @@ public class EnterAndExit {
 
         if (!url.equals(iit8077.urlsert)) {
             String test;
-            Thread.sleep(1000);
+            Thread.sleep(1300);
             test = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-footer > button")).getAttribute("clientTop");
             Thread.sleep(1000);
             if (test.equals("1")) {
@@ -123,9 +124,7 @@ public class EnterAndExit {
             driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(2)")).click();
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-            Thread.sleep(500);
-            Element.WaitElementToBeClickableAndClick(20,"button.btn:nth-child(5)",driver);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             System.out.println("receipts Signing");
         }
         if (driver.findElement(By.cssSelector("#userAlertModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1)")).isDisplayed()) {

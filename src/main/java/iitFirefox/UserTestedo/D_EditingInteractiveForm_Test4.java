@@ -52,7 +52,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            test2 = CompleteForm.SCHF(driver);
+            test2 = CompleteForm.SCHF("Yes",driver);
             Cabinet.ClickMenuFirstElement(3, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#numberSf")).clear();
@@ -91,7 +91,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormAct.Act(driver);
+            test2 = CompleteFormAct.Act("Yes",driver);
             Cabinet.ClickMenuFirstElement(3, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#numberActEW")).clear();
@@ -131,7 +131,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormDopSchF.DopSchF(driver);
+            test2 = CompleteFormDopSchF.DopSchF("YES",driver);
             Cabinet.ClickMenuFirstElement(3, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#numberUPD")).clear();
@@ -166,7 +166,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
-            test2 = CompleteForm.SCHF(driver);
+            test2 = CompleteForm.SCHF("Yes",driver);
             CheckDisableButtonSign();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -187,7 +187,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
-            test2 = CompleteFormAct.Act(driver);
+            test2 = CompleteFormAct.Act("Yes",driver);
             CheckDisableButtonSign();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -209,7 +209,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormDopSchF.DopSchF(driver);
+            test2 = CompleteFormDopSchF.DopSchF("YES",driver);
             CheckDisableButtonSign();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);

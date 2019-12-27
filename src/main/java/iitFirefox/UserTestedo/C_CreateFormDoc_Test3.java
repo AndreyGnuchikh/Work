@@ -42,7 +42,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            test2 = CompleteForm.SCHF(driver);
+            test2 = CompleteForm.SCHF("Yes",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -75,7 +75,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormAct.Act(driver);
+            test2 = CompleteFormAct.Act("Yes",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -109,7 +109,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
             // Add ρχτ
-            test2 = CompleteFormDopSchF.DopSchF(driver);
+            test2 = CompleteFormDopSchF.DopSchF("YES",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -140,7 +140,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            test2 = CompleteForm.SCHFIP(driver);
+            test2 = CompleteForm.SCHF("IP",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -173,7 +173,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            test2 = CompleteFormAct.ActIP(driver);
+            test2 = CompleteFormAct.Act("IP",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -207,7 +207,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
             // Add ρχτ
-            test2 = CompleteFormDopSchF.DopSchF_IP(driver);
+            test2 = CompleteFormDopSchF.DopSchF("IP",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -242,7 +242,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
             // Add ρχτ
-            test2 = CompleteFormDopSchF.DopSchF_IP_3Page(driver);
+            test2 = CompleteFormDopSchF.DopSchF_IP_3Page(1,driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -276,7 +276,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
             // Add ρχτ
-            test2 = CompleteFormDopSchF.DopSchF_IP_3Page_bloc3(driver);
+            test2 = CompleteFormDopSchF.DopSchF_IP_3Page(2,driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");

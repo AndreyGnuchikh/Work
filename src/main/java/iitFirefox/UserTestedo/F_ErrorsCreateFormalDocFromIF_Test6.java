@@ -46,7 +46,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteForm.SCHFNoClick(driver);
+            CompleteForm.SCHF("NO",driver);
             System.out.println(date);
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
@@ -81,7 +81,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteForm.SCHFNoClick(driver);
+            CompleteForm.SCHF("NO",driver);
             System.out.println(date);
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
@@ -109,7 +109,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormAct.ActClick(driver);
+            CompleteFormAct.Act("NO",driver);
             System.out.println(date);
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
@@ -145,7 +145,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormAct.ActClick(driver);
+            CompleteFormAct.Act("NO",driver);
             System.out.println(date);
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
@@ -173,10 +173,10 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormAct.ActClick(driver);
+            CompleteFormAct.Act("NO",driver);
             System.out.println(date);
             Thread.sleep(2500);
-            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Cabinet.Up(driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
@@ -209,10 +209,10 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormAct.ActClick(driver);
+            CompleteFormAct.Act("NO",driver);
             System.out.println(date);
             Thread.sleep(1500);
-            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Cabinet.Up(driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
@@ -251,10 +251,10 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormAct.ActClick(driver);
+            CompleteFormAct.Act("NO",driver);
             System.out.println(date);
             Thread.sleep(1500);
-            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Cabinet.Up(driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
@@ -295,7 +295,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormDopSchF.DopSchFClick(driver);
+            CompleteFormDopSchF.DopSchF("NO",driver);
             System.out.println(date);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
@@ -332,7 +332,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormDopSchF.DopSchFClick(driver);
+            CompleteFormDopSchF.DopSchF("NO",driver);
             System.out.println(date);
             Thread.sleep(2000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
@@ -368,10 +368,10 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormDopSchF.DopSchFClick(driver);
+            CompleteFormDopSchF.DopSchF("NO",driver);
             System.out.println(date);
             Thread.sleep(1500);
-            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Cabinet.Up(driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
@@ -405,10 +405,10 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormDopSchF.DopSchFClick(driver);
+            CompleteFormDopSchF.DopSchF("NO",driver);
             System.out.println(date);
             Thread.sleep(2500);
-            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Cabinet.Up(driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
@@ -448,10 +448,10 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormDopSchF.DopSchFClick(driver);
+            CompleteFormDopSchF.DopSchF("NO",driver);
             System.out.println(date);
             Thread.sleep(1500);
-            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+            Cabinet.Up(driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
@@ -483,7 +483,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
-        ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
+        Cabinet.Up(driver);
         Thread.sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
@@ -512,7 +512,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         test2 = driver.findElement(By.cssSelector(s)).getAttribute("className");
         System.out.println(test2);
         Check.CheckingContains("mandatory-save", test2, driver);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         ((JavascriptExecutor) driver).executeScript("scroll(0,400)");
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
@@ -673,7 +673,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
@@ -683,9 +683,9 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".subbtn")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#shipper-rusreg")).sendKeys("β");
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#change_buyer")).click();
+        driver.findElement(By.cssSelector("#buyer-rusreg")).sendKeys("β");
+        driver.findElement(By.cssSelector("#sf_step > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
 
@@ -703,7 +703,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
@@ -713,7 +713,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".subbtn")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#change_buyer")).click();
         driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("1653001883", Keys.ENTER);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
@@ -731,7 +731,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
@@ -758,7 +758,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
@@ -838,7 +838,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(close)).click();
         Thread.sleep(500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
@@ -863,7 +863,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector(close)).click();
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
+            Cabinet.Up(driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(500);
@@ -893,7 +893,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(close)).click();
         Thread.sleep(500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
@@ -921,7 +921,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(close)).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
@@ -947,7 +947,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(close)).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
@@ -965,7 +965,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
 
     void page2Name(String s) throws InterruptedException {
         Thread.sleep(2500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.DOWN, Keys.DOWN, Keys.DOWN);
+        Cabinet.Down(driver);
 
         driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         save = null;
@@ -1079,7 +1079,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(1500);
@@ -1149,7 +1149,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(500);
@@ -1172,7 +1172,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         test2 = driver.findElement(By.cssSelector(s)).getAttribute("className");
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
-        driver.findElement(By.xpath("//*")).sendKeys(Keys.UP, Keys.UP, Keys.UP, Keys.UP, Keys.UP);
+        Cabinet.Up(driver);
         ((JavascriptExecutor) driver).executeScript("scroll(0,400)");
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();

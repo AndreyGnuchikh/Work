@@ -209,5 +209,15 @@ public class C_Download_Files_Test3 extends iit8077 {
             Cabinet.Catch(driver, e);
         }
     }
-
+    @Test
+    @Order(14)
+    void N_AddFileUPDDownload_155_Test14() {
+        try {
+            FileCreateAndLoading.AddFileUPDError("11.xml", driver);
+            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+            Check.CheckExit("Документ оформлен по Приказу ФНС РФ № ММВ-7-15/155 от 24.03.2016. Файл 11.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+        } catch (Throwable e) {
+            Cabinet.Catch(driver, e);
+        }
+    }
 }

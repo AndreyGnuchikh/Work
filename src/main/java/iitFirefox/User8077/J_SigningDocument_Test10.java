@@ -144,7 +144,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
             HelpUser.DeletedFiles(dir);
             getingLst2 = getingLst2.substring(18, 45);
             System.out.println(getingLst2);
-            Check.CheckExit("ON_SCHFDOPPOK_2JH333_2JH444", getingLst2, driver);
+            Check.CheckExit("ON_NSCHFDOPPOK_2JH333_2JH44", getingLst2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -196,7 +196,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
                 getingLst2 = getingLst2.substring(18, 45);
             }
             System.out.println(getingLst2);
-            Check.CheckExit("ON_SCHFDOPPOK_2JH333_2JH444", getingLst2, driver);
+            Check.CheckExit("ON_NSCHFDOPPOK_2JH333_2JH44", getingLst2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -261,7 +261,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
             getRuntime().exec("taskkill /im nmcades.exe");
             Thread.sleep(1000);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getText();
-            Check.CheckExit("10: Ошибка! Сертификат не принадлежит пользователю Нет автопароля!", test2, driver);
+            Check.CheckExit("3: Ошибка при создании подписи", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -293,13 +293,12 @@ public class J_SigningDocument_Test10 extends iit8077 {
             EnterAndExit.loggingCerts(fio9, driver);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(1000);
-            driver.findElement(By.id("enter")).click();
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            FileCreateAndLoading.AddFile("upd\\Dop.xml", driver);
+            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
-            Check.CheckExit("true", test2, driver);
+            Check.CheckExit("false", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

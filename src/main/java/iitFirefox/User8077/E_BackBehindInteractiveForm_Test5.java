@@ -42,14 +42,14 @@ public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add счф
-            CompleteForm.SCHFNoClick(driver);
+            CompleteForm.SCHF("NO",driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
-            Thread.sleep(1000);
+            Thread.sleep(1500);
             test2 = driver.findElement(By.cssSelector(".doc_title")).getText();
             System.out.println(test2);
             Check.CheckExit("—чет-фактура є  ", test2, driver);
@@ -73,7 +73,7 @@ public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add счф
-            CompleteFormAct.ActClick(driver);
+            CompleteFormAct.Act("NO",driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);
@@ -103,12 +103,12 @@ public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
-            CompleteFormDopSchF.DopSchFClick(driver);
+            CompleteFormDopSchF.DopSchF("NO",driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-            Thread.sleep(2000);
+            Thread.sleep(2500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);
 
