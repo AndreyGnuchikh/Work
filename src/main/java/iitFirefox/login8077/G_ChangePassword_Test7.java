@@ -2,6 +2,7 @@ package iitFirefox.login8077;
 
 import iitAdd.Drivers; 
 import methods.Cabinet;
+import methods.Element;
 import methods.EnterAndExit;
 import iitAdd.iit8077;
 import methods.Check;
@@ -20,7 +21,8 @@ public class G_ChangePassword_Test7 extends iit8077 {
             driver = Drivers.ff();
             driver.get(url);
             EnterAndExit.LogPass(q7log, pass7log, driver);
-            Thread.sleep(1000);
+            Element.visibleElement180SecToWait("#user-nav",driver);
+            Thread.sleep(1500);
             driver.findElement(By.id("user-nav")).click();
             Thread.sleep(2500);
             driver.findElement(By.cssSelector("#user-panel > div:nth-child(6) > div > div.nav-title.collapsed")).click();

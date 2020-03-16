@@ -39,18 +39,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).click();
             Thread.sleep(1000);
-            test = driver.findElement(By.id("surname")).getAttribute("value");
-            Check.Check("УПД", test, driver);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Check.Check("2", test, driver);
-            test = driver.findElement(By.id("patronymic")).getAttribute("value");
-            Check.Check("должность", test, driver);
-            test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность 2", test, driver);
-            test = driver.findElement(By.id("authority")).getAttribute("value");
-            Check.Check("d", test, driver);
-            test = driver.findElement(By.id("shipment-info")).getAttribute("value");
-            Check.CheckExit("Замечаний нет", test, driver);
+            CheckTest12(test,driver);
 
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -70,12 +59,12 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
             test = driver.findElement(By.id("surname")).getAttribute("value");
             Check.Check("УПД", test, driver);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Check.Check("2", test, driver);
-            test = driver.findElement(By.id("patronymic")).getAttribute("value");
-            Check.Check("должность", test, driver);
+            /*test = driver.findElement(By.id("name")).getAttribute("value");
+            Check.Check("2", test, driver);*/
+            /*test = driver.findElement(By.id("patronymic")).getAttribute("value");
+            Check.Check("должность", test, driver);*/
             test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность 2", test, driver);
+            Check.Check("Должность", test, driver);
             test = driver.findElement(By.id("org-name")).getAttribute("value");
             Check.Check("Все хорошо 2,0", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
@@ -99,16 +88,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_3")).click();
-            test = driver.findElement(By.id("surname")).getAttribute("value");
-            Check.Check("УПД", test, driver);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Check.Check("2", test, driver);
-            test = driver.findElement(By.id("patronymic")).getAttribute("value");
-            Check.Check("должность", test, driver);
-            test = driver.findElement(By.id("authority")).getAttribute("value");
-            Check.Check("d", test, driver);
-            test = driver.findElement(By.id("shipment-info")).getAttribute("value");
-            Check.CheckExit("Замечаний нет", test, driver);
+            CheckTest12(test,driver);
 
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -125,18 +105,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).click();
             Thread.sleep(500);
-            test = driver.findElement(By.id("surname")).getAttribute("value");
-            Check.Check("УПД", test, driver);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Check.Check("2", test, driver);
-            test = driver.findElement(By.id("patronymic")).getAttribute("value");
-            Check.Check("должность", test, driver);
-            test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность 2", test, driver);
-            test = driver.findElement(By.id("authority")).getAttribute("value");
-            Check.Check("d", test, driver);
-            test = driver.findElement(By.id("shipment-info")).getAttribute("value");
-            Check.CheckExit("Замечаний нет", test, driver);
+            CheckTest12(test,driver);
 
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -156,12 +125,12 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
             test = driver.findElement(By.id("surname")).getAttribute("value");
             Check.Check("УПД", test, driver);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Check.Check("2", test, driver);
-            test = driver.findElement(By.id("patronymic")).getAttribute("value");
-            Check.Check("должность", test, driver);
+            /*test = driver.findElement(By.id("name")).getAttribute("value");
+            Check.Check("2", test, driver);*/
+            /*test = driver.findElement(By.id("patronymic")).getAttribute("value");
+            Check.Check("должность", test, driver);*/
             test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность 2", test, driver);
+            Check.Check("Должность", test, driver);
             test = driver.findElement(By.id("org-name")).getAttribute("value");
             Check.Check("Все хорошо 2,0", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
@@ -185,18 +154,28 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_3")).click();
+            CheckTest12(test,driver);
+
+        } catch (Throwable e) {
+            Cabinet.Catch(driver, e);
+        }
+    }
+    public static  void CheckTest12(String test,WebDriver driver) throws Exception {
+        try {
+            Thread.sleep(1000);
             test = driver.findElement(By.id("surname")).getAttribute("value");
             Check.Check("УПД", test, driver);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Check.Check("2", test, driver);
-            test = driver.findElement(By.id("patronymic")).getAttribute("value");
-            Check.Check("должность", test, driver);
+/*            test = driver.findElement(By.id("name")).getAttribute("value");
+            Check.Check("2", test, driver);*/
+            /*test = driver.findElement(By.id("patronymic")).getAttribute("value");
+            Check.Check("должность", test, driver);*/
+            test = driver.findElement(By.id("position")).getAttribute("value");
+            Check.Check("Должность", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
             Check.Check("d", test, driver);
             test = driver.findElement(By.id("shipment-info")).getAttribute("value");
             Check.CheckExit("Замечаний нет", test, driver);
-
-        } catch (Throwable e) {
+        }catch (Throwable e){
             Cabinet.Catch(driver, e);
         }
     }

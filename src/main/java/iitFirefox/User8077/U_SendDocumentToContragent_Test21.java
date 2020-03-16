@@ -25,7 +25,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.get(url);
             EnterAndExit.LogPass(ip,ip,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
         }catch (Throwable e) {
             Cabinet.Catch(driver,e);
         }
@@ -35,7 +35,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(1)
     void A_GetFileName_Test1(){
         try {
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             Cabinet.ClickMenuFirstElement(12,driver);
             test = driver.findElement(By.id("sn-fname")).getAttribute("textContent");
             Check.CheckExit("1.html",test,driver);
@@ -48,7 +48,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     void B_AddTextInFile_Test2(){
         try {
             Date date = new Date();
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
             driver.findElement(By.cssSelector("#sn-comment")).sendKeys(""+date);
@@ -68,7 +68,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(3)
     void C_CheckCabinetRecipient_Test3(){
         try {
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
             driver.findElement(By.cssSelector("#sn-comment")).sendKeys("textContent");
@@ -88,7 +88,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     void D_CheckCoworkerRecipient_Test4(){
         try {
 
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
             driver.findElement(By.cssSelector("#sn-comment")).sendKeys("textContent");
@@ -109,7 +109,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     void E_AddTextInFileAndOpenInRecipientLk_Test5(){
         try {
             Date date = new Date();
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
             driver.findElement(By.cssSelector("#sn-comment")).sendKeys(""+date);
@@ -120,7 +120,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.Exit(driver);
             EnterAndExit.loggingCerts(upd2,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
             driver.findElement(By.name("id51890")).click();
@@ -136,7 +136,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(6)
     void F_CheckCabinetRecipientInRecipientLk_Test6(){
         try {
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
             driver.findElement(By.cssSelector("#sn-comment")).sendKeys("textContent");
@@ -147,7 +147,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.Exit(driver);
             EnterAndExit.loggingCerts(upd2,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
             driver.findElement(By.name("id51890")).click();
@@ -162,7 +162,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(7)
     void G_CheckCoworkerRecipientInRecipientLk_Test7(){
         try {
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
             driver.findElement(By.cssSelector("#sn-comment")).sendKeys("textContent");
@@ -173,7 +173,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.Exit(driver);
             EnterAndExit.loggingCerts(upd2,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
             driver.findElement(By.name("id51890")).click();
@@ -188,7 +188,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(8)
     void H_CheckCabinetSenderInRecipientLk_Test8(){
         try {
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
             driver.findElement(By.cssSelector("#sn-comment")).sendKeys("textContent");
@@ -199,7 +199,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.Exit(driver);
             EnterAndExit.loggingCerts(upd2,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
             driver.findElement(By.name("id51890")).click();
@@ -214,7 +214,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(9)
     void I_CheckCoworkerSenderInRecipientLk_Test9(){
         try {
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
             driver.findElement(By.cssSelector("#sn-comment")).sendKeys("textContent");
@@ -225,7 +225,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.Exit(driver);
             EnterAndExit.loggingCerts(upd2,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
             driver.findElement(By.name("id51890")).click();
@@ -240,7 +240,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(10)
     void J_CheckStatus_Test10(){
         try {
-            FileCreateAndLoading.AddFile("1.html",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             Thread.sleep(500);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
@@ -269,7 +269,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.get(url);
             EnterAndExit.loggingCerts(upd2,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
             driver.findElement(By.cssSelector("div.statistic:nth-child(4) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
             String checkbox2 = driver.findElement(By.xpath("//*[@id=\"not-1\"]")).getAttribute("checked");
@@ -287,8 +287,8 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.get(url);
             EnterAndExit.LogPass(ip,ip,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
-            FileCreateAndLoading.AddFile("1.html",driver);
+            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
+            FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
             driver.findElement(By.cssSelector("#sn-comment")).sendKeys(""+ date);
@@ -364,7 +364,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.Exit(driver);
             EnterAndExit.loggingCerts(upd2,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             Cabinet.OpenNameFolder("УПД 123",driver);
         }catch (Throwable e) {
             Cabinet.Catch(driver,e);
@@ -416,7 +416,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
                 EnterAndExit.loggingCerts(upd,driver);
                 EnterAndExit.RoleSwitch(2,driver);
                 Thread.sleep(2000);
-                EnterAndExit.startEndingCertAndSendingFiles(driver);
+                EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
                 Thread.sleep(2000);
                 driver.findElement(By.cssSelector(".createDocument")).click();
                 driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
@@ -445,13 +445,13 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
                 Thread.sleep(4000);
                 Sign.SignFirstFile(driver);
                 driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
-                EnterAndExit.startEndingCertAndSendingFiles(driver);
+                EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
                 Cabinet.ClickMenuFirstElement(12,driver);
                 Cabinet.SendCabinet("Все хорошо 2,0","Все хорошо 2.0",driver);
                 EnterAndExit.Exit(driver);
                 EnterAndExit.loggingCerts(upd2,driver);
                 EnterAndExit.RoleSwitch(2,driver);
-                EnterAndExit.startEndingCertAndSendingFiles(driver);
+                EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
                 Cabinet.OpenNameFolder("не",driver);
                 String row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
                 row = row.substring(0, 36);
@@ -473,8 +473,8 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.findElement(By.xpath("//*[contains(text(), 'Все хорошо 2.0')][contains(@class, 'option')]")).click();
             Thread.sleep(100);
             driver.findElement(By.cssSelector("#sendModal > div > div > div.modal-body > div:nth-child(4) > div > div.selectize-input.items.not-full.has-options")).click();
-            Thread.sleep(100);
-            driver.findElement(By.xpath("//*[contains(text(), 'УПД Должность 2')][contains(@class, 'option')]")).click();
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[contains(text(), 'УПД 2')][contains(@class, 'option')]")).click();
             Thread.sleep(100);
         }
         void sendAllGood1() throws InterruptedException {

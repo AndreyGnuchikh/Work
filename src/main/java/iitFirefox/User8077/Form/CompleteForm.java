@@ -13,13 +13,14 @@ public class CompleteForm {
     public static String SCHF(String ClickYesNoOrIP, WebDriver driver) throws InterruptedException {
         Date date = new Date();
         driver.findElement(By.cssSelector("#numberSf")).sendKeys("SCHF " + date);
-        driver.findElement(By.cssSelector("#numbercorSf")).sendKeys("1");
+//        driver.findElement(By.cssSelector("#numbercorSf")).sendKeys("1");
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#dateSf")).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#dateSf_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("#datecorSf")).click();
-        driver.findElement(By.cssSelector("#datecorSf_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+//        driver.findElement(By.cssSelector("#datecorSf")).click();
+//        driver.findElement(By.cssSelector("#datecorSf_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //Seller
         driver.findElement(By.cssSelector("#change_seller")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");

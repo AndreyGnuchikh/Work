@@ -13,12 +13,12 @@ public class CompleteFormDopSchF {
     public static String DopSchF(String ClickYesNoOrIP, WebDriver driver) throws InterruptedException {
         Date date = new Date();
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("DopSchF " + date);
-        driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
+//        driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();
         driver.findElement(By.cssSelector("#dateUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("#datecorUPD")).click();
-        driver.findElement(By.cssSelector("#datecorUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+//        Thread.sleep(500);
+//        driver.findElement(By.cssSelector("#datecorUPD")).click();
+//        driver.findElement(By.cssSelector("#datecorUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //Seller
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#change_seller")).click();
@@ -144,7 +144,7 @@ public class CompleteFormDopSchF {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Thread.sleep(500);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Thread.sleep(3000);
         }

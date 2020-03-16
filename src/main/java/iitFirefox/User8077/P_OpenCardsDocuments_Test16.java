@@ -55,9 +55,9 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             Check.Check("1.html", test, driver);
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector("#cf-creator")).getText();
-            Check.Check("УПД Должность", test, driver);
+            Check.Check("УПД 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-perf")).getText();
-            Check.Check("УПД Должность", test, driver);
+            Check.Check("УПД 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-date")).getText();
             test = test.substring(0, 10);
             Check.Check(dateFormat.format(currentDate), test, driver);
@@ -68,7 +68,7 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(1)")).getText();
             Check.Check("Согласовано", test, driver);
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(3)")).getText();
-            Check.Check("УПД Должность", test, driver);
+            Check.Check("УПД 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(4)")).getText();
             Check.CheckExit("Д", test, driver);
         } catch (Throwable e) {
@@ -93,7 +93,7 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             Thread.sleep(500);
             Check.Check("Dop.xml", test, driver);
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(1)")).getText();
-            Check.Check("УПД должность 2001", test, driver);
+            Check.Check("УПД 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(4)")).getText();
             test = test.substring(0, 10);
             Thread.sleep(500);
@@ -101,8 +101,8 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(3)")).getText();
             Check.Check("Должность", test, driver);
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(5)")).getText();
-            Check.CheckExit("67778A2E000300036346\n" +
-                    "с 20.05.2019 по 02.03.2020", test, driver);
+            Check.CheckExit("0179F1A80022AB9F954F6140530460C324\n" +
+                    "с 13.12.2019 по 13.03.2020", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -128,7 +128,7 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             test = driver.findElement(By.cssSelector("#cf-historyBody > tr:nth-child(1) > td:nth-child(3)")).getText();
             Check.Check("Тест Все хорошо", test, driver);
             test = driver.findElement(By.cssSelector("#cf-historyBody > tr:nth-child(1) > td:nth-child(4)")).getText();
-            Check.Check("УПД Должность", test, driver);
+            Check.Check("УПД 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-historyBody > tr:nth-child(1) > td:nth-child(5)")).getText();
             Check.Check("Все хорошо 2,0", test, driver);
             test = driver.findElement(By.cssSelector("#cf-historyBody > tr:nth-child(1) > td:nth-child(6)")).getText();

@@ -12,12 +12,12 @@ public class CompleteFormAct {
     public static String Act(String ClickYesNoOrIP,WebDriver driver) throws InterruptedException {
         Date date = new Date();
         driver.findElement(By.cssSelector("#numberActEW")).sendKeys("Act " + date);
-        driver.findElement(By.cssSelector("#numbercorActEW")).sendKeys("1");
+//        driver.findElement(By.cssSelector("#numbercorActEW")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateActEW")).click();
         driver.findElement(By.cssSelector("#dateActEW_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("#datecorActEW")).click();
-        driver.findElement(By.cssSelector("#datecorActEW_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+//        driver.findElement(By.cssSelector("#datecorActEW")).click();
+//        driver.findElement(By.cssSelector("#datecorActEW_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         //Seller
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#change_seller")).click();

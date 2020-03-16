@@ -47,7 +47,7 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
             System.out.println(row);
             Thread.sleep(1500);
             test = driver.findElement(By.cssSelector("#grid-basic2-row-" + row + "> table:nth-child(1) > tr:nth-child(1) > td:nth-child(9)")).getText();
-            Check.CheckExit("Иванов", test, driver);
+            Check.CheckExit("Иванов Денис", test, driver);
             driver.quit();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -72,7 +72,7 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
             Cabinet.ClickMenuFirstElement(8, driver);
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector("#cf-perf")).getText();
-            Check.CheckExit("Иванов", test, driver);
+            Check.CheckExit("Иванов Денис", test, driver);
             driver.quit();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);

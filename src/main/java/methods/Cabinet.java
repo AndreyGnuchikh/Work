@@ -80,6 +80,7 @@ public class Cabinet {
     }
     public static void OpenNameFolder(String name, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+
         Thread.sleep(1000);
         String folder = driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1)")).getAttribute("className");
         if (!folder.contains("expanded")) {
@@ -88,9 +89,15 @@ public class Cabinet {
             ((JavascriptExecutor) driver).executeScript("scroll(0,100)");
         }
         Thread.sleep(3800);
+        EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
         driver.findElement(By.cssSelector("[foldername=\"" + name + "\"]")).click();
         Thread.sleep(4000);
-        driver.findElement(By.cssSelector("[foldername=\"" + name + "\"]")).click();
+        EnterAndExit.startEndingCertAndSendingFiles("SkipSingFiles",driver);
+        Thread.sleep(1000);
+        Cabinet.Up(driver);
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+
     }
     public static void Catch(WebDriver driver, Throwable e) {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -126,7 +133,7 @@ public class Cabinet {
         driver.findElement(By.cssSelector(".not-full")).click();
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[contains(text(), '" + coworker + "')][contains(@class, 'option')]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("#modalSendButton")).click();
 
         Thread.sleep(4000);

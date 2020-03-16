@@ -79,14 +79,14 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector("#signatures > tr > td:nth-child(2)")).getText();
             Thread.sleep(500);
-            Check.Check("УПД должность 2001", test, driver);
+            Check.Check("УПД 1", test, driver);
             test = driver.findElement(By.cssSelector("#signatures > tr > td:nth-child(4)")).getText();
             Thread.sleep(500);
             Check.Check("Должность", test, driver);
             test = driver.findElement(By.cssSelector("#signatures > tr > td:nth-child(5)")).getText();
             Thread.sleep(500);
-            Check.CheckExit("67778A2E000300036346\n" +
-                    "с 20.05.2019 по 02.03.2020", test, driver);
+            Check.CheckExit("0179F1A80022AB9F954F6140530460C324\n" +
+                    "с 13.12.2019 по 13.03.2020", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -130,7 +130,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
             Cabinet.ClickMenuFirstElement(11, driver);
             Thread.sleep(500);
             test = String.valueOf(driver.getWindowHandles());
-            test = test.substring(13, 23);
+            test = test.substring(5,15);
             System.out.println(test);
             driver.switchTo().window(test);
             test = driver.getCurrentUrl();

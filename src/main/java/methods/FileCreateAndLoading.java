@@ -30,7 +30,11 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         EnterAndExit.startEndingCertAndSendingFiles(driver);
         // Click and found first element
-        Thread.sleep(2500);
+        Thread.sleep(1000);
+        Cabinet.Up(driver);
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+        Thread.sleep(1200);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         Thread.sleep(800);
         row = row.substring(0, 36);
@@ -55,8 +59,11 @@ public class FileCreateAndLoading {
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         EnterAndExit.startEndingCertAndSendingFiles("Skip",driver);
-        // Click and found first element
-        Thread.sleep(2500);
+        Thread.sleep(1000);
+        Cabinet.Up(driver);
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+        Thread.sleep(1200);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         Thread.sleep(800);
         row = row.substring(0, 36);
@@ -95,7 +102,11 @@ public class FileCreateAndLoading {
         Thread.sleep(3500);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         // Click and found first element
-        Thread.sleep(2500);
+        Thread.sleep(1000);
+        Cabinet.Up(driver);
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+        Thread.sleep(1200);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         row = row.substring(0, 36);
         Element.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);

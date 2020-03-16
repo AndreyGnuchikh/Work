@@ -249,7 +249,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Thread.sleep(500);
             test = driver.findElement(By.id("position")).getAttribute("value");
             Thread.sleep(500);
-            Check.Check("Должность 2", test, driver);
+            Check.Check("Должность", test, driver);
             Thread.sleep(500);
             test = driver.findElement(By.id("authority")).getAttribute("value");
             Thread.sleep(500);
@@ -288,10 +288,9 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             test = null;
             test = driver.findElement(By.id("surname")).getAttribute("value");
             Check.Check("УПД", test, driver);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Check.Check(" ", test, driver);
+
             test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность 2", test, driver);
+            Check.Check("Должность", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
             Check.Check("d", test, driver);
             String test = driver.findElement(By.id("shipment-info")).getAttribute("value");
