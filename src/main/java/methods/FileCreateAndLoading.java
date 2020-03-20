@@ -16,9 +16,9 @@ public class FileCreateAndLoading {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file
         String row;
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector(".createDocument")).click();
-        Thread.sleep(2500);
+        Thread.sleep(2800);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
         Thread.sleep(200);

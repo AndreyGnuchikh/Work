@@ -35,7 +35,7 @@ public class CompleteForm {
         driver.findElement(By.cssSelector("#seller-rusflat")).sendKeys("2019");
         driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         //GoodsSender
-        driver.findElement(By.cssSelector("#sf_step > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#sf_step > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         //Buyer
         if(ClickYesNoOrIP.equals("IP")) {
             driver.findElement(By.cssSelector("#change_buyer")).click();
@@ -76,7 +76,7 @@ public class CompleteForm {
 
         }
         //GoodsRecipient
-        driver.findElement(By.cssSelector("#sf_step > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#sf_step > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("input.col-md-12")).sendKeys("555");
         String test = driver.findElement(By.cssSelector("div.input-group:nth-child(1)")).getAttribute("outerHTML");
         test = test.substring(256, 267);
@@ -100,10 +100,10 @@ public class CompleteForm {
         driver.findElement(By.cssSelector("#gosConNumber-date")).click();
         driver.findElement(By.cssSelector("#gosConNumber-date_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#numberLS")).sendKeys("11111111111");
-        driver.findElement(By.cssSelector("#budgetClassificationCode")).sendKeys("12345678901234567890");
+/*        driver.findElement(By.cssSelector("#budgetClassificationCode")).sendKeys("12345678901234567890");
         driver.findElement(By.cssSelector("#territorialFKName")).sendKeys("12345678901234567890");
         driver.findElement(By.cssSelector("#targetCode")).sendKeys("12345678901234567890");
-        driver.findElement(By.cssSelector("#territorialFKCode")).sendKeys("1234");
+        driver.findElement(By.cssSelector("#territorialFKCode")).sendKeys("1234");*/
         driver.findElement(By.cssSelector(".editing > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         //2 Page#
         Thread.sleep(500);
@@ -116,7 +116,9 @@ public class CompleteForm {
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Характеристика/описание товара");
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)")).sendKeys("Артикул");
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys("Sort");
+/*
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(5) > input:nth-child(1)")).sendKeys("1234515212");
+*/
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(4) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys("123451521212345152121234515");
         driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)")).sendKeys("123451521212345152121234512");
 
@@ -135,7 +137,10 @@ public class CompleteForm {
         Thread.sleep(4000);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();}
         String test2 = "" + date;
+        Thread.sleep(3000);
+        driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         return test2;
+
     }
 }
 

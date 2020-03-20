@@ -121,6 +121,7 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
             driver.get(url);
             EnterAndExit.LogPass(pass5log, pass5log, driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(500);
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
             driver.findElement(By.cssSelector("div.statistic:nth-child(4) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
             driver.findElement(By.cssSelector("#not-3")).click();

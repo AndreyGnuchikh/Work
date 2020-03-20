@@ -24,7 +24,7 @@ public class G_ChangePassword_Test7 extends iit8077 {
             Element.visibleElement180SecToWait("#user-nav",driver);
             Thread.sleep(1500);
             driver.findElement(By.id("user-nav")).click();
-            Thread.sleep(2500);
+            Thread.sleep(2800);
             driver.findElement(By.cssSelector("#user-panel > div:nth-child(6) > div > div.nav-title.collapsed")).click();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);

@@ -34,7 +34,7 @@ public class CompleteFormAct {
         driver.findElement(By.cssSelector("#seller-rusflat")).sendKeys("2019");
         driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         //GoodsSender
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         //Buyer
         if(ClickYesNoOrIP.equals("IP")){
             driver.findElement(By.cssSelector("#change_buyer")).click();
@@ -74,7 +74,7 @@ public class CompleteFormAct {
         }
         Thread.sleep(500);
         //GoodsRecipient
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("input.col-md-12")).sendKeys("555");
         String test = driver.findElement(By.cssSelector("div.input-group:nth-child(1)")).getAttribute("outerHTML");
         test = test.substring(256, 267);
@@ -150,6 +150,9 @@ public class CompleteFormAct {
             driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         }
         String test2 = "" + date;
+
+        Thread.sleep(3000);
+        driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         return test2;
 
     }
