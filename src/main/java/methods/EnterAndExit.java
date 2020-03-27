@@ -27,7 +27,7 @@ public class EnterAndExit {
         System.out.println("Login: " + login);
         Thread.sleep(1500);
         driver.findElement(By.className("auth__tab-item--right")).click();
-        Thread.sleep(500);
+        Thread.sleep(1200);
         Element.WaitElementToBeClickableAndClick(1, "//*[@id=\"keyModal_body\"]/option[" + login + "]", driver);
         Thread.sleep(500);
         driver.findElement(By.className("btnSelectKey")).click();

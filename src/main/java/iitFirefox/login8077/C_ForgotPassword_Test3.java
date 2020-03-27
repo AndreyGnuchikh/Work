@@ -28,7 +28,6 @@ public class C_ForgotPassword_Test3 extends iit8077 {
             Cabinet.Catch(driver, e);
         }
     }
-
     @Test
     @Order(1)
     void A_ForgetPassword() {
@@ -55,10 +54,10 @@ public class C_ForgotPassword_Test3 extends iit8077 {
                 driver.findElement(By.xpath("//*[@id=\"passp-field-login\"]")).sendKeys(testIitTest);
                 Thread.sleep(1500);
                 driver.findElement(By.cssSelector(".passp-button.passp-sign-in-button button.button2:nth-child(1)")).click();
-                Thread.sleep(500);
+                Thread.sleep(1000);
                 driver.findElement(By.xpath("//*[@id=\"passp-field-passwd\"]")).sendKeys(EmailPass);
-                Thread.sleep(500);
-                driver.findElement(By.cssSelector(".button2")).click();
+                Thread.sleep(3000);
+                driver.findElement(By.cssSelector("button.control:nth-child(1)")).click();
             } else {
                 driver.findElement(By.xpath("//*[@id=\"passp-field-login\"]")).sendKeys(testIitTest);
                 Thread.sleep(500);

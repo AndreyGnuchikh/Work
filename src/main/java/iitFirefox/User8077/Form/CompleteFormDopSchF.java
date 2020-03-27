@@ -35,7 +35,7 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         //GoodsSender
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         //Buyer
         if(ClickYesNoOrIP.equals("IP")) {
             driver.findElement(By.cssSelector("#change_buyer")).click();
@@ -55,7 +55,7 @@ public class CompleteFormDopSchF {
             driver.findElement(By.cssSelector("#buyer-rushouse")).sendKeys("3");
             driver.findElement(By.cssSelector("#buyer-rusbuild")).sendKeys("4");
             driver.findElement(By.cssSelector("#buyer-rusflat")).sendKeys("2020");
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
         }else{
             driver.findElement(By.cssSelector("#change_buyer")).click();
@@ -71,11 +71,11 @@ public class CompleteFormDopSchF {
             driver.findElement(By.cssSelector("#buyer-rushouse")).sendKeys("3");
             driver.findElement(By.cssSelector("#buyer-rusbuild")).sendKeys("4");
             driver.findElement(By.cssSelector("#buyer-rusflat")).sendKeys("2020");
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
         }
         //GoodsRecipient
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("input.col-md-12")).sendKeys("555");
         String test = driver.findElement(By.cssSelector("div.input-group:nth-child(1)")).getAttribute("outerHTML");
         test = test.substring(256, 267);
@@ -116,7 +116,9 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector(".picker--opened > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#delivery-info-additional")).sendKeys("Дополнительные сведения");
         driver.findElement(By.cssSelector("#itemTransfer-info")).sendKeys("Сведения о  передаче вещи");
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("#itemTransfer-date")).click();
+        driver.findElement(By.cssSelector("#itemTransfer-date_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         driver.findElement(By.cssSelector(".edit_but")).click();
         //Работник организации
         driver.findElement(By.cssSelector("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
@@ -154,13 +156,13 @@ public class CompleteFormDopSchF {
     public static String DopSchF_IP_3Page(Integer twoOrThree, WebDriver driver) throws InterruptedException {
         Date date = new Date();
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("DopSchF " + date);
-        driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
+        //driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();
         driver.findElement(By.cssSelector("#dateUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("#datecorUPD")).click();
+      /*  driver.findElement(By.cssSelector("#datecorUPD")).click();
         driver.findElement(By.cssSelector("#datecorUPD_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        //Seller
+   */     //Seller
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#change_seller")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
@@ -176,7 +178,7 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         //GoodsSender
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         //Buyer
             driver.findElement(By.cssSelector("#change_buyer")).click();
             driver.findElement(By.cssSelector("#buyer-formaction")).click();
@@ -195,10 +197,10 @@ public class CompleteFormDopSchF {
             driver.findElement(By.cssSelector("#buyer-rushouse")).sendKeys("3");
             driver.findElement(By.cssSelector("#buyer-rusbuild")).sendKeys("4");
             driver.findElement(By.cssSelector("#buyer-rusflat")).sendKeys("2020");
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
         //GoodsRecipient
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         driver.findElement(By.cssSelector("input.col-md-12")).sendKeys("555");
         String test = driver.findElement(By.cssSelector("div.input-group:nth-child(1)")).getAttribute("outerHTML");
         test = test.substring(256, 267);

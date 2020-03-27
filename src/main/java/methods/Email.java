@@ -19,7 +19,7 @@ public class Email {
         isNormal = driver.findElements(By.className(".button2_theme_normal")).size() > 0;
         System.out.println("Уже есть ак " + isNormal);
         if (isNormal) {
-            driver.findElement(By.className(".button2_theme_normal")).click();
+            driver.findElement(By.cssSelector("button.control:nth-child(1)")).click();
         }
         isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
         System.out.println("Логин Пароль " + isPresentLog);
@@ -31,7 +31,7 @@ public class Email {
             driver.findElement(By.cssSelector("button.button2_type_submit")).click();
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(pass);
-            Thread.sleep(1500);
+            Thread.sleep(2000);
             driver.findElement(By.cssSelector(".button2")).click();
         } else {
             Thread.sleep(1500);

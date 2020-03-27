@@ -116,6 +116,8 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             test2 = CompleteFormDopSchF.DopSchF("YES",driver);
             Thread.sleep(2000);
             String row;
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(500);
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
             row = row.substring(0, 36);
             Thread.sleep(1500);
@@ -216,6 +218,8 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             test2 = CompleteFormDopSchF.DopSchF("IP",driver);
             Thread.sleep(2000);
             String row;
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(500);
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
             row = row.substring(0, 36);
             Thread.sleep(1500);
@@ -251,6 +255,8 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             test2 = CompleteFormDopSchF.DopSchF_IP_3Page(1,driver);
             Thread.sleep(2000);
             String row;
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(500);
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
             row = row.substring(0, 36);
             Thread.sleep(1500);
@@ -287,6 +293,8 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             test2 = CompleteFormDopSchF.DopSchF_IP_3Page(2,driver);
             Thread.sleep(2000);
             String row;
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(500);
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
             row = row.substring(0, 36);
             Thread.sleep(1500);

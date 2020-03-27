@@ -41,7 +41,7 @@ public class Sign {
         driver.findElement(By.id("cm-sign_text")).click();
         Thread.sleep(4000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-        Thread.sleep(13000);
+        Thread.sleep(14000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
         EnterAndExit.startEndingCertAndSendingFiles(driver);
     }
