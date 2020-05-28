@@ -24,7 +24,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("#change_seller")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
-        driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("г. Москва");
+        //driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("г. Москва");
         driver.findElement(By.cssSelector("#seller-rusarea")).sendKeys("Район Тверской");
         driver.findElement(By.cssSelector("#seller-ruscity")).sendKeys("Москва");
         driver.findElement(By.cssSelector("#seller-ruslocality")).sendKeys("Москва");
@@ -102,7 +102,7 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(6) > div:nth-child(3) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
 
         //3 page
         driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Наименование документа");
@@ -167,7 +167,7 @@ public class CompleteFormDopSchF {
         driver.findElement(By.cssSelector("#change_seller")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
-        driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("г. Москва");
+        //driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("г. Москва");
         driver.findElement(By.cssSelector("#seller-rusarea")).sendKeys("Район Тверской");
         driver.findElement(By.cssSelector("#seller-ruscity")).sendKeys("Москва");
         driver.findElement(By.cssSelector("#seller-ruslocality")).sendKeys("Москва");
@@ -227,7 +227,7 @@ public class CompleteFormDopSchF {
 
         driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(6) > div:nth-child(3) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
 
         //3 page
         driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Наименование документа");

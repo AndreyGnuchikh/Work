@@ -111,7 +111,7 @@ public class Cabinet {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[contains(text(), '" + cabinet + "')][contains(@class, 'option')]")).click();
         Thread.sleep(2000);

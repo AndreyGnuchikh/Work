@@ -25,7 +25,7 @@ public class CompleteForm {
         driver.findElement(By.cssSelector("#change_seller")).click();
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
-        driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("г. Москва");
+        //driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("г. Москва");
         driver.findElement(By.cssSelector("#seller-rusarea")).sendKeys("Район Тверской");
         driver.findElement(By.cssSelector("#seller-ruscity")).sendKeys("Москва");
         driver.findElement(By.cssSelector("#seller-ruslocality")).sendKeys("Москва");

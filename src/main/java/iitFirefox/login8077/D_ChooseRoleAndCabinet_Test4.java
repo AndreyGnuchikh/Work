@@ -122,10 +122,10 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
             checking = driver.findElement(By.className("select2-results__options")).getAttribute("innerText");
             System.out.println(checking + "/");
             Check.CheckExit("Переименованный кабинет\n" +
-                    "Все хорошо кабинет\n" +
                     "Кабинет Все хорошо\n" +
-                    "Тест 150\n" +
-                    "Все хорошо тест бд", checking, driver);
+                    "Все хорошо кабинет\n" +
+                    "Все хорошо тест бд\n" +
+                    "Тест 150", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

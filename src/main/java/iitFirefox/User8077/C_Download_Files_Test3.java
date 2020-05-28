@@ -6,6 +6,7 @@ import methods.EnterAndExit;
 import iitAdd.iit8077;
 import methods.Check;
 import methods.FileCreateAndLoading;
+import org.junit.Ignore;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -57,11 +58,11 @@ public class C_Download_Files_Test3 extends iit8077 {
 
     @Test
     @Order(3)
-    void C_AddFileUPDDownloadWrong_Validation156651_Test3() {
+    void C_AddFileUPDDownloadWrong_Validation820and189_Test3() {
         try {
             FileCreateAndLoading.AddFileUPDError("2.xml", driver);
-            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Ошибка валидации: cvc-pattern-valid: Value '156651' is not facet-valid with respect to pattern '([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}' for type 'ИННЮЛТип'. Файл 2.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+            test2 = driver.findElement(By.cssSelector("h3.resptext:nth-child(4)")).getText();
+            Check.CheckExit("Направляемый xml не соответствует xsd-схемам приказов: ФНС России от 19.12.2018г. № ММВ-7-15/820, ФНС России от 13.04.2016г. № ММВ-7-15/189. Файл 2.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -109,7 +110,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileUPDError("6.xml", driver);
             test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Не удалось опознать тип формализованного документа. Файл 6.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+            Check.CheckExit("Направляемый xml не соответствует xsd-схемам приказов: ФНС России от 19.12.2018г. № ММВ-7-15/820, ФНС России от 13.04.2016г. № ММВ-7-15/189. Файл 6.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -121,7 +122,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileUPDError("7.xml", driver);
             test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Ошибка валидации, в xml отсутствует поле ИдЭДО Файл 7.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+            Check.CheckExit("Направляемый xml не соответствует xsd-схемам приказов: ФНС России от 19.12.2018г. № ММВ-7-15/820, ФНС России от 13.04.2016г. № ММВ-7-15/189. Файл 7.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -133,7 +134,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileUPDError("8.xml", driver);
             test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Ошибка валидации, в xml отсутствует поле ИдФайл Файл 8.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+            Check.CheckExit("Направляемый xml не соответствует xsd-схемам приказов: ФНС России от 19.12.2018г. № ММВ-7-15/820, ФНС России от 13.04.2016г. № ММВ-7-15/189. Файл 8.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -157,13 +158,13 @@ public class C_Download_Files_Test3 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileUPDError("10.xml", driver);
             test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Ошибка валидации: cvc-complex-type.4: Attribute 'ИННЮЛ' must appear on element 'СвОЭДОтпр'. Файл 10.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+            Check.CheckExit("Направляемый xml не соответствует xsd-схемам приказов: ФНС России от 19.12.2018г. № ММВ-7-15/820, ФНС России от 13.04.2016г. № ММВ-7-15/189. Файл 10.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
     }
 
-    @Test
+    @Ignore
     @Order(12)
     void L_AddFileUPDDownloadWrong_ValidationFile_Test12() {
         try {
@@ -194,6 +195,8 @@ public class C_Download_Files_Test3 extends iit8077 {
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             String row = null;
             Thread.sleep(2500);
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(500);
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
             System.out.println(row);
             row = row.substring(0, 36);

@@ -192,7 +192,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
                     test = driver.findElement(By.cssSelector("#errorBlock > ul:nth-child(2) > li:nth-child(1)")).getText();
                     Check.Check("Запрещенное расширение для файла \"1.ade\". Данные расширения: \"ade, adp, app, asa, ashx, asmx, asp, bat, cdx, chm, class, cmd, com, config, cpl, crt, der, dll, exe, fxp, hlp, hta, htr, htw, ida, idq, ins, isp, its, jse, ksh, lnk, mad, maf, mam, maq, mar, mas, mat, mau, mdw, mdz, msc, msh, mav, maw, mda, shtm, mde, mdt, msh1, msh1xml, msh2, mshxml, msi, msp, mst, ops, pcd, pif, prt, prg, pst, reg, rem, scf, scr, sct, shb, shs, shtml, soap, stm, url, vb, vbe, vbs, ws, wsc, wsf, url\" запрещены.", test, driver);
                 }
-                upload.clear();
+                upload.clear(); 
             }
 
             Thread.sleep(1000);

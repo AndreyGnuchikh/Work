@@ -21,7 +21,7 @@ public class Sign {
         ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
         Thread.sleep(500);
         driver.findElement(By.id("cm-sign_text")).click();
-        Thread.sleep(5000);
+        Thread.sleep(5500);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
         Thread.sleep(10000);
     }

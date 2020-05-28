@@ -135,6 +135,7 @@ public class F_ChangeScopeOfAuthority_Test6 extends iit8077 {
         EnterAndExit.RoleSwitch(2, driver);
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#user-nav")).click();
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("div.statistic:nth-child(5) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#nav-bar-authority-area-select")).click();
         driver.findElement(By.cssSelector("#nav-bar-authority-area-select > option:nth-child(" + numerAuthority + ")")).click();

@@ -56,14 +56,17 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#numberSf")).clear();
             driver.findElement(By.cssSelector("#numberSf")).sendKeys("Тест");
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-            Thread.sleep(500);
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#commentSFModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".glyphicon-ok")).click();
             Thread.sleep(2000);
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(1000);
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
             System.out.println(row);
             System.out.println(row);
@@ -104,8 +107,9 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(2000);
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(1000);
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
-            System.out.println(row);
             System.out.println(row);
             row = row.substring(36, 68);
             System.out.println(row);
@@ -131,8 +135,11 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             Thread.sleep(1000);
             // Add act
             test2 = CompleteFormDopSchF.DopSchF("YES",driver);
+            Thread.sleep(2000);
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(1000);
             Cabinet.ClickMenuFirstElement(3, driver);
-            Thread.sleep(1500);
+            Thread.sleep(2000);
             driver.findElement(By.cssSelector("#numberUPD")).clear();
             driver.findElement(By.cssSelector("#numberUPD")).sendKeys("Тест");
             driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
@@ -142,8 +149,9 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(2000);
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(1000);
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
-            System.out.println(row);
             System.out.println(row);
             row = row.substring(36, 79);
             System.out.println(row);
@@ -208,6 +216,9 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             Thread.sleep(1000);
             // Add act
             test2 = CompleteFormDopSchF.DopSchF("YES",driver);
+            Thread.sleep(2000);
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+            Thread.sleep(1000);
             CheckDisableButtonSign();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -304,7 +315,11 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
     void CheckDisableButtonSign() throws InterruptedException {
         Sign.SignFirstFile(driver);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+        Thread.sleep(2000);
         EnterAndExit.startEndingCertAndSendingFiles(driver);
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
+        Thread.sleep(1000);
         Cabinet.ClickMenuFirstElement(3, driver);
         test2 = driver.findElement(By.cssSelector("#cm-edit_text")).getAttribute("class");
         Check.CheckExit("dijitReset dijitMenuItemLabel", test2, driver);

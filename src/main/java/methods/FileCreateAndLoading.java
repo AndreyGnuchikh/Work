@@ -74,7 +74,7 @@ public class FileCreateAndLoading {
     public static void AddFileUPDError(String fileName, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file UPD Error
-        Thread.sleep(1500);
+        Element.visibleElement180SecToWait(".createDocument",driver);
         driver.findElement(By.cssSelector(".createDocument")).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();

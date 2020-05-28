@@ -24,7 +24,7 @@ public class CompleteFormAct {
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#seller-compokpo")).sendKeys("1424512512");
         driver.findElement(By.cssSelector("#seller-rusindex")).sendKeys("140056");
-        driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("г. Москва");
+        //driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("г. Москва");
         driver.findElement(By.cssSelector("#seller-rusarea")).sendKeys("Район Тверской");
         driver.findElement(By.cssSelector("#seller-ruscity")).sendKeys("Москва");
         driver.findElement(By.cssSelector("#seller-ruslocality")).sendKeys("Москва");
@@ -100,13 +100,14 @@ public class CompleteFormAct {
         driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys("500");
 
         driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys("12563115621536112563151621531");
+
         driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         Thread.sleep(1000);
         //3 page
-        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(6) > div:nth-child(3) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector(".inputFormat-deliveryAcceptance1-nameDate-group-optional")).sendKeys("Наименование документа");
+        driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Наименование документа");
         driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Номер документа");
-        driver.findElement(By.cssSelector("textarea.inputFormat-deliveryAcceptance1-group")).sendKeys("Дополнительные сведения");
+        driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(2) > textarea:nth-child(1)")).sendKeys("Дополнительные сведения");
         driver.findElement(By.cssSelector("div.deliveryAcceptance-table-row:nth-child(2) > div:nth-child(2) > div:nth-child(4) > input:nth-child(1)")).click();
         driver.findElement(By.cssSelector(".picker--opened > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(6) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
