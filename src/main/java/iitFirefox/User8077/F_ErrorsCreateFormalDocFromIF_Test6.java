@@ -55,9 +55,9 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
             inn("#change_seller");
             CheckdateFirstPage("#");
             Check("#numberSf");
-            Check("#numbercorSf");
+            //Check("#numbercorSf");
             Checkdate("#dateSf");
-            Checkdate("#datecorSf");
+            //Checkdate("#datecorSf");
             Check("input.col-md-12");
             Region2("#change_buyer");
             Inn2("#change_buyer");
@@ -117,9 +117,9 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
             inn("#change_seller");
             CheckdateFirstPage("#");
             CheckACT("#numberActEW");
-            Check("#numbercorActEW");
+            //Check("#numbercorActEW");
             Checkdate("#dateActEW");
-            Checkdate("#datecorActEW");
+            //Checkdate("#datecorActEW");
             Check("input.col-md-12");
             Region2("#change_buyer");
             Inn2("#change_buyer");
@@ -181,7 +181,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(6) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
             CheckACTPage3("div.delivery-info-table-row:nth-child(2) > div:nth-child(1) > input:nth-child(1)");
             CheckdateThreepage("div.delivery-info-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)");
             Checkdate("#dateActEW");
@@ -218,7 +218,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(6) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
 
             driver.findElement(By.cssSelector(".edit_but")).click();
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
@@ -261,7 +261,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(6) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
 
             driver.findElement(By.cssSelector(".edit_but")).click();
             Thread.sleep(500);
@@ -305,9 +305,9 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
             inn("#change_seller");
             CheckdateFirstPage("#");
             Check("#numberUPD");
-            Check("#numbercorUPD");
+            //Check("#numbercorUPD");
             Checkdate("#dateUPD");
-            Checkdate("#datecorUPD");
+            //Checkdate("#datecorUPD");
             Check("input.col-md-12");
             Region2("#change_buyer");
             Inn2("#change_buyer");
@@ -376,7 +376,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(1000);
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(6) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
             CheckSchFDOPPage3("div.delivery-info-table-row:nth-child(2) > div:nth-child(1) > input:nth-child(1)");
             CheckdateThreepage("div.delivery-info-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)");
             Thread.sleep(500);
@@ -414,7 +414,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(6) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
 
             driver.findElement(By.cssSelector(".edit_but")).click();
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
@@ -456,7 +456,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(6) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
             driver.findElement(By.cssSelector(".edit_but")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_3")).click();
@@ -575,6 +575,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
+        Cabinet.Up(driver);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Check.Check("Одно или несколько обязательных полей не были заполнены!", test2, driver);
@@ -616,7 +617,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(s)).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020", Keys.ENTER);
+        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("125451241241", Keys.ENTER);
         test2 = driver.findElement(By.cssSelector("#seller-rusreg")).getAttribute("className");
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
@@ -655,7 +656,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         driver.findElement(By.cssSelector(".subbtn")).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector(s)).click();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020", Keys.ENTER);
+        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("125451241241", Keys.ENTER);
         driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("в");
         driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
@@ -667,7 +668,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#buyer-compinn")).clear();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("5047071020", Keys.ENTER);
+        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("125451241241", Keys.ENTER);
         test2 = driver.findElement(By.cssSelector("#buyer-rusreg")).getAttribute("className");
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
@@ -700,7 +701,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         test2 = driver.findElement(By.cssSelector("#buyer-rusreg")).getAttribute("className");
         System.out.println(test2);
         Thread.sleep(500);
-        Check.CheckingContains("inputFormat-error", test2, driver);
+        Check.CheckingContains("inputFormat-not", test2, driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(500);
@@ -729,15 +730,15 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         System.out.println(save);
         driver.findElement(By.cssSelector(".inputFormat-TOMPconstruct1-group")).clear();
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(5) > input:nth-child(1)")).clear();
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(9) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).clear();
         Thread.sleep(500);
         test2 = driver.findElement(By.cssSelector(".inputFormat-TOMPconstruct1-group")).getAttribute("className");
         Thread.sleep(500);
         Check.CheckingContains("inputFormat-TOMPconstruct1-group", test2, driver);
         Thread.sleep(1000);
+        Cabinet.Up(driver);
         driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         Thread.sleep(500);
-        Cabinet.Up(driver);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1)")).click();
         test2 = driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).getText();
         Thread.sleep(500);
@@ -785,12 +786,12 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         Thread.sleep(500);
         driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(7) > div:nth-child(2) > div:nth-child(5) > input:nth-child(1)")).sendKeys("500");
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(9) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys("500");
 //        driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(5) > input:nth-child(1)")).sendKeys("500");
         driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        Cabinet.Up(driver);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
-
         Cabinet.Up(driver);
         Thread.sleep(1000);
         test2 = driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).getText();

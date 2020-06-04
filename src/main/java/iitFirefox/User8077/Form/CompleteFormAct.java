@@ -149,11 +149,10 @@ public class CompleteFormAct {
             driver.findElement(By.cssSelector("#commentActEWModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(4000);
             driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+            Thread.sleep(3000);
+            driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         }
         String test2 = "" + date;
-
-        Thread.sleep(3000);
-        driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         return test2;
 
     }

@@ -12,15 +12,16 @@ import java.io.File;
 public class Cabinet {
     public static String ClickMenuFirstElement(int NumButtonsMenu, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        EnterAndExit.startEndingCertAndSendingFiles(driver);
         String row;
         Thread.sleep(2500);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         row = row.substring(0, 36);
-        Thread.sleep(2000);
+        Thread.sleep(2100);
         Element.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
         Actions builder = new Actions(driver);
         builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
-        ).moveByOffset(-10, -10).sendKeys(Keys.ARROW_DOWN).build().perform();
+        ).moveByOffset(-5, -5).sendKeys(Keys.ARROW_DOWN).build().perform();
         Thread.sleep(1000);
         switch (NumButtonsMenu) {
             case (1):
@@ -30,7 +31,7 @@ public class Cabinet {
                 //Удалить файлы в папке
                 File dir = new File("C:\\Tools\\TestFile\\"); //path указывает на директорию
                 HelpUser.DeletedFiles(dir);
-
+                Thread.sleep(500);
                 driver.findElement(By.id("cm-open_text")).click();
                 break;
             case (3):

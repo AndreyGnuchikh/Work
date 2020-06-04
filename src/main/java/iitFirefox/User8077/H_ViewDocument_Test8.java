@@ -100,10 +100,14 @@ public class H_ViewDocument_Test8 extends iit8077 {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
             CompleteFormDopSchF.DopSchF("YES",driver);
+            Thread.sleep(1000);
+            driver.findElement(By.cssSelector(".active-file")).click();
+            Thread.sleep(1000);
             Cabinet.ClickMenuFirstElement(2, driver);
-            test2 = driver.findElement(By.cssSelector("#butPrintUPD > button:nth-child(1)")).getText();
+
+            test2 = driver.findElement(By.cssSelector("#butPrint > button:nth-child(2)")).getText();
             Check.Check("Закрыть", test2, driver);
-            driver.findElement(By.cssSelector("#butPrintUPD > button:nth-child(1) > span:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#butPrint > button:nth-child(2)")).click();
             Thread.sleep(1000);
             test2 = driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).getText();
             Check.CheckExit("Все документы", test2, driver);

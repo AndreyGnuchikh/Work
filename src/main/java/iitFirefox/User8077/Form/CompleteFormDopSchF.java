@@ -87,7 +87,7 @@ public class CompleteFormDopSchF {
         }
 
         System.out.println(test);
-        Thread.sleep(1000);
+        Thread.sleep(1100);
         driver.findElement(By.id(test)).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#" + test + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
