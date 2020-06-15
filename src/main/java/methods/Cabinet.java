@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.File;
 
 public class Cabinet {
+
     public static String ClickMenuFirstElement(int NumButtonsMenu, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         EnterAndExit.startEndingCertAndSendingFiles(driver);
@@ -44,6 +45,7 @@ public class Cabinet {
             case (5):
                 Thread.sleep(500);
                 driver.findElement(By.id("cm-sign_text")).click();
+                Thread.sleep(1500);
                 break;
             case (6):
                 driver.findElement(By.id("cm-download_text")).click();
@@ -104,6 +106,28 @@ public class Cabinet {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         driver.quit();
         e.printStackTrace();
+        String srt;
+        if(e.toString().contains("org.openqa.selenium.NoSuchElementException:")){
+            srt = e.toString();
+            int index1 = srt.indexOf("For documentation on this error");
+            int index2 = srt.indexOf("t:");
+            srt = srt.substring(index2+1, index1);
+            System.out.println("Проблена с нахождением элемента "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        }
+        if(e.toString().contains("org.openqa.selenium.ElementClickInterceptedException:")){
+            srt = e.toString();
+            int index1 = srt.indexOf("Build info:");
+            int index2 = srt.indexOf("n:");
+            srt = srt.substring(index2+1, index1);
+            System.out.println("Элемент как то скрыт от нажатия "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        }
+        if(e.toString().contains("org.openqa.selenium.ElementNotInteractableException:")){
+            srt = e.toString();
+            int index1 = srt.indexOf("Build info:");
+            int index2 = srt.indexOf("n:");
+            srt = srt.substring(index2+1, index1);
+            System.out.println("Эламент есть в DOM, но не находится в поле нажатия, видости "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+        }
         Assertions.fail();
     }
     public static void SendCabinet(String who, String cabinet, WebDriver driver) throws InterruptedException {
@@ -127,7 +151,7 @@ public class Cabinet {
         Thread.sleep(2000);
         driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1)")).click();
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[contains(text(), '" + cabinet + "')][contains(@class, 'option')]")).click();
         Thread.sleep(1500);

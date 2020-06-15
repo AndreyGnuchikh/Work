@@ -61,7 +61,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Thread.sleep(1000);
             Cabinet.OpenNameFolder("АКТ", driver);
-            Thread.sleep(5000);
+            Thread.sleep(5200);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Sign.SignFirstFileUDPSecondSign(test2, driver);
             String test = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
@@ -89,6 +89,8 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Cabinet.OpenNameFolder("УПД 123", driver);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(2000);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(1000);
             Sign.SignFirstFileUDPSecondSign(test2, driver);
@@ -112,14 +114,11 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Thread.sleep(500);
             FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
+            driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(1500);
-            test2 = driver.findElement(By.cssSelector(".resptext")).getAttribute("innerText");
+            test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("innerText");
             System.out.println(test2);
-            Check.CheckExit("ФИО 9 (2012), для Вас не заполнена информация, необходимая для подписания УПД.\n" +
-                    "Для добавления необходимых сведений нажмите на Ваше ФИО в правом верхнем углу Личного кабинета и заполните блок \"Настроить область полномочий\" и сохраните изменения.\n" +
-                    "Либо свяжитесь с технической поддержкой ООО \"ИИТ\":\n" +
-                    "e-mail: support@iit.ru\n" +
-                    "тел: 8 (499) 262-24-25", test2, driver);
+            Check.CheckExit("ФИО 9 (г2012), для Вас не заполнена информация, необходимая для подписания УПД. Для добавления необходимых сведений нажмите на Ваше ФИО в правом верхнем углу Личного кабинета и заполните блок \"Настроить область полномочий\" и сохраните изменения. Либо свяжитесь с технической поддержкой ООО \"ИИТ\": e-mail: support@iit.ru тел: 8 (499) 262-24-25", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -217,7 +216,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
             Thread.sleep(7500);
             String test = driver.findElement(By.cssSelector(".result > h4:nth-child(1)")).getText();
-            Check.CheckExit("Все документы успешно подписаны УСИЛЕННОЙ ЭП!", test, driver);
+            Check.CheckExit("Все документы успешно подписаны ЭП!", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -281,6 +280,8 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
 
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(2000);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(1000);
             secondSign();
