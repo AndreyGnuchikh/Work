@@ -4,6 +4,7 @@ import methods.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -11,7 +12,8 @@ public class CompleteFormDopSchF {
     public static WebDriver driver;
 
     public static String DopSchF(String ClickYesNoOrIP, WebDriver driver) throws InterruptedException {
-        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy k mm ss");
+        String date = dateFormat.format( new Date());
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("DopSchF " + date);
 //        driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();
@@ -154,7 +156,8 @@ public class CompleteFormDopSchF {
         return test2;
     }
     public static String DopSchF_IP_3Page(Integer twoOrThree, WebDriver driver) throws InterruptedException {
-        Date date = new Date();
+        SimpleDateFormat  dateFormat = new SimpleDateFormat("d MMMM yyyy k mm ss");
+        String date = dateFormat.format( new Date());
         driver.findElement(By.cssSelector("#numberUPD")).sendKeys("DopSchF " + date);
         //driver.findElement(By.cssSelector("#numbercorUPD")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateUPD")).click();

@@ -64,7 +64,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             /*test = driver.findElement(By.id("patronymic")).getAttribute("value");
             Check.Check("должность", test, driver);*/
             test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность", test, driver);
+            Check.CheckingContains("Должность", test, driver);
             test = driver.findElement(By.id("org-name")).getAttribute("value");
             Check.Check("Все хорошо 2,0", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
@@ -130,7 +130,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             /*test = driver.findElement(By.id("patronymic")).getAttribute("value");
             Check.Check("должность", test, driver);*/
             test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность", test, driver);
+            Check.CheckingContains("Должность", test, driver);
             test = driver.findElement(By.id("org-name")).getAttribute("value");
             Check.Check("Все хорошо 2,0", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
@@ -170,7 +170,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             /*test = driver.findElement(By.id("patronymic")).getAttribute("value");
             Check.Check("должность", test, driver);*/
             test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность", test, driver);
+            Check.CheckingContains("Должность", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
             Check.Check("d", test, driver);
             test = driver.findElement(By.id("shipment-info")).getAttribute("value");

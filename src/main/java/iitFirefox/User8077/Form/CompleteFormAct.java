@@ -3,6 +3,7 @@ package iitFirefox.User8077.Form;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -10,7 +11,8 @@ public class CompleteFormAct {
     public static WebDriver driver;
 
     public static String Act(String ClickYesNoOrIP,WebDriver driver) throws InterruptedException {
-        Date date = new Date();
+        SimpleDateFormat  dateFormat = new SimpleDateFormat("d MMMM yyyy k mm ss");
+        String date = dateFormat.format( new Date());
         driver.findElement(By.cssSelector("#numberActEW")).sendKeys("Act " + date);
 //        driver.findElement(By.cssSelector("#numbercorActEW")).sendKeys("1");
         driver.findElement(By.cssSelector("#dateActEW")).click();

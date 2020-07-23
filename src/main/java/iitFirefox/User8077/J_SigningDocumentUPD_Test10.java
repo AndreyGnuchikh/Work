@@ -118,7 +118,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Thread.sleep(1500);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("innerText");
             System.out.println(test2);
-            Check.CheckExit("ФИО 9 (г2012), для Вас не заполнена информация, необходимая для подписания УПД. Для добавления необходимых сведений нажмите на Ваше ФИО в правом верхнем углу Личного кабинета и заполните блок \"Настроить область полномочий\" и сохраните изменения. Либо свяжитесь с технической поддержкой ООО \"ИИТ\": e-mail: support@iit.ru тел: 8 (499) 262-24-25", test2, driver);
+            Check.CheckingContainsExit(", для Вас не заполнена информация, необходимая для подписания УПД. Для добавления необходимых сведений нажмите на Ваше ФИО в правом верхнем углу Личного кабинета и заполните блок \"Настроить область полномочий\" и сохраните изменения. Либо свяжитесь с технической поддержкой ООО \"ИИТ\": e-mail: support@iit.ru тел: 8 (499) 262-24-25", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -216,7 +216,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
             Thread.sleep(7500);
             String test = driver.findElement(By.cssSelector(".result > h4:nth-child(1)")).getText();
-            Check.CheckExit("Все документы успешно подписаны ЭП!", test, driver);
+            Check.CheckExit("Все документы успешно подписаны УСИЛЕННОЙ ЭП!", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -248,7 +248,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Thread.sleep(500);
             test = driver.findElement(By.id("position")).getAttribute("value");
             Thread.sleep(500);
-            Check.Check("Должность", test, driver);
+            Check.CheckingContains("Должность", test, driver);
             Thread.sleep(500);
             test = driver.findElement(By.id("authority")).getAttribute("value");
             Thread.sleep(500);
@@ -291,7 +291,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             Check.Check("УПД", test, driver);
 
             test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность", test, driver);
+            Check.CheckingContains("Должность", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
             Check.Check("d", test, driver);
             String test = driver.findElement(By.id("shipment-info")).getAttribute("value");

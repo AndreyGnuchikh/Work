@@ -106,7 +106,7 @@ public class Cabinet {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         driver.quit();
         e.printStackTrace();
-        String srt;
+        String srt = null;
         if(e.toString().contains("org.openqa.selenium.NoSuchElementException:")){
             srt = e.toString();
             int index1 = srt.indexOf("For documentation on this error");
@@ -128,7 +128,7 @@ public class Cabinet {
             srt = srt.substring(index2+1, index1);
             System.out.println("Эламент есть в DOM, но не находится в поле нажатия, видости "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         }
-        Assertions.fail();
+        Assertions.fail(srt);
     }
     public static void SendCabinet(String who, String cabinet, WebDriver driver) throws InterruptedException {
         driver.findElement(By.cssSelector(".selectize-input")).click();

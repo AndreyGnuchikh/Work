@@ -257,8 +257,10 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#sign-readers")).click();
-            driver.findElement(By.cssSelector("#sign-readers > option:nth-child(3)")).click();
+            driver.findElement(By.cssSelector("#sign-readers > option:nth-child("+fio10+")")).click();
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
+            Thread.sleep(1000);
+            getRuntime().exec("taskkill /im nmcades.exe");
             Thread.sleep(1000);
             getRuntime().exec("taskkill /im nmcades.exe");
             Thread.sleep(1000);

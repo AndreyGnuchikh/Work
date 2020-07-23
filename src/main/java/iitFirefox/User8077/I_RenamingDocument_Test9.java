@@ -103,24 +103,25 @@ public class I_RenamingDocument_Test9 extends iit8077 {
     @Order(4)
     void D_WrongSymbols_Test4() {
         try {
-            String[] d = {"/", "\\", ":", "*", "?", "«", "<", ">", "|"};
+            String[] d = {"/", "\\", ":", "*", "?", "<", ">", "|"};
             FileCreateAndLoading.AddFileAndClickMenu(4, "1.html", driver);
             for (int i = 0; i < d.length; i++) {
                 driver.findElement(By.cssSelector("#rename-newName")).sendKeys(d[i]);
                 Thread.sleep(400);
                 test = driver.findElement(By.cssSelector("#rename-newName")).getAttribute("data-content");
                 System.out.println(test);
-                Check.Check("Поле не может быть пустым и не может содержать /,\\,:,*,?,«,<,>,|,\"", test, driver);
+                Check.Check("Поле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
                 driver.findElement(By.cssSelector("#rename-newName")).clear();
                 Thread.sleep(400);
             }
-            Check.CheckExit("Поле не может быть пустым и не может содержать /,\\,:,*,?,«,<,>,|,\"", test, driver);
+            Check.CheckExit("Поле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
     }
 
-    @Test
+/*    -- Отменено в 4.1 релизе
+@Test
     @Order(5)
     void E_WrongNames_Test5() {
         try {
@@ -142,7 +143,7 @@ public class I_RenamingDocument_Test9 extends iit8077 {
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
-    }
+    }*/
 
     @Test
     @Order(6)
@@ -155,7 +156,7 @@ public class I_RenamingDocument_Test9 extends iit8077 {
             Thread.sleep(1000);
             test = driver.findElement(By.cssSelector("h3.resptext")).getText();
             System.out.println(test);
-            Check.CheckExit("Введите новое имя документа!", test, driver);
+            Check.CheckExit("Недопустимое имя файла . Поле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

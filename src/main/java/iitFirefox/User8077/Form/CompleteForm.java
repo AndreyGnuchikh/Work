@@ -1,9 +1,10 @@
 package iitFirefox.User8077.Form;
 
-import methods.HelpUser;
+import methods.IitDate;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -11,7 +12,8 @@ public class CompleteForm {
     public static WebDriver driver;
 
     public static String SCHF(String ClickYesNoOrIP, WebDriver driver) throws InterruptedException {
-        Date date = new Date();
+        SimpleDateFormat  dateFormat = new SimpleDateFormat("d MMMM yyyy k mm ss");
+        String date = dateFormat.format( new Date());
         driver.findElement(By.cssSelector("#numberSf")).sendKeys("SCHF " + date);
 //        driver.findElement(By.cssSelector("#numbercorSf")).sendKeys("1");
         Thread.sleep(500);

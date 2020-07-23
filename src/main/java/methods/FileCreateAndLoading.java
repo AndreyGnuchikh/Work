@@ -295,6 +295,7 @@ public class FileCreateAndLoading {
                 OpenNameFolder("сод 123", driver);
                 break;
         }
+        EnterAndExit.startEndingCertAndSendingFiles(driver);
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
         Thread.sleep(1000);

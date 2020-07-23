@@ -67,7 +67,7 @@ public class C_ForgotPassword_Test3 extends iit8077 {
             }
             Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             driver.findElement(By.cssSelector("a.ns-view-folder:nth-child(1) > span:nth-child(2)")).click();
-            Thread.sleep(5000);
+            Thread.sleep(5500);
             driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).click();
             Thread.sleep(3000);
             newpass = driver.findElement(By.cssSelector(".mail-Message-Body-Content > div:nth-child(4)")).getText();
