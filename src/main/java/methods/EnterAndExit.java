@@ -129,7 +129,13 @@ public class EnterAndExit {
         }
         if (driver.findElement(By.cssSelector("#userAlertModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1)")).isDisplayed()) {
             driver.findElement(By.cssSelector("#userAlertModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1)")).click();
-            Thread.sleep(1000);
+            for (int i = 0; i <20 ; i++) {
+                if (driver.findElement(By.cssSelector("#sign-second > div.result > h4")).isDisplayed()) {
+                    Thread.sleep(1000);
+                }else{
+                    break;
+                }
+            }
         }
     }
     public static void startEndingCertAndSendingFiles(String SkipSignFiles, WebDriver driver) throws InterruptedException {
@@ -144,10 +150,15 @@ public class EnterAndExit {
         }
         if (driver.findElement(By.cssSelector("#userAlertModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1)")).isDisplayed()) {
             driver.findElement(By.cssSelector("#userAlertModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1)")).click();
-            Thread.sleep(1000);
+            for (int i = 0; i <20 ; i++) {
+                if (driver.findElement(By.cssSelector("#sign-second > div.result > h4")).isDisplayed()) {
+                    Thread.sleep(1000);
+                }else{
+                    break;
+                }
+            }
         }
     }
-
 
     public static void Exit(WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());

@@ -55,9 +55,9 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             Check.Check("1.html", test, driver);
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector("#cf-creator")).getText();
-            Check.Check("ÓÏÄ 1", test, driver);
+            Check.CheckingContains("ÓÏÄ 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-perf")).getText();
-            Check.Check("ÓÏÄ 1", test, driver);
+            Check.CheckingContains("ÓÏÄ 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-date")).getText();
             test = test.substring(0, 10);
             Check.Check(dateFormat.format(currentDate), test, driver);
@@ -68,7 +68,7 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(1)")).getText();
             Check.Check("Ñîãëàñîâàíî", test, driver);
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(3)")).getText();
-            Check.Check("ÓÏÄ 1", test, driver);
+            Check.CheckingContains("ÓÏÄ 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(4)")).getText();
             Check.CheckExit("Ä", test, driver);
         } catch (Throwable e) {
@@ -93,7 +93,7 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             Thread.sleep(500);
             Check.Check("Dop.xml", test, driver);
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(1)")).getText();
-            Check.Check("ÓÏÄ 1", test, driver);
+            Check.CheckingContains("ÓÏÄ 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(4)")).getText();
             test = test.substring(0, 10);
             Thread.sleep(500);
@@ -101,8 +101,8 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(3)")).getText();
             Check.Check("Äîëæíîñòü", test, driver);
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(5)")).getText();
-            Check.CheckExit("0179F1A80022AB9F954F6140530460C324\n" +
-                    "ñ 13.12.2019 ïî 13.03.2020", test, driver);
+            Check.CheckExit("02B465C000DBABADA5475C22EDB52EB92F\n" +
+                    "ñ 15.06.2020 ïî 15.09.2020", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -116,8 +116,9 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             SimpleDateFormat dateFormat = null;
             dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
             FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("3", driver);
+            Cabinet.OpenNameFolder("ÓÏÄ",driver);
             Cabinet.ClickMenuFirstElement(8, driver);
-            Thread.sleep(1500);
+            Thread.sleep(2500);
             //Third
             test = driver.findElement(By.cssSelector("#cf-historyBody > tr:nth-child(1) > td:nth-child(2)")).getText();
             test = test.substring(0, 10);
@@ -128,7 +129,7 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             test = driver.findElement(By.cssSelector("#cf-historyBody > tr:nth-child(1) > td:nth-child(3)")).getText();
             Check.Check("Òåñò Âñå õîðîøî", test, driver);
             test = driver.findElement(By.cssSelector("#cf-historyBody > tr:nth-child(1) > td:nth-child(4)")).getText();
-            Check.Check("ÓÏÄ 1", test, driver);
+            Check.CheckingContains("ÓÏÄ 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-historyBody > tr:nth-child(1) > td:nth-child(5)")).getText();
             Check.Check("Âñå õîðîøî 2,0", test, driver);
             test = driver.findElement(By.cssSelector("#cf-historyBody > tr:nth-child(1) > td:nth-child(6)")).getText();

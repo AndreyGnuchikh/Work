@@ -28,11 +28,11 @@ public class Email {
             Thread.sleep(500);
             driver.findElement(By.id("passp-field-login")).sendKeys(email);
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("button.button2_type_submit")).click();
+            driver.findElement(By.cssSelector("button.Button2_type_submit")).click();
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(pass);
             Thread.sleep(2000);
-            driver.findElement(By.cssSelector(".button2")).click();
+            driver.findElement(By.cssSelector(".Button2_type_submit")).click();
         } else {
             Thread.sleep(1500);
             isPresentPass = driver.findElements(By.id("passp-field-passwd")).size() > 0;
