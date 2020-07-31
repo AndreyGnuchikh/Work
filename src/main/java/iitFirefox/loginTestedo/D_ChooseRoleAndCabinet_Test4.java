@@ -1,10 +1,11 @@
 package iitFirefox.loginTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.EnterAndExit;
-import methods.Check;
+import iitAdd.Drivers;
+import iitAdd.iit8077;
 import iitAdd.testedo;
+import methods.Cabinet;
+import methods.Check;
+import methods.EnterAndExit;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -118,11 +119,12 @@ public class D_ChooseRoleAndCabinet_Test4 extends testedo {
             EnterAndExit.RoleSwitch(2,driver);
             Thread.sleep(1000);
             driver.findElement(By.id("select2-cabinet-container")).click();
+            Thread.sleep(1000);
             checking = driver.findElement(By.className("select2-results__options")).getAttribute("innerText");
             System.out.println(checking + "/");
-            Check.CheckExit("test2\n" +
+            Check.CheckExit("Бухгалтерия ООО \"Ромашка\"\n" +
                     "Unused cabinet\n" +
-                    "TestContractor1 Cabinet1\n" +
+                    "Отдел кадров ООО \"Ромашка\"\n" +
                     "TestContractor2Cabinet1", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);

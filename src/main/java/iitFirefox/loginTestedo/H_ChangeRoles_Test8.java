@@ -1,10 +1,11 @@
 package iitFirefox.loginTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
+import iitAdd.iit8077;
 import iitAdd.testedo;
+import methods.Cabinet;
 import methods.Check;
+import methods.EnterAndExit;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,8 +34,8 @@ public class H_ChangeRoles_Test8 extends testedo {
             Admin();
 
             EnterAndExit.RoleSwitch(2, driver);
-            checking = driver.findElement(By.cssSelector(".pad > p:nth-child(2) > a:nth-child(3) > strong:nth-child(1)")).getText();
-            Check.CheckExit("Кабинет 2", checking, driver);
+            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Check.CheckExit("Кабинет Все хорошо", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -50,7 +51,7 @@ public class H_ChangeRoles_Test8 extends testedo {
 
             EnterAndExit.RoleSwitch(3, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Check.CheckExit("СОГАЗ - Омский филиал", checking, driver);
+            Check.CheckExit(supportCabinet, checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -65,6 +66,7 @@ public class H_ChangeRoles_Test8 extends testedo {
             Admin();
 
             EnterAndExit.RoleSwitch(4, driver);
+
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
             Check.CheckExit("Биллинг", checking, driver);
         } catch (Throwable e) {
@@ -95,10 +97,9 @@ public class H_ChangeRoles_Test8 extends testedo {
             EnterAndExit.LogPass(LogAll, pass, driver);
             EnterAndExit.RoleSwitch(2, driver);
             User();
-
             EnterAndExit.RoleSwitch(3, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Check.CheckExit("СОГАЗ - Омский филиал", checking, driver);
+            Check.CheckExit(supportCabinet, checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -111,7 +112,7 @@ public class H_ChangeRoles_Test8 extends testedo {
             EnterAndExit.LogPass(LogAll, pass, driver);
             EnterAndExit.RoleSwitch(2, driver);
             User();
-            Thread.sleep(500);
+
             EnterAndExit.RoleSwitch(4, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
             Check.CheckExit("Биллинг", checking, driver);
@@ -126,6 +127,7 @@ public class H_ChangeRoles_Test8 extends testedo {
         try {
             EnterAndExit.LogPass(LogAll, pass, driver);
             EnterAndExit.RoleSwitch(3, driver);
+            Thread.sleep(2000);
             Support();
 
             EnterAndExit.RoleSwitch(1, driver);
@@ -146,7 +148,7 @@ public class H_ChangeRoles_Test8 extends testedo {
 
             EnterAndExit.RoleSwitch(2, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Check.CheckExit("Кабинет 2", checking, driver);
+            Check.CheckExit("Кабинет Все хорошо", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -198,11 +200,12 @@ public class H_ChangeRoles_Test8 extends testedo {
 
             EnterAndExit.RoleSwitch(2, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Check.CheckExit("Кабинет 2", checking, driver);
+            Check.CheckExit("Кабинет Все хорошо", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
     }
+
 
     @Test
     @Order(12)
@@ -216,7 +219,8 @@ public class H_ChangeRoles_Test8 extends testedo {
 
             EnterAndExit.RoleSwitch(3, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Check.CheckExit("СОГАЗ - Омский филиал", checking, driver);
+            Check.CheckExit(supportCabinet, checking, driver);
+
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -231,18 +235,18 @@ public class H_ChangeRoles_Test8 extends testedo {
 
     }
 
-    private void User() throws InterruptedException {
-        Thread.sleep(500);
+    void User() throws InterruptedException {
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Check.Check("Кабинет 2", checking, driver);
+        Check.Check("Кабинет Все хорошо", checking, driver);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
-        Thread.sleep(2200);
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
     }
 
-    private void Support() throws InterruptedException {
+    void Support() throws InterruptedException {
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Check.Check("СОГАЗ - Омский филиал", checking, driver);
+        Check.Check(supportCabinet, checking, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();

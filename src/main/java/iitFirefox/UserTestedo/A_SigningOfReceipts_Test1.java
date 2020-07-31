@@ -1,5 +1,7 @@
 package iitFirefox.UserTestedo;
 
+import iitAdd.Settings;
+import iitAdd.iit8077;
 import iitAdd.testedo;
 import iitFirefox.UserTestedo.SoapTest1.*;
 import iitAdd.Drivers; 
@@ -14,7 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class A_SigningOfReceipts_Test1 extends testedo {
+public class A_SigningOfReceipts_Test1 extends iit8077 {
     public WebDriver driver;
     public String test;
 

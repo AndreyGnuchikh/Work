@@ -148,9 +148,9 @@ public class F_ChangeScopeOfAuthority_Test6 extends iit8077 {
         EnterAndExit.RoleSwitch(1, driver);
         driver.findElement(By.cssSelector("#user")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("#user-search")).sendKeys("Все");
+        driver.findElement(By.cssSelector("#user-search")).sendKeys("Все Все");
         Thread.sleep(2100);
-        HelpAdmin.MenuAdmin(1, "//*[contains(text(), 'Все')][contains(@class, 'dgrid-column-name ')]", driver);
+        HelpAdmin.MenuAdmin(1, "//*[contains(text(), 'Все Все')][contains(@class, 'dgrid-column-name ')]", driver);
         Thread.sleep(1200);
         test = driver.findElement(By.cssSelector("#carduser-authority-area-name")).getText();
         Thread.sleep(1600);

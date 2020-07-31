@@ -33,12 +33,12 @@ public class G_ChangePassword_Test7 extends iit8077 {
 
     @Test
     @Order(1)
-    void A_ChengePasswordInCabinet_Test1() {
+    void A_Old_PasswordInCabinet_Test1() {
         try {
             log(pass7log, pass7log, pass7log);
             String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
             System.out.println(checkingTest);
-            Check.CheckExit("Пароль был успешно изменен", checkingTest, driver);
+            Check.CheckExit("Новый пароль не должен совпадать со старым!", checkingTest, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -49,9 +49,9 @@ public class G_ChangePassword_Test7 extends iit8077 {
     void B_PasswordWritesecontWrong_Test2() {
         try {
             log(pass7log, pass7log, wrong7log);
-            String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
+            String checkingTest = driver.findElement(By.cssSelector("div.col-md-7:nth-child(3) > input:nth-child(2)")).getAttribute("outerHTML");
             System.out.println(checkingTest);
-            Check.CheckExit("Новый пароль введен повторно неверно!", checkingTest, driver);
+            Check.CheckingContains("border-color: red", checkingTest, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -70,14 +70,38 @@ public class G_ChangePassword_Test7 extends iit8077 {
             Cabinet.Catch(driver, e);
         }
     }
+    @Test
+    @Order(4)
+    void D_Change_PasswordInCabinet_Test4() {
+        try {
+            log(pass7log, newpass7log, newpass7log);
+            String checkingTest = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
+            System.out.println(checkingTest);
+            Check.Check("Пароль был успешно изменен", checkingTest, driver);
+            driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+            Thread.sleep(1500);
+            driver.findElement(By.id("user-nav")).click();
+            Thread.sleep(2800);
+            driver.findElement(By.cssSelector("#user-panel > div:nth-child(6) > div > div.nav-title.collapsed")).click();
+
+            log(newpass7log, pass7log, pass7log);
+            String checkingTest2 = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-body.text-center > h3")).getText();
+            System.out.println(checkingTest);
+            Check.CheckExit("Пароль был успешно изменен", checkingTest2, driver);
+        } catch (Throwable e) {
+            Cabinet.Catch(driver, e);
+        }
+    }
 
     void log(String log1, String log2, String log3) throws InterruptedException {
         driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[1]/div[1]/input")).sendKeys(log1);
         driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[1]/div[2]/input")).sendKeys(log2);
         driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[1]/div[3]/input")).sendKeys(log3);
         Thread.sleep(500);
-        driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[2]/button")).click();
-        Thread.sleep(2000);
+        if(driver.findElement(By.cssSelector("#navbarChangePassButton")).isEnabled()){
+            driver.findElement(By.xpath("//*[@id=\"collapseThree\"]/div[2]/button")).click();
+        }
+         Thread.sleep(2000);
     }
 
 

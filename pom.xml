@@ -14,15 +14,15 @@
     <!-- properties-->
     <properties>
         <project.build.sourceEncoding>WINDOWS-1251</project.build.sourceEncoding>
-        <junit-jupiter.version>5.5.2</junit-jupiter.version>
-        <allure-junit5.version>2.13.0</allure-junit5.version>
+        <junit-jupiter.version>5.6.2</junit-jupiter.version>
+        <allure-junit5.version>2.13.5</allure-junit5.version>
 
         <java.version>1.8</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
 
         <!-- build aspectjweaver and allure-junit5-->
-        <aspectj.version>1.9.4</aspectj.version>
+        <aspectj.version>1.9.0</aspectj.version>
         <allure.version>2.13.0</allure.version>
     </properties>
 
@@ -100,7 +100,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>3.0.0-M2</version>
                 <configuration>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

@@ -306,6 +306,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             driver = Drivers.ff();
             Thread.sleep(500);
             driver.get(url);
+            Thread.sleep(500);
             EnterAndExit.loggingCerts(upd, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);

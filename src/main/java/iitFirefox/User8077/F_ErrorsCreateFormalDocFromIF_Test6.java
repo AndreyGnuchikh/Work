@@ -821,6 +821,8 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(1500);
         driver.findElement(By.cssSelector(close)).click();
+        Thread.sleep(500);
+        Cabinet.Up(driver);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Check.Check("Одно или несколько обязательных полей не были заполнены!", test2, driver);

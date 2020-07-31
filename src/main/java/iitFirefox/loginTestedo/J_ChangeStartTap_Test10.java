@@ -1,10 +1,11 @@
 package iitFirefox.loginTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.EnterAndExit;
-import methods.Check;
+import iitAdd.Drivers;
+import iitAdd.iit8077;
 import iitAdd.testedo;
+import methods.Cabinet;
+import methods.Check;
+import methods.EnterAndExit;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,7 @@ public class J_ChangeStartTap_Test10 extends testedo {
 
     @BeforeEach
     void setUp() {
+
         try {
             driver = Drivers.ff();
         } catch (Throwable e) {
@@ -47,7 +49,7 @@ public class J_ChangeStartTap_Test10 extends testedo {
             driver.findElement(By.xpath("//*[@id=\"wrap\"]/nav/div/div[1]/div/a")).click();
             test = driver.findElement(By.className("header__title")).getText();
             System.out.println(test);
-            Check.CheckExit("Приветствуем, Все", test, driver);
+            Check.CheckExit("Приветствуем, Все Все", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -63,7 +65,7 @@ public class J_ChangeStartTap_Test10 extends testedo {
             driver.findElement(By.xpath("//*[@id=\"wrap\"]/nav/div/div[1]/div/a")).click();
             test = driver.findElement(By.className("header__title")).getText();
             System.out.println(test);
-            Check.Check("Приветствуем, Все", test, driver);
+            Check.Check("Приветствуем, Все Все", test, driver);
             driver.findElement(By.className("header__btn-enter")).click();
             test = driver.findElement(By.name("adminInfoText")).getText();
             System.out.println(test);

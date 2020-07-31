@@ -1,10 +1,11 @@
 package iitFirefox.loginTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.HelpUser;
+import iitAdd.Drivers;
+import iitAdd.iit8077;
 import iitAdd.testedo;
+import methods.Cabinet;
 import methods.Check;
+import methods.HelpUser;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -40,7 +41,7 @@ public class K_DownloadMaterial_Test11 extends testedo {
             for (File file : dir.listFiles())
                 if (!file.isDirectory())
                     file.delete();
-            driver.findElement(By.xpath("//*[contains(text(), 'Рукводство пользователя')]")).click();
+            driver.findElement(By.xpath("//*[contains(text(), 'Руководство пользователя')]")).click();
             Thread.sleep(10000);
             // Взять файл в папке.
             File[] arrFiles = dir.listFiles();

@@ -1,17 +1,17 @@
 package iitFirefox.loginTestedo;
 
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.EnterAndExit;
-import methods.Check;
+import iitAdd.Drivers;
+import iitAdd.iit8077;
 import iitAdd.testedo;
+import methods.Cabinet;
+import methods.Check;
+import methods.EnterAndExit;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static java.lang.Runtime.getRuntime;
-
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class B_LoginCerts_Test2 extends testedo {
@@ -35,6 +35,7 @@ public class B_LoginCerts_Test2 extends testedo {
             EnterAndExit.loggingCerts8080(fio, driver);
             checking = driver.findElement(By.id("selectRole")).getText();
             System.out.println(checking);
+            Thread.sleep(500);
             Check.CheckExit("Выбрать", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -45,7 +46,7 @@ public class B_LoginCerts_Test2 extends testedo {
     @Order(2)
     void B_ContragentIsDisconnect_Test2() {
         try {
-            EnterAndExit.loggingCerts(fio2, driver);
+            EnterAndExit.loggingCerts8080(fio2, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
             System.out.println(checking);
             Check.CheckExit("Внимание! Не удалось войти на портал. Контрагент отключен.", checking, driver);
@@ -58,7 +59,7 @@ public class B_LoginCerts_Test2 extends testedo {
     @Order(3)
     void C_ContragentIsBlock_Test3() {
         try {
-            EnterAndExit.loggingCerts(fio3, driver);
+            EnterAndExit.loggingCerts8080(fio3, driver);
             checking = driver.findElement(By.cssSelector("#alertMessage > div:nth-child(3)")).getText();
             System.out.println(checking);
             Check.CheckExit("УВАЖАЕМЫЙ ПОЛЬЗОВАТЕЛЬ УСЛУГ ОПЕРАТОРА ЭДО!", checking, driver);
@@ -67,18 +68,20 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-   /* @Test
+/*    @Test
     @Order(4)
     void D_UserNoCabinet_Test4() {
         try {
-            Enter.loggingCerts(fio4, driver);
+            Enter.loggingCerts8080(fio4, driver);
             Thread.sleep(1500);
+            Enter.RoleSwitch(2,driver);
+            Thread.sleep(2500);
             checking = driver.findElement(By.id("alertMessage")).getText();
             System.out.println(checking);
-            Check.CheckExit("Внимание! Для текущего пользователя отсутствуют кабинеты для выбора.\\n\" +\n" +
-                    "                    \"Для получения доступа к личному кабинету обратитесь в техническую поддержку ООО \\\"ИИТ\\\":\\n\" +\n" +
-                    "                    \"тел: 8 (499) 262 24 25\\n\" +\n" +
-                    "                    \"e-mail: support@iit.ru", checking, driver);
+            Check.CheckExit("Внимание! Для текущего пользователя отсутствуют кабинеты для выбора.\n" +
+                    "Для получения доступа к личному кабинету обратитесь в техническую поддержку ООО \"ИИТ\":\n" +
+                    "тел: 8 (499) 262 24 25\n" +
+                    "e-mail: support@iit.ru", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -88,7 +91,7 @@ public class B_LoginCerts_Test2 extends testedo {
     @Order(5)
     void E_UserIsBlock_Test5() {
         try {
-            EnterAndExit.loggingCerts(fio5, driver);
+            EnterAndExit.loggingCerts8080(fio5, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
@@ -102,7 +105,7 @@ public class B_LoginCerts_Test2 extends testedo {
     @Order(6)
     void F_UserNoHaveRole_Test6() {
         try {
-            EnterAndExit.loggingCerts(fio6, driver);
+            EnterAndExit.loggingCerts8080(fio6, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
 
             System.out.println(checking);
@@ -112,14 +115,13 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-  /*  @Test
+   /* @Test
     @Order(7)
     void G_UserNoHaveCabinetTest7() {
         try {
             Enter.loggingCerts8080(fio7, driver);
             checking = driver.findElement(By.cssSelector("#alertMessage > a:nth-child(5)")).getText();
             System.out.println(checking);
-            Thread.sleep(500);
             Check.CheckExit("support@iit.ru", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -127,7 +129,7 @@ public class B_LoginCerts_Test2 extends testedo {
     }*/
 
     //    @Test
-    //      @Order(8)
+    //@Order(8)
 //    void H_NoValidation_Test8() {
 //    try {
 //        Enter.loggingCerts8080(fio8, driver);
@@ -139,7 +141,7 @@ public class B_LoginCerts_Test2 extends testedo {
 //         }
 //    }
 /*    @Test
-@Order(9)
+    //@Order(9)
    try {
     void I_NoConnectUser_Test9() {
         Enter.loggingCerts8080(fio9, driver);

@@ -1,12 +1,13 @@
 package iitFirefox.loginTestedo;
 
 import iitAdd.Admin.HelpAdmin;
-import iitAdd.Drivers; 
+import iitAdd.Drivers;
+import iitAdd.iit8077;
+import iitAdd.testedo;
 import methods.Cabinet;
+import methods.Check;
 import methods.Element;
 import methods.EnterAndExit;
-import iitAdd.testedo;
-import methods.Check;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -135,6 +136,7 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
         EnterAndExit.RoleSwitch(2, driver);
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#user-nav")).click();
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("div.statistic:nth-child(5) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
         driver.findElement(By.cssSelector("#nav-bar-authority-area-select")).click();
         driver.findElement(By.cssSelector("#nav-bar-authority-area-select > option:nth-child(" + numerAuthority + ")")).click();
@@ -147,9 +149,9 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
         EnterAndExit.RoleSwitch(1, driver);
         driver.findElement(By.cssSelector("#user")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("#user-search")).sendKeys("Все");
+        driver.findElement(By.cssSelector("#user-search")).sendKeys("Все Все");
         Thread.sleep(2100);
-        HelpAdmin.MenuAdmin(1, "//*[contains(text(), 'Все')][contains(@class, 'dgrid-column-name ')]", driver);
+        HelpAdmin.MenuAdmin(1, "//*[contains(text(), 'Все Все')][contains(@class, 'dgrid-column-name ')]", driver);
         Thread.sleep(1200);
         test = driver.findElement(By.cssSelector("#carduser-authority-area-name")).getText();
         Thread.sleep(1600);

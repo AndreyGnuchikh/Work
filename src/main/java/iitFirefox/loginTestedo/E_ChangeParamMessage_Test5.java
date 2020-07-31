@@ -1,13 +1,9 @@
 package iitFirefox.loginTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.Element;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
 import iitAdd.iit8077;
 import iitAdd.testedo;
-import methods.Email;
-import methods.FileCreateAndLoading;
+import methods.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,7 +21,6 @@ public class E_ChangeParamMessage_Test5 extends testedo {
     void A_DelatedCheckboxs() {
         try {
             Email.DeletedCabinetMarkerAndDeletedEmail(url, pass5log, testIitTest2, EmailPass, driver);
-
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -47,11 +42,11 @@ public class E_ChangeParamMessage_Test5 extends testedo {
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
             //add file
-            Thread.sleep(1000);
             FileCreateAndLoading.AddFileAndClickMenu(12, "1.html", driver);
-            Cabinet.SendCabinet("АО АИСА ИТ-Сервис", "Кабинет 1", driver);
             Thread.sleep(1000);
-            Email.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
+            Cabinet.SendCabinet("Тест все хорошо", "Переименованный кабинет", driver);
+            Thread.sleep(1000);
+            Email.Email(testedo.testIitTest2, testedo.EmailPass, driver);
             Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             Thread.sleep(500);
             String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
@@ -88,14 +83,13 @@ public class E_ChangeParamMessage_Test5 extends testedo {
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
             //add file
-            Thread.sleep(1000);
             FileCreateAndLoading.AddFileAndClickMenu(10, "1.html", driver);
             Thread.sleep(1500);
             driver.findElement(By.xpath("//*[@id=\"cn-comment\"]")).sendKeys("Саглосование ", date.toString());
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#modalSendConfirm")).click();
             Thread.sleep(1000);
-            Email.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
+            Email.Email(testedo.testIitTest2, testedo.EmailPass, driver);
             Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             Thread.sleep(500);
             String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
@@ -124,6 +118,7 @@ public class E_ChangeParamMessage_Test5 extends testedo {
             driver.get(url);
             EnterAndExit.LogPass(pass5log, pass5log, driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(500);
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
             driver.findElement(By.cssSelector("div.statistic:nth-child(4) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
             driver.findElement(By.cssSelector("#not-3")).click();
@@ -132,14 +127,14 @@ public class E_ChangeParamMessage_Test5 extends testedo {
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
 
             //add file
-            Thread.sleep(1000);
             FileCreateAndLoading.AddFileAndClickMenu(7, "1.html", driver);
             Thread.sleep(1500);
             driver.findElement(By.xpath("//*[@id=\"modalSetTrust\"]")).click();
             Thread.sleep(1000);
-            Email.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
+            Email.Email(testedo.testIitTest2, testedo.EmailPass, driver);
+            Thread.sleep(1000);
             Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
-            Thread.sleep(500);
+            Thread.sleep(1000);
             String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
             System.out.println(test1);
             if (test1.equals("Портал ЭДО ИИТ: Изменение ответственного исполнителя")) {

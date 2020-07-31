@@ -55,7 +55,7 @@ public class I_RenamingDocument_Test9 extends testedo {
     void B_SignDocumentAndCheck_Test2() {
         try {
             EnterAndExit.Exit(driver);
-            EnterAndExit.loggingCerts(fio9,driver);
+            EnterAndExit.loggingCerts8080(fio9,driver);
             EnterAndExit.startEndingCertAndSendingFiles("Skip",driver);
             row = null;
             row = FileCreateAndLoading.AddFile("1.html", driver);

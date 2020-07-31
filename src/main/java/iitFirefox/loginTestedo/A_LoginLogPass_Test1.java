@@ -1,20 +1,22 @@
 package iitFirefox.loginTestedo;
 
-
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
+import iitAdd.iit8077;
 import iitAdd.testedo;
+import methods.Cabinet;
 import methods.Check;
+import methods.EnterAndExit;
 import org.junit.jupiter.api.*;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class A_LoginLogPass_Test1 extends testedo {
+
     public WebDriver driver;
     public String checking;
+
 
     @BeforeEach
     void setUp() {
@@ -26,8 +28,6 @@ public class A_LoginLogPass_Test1 extends testedo {
             Cabinet.Catch(driver, e);
         }
     }
-
-
     @Test
     @Order(1)
     void A_AllRightTest1() {
@@ -111,8 +111,7 @@ public class A_LoginLogPass_Test1 extends testedo {
         }
     }
 
-/*
-    @Test
+ /*   @Test
     @Order(7)
     void G_UserDontHaveCabinet7() {
         try {
@@ -123,8 +122,7 @@ public class A_LoginLogPass_Test1 extends testedo {
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
-    }
-*/
+    }*/
 
     @Test
     @Order(8)

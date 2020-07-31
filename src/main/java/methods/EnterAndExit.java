@@ -101,6 +101,7 @@ public class EnterAndExit {
                 Thread.sleep(1000);
                 driver.findElement(By.xpath("/html/body/main/section/div/div[2]/Form/div[2]/div/div/span/span[1]/span")).click();
                 Thread.sleep(1000);
+
                 driver.findElement(By.cssSelector("li.select2-results__option:nth-child(1)")).click();
                 driver.findElement(By.cssSelector("#enter")).click();
                 break;

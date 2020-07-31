@@ -12,7 +12,7 @@ public class HelpAdmin {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         Actions builder = new Actions(driver);
         Thread.sleep(500);
-        builder.contextClick(driver.findElement(By.xpath(string))).sendKeys(
+        builder.contextClick(driver.findElement(By.xpath(string))).moveByOffset(+24, +63).sendKeys(
                 Keys.ARROW_DOWN).build().perform();
 
         switch (i) {

@@ -1,5 +1,3 @@
-package iitFirefox.login8077;
-
 
 import iitAdd.Drivers;
 import methods.Cabinet;
@@ -10,7 +8,6 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class A_LoginLogPass_Test1 extends iit8077 {

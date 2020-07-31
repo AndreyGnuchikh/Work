@@ -24,7 +24,7 @@ public class FileCreateAndLoading {
         Thread.sleep(200);
         System.out.println(fileName);
         upload.sendKeys("C:\\Tools\\" + fileName);
-        Thread.sleep(500);
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
@@ -75,6 +75,7 @@ public class FileCreateAndLoading {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file UPD Error
         Element.visibleElement180SecToWait(".createDocument",driver);
+        Thread.sleep(200);
         driver.findElement(By.cssSelector(".createDocument")).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();

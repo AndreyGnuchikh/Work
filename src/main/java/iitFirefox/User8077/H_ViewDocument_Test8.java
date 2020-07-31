@@ -90,6 +90,7 @@ public class H_ViewDocument_Test8 extends iit8077 {
     void C_OpenUPD_Test3() {
         try {
             setUP();
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector(".createDocument")).click();
             driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
             Thread.sleep(500);

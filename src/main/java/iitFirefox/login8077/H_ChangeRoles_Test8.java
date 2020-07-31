@@ -1,13 +1,13 @@
 package iitFirefox.login8077;
 
-import iitAdd.Drivers; 
+import iitAdd.Drivers;
+import iitAdd.iit8077;
 import methods.Cabinet;
-import methods.EnterAndExit;
 import methods.Check;
+import methods.EnterAndExit;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import iitAdd.iit8077;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class H_ChangeRoles_Test8 extends iit8077 {
@@ -50,7 +50,7 @@ public class H_ChangeRoles_Test8 extends iit8077 {
 
             EnterAndExit.RoleSwitch(3, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Check.CheckExit("ЖАСО - Нижегородский филиал", checking, driver);
+            Check.CheckExit(supportCabinet, checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -98,7 +98,7 @@ public class H_ChangeRoles_Test8 extends iit8077 {
             User();
             EnterAndExit.RoleSwitch(3, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Check.CheckExit("ЖАСО - Нижегородский филиал", checking, driver);
+            Check.CheckExit(supportCabinet, checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -218,7 +218,7 @@ public class H_ChangeRoles_Test8 extends iit8077 {
 
             EnterAndExit.RoleSwitch(3, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Check.CheckExit("ЖАСО - Нижегородский филиал", checking, driver);
+            Check.CheckExit(supportCabinet, checking, driver);
 
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -245,7 +245,7 @@ public class H_ChangeRoles_Test8 extends iit8077 {
 
     void Support() throws InterruptedException {
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-        Check.Check("ЖАСО - Нижегородский филиал", checking, driver);
+        Check.Check(supportCabinet, checking, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();

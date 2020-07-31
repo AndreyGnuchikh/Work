@@ -63,7 +63,7 @@ public class CompleteFormAct {
             driver.findElement(By.cssSelector("#buyer-block > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div.col-md-9.col-sm-9 > span > span.selection > span")).click();
             driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("Все хорошо 2,0");
             Thread.sleep(500);
-            driver.findElement(By.xpath("//*[contains(text(),'Все хорошо 2,0')]")).click();
+            driver.findElement(By.xpath("//*[contains(text(),'Все хорошо 2')]")).click();
             driver.findElement(By.cssSelector("#buyer-compokpo")).sendKeys("1231241251");
             driver.findElement(By.cssSelector("#buyer-rusindex")).sendKeys("140057");
             driver.findElement(By.cssSelector("#buyer-ruscity")).sendKeys("г. Санкт-Петербург");

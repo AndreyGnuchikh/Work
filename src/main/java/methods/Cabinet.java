@@ -113,6 +113,8 @@ public class Cabinet {
             int index2 = srt.indexOf("t:");
             srt = srt.substring(index2+1, index1);
             System.out.println("Проблена с нахождением элемента "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+            Assertions.fail("Проблена с нахождением элемента "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+
         }
         if(e.toString().contains("org.openqa.selenium.ElementClickInterceptedException:")){
             srt = e.toString();
@@ -120,6 +122,7 @@ public class Cabinet {
             int index2 = srt.indexOf("n:");
             srt = srt.substring(index2+1, index1);
             System.out.println("Элемент как то скрыт от нажатия "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+            Assertions.fail("Элемент как то скрыт от нажатия "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         }
         if(e.toString().contains("org.openqa.selenium.ElementNotInteractableException:")){
             srt = e.toString();
@@ -127,6 +130,7 @@ public class Cabinet {
             int index2 = srt.indexOf("n:");
             srt = srt.substring(index2+1, index1);
             System.out.println("Эламент есть в DOM, но не находится в поле нажатия, видости "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
+            Assertions.fail("Эламент есть в DOM, но не находится в поле нажатия, видости "+srt +"В методе: "+ Thread.currentThread().getStackTrace()[1].getMethodName());
         }
         Assertions.fail(srt);
     }

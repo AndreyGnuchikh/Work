@@ -1,14 +1,12 @@
 package iitFirefox.loginTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
+import iitAdd.iit8077;
 import iitAdd.testedo;
+import methods.Cabinet;
 import methods.Check;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import methods.EnterAndExit;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -28,11 +26,11 @@ public class I_ExitCabinet_Test9 extends testedo {
     }
 
     @Test
+    @Order(1)
     void A_Exit_Test1() {
         try {
             driver.get(url);
             EnterAndExit.LogPass(LogAll, pass, driver);
-            Thread.sleep(500);
             driver.findElement(By.id("selectRole")).click();
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
             Thread.sleep(2000);

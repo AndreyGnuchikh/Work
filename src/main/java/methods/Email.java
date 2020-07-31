@@ -16,10 +16,10 @@ public class Email {
         Thread.sleep(1000);
 
         // Если элемент не виден на странице вернет false если винед true
-        isNormal = driver.findElements(By.className(".button2_theme_normal")).size() > 0;
+        isNormal = driver.findElements(By.className("AuthAccountListItem-displayName")).size() > 0;
         System.out.println("Уже есть ак " + isNormal);
         if (isNormal) {
-            driver.findElement(By.cssSelector("button.control:nth-child(1)")).click();
+            driver.findElement(By.className("AuthAccountListItem-displayName")).click();
         }
         isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
         System.out.println("Логин Пароль " + isPresentLog);
@@ -67,10 +67,10 @@ public class Email {
 
         Thread.sleep(1000);
         // Если элемент не виден на странице вернет false если винед true
-        isNormal = driver.findElements(By.className(".button2_theme_normal")).size() > 0;
+        isNormal = driver.findElements(By.className("AuthAccountListItem-displayName")).size() > 0;
         System.out.println("Уже есть ак " + isNormal);
         if (isNormal) {
-            driver.findElement(By.className(".button2_theme_normal")).click();
+            driver.findElement(By.className("AuthAccountListItem-displayName")).click();
         }
         isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
         System.out.println("Логин Пароль " + isPresentLog);
@@ -111,10 +111,10 @@ public class Email {
 
         Thread.sleep(1000);
         // Если элемент не виден на странице вернет false если винед true
-        isNormal = driver.findElements(By.className(".button2_theme_normal")).size() > 0;
+        isNormal = driver.findElements(By.className("AuthAccountListItem-displayName")).size() > 0;
         System.out.println("Уже есть ак " + isNormal);
         if (isNormal) {
-            driver.findElement(By.className(".button2_theme_normal")).click();
+            driver.findElement(By.className("AuthAccountListItem-displayName")).click();
         }
         isPresentLog = driver.findElements(By.id("passp-field-login")).size() > 0;
         System.out.println("Логин Пароль " + isPresentLog);

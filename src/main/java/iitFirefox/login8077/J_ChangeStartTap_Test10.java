@@ -48,7 +48,7 @@ public class J_ChangeStartTap_Test10 extends iit8077 {
             driver.findElement(By.xpath("//*[@id=\"wrap\"]/nav/div/div[1]/div/a")).click();
             test = driver.findElement(By.className("header__title")).getText();
             System.out.println(test);
-            Check.CheckExit("Приветствуем, Все", test, driver);
+            Check.CheckExit("Приветствуем, Все Все", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -64,7 +64,7 @@ public class J_ChangeStartTap_Test10 extends iit8077 {
             driver.findElement(By.xpath("//*[@id=\"wrap\"]/nav/div/div[1]/div/a")).click();
             test = driver.findElement(By.className("header__title")).getText();
             System.out.println(test);
-            Check.Check("Приветствуем, Все", test, driver);
+            Check.Check("Приветствуем, Все Все", test, driver);
             driver.findElement(By.className("header__btn-enter")).click();
             test = driver.findElement(By.name("adminInfoText")).getText();
             System.out.println(test);
