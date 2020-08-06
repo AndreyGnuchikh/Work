@@ -1,13 +1,11 @@
 package iitFirefox.UserTestedo;
 
-import iitAdd.Settings;
-import iitAdd.iit8077;
+import iitAdd.Drivers;
 import iitAdd.testedo;
 import iitFirefox.UserTestedo.SoapTest1.*;
-import iitAdd.Drivers; 
 import methods.Cabinet;
-import methods.EnterAndExit;
 import methods.Check;
+import methods.EnterAndExit;
 import methods.Sign;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -16,10 +14,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class A_SigningOfReceipts_Test1 extends iit8077 {
+public class A_SigningOfReceipts_Test1 extends testedo {
     public WebDriver driver;
     public String test;
-
     public String test2;
 
 
@@ -47,9 +44,9 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             Cabinet.OpenNameFolder("СЧФ 321", driver);
             Thread.sleep(1500);
             Sign.SignFirstFileUDP(test, driver);
-            Thread.sleep(30000);
+            Thread.sleep(40000);
             driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             test = driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > b:nth-child(1)")).getText();
             System.out.println(test);
             Check.CheckExit("У вас есть неподписанные квитанции для следующих документов:", test, driver);
@@ -68,6 +65,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             test = AddDocumentUPDUserASChF_Test2.add();
+            Thread.sleep(2500);
             Cabinet.OpenNameFolder("СЧФ Наименование", driver);
             Sign.SignFirstFileUDP(test, driver);
             Thread.sleep(60000);
@@ -92,14 +90,16 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
 
             test = AddDocumentUPDUserASChFDop_Test3.add();
+            Thread.sleep(1500);
             Cabinet.OpenNameFolder("Тест 3", driver);
             Sign.SignFirstFileUDP(test, driver);
             Thread.sleep(30000);
             driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             test = driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > b:nth-child(1)")).getText();
             System.out.println(test);
             Check.CheckExit("У вас есть неподписанные квитанции для следующих документов:", test, driver);
+
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -116,7 +116,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             test = AddDocumentUPDUserASChFDop_Test4.add();
             Cabinet.OpenNameFolder("УПД 123", driver);
-            Thread.sleep(1500);
+
             Sign.SignFirstFileUDP(test, driver);
             Thread.sleep(25000);
             Cabinet.ClickMenuFirstElement(9, driver);
@@ -140,7 +140,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             test = AddDocumentUPDUserASChF_Test5.add();
             Thread.sleep(1500);
-            driver.findElement(By.cssSelector(".dirname > a:nth-child(2)")).click();
+            Cabinet.OpenNameFolder("СЧФ",driver);
             Actions builder = new Actions(driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#grid-basic2-row-" + test)).click();
@@ -165,14 +165,15 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             test = AddDocumentUPDUserASChF_Test1.add();
             Cabinet.OpenNameFolder("СЧФ 321", driver);
+
             Sign.SignFirstFileUDP(test, driver);
-            Thread.sleep(20000);
+            Thread.sleep(15000);
             driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
-            Thread.sleep(1000);
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-            Thread.sleep(500);
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
-            Thread.sleep(500);
+            Thread.sleep(2000);
             test = driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > b:nth-child(1)")).getText();
             System.out.println(test);
             Check.CheckExit("У вас есть неподписанные квитанции для следующих документов:", test, driver);

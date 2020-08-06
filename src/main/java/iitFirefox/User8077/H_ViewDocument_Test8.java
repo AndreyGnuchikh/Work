@@ -6,7 +6,7 @@ import methods.HelpUser;
 import methods.EnterAndExit;
 
 import iitAdd.iit8077;
-import iitFirefox.User8077.Form.CompleteFormDopSchF;
+import Form.CompleteFormDopSchF;
 import methods.Check;
 import methods.FileCreateAndLoading;
 import org.junit.jupiter.api.MethodOrderer;

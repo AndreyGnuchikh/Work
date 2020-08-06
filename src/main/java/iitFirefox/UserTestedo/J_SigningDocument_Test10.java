@@ -1,9 +1,12 @@
 package iitFirefox.UserTestedo;
 
 import iitAdd.Drivers;
-import methods.*;
 import iitAdd.testedo;
-import org.junit.jupiter.api.*;
+import methods.*;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -47,7 +50,7 @@ public class J_SigningDocument_Test10 extends testedo {
             setUp();
             FileCreateAndLoading.AddFile("upd\\Dop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
-            Thread.sleep(1500);
+            Thread.sleep(2000);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
             Thread.sleep(5000);
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
@@ -114,11 +117,11 @@ public class J_SigningDocument_Test10 extends testedo {
             Thread.sleep(3000);
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            Thread.sleep(1500);
+            Thread.sleep(500);
             Cabinet.ClickMenuFirstElement(6, driver);
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#downloadp7s")).click();
             Thread.sleep(1500);
+            driver.findElement(By.cssSelector("#downloadp7s")).click();
+            Thread.sleep(500);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             Thread.sleep(1500);
             File dir = new File("C:\\Tools\\TestFile");
@@ -129,7 +132,6 @@ public class J_SigningDocument_Test10 extends testedo {
             System.out.println(test);
             test2 = "C:\\Program Files\\7-Zip\\7z.exe e C:\\Tools\\TestFile\\" + test + " -o\"C:\\Tools\\TestFile\\\"";
             System.out.println(test2);
-            Thread.sleep(2000);
             getRuntime().exec(test2);
             Thread.sleep(1500);
             File dir2 = new File("C:\\Tools\\TestFile");
@@ -140,7 +142,7 @@ public class J_SigningDocument_Test10 extends testedo {
             HelpUser.DeletedFiles(dir);
             getingLst2 = getingLst2.substring(18, 45);
             System.out.println(getingLst2);
-            Check.CheckExit("ON_SCHFDOPPOK_2JH333_2JH444", getingLst2, driver);
+            Check.CheckExit("ON_NSCHFDOPPOK_2JH333_2JH44", getingLst2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -155,13 +157,13 @@ public class J_SigningDocument_Test10 extends testedo {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(3000);
+            Thread.sleep(3500);
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Cabinet.ClickMenuFirstElement(6, driver);
-            Thread.sleep(2000);
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector("#downloadp7s")).click();
-            Thread.sleep(1000);
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             Thread.sleep(1500);
             File dir = new File("C:\\Tools\\TestFile");
@@ -171,7 +173,6 @@ public class J_SigningDocument_Test10 extends testedo {
             test = test.substring(18);
             System.out.println(test);
             test2 = "C:\\Program Files\\7-Zip\\7z.exe e C:\\Tools\\TestFile\\" + test + " -o\"C:\\Tools\\TestFile\\\"";
-            Thread.sleep(1000);
             System.out.println(test2);
             getRuntime().exec(test2);
             Thread.sleep(3500);
@@ -193,13 +194,13 @@ public class J_SigningDocument_Test10 extends testedo {
                 getingLst2 = getingLst2.substring(18, 45);
             }
             System.out.println(getingLst2);
-            Check.CheckExit("ON_SCHFDOPPOK_2JH333_2JH444", getingLst2, driver);
+            Check.CheckExit("ON_NSCHFDOPPOK_2JH333_2JH44", getingLst2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
     }
 
-    /*@Test
+     /*@Test
     @Order(7)
     void G_NoCerts_Test7() {
         try {
@@ -253,12 +254,16 @@ public class J_SigningDocument_Test10 extends testedo {
             FileCreateAndLoading.AddFile("1.html", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
+            driver.findElement(By.cssSelector("#sign-readers")).click();
+            driver.findElement(By.cssSelector("#sign-readers > option:nth-child("+fio10+")")).click();
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
             Thread.sleep(1000);
             getRuntime().exec("taskkill /im nmcades.exe");
             Thread.sleep(1000);
+            getRuntime().exec("taskkill /im nmcades.exe");
+            Thread.sleep(1000);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getText();
-            Check.CheckExit("10: Ошибка! Сертификат не принадлежит пользователю Нет автопароля!", test2, driver);
+            Check.CheckExit("3: Ошибка при создании подписи", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -287,11 +292,11 @@ public class J_SigningDocument_Test10 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            Thread.sleep(500);
             EnterAndExit.loggingCerts8080(fio9, driver);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(1000);
-            FileCreateAndLoading.AddFile("upd\\Dop.xml", driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");

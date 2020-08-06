@@ -37,9 +37,9 @@ public class S_NotificationAndApproval_Test19 extends iit8077 {
             }
 
             Thread.sleep(2500);
-            driver.findElement(By.id("recipient-1")).click();
+            driver.findElement(By.cssSelector("span.user-account__name:nth-child(1)")).click();
             Thread.sleep(1000);
-            driver.findElement(By.cssSelector("div.b-mail-dropdown__item:nth-child(7) > a:nth-child(1)")).click();
+            driver.findElement(By.cssSelector(".legouser__menu-item_action_exit > span:nth-child(1)")).click();
             Thread.sleep(3000);
             ////////////////////////////////////////////////////////////////////////
             driver.get(url);
@@ -389,10 +389,11 @@ public class S_NotificationAndApproval_Test19 extends iit8077 {
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
             }
-            Thread.sleep(2000);
-            driver.findElement(By.id("recipient-1")).click();
-            Thread.sleep(1500);
-            driver.findElement(By.xpath("//*[contains(text(),'Выйти из сервисов Яндекса')]")).click();
+            Thread.sleep(2500);
+            driver.findElement(By.cssSelector("span.user-account__name:nth-child(1)")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.cssSelector(".legouser__menu-item_action_exit > span:nth-child(1)")).click();
+            Thread.sleep(3000);
             //////////////////////////////////////////////////////////////////////////
             driver.get(url);
             Thread.sleep(3000);

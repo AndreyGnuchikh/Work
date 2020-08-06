@@ -1,14 +1,13 @@
 package iitFirefox.UserTestedo;
 
-
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
 import iitAdd.testedo;
-import iitFirefox.User8077.Form.CompleteForm;
-import iitFirefox.User8077.Form.CompleteFormAct;
-import iitFirefox.User8077.Form.CompleteFormDopSchF;
+import Form.CompleteForm;
+import Form.CompleteFormAct;
+import Form.CompleteFormDopSchF;
+import methods.Cabinet;
 import methods.Check;
+import methods.EnterAndExit;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -52,17 +51,16 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
             Thread.sleep(500);
 
-            Region("#interSFdoc");
-            inn("#interSFdoc");
+            Region("#change_seller");
+            inn("#change_seller");
             CheckdateFirstPage("#");
             Check("#numberSf");
-            Check("#numbercorSf");
+            //Check("#numbercorSf");
             Checkdate("#dateSf");
-            Checkdate("#datecorSf");
+            //Checkdate("#datecorSf");
             Check("input.col-md-12");
-            Region2("#interSFdoc");
-            Region3("#interSFdoc");
-            inn3("#interSFdoc");
+            Region2("#change_buyer");
+            Inn2("#change_buyer");
 
             driver.quit();
         } catch (Throwable e) {
@@ -86,9 +84,9 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
             Thread.sleep(1500);
-            driver.findElement(By.cssSelector("#interSFdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-            page2Name("#interSFdoc");
-            page2NumberCustomDeclaration("#interSFdoc");
+            driver.findElement(By.cssSelector("div.row:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
+            page2NameMark("#interSFdoc");
+            page2NumberCustomDeclarationMakr();
             driver.quit();
 
         } catch (Throwable e) {
@@ -115,17 +113,16 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
             Thread.sleep(500);
 
-            Region("#interActEWdoc");
-            inn("#interActEWdoc");
+            Region("#change_seller");
+            inn("#change_seller");
             CheckdateFirstPage("#");
             CheckACT("#numberActEW");
-            Check("#numbercorActEW");
+            //Check("#numbercorActEW");
             Checkdate("#dateActEW");
-            Checkdate("#datecorActEW");
+            //Checkdate("#datecorActEW");
             Check("input.col-md-12");
-            Region2("#interActEWdoc");
-            Region3("#interActEWdoc");
-            inn3("#interActEWdoc");
+            Region2("#change_buyer");
+            Inn2("#change_buyer");
             driver.quit();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -150,11 +147,13 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
             Thread.sleep(1500);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            page2Name("#interActEWdoc");
-            page2NumberCustomDeclaration("#interActEWdoc");
+            page2Name("#change_seller");
+            driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+            page2NumberCustomDeclaration();
             driver.quit();
+
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -175,14 +174,14 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             // Add счф
             CompleteFormAct.Act("NO",driver);
             System.out.println(date);
-            Thread.sleep(2500);
+            Thread.sleep(1500);
             Cabinet.Up(driver);
-            Thread.sleep(1000);
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
             CheckACTPage3("div.delivery-info-table-row:nth-child(2) > div:nth-child(1) > input:nth-child(1)");
             CheckdateThreepage("div.delivery-info-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)");
             Checkdate("#dateActEW");
@@ -191,6 +190,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Page3ACT("#recvInfo_worker > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
             Page3ACT("#shipment-info");
             driver.quit();
+
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -216,9 +216,9 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
 
             driver.findElement(By.cssSelector(".edit_but")).click();
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
@@ -233,6 +233,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Page3ACTTap2("#recvInfo_representative > div:nth-child(5) > div:nth-child(2) > input:nth-child(1)");
             Page3ACTTap2("#org-name");
             driver.quit();
+
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -258,9 +259,9 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
 
             driver.findElement(By.cssSelector(".edit_but")).click();
             Thread.sleep(500);
@@ -282,7 +283,6 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
     @Order(8)
     void H_ErrorsFormSchFDOPFirstPage_Test8() {
         try {
-
             Thread.sleep(2000);
             driver.findElement(By.cssSelector(".createDocument")).click();
             Thread.sleep(500);
@@ -301,17 +301,16 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
             Thread.sleep(1000);
 
-            RegionDOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
-            innDOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
+            Region("#change_seller");
+            inn("#change_seller");
             CheckdateFirstPage("#");
             Check("#numberUPD");
-            Check("#numbercorUPD");
+            //Check("#numbercorUPD");
             Checkdate("#dateUPD");
-            Checkdate("#datecorUPD");
+            //Checkdate("#datecorUPD");
             Check("input.col-md-12");
-            Region2DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
-            Region3DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
-            inn3DOPSCHF("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)");
+            Region2("#change_buyer");
+            Inn2("#change_buyer");
 
             driver.quit();
         } catch (Throwable e) {
@@ -333,21 +332,22 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Thread.sleep(1000);
             // Add счф
             CompleteFormDopSchF.DopSchF("NO",driver);
-            System.out.println(date);
             Thread.sleep(2000);
+            System.out.println(date);
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
             Thread.sleep(1000);
             ((JavascriptExecutor) driver).executeScript("scroll(0,400)");
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             String open, close;
             Thread.sleep(500);
-            open = "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)";
+            open = "div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)";
             Thread.sleep(500);
-            close = "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)";
+            close = "div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)";
             Thread.sleep(500);
-            page2NameDOPSCHF(open, "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)", close);
+            page2NameDOPSCHF(open, "div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)", close);
             Thread.sleep(500);
-            page2NumberCustomDeclarationDOPSCHF(open, "#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)", close);
+            page2NumberNotNumFeeDOPSCHF(open, "div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(7) > div:nth-child(2) > div:nth-child(5) > input:nth-child(1)", close);
             driver.quit();
 
         } catch (Throwable e) {
@@ -372,14 +372,14 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             System.out.println(date);
             Thread.sleep(1500);
             Cabinet.Up(driver);
-            Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
-            Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
             CheckSchFDOPPage3("div.delivery-info-table-row:nth-child(2) > div:nth-child(1) > input:nth-child(1)");
             CheckdateThreepage("div.delivery-info-table-row:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)");
+            Thread.sleep(500);
             Checkdate("#dateUPD");
             Page3ACT("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)");
             Page3ACT("#recvInfo_worker > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)");
@@ -399,6 +399,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Thread.sleep(2000);
             driver.findElement(By.cssSelector(".createDocument")).click();
             driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
+            Thread.sleep(500);
             driver.findElement(By.cssSelector("#editorFiles")).click();
             driver.findElement(By.cssSelector("#uploadForm > option:nth-child(3)")).click();
             Thread.sleep(500);
@@ -407,14 +408,13 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             // Add счф
             CompleteFormDopSchF.DopSchF("NO",driver);
             System.out.println(date);
-            Thread.sleep(2500);
-            Cabinet.Up(driver);
             Thread.sleep(1500);
+            Cabinet.Up(driver);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
 
             driver.findElement(By.cssSelector(".edit_but")).click();
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_2")).click();
@@ -452,12 +452,11 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             System.out.println(date);
             Thread.sleep(1500);
             Cabinet.Up(driver);
-            Thread.sleep(1500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(3) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
-            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(8) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#interUPDdoc > div:nth-child(1) > div:nth-child(5) > div:nth-child(5) > div:nth-child(3) > div:nth-child(1)")).click();
             driver.findElement(By.cssSelector(".edit_but")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#receiverInfo_groupSelector_3")).click();
@@ -484,7 +483,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
         Cabinet.Up(driver);
-        Thread.sleep(1500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
@@ -533,11 +532,13 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(s + "_root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(s)).getAttribute("className");
+        Thread.sleep(500);
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+        Thread.sleep(500);
         Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
         driver.findElement(By.cssSelector(".subbtn")).click();
         Thread.sleep(500);
@@ -574,6 +575,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
+        Cabinet.Up(driver);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
@@ -612,15 +614,15 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
 
     void Region(String s) throws InterruptedException {
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(s)).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020");
+        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("125451241241", Keys.ENTER);
         test2 = driver.findElement(By.cssSelector("#seller-rusreg")).getAttribute("className");
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "> div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(2000);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
@@ -629,22 +631,22 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector(s)).click();
         driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("в");
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
 
     void inn(String s) throws InterruptedException {
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(s)).click();
         driver.findElement(By.cssSelector("#seller-compinn")).clear();
         test2 = driver.findElement(By.cssSelector("#seller-compinn")).getAttribute("className");
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Thread.sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
@@ -653,25 +655,25 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".subbtn")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020");
+        driver.findElement(By.cssSelector(s)).click();
+        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("125451241241", Keys.ENTER);
         driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("в");
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
 
     void Region2(String s) throws InterruptedException {
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(s)).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("#shipper-compinn")).clear();
+        driver.findElement(By.cssSelector("#buyer-compinn")).clear();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("5047071020", Keys.ENTER);
-        test2 = driver.findElement(By.cssSelector("#shipper-rusreg")).getAttribute("className");
+        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("125451241241", Keys.ENTER);
+        test2 = driver.findElement(By.cssSelector("#buyer-rusreg")).getAttribute("className");
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(500);
         Cabinet.Up(driver);
         Thread.sleep(1000);
@@ -685,13 +687,13 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#change_buyer")).click();
         driver.findElement(By.cssSelector("#buyer-rusreg")).sendKeys("в");
-        driver.findElement(By.cssSelector("#sf_step > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
 
-    void Region3(String s) throws InterruptedException {
+    void Inn2(String s) throws InterruptedException {
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(s)).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#buyer-compinn")).clear();
         Thread.sleep(500);
@@ -699,12 +701,12 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         test2 = driver.findElement(By.cssSelector("#buyer-rusreg")).getAttribute("className");
         System.out.println(test2);
         Thread.sleep(500);
-        Check.CheckingContains("inputFormat-error", test2, driver);
+        Check.CheckingContains("inputFormat-not", test2, driver);
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(500);
         Cabinet.Up(driver);
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         Thread.sleep(500);
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
@@ -715,307 +717,97 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#change_buyer")).click();
         driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("1653001883", Keys.ENTER);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".editing > div:nth-child(7) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
 
     }
+    void page2NameMark(String s) throws InterruptedException {
+        Thread.sleep(2500);
+        Cabinet.Down(driver);
 
-    void inn3(String s) throws InterruptedException {
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        save = null;
+        save = driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).getAttribute("value");
+        System.out.println(save);
+        driver.findElement(By.cssSelector(".inputFormat-TOMPconstruct1-group")).clear();
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("#buyer-compinn")).clear();
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys(Keys.ENTER);
-        test2 = driver.findElement(By.cssSelector("#buyer-compinn")).getAttribute("className");
-        System.out.println(test2);
-        Check.CheckingContains("inputFormat-error", test2, driver);
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(9) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).clear();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        test2 = driver.findElement(By.cssSelector(".inputFormat-TOMPconstruct1-group")).getAttribute("className");
+        Thread.sleep(500);
+        Check.CheckingContains("inputFormat-TOMPconstruct1-group", test2, driver);
         Thread.sleep(1000);
         Cabinet.Up(driver);
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
         Thread.sleep(500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1)")).click();
+        test2 = driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).getText();
         Thread.sleep(500);
-        Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("1653001883");
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        Check.Check("ѕросмотр интерактивной версии", test2, driver);
 
     }
-/* void inn4(String s) {
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("#consignee-compinn")).clear();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("#consignee-compinn")).sendKeys(Keys.ENTER);
-        test2 = driver.findElement(By.cssSelector("#consignee-compinn")).getAttribute("className");
-        System.out.println(test2);
-        Check.CheckingContains("inputFormat-error", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Thread.sleep(1000);
-        Cabinet.Up(driver);
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Thread.sleep(500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        Thread.sleep(500);
-        Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector("#consignee-compinn")).sendKeys("1653001883", Keys.ENTER);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(4) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-
-    }*/
-
-    void RegionDOPSCHF(String open, String close) throws InterruptedException {
-        Thread.sleep(2000);
-        driver.findElement(By.cssSelector(open)).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("#seller-compinn")).clear();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020");
-        test2 = driver.findElement(By.cssSelector("#seller-rusreg")).getAttribute("className");
-        System.out.println(test2);
-        Check.CheckingContains("inputFormat-error", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(close)).click();
-        Thread.sleep(2000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Thread.sleep(500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        Thread.sleep(1000);
-        Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("в");
-        driver.findElement(By.cssSelector(close)).click();
-
-    }
-
-    void innDOPSCHF(String open, String close) throws InterruptedException {
-        driver.findElement(By.cssSelector(open)).click();
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("#seller-compinn")).clear();
-        test2 = driver.findElement(By.cssSelector("#seller-compinn")).getAttribute("className");
-        System.out.println(test2);
-        Check.CheckingContains("inputFormat-error", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(close)).click();
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Thread.sleep(500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        Thread.sleep(500);
-        Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#seller-compinn")).sendKeys("5047071020");
-        driver.findElement(By.cssSelector("#seller-rusreg")).sendKeys("в");
-        driver.findElement(By.cssSelector(close)).click();
-
-    }
-
-    void Region2DOPSCHF(String open, String close) throws InterruptedException {
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(open)).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("#shipper-compinn")).clear();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("5047071020", Keys.ENTER);
-        test2 = driver.findElement(By.cssSelector("#shipper-rusreg")).getAttribute("className");
-        System.out.println(test2);
-        Check.CheckingContains("inputFormat-error", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(close)).click();
-        Thread.sleep(500);
-        Cabinet.Up(driver);
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Thread.sleep(500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        Thread.sleep(1000);
-        Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#shipper-rusreg")).sendKeys("в");
-        driver.findElement(By.cssSelector(close)).click();
-
-    }
-
-    /*    void inn2DOPSCHF(String open, String close) {
-            driver.findElement(By.cssSelector(open)).click();
-            driver.findElement(By.cssSelector("#shipper-compinn")).clear();
-            test2 = driver.findElement(By.cssSelector("#shipper-compinn")).getAttribute("className");
-            System.out.println(test2);
-            Check.CheckingContains("inputFormat-error", test2, driver);
-            Thread.sleep(500);
-            driver.findElement(By.cssSelector(close)).click();
-            Thread.sleep(1000);
-            Cabinet.Up(driver);
-            Thread.sleep(1000);
-            driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-            Thread.sleep(500);
-            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Thread.sleep(500);
-            Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-            Thread.sleep(500);
-            driver.findElement(By.cssSelector(".subbtn")).click();
-            Thread.sleep(500);
-            driver.findElement(By.cssSelector(open)).click();
-            driver.findElement(By.cssSelector("#shipper-compinn")).sendKeys("5047071020");
-            driver.findElement(By.cssSelector("#shipper-rusreg")).sendKeys("в");
-            driver.findElement(By.cssSelector(close)).click();
-
-        }*/
-    void Region3DOPSCHF(String open, String close) throws InterruptedException {
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(open)).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("#buyer-compinn")).clear();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys(Keys.ENTER);
-        test2 = driver.findElement(By.cssSelector("#buyer-rusreg")).getAttribute("className");
-        System.out.println(test2);
-        Thread.sleep(500);
-        Check.CheckingContains("inputFormat-error", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(close)).click();
-        Thread.sleep(500);
-        Cabinet.Up(driver);
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Thread.sleep(500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        Thread.sleep(1000);
-        Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("1653001883", Keys.ENTER);
-        driver.findElement(By.cssSelector(close)).click();
-
-    }
-
-    void inn3DOPSCHF(String open, String close) throws InterruptedException {
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector(open)).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("#buyer-compinn")).clear();
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys(Keys.ENTER);
-        test2 = driver.findElement(By.cssSelector("#buyer-compinn")).getAttribute("className");
-        System.out.println(test2);
-        Check.CheckingContains("inputFormat-error", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(close)).click();
-        Thread.sleep(1000);
-        Cabinet.Up(driver);
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Thread.sleep(500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        Thread.sleep(500);
-        Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#buyer-compinn")).sendKeys("1653001883");
-        driver.findElement(By.cssSelector(close)).click();
-
-    }
-/*    void inn4DOPSCHF(String open, String close) {
-        driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#consignee-compinn")).clear();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("#consignee-compinn")).sendKeys(Keys.ENTER);
-        test2 = driver.findElement(By.cssSelector("#consignee-compinn")).getAttribute("className");
-        System.out.println(test2);
-        Check.CheckingContains("inputFormat-error", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(close)).click();
-        Thread.sleep(1000);
-        Cabinet.Up(driver);
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        Thread.sleep(500);
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        Thread.sleep(500);
-        Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(open)).click();
-        driver.findElement(By.cssSelector("#consignee-compinn")).sendKeys("1653001883", Keys.ENTER);
-        driver.findElement(By.cssSelector(close)).click();
-
-    }*/
-
     void page2Name(String s) throws InterruptedException {
         Thread.sleep(2500);
         Cabinet.Down(driver);
 
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         save = null;
-        save = driver.findElement(By.cssSelector(s + "> div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).getAttribute("value");
+        save = driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).getAttribute("value");
         System.out.println(save);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).clear();
-        test2 = driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).getAttribute("className");
-        System.out.println(test2);
-        Check.CheckingContains("inputFormat-error", test2, driver);
+        driver.findElement(By.cssSelector(".inputFormat-TOMPconstruct1-group")).clear();
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(5) > input:nth-child(1)")).clear();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
-        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
+        test2 = driver.findElement(By.cssSelector(".inputFormat-TOMPconstruct1-group")).getAttribute("className");
+        Thread.sleep(500);
+        Check.CheckingContains("inputFormat-TOMPconstruct1-group", test2, driver);
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        Thread.sleep(500);
+        Cabinet.Up(driver);
+        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Thread.sleep(500);
         Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
-        Thread.sleep(500);
         driver.findElement(By.cssSelector(".subbtn")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")).sendKeys(save);
+        driver.findElement(By.cssSelector(".inputFormat-TOMPconstruct1-group")).sendKeys("500",Keys.ENTER);
+        driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(5) > input:nth-child(1)")).sendKeys("500",Keys.ENTER);
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + "  > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+
     }
-
-    void page2NumberCustomDeclaration(String s) throws InterruptedException {
-
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        String Element = s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)";
-        save = null;
-        save = driver.findElement(By.cssSelector(Element)).getAttribute("value");
-        System.out.println(save);
-        driver.findElement(By.cssSelector(Element)).clear();
-        test2 = driver.findElement(By.cssSelector(Element)).getAttribute("className");
-        System.out.println(test2);
-        Check.CheckingContains("inputFormat-error", test2, driver);
+    void page2NumberCustomDeclarationMakr() throws InterruptedException {
+        driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
+        Cabinet.Down(driver);
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("div.row:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(9) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys("500");
+//        driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(5) > input:nth-child(1)")).sendKeys("500");
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        Cabinet.Up(driver);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
-        test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-        Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(".subbtn")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys(save);
-        driver.findElement(By.cssSelector(s + " > div:nth-child(1) > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        Cabinet.Up(driver);
+        Thread.sleep(1000);
+        test2 = driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).getText();
+        Check.Check("ѕросмотр интерактивной версии", test2, driver);
     }
+    void page2NumberCustomDeclaration() throws InterruptedException {
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).clear();
+        driver.findElement(By.cssSelector("div.infoblock:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
 
+        Cabinet.Up(driver);
+        Thread.sleep(1000);
+        test2 = driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).getText();
+        Check.Check("ѕросмотр интерактивной версии", test2, driver);
+    }
     void page2NameDOPSCHF(String open, String element, String close) throws InterruptedException {
 
         Thread.sleep(3500);
@@ -1029,6 +821,8 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(1500);
         driver.findElement(By.cssSelector(close)).click();
+        Thread.sleep(500);
+        Cabinet.Up(driver);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
@@ -1041,7 +835,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         driver.findElement(By.cssSelector(close)).click();
     }
 
-    void page2NumberCustomDeclarationDOPSCHF(String open, String element, String close) throws InterruptedException {
+    void page2NumberNotNumFeeDOPSCHF(String open, String element, String close) throws InterruptedException {
         driver.findElement(By.cssSelector(open)).click();
         String Element = element;
         save = null;
@@ -1061,7 +855,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(open)).click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(3) > input:nth-child(1)")).sendKeys(save);
+        driver.findElement(By.cssSelector(".error_border > div:nth-child(2) > div:nth-child(7) > div:nth-child(2) > div:nth-child(5) > input:nth-child(1)")).sendKeys(save);
         driver.findElement(By.cssSelector(close)).click();
     }
 
@@ -1082,7 +876,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         Cabinet.Up(driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Thread.sleep(1500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
@@ -1112,21 +906,18 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         System.out.println(test2);
         Check.CheckingContains("inputFormat-error", test2, driver);
         Thread.sleep(500);
-        ((JavascriptExecutor) driver).executeScript("scroll(0,0)");
+        Cabinet.Up(driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
-        Thread.sleep(1500);
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
         test2 = driver.findElement(By.cssSelector(".resptext")).getText();
         Check.Check("ќдно или несколько об€зательных полей не были заполнены!", test2, driver);
         driver.findElement(By.cssSelector(".subbtn")).click();
         Thread.sleep(500);
         ((JavascriptExecutor) driver).executeScript("scroll(0,800)");
-        Thread.sleep(500);
         driver.findElement(By.cssSelector(".edit_but")).click();
-        Thread.sleep(500);
         driver.findElement(By.cssSelector(s)).sendKeys(save);
-        Thread.sleep(500);
         driver.findElement(By.cssSelector("div.col-md-9:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")).click();
     }
 

@@ -1,21 +1,18 @@
 package iitFirefox.UserTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.HelpUser;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
 import iitAdd.testedo;
-import methods.Check;
-import methods.FileCreateAndLoading;
-import methods.Sign;
-import org.junit.jupiter.api.*;
+import methods.*;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
-
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -32,7 +29,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             setUp();
             FileCreateAndLoading.AddFile("upd\\0.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
-            Thread.sleep(2500);
+            Thread.sleep(5000);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
             Thread.sleep(5000);
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
@@ -61,8 +58,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Thread.sleep(1000);
             Cabinet.OpenNameFolder("АКТ", driver);
-
-            Thread.sleep(5000);
+            Thread.sleep(5200);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Sign.SignFirstFileUDPSecondSign(test2, driver);
             String test = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
@@ -86,11 +82,12 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(3000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            Thread.sleep(32000);
+            HelpUser.sleepUpd();
             Cabinet.OpenNameFolder("УПД 123", driver);
-
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(2000);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(1000);
             Sign.SignFirstFileUDPSecondSign(test2, driver);
@@ -109,18 +106,16 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             driver.get(url);
             EnterAndExit.loggingCerts8080(fio9, driver);
             Thread.sleep(1500);
-            EnterAndExit.startEndingCertAndSendingFiles("Skip",driver);
+            EnterAndExit.RoleSwitch(2,driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
             Thread.sleep(500);
-            FileCreateAndLoading.AddFile("Skip","upd\\SchfDop.xml", driver);
+            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
+            driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(1500);
-            driver.findElement(By.cssSelector("#signModal > div > div > div.modal-footer > button:nth-child(1)")).click();
-            Thread.sleep(1500);
-            test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1)")).getAttribute("innerText");
-
+            test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("innerText");
             System.out.println(test2);
-            Check.CheckExit("SchfDop.xml\n" +
-                    "23: Ошибка! В сертификате Пользователя отсутствует информация о должности.", test2, driver);
+            Check.CheckingContainsExit(", для Вас не заполнена информация, необходимая для подписания УПД. Для добавления необходимых сведений нажмите на Ваше ФИО в правом верхнем углу Личного кабинета и заполните блок \"Настроить область полномочий\" и сохраните изменения. Либо свяжитесь с технической поддержкой ООО \"ИИТ\": e-mail: support@iit.ru тел: 8 (499) 262-24-25", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -137,8 +132,8 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             EnterAndExit.RoleSwitch(2, driver);
 
             Thread.sleep(2000);
-            EnterAndExit.startEndingCertAndSendingFiles("Skip",driver);
-            FileCreateAndLoading.AddFile("Skip","upd\\SchfDop.xml", driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
@@ -214,7 +209,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
                     System.out.println(i);
                 }
             }
-            Thread.sleep(2500);
+            Thread.sleep(5000);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
             Thread.sleep(7500);
             String test = driver.findElement(By.cssSelector(".result > h4:nth-child(1)")).getText();
@@ -243,18 +238,14 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             secondSign();
             test = null;
-            Thread.sleep(500);
+            Thread.sleep(1000);
             test = driver.findElement(By.id("surname")).getAttribute("value");
-            Thread.sleep(500);
-            Check.Check("УПД2", test, driver);
-            Thread.sleep(500);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Thread.sleep(500);
-            Check.Check("(2001", test, driver);
+            Thread.sleep(1000);
+            Check.Check("УПД", test, driver);
             Thread.sleep(500);
             test = driver.findElement(By.id("position")).getAttribute("value");
             Thread.sleep(500);
-            Check.Check("Должность", test, driver);
+            Check.CheckingContains("Должность", test, driver);
             Thread.sleep(500);
             test = driver.findElement(By.id("authority")).getAttribute("value");
             Thread.sleep(500);
@@ -281,22 +272,23 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(3000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            Thread.sleep(32000);
+            HelpUser.sleepUpd();
             Cabinet.OpenNameFolder("УПД 123", driver);
 
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(2000);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(1000);
             secondSign();
-            Thread.sleep(1000);
+            Thread.sleep(1500);
             test = null;
             test = driver.findElement(By.id("surname")).getAttribute("value");
-            Check.Check("УПД2", test, driver);
-            test = driver.findElement(By.id("name")).getAttribute("value");
-            Check.Check("(2001", test, driver);
+            Check.Check("УПД", test, driver);
+
             test = driver.findElement(By.id("position")).getAttribute("value");
-            Check.Check("Должность", test, driver);
+            Check.CheckingContains("Должность", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
             Check.Check("d", test, driver);
             String test = driver.findElement(By.id("shipment-info")).getAttribute("value");
@@ -311,6 +303,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             driver = Drivers.ff();
             Thread.sleep(500);
             driver.get(url);
+            Thread.sleep(500);
             EnterAndExit.loggingCerts8080(upd, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
@@ -331,16 +324,14 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
         Thread.sleep(1000);
         System.out.println(test2);
-
         driver.findElement(By.cssSelector("#grid-basic2-row-" + test2)).click();
         Thread.sleep(1000);
 
         builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + test2))
         ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
         driver.findElement(By.id("cm-sign_text")).click();
-        Thread.sleep(6000);
+        Thread.sleep(5000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-        Thread.sleep(500);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).click();
         Thread.sleep(500);
     }

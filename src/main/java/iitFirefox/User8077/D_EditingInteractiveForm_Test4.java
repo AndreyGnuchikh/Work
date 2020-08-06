@@ -5,9 +5,9 @@ import methods.Cabinet;
 
 import methods.EnterAndExit;
 import iitAdd.iit8077;
-import iitFirefox.User8077.Form.CompleteForm;
-import iitFirefox.User8077.Form.CompleteFormAct;
-import iitFirefox.User8077.Form.CompleteFormDopSchF;
+import Form.CompleteForm;
+import Form.CompleteFormAct;
+import Form.CompleteFormDopSchF;
 import iitFirefox.User8077.SoapTest1.AddDocumentUPDUserACT;
 import iitFirefox.User8077.SoapTest1.AddDocumentUPDUserASChFDop_Test3;
 import iitFirefox.User8077.SoapTest1.AddDocumentUPDUserASChF_Test1;

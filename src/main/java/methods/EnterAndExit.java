@@ -119,12 +119,13 @@ public class EnterAndExit {
 
     public static void startEndingCertAndSendingFiles(WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        Thread.sleep(2000);
+        Thread.sleep(2100);
         if (driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).isDisplayed()) {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(2)")).click();
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+            Thread.sleep(1000);
             Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             System.out.println("receipts Signing");
         }

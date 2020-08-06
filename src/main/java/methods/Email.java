@@ -41,7 +41,7 @@ public class Email {
                 Thread.sleep(1000);
                 driver.findElement(By.id("passp-field-passwd")).sendKeys(pass);
                 Thread.sleep(1000);
-                driver.findElement(By.cssSelector("button.button2_type_submit")).click();
+                driver.findElement(By.cssSelector(".Button2_type_submit")).click();
             }
         }
 
@@ -80,14 +80,14 @@ public class Email {
             driver.findElement(By.cssSelector("button.button2_type_submit")).click();
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(EmailPass);
-            driver.findElement(By.cssSelector(".button2")).click();
+            driver.findElement(By.cssSelector(".Button2_type_submit")).click();
             Thread.sleep(1500);
         }
         isPresentPass = driver.findElements(By.id("passp-field-passwd")).size() > 0;
         System.out.println("Только Пароль " + isPresentPass);
         if (isPresentPass) {
             driver.findElement(By.id("passp-field-passwd")).sendKeys(EmailPass);
-            driver.findElement(By.cssSelector(".button2")).click();
+            driver.findElement(By.cssSelector(".Button2_type_submit")).click();
         }
     }
 
@@ -124,14 +124,14 @@ public class Email {
             driver.findElement(By.cssSelector("button.button2_type_submit")).click();
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#passp-field-passwd")).sendKeys(EmailPass);
-            driver.findElement(By.cssSelector(".button2")).click();
+            driver.findElement(By.cssSelector(".Button2_type_submit")).click();
             Thread.sleep(1500);
         }
         isPresentPass = driver.findElements(By.id("passp-field-passwd")).size() > 0;
         System.out.println("Только Пароль " + isPresentPass);
         if (isPresentPass) {
             driver.findElement(By.id("passp-field-passwd")).sendKeys(EmailPass);
-            driver.findElement(By.cssSelector(".button2")).click();
+            driver.findElement(By.cssSelector(".Button2_type_submit")).click();
         }
     }
 

@@ -1,4 +1,4 @@
-package iitFirefox.User8077.Form;
+package Form;
 
 import methods.Element;
 import org.openqa.selenium.By;
@@ -87,7 +87,9 @@ public class CompleteFormDopSchF {
         if (test.contains("\"")) {
             test = test.substring(0, 9);
         }
-
+        if (test.contains("\"")) {
+            test = test.substring(0, 8);
+        }
         System.out.println(test);
         Thread.sleep(1500);
         driver.findElement(By.id(test)).click();

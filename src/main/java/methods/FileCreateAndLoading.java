@@ -24,7 +24,7 @@ public class FileCreateAndLoading {
         Thread.sleep(200);
         System.out.println(fileName);
         upload.sendKeys("C:\\Tools\\" + fileName);
-        Thread.sleep(1500);
+        Thread.sleep(1600);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
@@ -64,6 +64,7 @@ public class FileCreateAndLoading {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         Thread.sleep(1200);
+        EnterAndExit.startEndingCertAndSendingFiles("Skip",driver);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         Thread.sleep(800);
         row = row.substring(0, 36);
@@ -81,8 +82,15 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
         Thread.sleep(200);
-        upload.sendKeys("C:\\Tools\\upd\\" + fileName);
-        Thread.sleep(500);
+        String x = driver.getCurrentUrl();
+        if(x.contains("8077")){
+            upload.sendKeys("C:\\Tools\\upd\\" + fileName);
+            Thread.sleep(500);
+        }else {
+            upload.sendKeys("C:\\Tools\\upd8080\\" + fileName);
+            Thread.sleep(500);
+        }
+
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
         Thread.sleep(3000);
     }

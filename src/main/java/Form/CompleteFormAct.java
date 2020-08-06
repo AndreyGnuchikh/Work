@@ -1,4 +1,4 @@
-package iitFirefox.User8077.Form;
+package Form;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

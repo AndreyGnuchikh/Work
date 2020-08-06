@@ -5,7 +5,7 @@ import methods.Cabinet;
 import methods.HelpUser;
 import methods.*;
 import iitAdd.iit8077;
-import iitFirefox.User8077.Form.CompleteFormAct;
+import Form.CompleteFormAct;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -468,7 +468,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
             Thread.sleep(1000);
-            driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(200);
             driver.findElement(By.xpath("//*[contains(text(), 'Все хорошо 2.0')][contains(@class, 'option')]")).click();
             Thread.sleep(100);

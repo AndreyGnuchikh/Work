@@ -1,14 +1,13 @@
 package iitFirefox.UserTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
 import iitAdd.testedo;
-import methods.Check;
-import methods.FileCreateAndLoading;
+import methods.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class I_RenamingDocument_Test9 extends testedo {
@@ -20,6 +19,7 @@ public class I_RenamingDocument_Test9 extends testedo {
     void setUp() {
         try {
             driver = Drivers.ff();
+            Thread.sleep(500);
             driver.get(url);
             EnterAndExit.LogPass(logUser, pass, driver);
             Thread.sleep(1500);
@@ -50,16 +50,16 @@ public class I_RenamingDocument_Test9 extends testedo {
         }
     }
 
- /*   @Test
+    @Test
     @Order(2)
     void B_SignDocumentAndCheck_Test2() {
         try {
             EnterAndExit.Exit(driver);
-            EnterAndExit.loggingCerts8080(fio9,driver);
-            EnterAndExit.startEndingCertAndSendingFiles("Skip",driver);
+            EnterAndExit.loggingCerts8080(upd,driver);
+            EnterAndExit.RoleSwitch(2,driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
             row = null;
             row = FileCreateAndLoading.AddFile("1.html", driver);
-            Thread.sleep(500);
             Sign.SignFirstFile(driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".fa-thumbs-up")).click();
@@ -70,13 +70,13 @@ public class I_RenamingDocument_Test9 extends testedo {
             ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
             // Get perentElement Disabled menu
             Thread.sleep(2000);
-            test = driver.findElement(By.id("cm-sign")).getAttribute("class");
+            test = driver.findElement(By.id("cm-rename")).getAttribute("class");
             System.out.println(test);
             Check.CheckExit("dijitReset dijitMenuItem dijitMenuItemDisabled dijitDisabled", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
-    }*/
+    }
 
     @Test
     @Order(3)
@@ -99,24 +99,25 @@ public class I_RenamingDocument_Test9 extends testedo {
     @Order(4)
     void D_WrongSymbols_Test4() {
         try {
-            String[] d = {"/", "\\", ":", "*", "?", "«", "<", ">", "|"};
+            String[] d = {"/", "\\", ":", "*", "?", "<", ">", "|"};
             FileCreateAndLoading.AddFileAndClickMenu(4, "1.html", driver);
             for (int i = 0; i < d.length; i++) {
                 driver.findElement(By.cssSelector("#rename-newName")).sendKeys(d[i]);
                 Thread.sleep(400);
                 test = driver.findElement(By.cssSelector("#rename-newName")).getAttribute("data-content");
                 System.out.println(test);
-                Check.Check("Поле не может быть пустым и не может содержать /,\\,:,*,?,«,<,>,|,\"", test, driver);
+                Check.Check("Поле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
                 driver.findElement(By.cssSelector("#rename-newName")).clear();
                 Thread.sleep(400);
             }
-            Check.CheckExit("Поле не может быть пустым и не может содержать /,\\,:,*,?,«,<,>,|,\"", test, driver);
+            Check.CheckExit("Поле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
     }
 
-    @Test
+/*    -- Отменено в 4.1 релизе
+@Test
     @Order(5)
     void E_WrongNames_Test5() {
         try {
@@ -138,7 +139,7 @@ public class I_RenamingDocument_Test9 extends testedo {
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
-    }
+    }*/
 
     @Test
     @Order(6)
@@ -148,11 +149,10 @@ public class I_RenamingDocument_Test9 extends testedo {
             driver.findElement(By.cssSelector("#rename-newName")).sendKeys(" ");
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#rename-btn")).click();
-            Thread.sleep(1500);
+            Thread.sleep(1000);
             test = driver.findElement(By.cssSelector("h3.resptext")).getText();
             System.out.println(test);
-            Thread.sleep(500);
-            Check.CheckExit("Введите новое имя документа!", test, driver);
+            Check.CheckExit("Недопустимое имя файла . Поле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

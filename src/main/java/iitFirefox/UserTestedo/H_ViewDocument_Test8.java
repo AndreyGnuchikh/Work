@@ -1,24 +1,22 @@
 package iitFirefox.UserTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.HelpUser;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
 import iitAdd.testedo;
-import iitFirefox.UserTestedo.Form.CompleteFormDopSchF;
-import methods.Check;
-import methods.FileCreateAndLoading;
+import Form.CompleteFormDopSchF;
+import methods.*;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
 import java.io.File;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -89,6 +87,7 @@ public class H_ViewDocument_Test8 extends testedo {
     void C_OpenUPD_Test3() {
         try {
             setUP();
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector(".createDocument")).click();
             driver.findElement(By.cssSelector("div.pan-create:nth-child(1)")).click();
             Thread.sleep(500);
@@ -98,11 +97,15 @@ public class H_ViewDocument_Test8 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
-            CompleteFormDopSchF.DopSchF(driver);
+            CompleteFormDopSchF.DopSchF("YES",driver);
+            Thread.sleep(1000);
+            driver.findElement(By.cssSelector(".active-file")).click();
+            Thread.sleep(1000);
             Cabinet.ClickMenuFirstElement(2, driver);
-            test2 = driver.findElement(By.cssSelector("#butPrintUPD > button:nth-child(1)")).getText();
+
+            test2 = driver.findElement(By.cssSelector("#butPrint > button:nth-child(2)")).getText();
             Check.Check("Закрыть", test2, driver);
-            driver.findElement(By.cssSelector("#butPrintUPD > button:nth-child(1) > span:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("#butPrint > button:nth-child(2)")).click();
             Thread.sleep(1000);
             test2 = driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).getText();
             Check.CheckExit("Все документы", test2, driver);

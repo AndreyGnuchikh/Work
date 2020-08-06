@@ -1,12 +1,8 @@
 package iitFirefox.UserTestedo;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.Element;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
 import iitAdd.testedo;
-import methods.Check;
-import methods.FileCreateAndLoading;
+import methods.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -16,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import java.util.Date;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class B_AddFile_Test2 extends testedo {
+public class B_File_CreateAndLoading_Test2 extends testedo {
     public WebDriver driver;
     public String test;
     public String test2;
@@ -30,7 +26,6 @@ class B_AddFile_Test2 extends testedo {
             driver.get(url);
             EnterAndExit.LogPass(logUser, pass, driver);
             Thread.sleep(1500);
-
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -44,7 +39,7 @@ class B_AddFile_Test2 extends testedo {
             testid = FileCreateAndLoading.AddFile("1.html", driver);
             test = driver.findElement(By.cssSelector("#grid-basic2-row-" + testid + " > table:nth-child(1) > tr:nth-child(1) > td:nth-child(4)")).getText();
             System.out.println(test);
-            Check.Check("Кабинет Тест Вход 1", test, driver);
+            Check.Check("Кабинет 1", test, driver);
             test2 = driver.findElement(By.cssSelector("#grid-basic2-row-" + testid + "> table:nth-child(1) > tr:nth-child(1) > td:nth-child(3)")).getText();
             System.out.println(test2);
             Check.CheckExit("1.html", test2, driver);
@@ -99,7 +94,9 @@ class B_AddFile_Test2 extends testedo {
             Thread.sleep(3000);
             //Change folder
             driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1) > a:nth-child(1) > i:nth-child(1)")).click();
+            Thread.sleep(500);
             driver.findElement(By.cssSelector("li.collapsed > div:nth-child(2) > a:nth-child(1)")).click();
+            Thread.sleep(500);
             String row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
             row = row.substring(0, 36);
             test = driver.findElement(By.cssSelector("#grid-basic2-row-" + row + " > table:nth-child(1) > tr:nth-child(1) > td:nth-child(13)")).getText();
@@ -138,7 +135,7 @@ class B_AddFile_Test2 extends testedo {
             for (int i = 0; i < 27; i++) {
                 upload.sendKeys("C:\\Tools\\" + "1.html");
             }
-            Thread.sleep(22000);
+            Thread.sleep(220000);
             upload.sendKeys("C:\\Tools\\" + "1.html");
             Thread.sleep(100);
             test = driver.findElement(By.cssSelector("#errorBlock > ul:nth-child(2) > li:nth-child(1)")).getText();
@@ -164,10 +161,10 @@ class B_AddFile_Test2 extends testedo {
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#uploadModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(2)")).click();
             Element.visibleElement180SecToWait(".glyphicon-ok-sign", driver);
-            Thread.sleep(1000);
+            Thread.sleep(20000);
             test = driver.findElement(By.cssSelector("h3.resptext")).getText();
             System.out.println(test);
-            Check.CheckExit("Файлы были успешно загружены", test, driver);
+            Check.CheckExit("Файлы 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html, 1.html были успешно загружены", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -191,7 +188,7 @@ class B_AddFile_Test2 extends testedo {
                     test = driver.findElement(By.cssSelector("#errorBlock > ul:nth-child(2) > li:nth-child(1)")).getText();
                     Check.Check("Запрещенное расширение для файла \"1.ade\". Данные расширения: \"ade, adp, app, asa, ashx, asmx, asp, bat, cdx, chm, class, cmd, com, config, cpl, crt, der, dll, exe, fxp, hlp, hta, htr, htw, ida, idq, ins, isp, its, jse, ksh, lnk, mad, maf, mam, maq, mar, mas, mat, mau, mdw, mdz, msc, msh, mav, maw, mda, shtm, mde, mdt, msh1, msh1xml, msh2, mshxml, msi, msp, mst, ops, pcd, pif, prt, prg, pst, reg, rem, scf, scr, sct, shb, shs, shtml, soap, stm, url, vb, vbe, vbs, ws, wsc, wsf, url\" запрещены.", test, driver);
                 }
-                upload.clear();
+                upload.clear(); 
             }
 
             Thread.sleep(1000);
@@ -207,7 +204,7 @@ class B_AddFile_Test2 extends testedo {
     void Add() throws InterruptedException {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector(".createDocument")).click();
-        Thread.sleep(500);
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
     }
 }
