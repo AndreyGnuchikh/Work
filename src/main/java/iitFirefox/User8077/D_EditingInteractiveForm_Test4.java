@@ -34,6 +34,9 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(300);
+            driver.findElement(By.cssSelector(".active-file")).click();
+            Thread.sleep(1500);
 
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);

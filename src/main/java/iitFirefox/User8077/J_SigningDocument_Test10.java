@@ -144,7 +144,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
             HelpUser.DeletedFiles(dir);
             getingLst2 = getingLst2.substring(18, 45);
             System.out.println(getingLst2);
-            Check.CheckExit("ON_NSCHFDOPPOK_2JH333_2JH44", getingLst2, driver);
+            Check.CheckingContainsExit("ON_NSCHFDOPPOK_2JH", getingLst2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -196,7 +196,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
                 getingLst2 = getingLst2.substring(18, 45);
             }
             System.out.println(getingLst2);
-            Check.CheckExit("ON_NSCHFDOPPOK_2JH333_2JH44", getingLst2, driver);
+            Check.CheckingContainsExit("ON_NSCHFDOPPOK_2JH", getingLst2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

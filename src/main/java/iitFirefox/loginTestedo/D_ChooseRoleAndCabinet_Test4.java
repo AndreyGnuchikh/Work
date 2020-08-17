@@ -32,7 +32,7 @@ public class D_ChooseRoleAndCabinet_Test4 extends testedo {
             EnterAndExit.LogPass(logUser, pass, driver);
             Thread.sleep(500);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
-            Check.CheckExit("Кабинет Тест Вход 1", checking, driver);
+            Check.CheckExit("Кабинет 1", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

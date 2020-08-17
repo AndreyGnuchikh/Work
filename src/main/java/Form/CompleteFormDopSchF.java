@@ -43,6 +43,7 @@ public class CompleteFormDopSchF {
             driver.findElement(By.cssSelector("#change_buyer")).click();
             driver.findElement(By.cssSelector("#buyer-formaction")).click();
             driver.findElement(By.cssSelector("#buyer-formaction > option:nth-child(2)")).click();
+            Thread.sleep(500);
             driver.findElement(By.cssSelector("#buyer-block > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div.col-md-9.col-sm-9 > span > span.selection > span")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("√нучих");
