@@ -66,9 +66,8 @@ public class Drivers extends Settings {
         if (headless) {
             firefoxOptions.addArguments("--headless"); //////////////////////////////////////
         }
-/*        firefoxOptions.addArguments("--window-size=1920,1080");
-        firefoxOptions.addArguments("--width=1920");
-        firefoxOptions.addArguments("--height=1080");*/
+        firefoxOptions.addArguments("--window-size=1600,1024");
+
 
         WebDriver driver = new FirefoxDriver(firefoxOptions);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -1,5 +1,7 @@
 package methods;
 
+import iitAdd.iit8077;
+import iitAdd.testedo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -285,7 +287,12 @@ public class FileCreateAndLoading {
         Thread.sleep(500);
         EnterAndExit.Exit(driver);
         driver.get(url);
+        if(url.equals(iit8077.url)){
         EnterAndExit.loggingCerts(upd2, driver);
+        }
+        if(url.equals(testedo.url)){
+        EnterAndExit.loggingCerts8080(upd2, driver);
+        }
         EnterAndExit.RoleSwitch(2, driver);
         EnterAndExit.startEndingCertAndSendingFiles(driver);
         Thread.sleep(1500);

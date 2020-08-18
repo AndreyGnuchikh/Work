@@ -33,6 +33,10 @@ public class Cabinet {
                 File dir = new File("C:\\Tools\\TestFile\\"); //path указывает на директорию
                 HelpUser.DeletedFiles(dir);
                 Thread.sleep(500);
+                // TODO: 18.08.2020  js code deleted DOM elements
+                JavascriptExecutor js = (JavascriptExecutor)driver;
+                js.executeScript("return document.getElementsByClassName('navbar-fixed-top')[0].remove();");
+
                 driver.findElement(By.id("cm-open_text")).click();
                 break;
             case (3):
@@ -140,7 +144,7 @@ public class Cabinet {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1)")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[contains(text(), '" + cabinet + "')][contains(@class, 'option')]")).click();
         Thread.sleep(2000);
@@ -155,7 +159,7 @@ public class Cabinet {
         Thread.sleep(2000);
         driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) > div:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1)")).click();
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[contains(text(), '" + cabinet + "')][contains(@class, 'option')]")).click();
         Thread.sleep(1500);

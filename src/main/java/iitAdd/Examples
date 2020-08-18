@@ -138,13 +138,19 @@ driver.findElement(By.id("cm-send_text")).click();
    Точное указание имени  driver.findElement(By.cssSelector("[foldername="+name+"]")).click();
    --------------------------------------contains text and class--------------------------------------
 
-     ****************************************Tap up and down****************************************
+     ****************************************Tap up and down and deleted elements*************************
            ((JavascriptExecutor)driver).executeScript("scroll(0,0)");UP
            ((JavascriptExecutor)driver).executeScript("scroll(0,400)");DOWN
 
            //Прокрутит до элемента button.
                     driver.executeScript("return arguments[0].scrollIntoView(true);", button)
-     ****************************************Tap up and down****************************************
+
+                                 // TODO: 18.08.2020  js code deleted DOM elements
+                                    JavascriptExecutor js = (JavascriptExecutor)driver;
+                                    js.executeScript("return document.getElementsByClassName('navbar-fixed-top')[0].remove();");
+
+     ****************************************Tap up and down and deleted elements*************************
+
 
           --------------------------------------aria-disabled--------------------------------------
            test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
