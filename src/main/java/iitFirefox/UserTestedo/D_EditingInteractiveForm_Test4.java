@@ -25,7 +25,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             row = null;
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);

@@ -292,7 +292,7 @@ public class J_SigningDocument_Test10 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(fio9, driver);
+            EnterAndExit.loggingCerts(fio9, driver);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(1000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
@@ -310,7 +310,7 @@ public class J_SigningDocument_Test10 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);

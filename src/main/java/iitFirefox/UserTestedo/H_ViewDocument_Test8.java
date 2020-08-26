@@ -56,7 +56,7 @@ public class H_ViewDocument_Test8 extends testedo {
         try {
             driver = ffWithoutAddon();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
@@ -118,7 +118,7 @@ public class H_ViewDocument_Test8 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);

@@ -51,7 +51,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             EnterAndExit.Exit(driver);
 
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd2, driver);
+            EnterAndExit.loggingCerts(upd2, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(3000);
@@ -76,7 +76,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("3", driver);
             EnterAndExit.Exit(driver);
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd2, driver);
+            EnterAndExit.loggingCerts(upd2, driver);
 
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
@@ -104,7 +104,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(fio9, driver);
+            EnterAndExit.loggingCerts(fio9, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2,driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
@@ -127,7 +127,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(fio, driver);
+            EnterAndExit.loggingCerts(fio, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
 
@@ -152,7 +152,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(fio, driver);
+            EnterAndExit.loggingCerts(fio, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
@@ -179,7 +179,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("2", driver);
             EnterAndExit.Exit(driver);
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd2, driver);
+            EnterAndExit.loggingCerts(upd2, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(3000);
@@ -227,7 +227,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("2", driver);
             EnterAndExit.Exit(driver);
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd2, driver);
+            EnterAndExit.loggingCerts(upd2, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(3000);
@@ -266,7 +266,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("3", driver);
             EnterAndExit.Exit(driver);
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd2, driver);
+            EnterAndExit.loggingCerts(upd2, driver);
 
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
@@ -304,7 +304,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             Thread.sleep(500);
             driver.get(url);
             Thread.sleep(500);
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);

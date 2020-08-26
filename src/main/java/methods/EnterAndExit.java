@@ -1,13 +1,14 @@
 package methods;
 
-import iitAdd.iit8077;
-import iitAdd.testedo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class EnterAndExit {
+
     public static void LogPass(String login, String pass, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         System.out.println("Login: " + login);
@@ -28,14 +29,27 @@ public class EnterAndExit {
         Thread.sleep(1500);
         driver.findElement(By.className("auth__tab-item--right")).click();
         Thread.sleep(2000);
-        Element.WaitElementToBeClickableAndClick(1, "//*[@id=\"keyModal_body\"]/option[" + login + "]", driver);
+
+        String certsName = driver.findElement(By.id("keyModal_body")).getAttribute("outerHTML");
+        ArrayList CertList = getCert(certsName);
+        //If element some name cert
+        for (int i = 0; i <CertList.size() ; i++) {
+            if(CertList.get(i).toString().contains(login)){
+                System.out.println("Find cert " +CertList.get(i).toString() + " number"+i);
+                Element.WaitElementToBeClickableAndClick(1, "//*[@id=\"keyModal_body\"]/option[" + ++i + "]", driver);
+                break;
+            }
+
+        }
+
         Thread.sleep(500);
         driver.findElement(By.className("btnSelectKey")).click();
-        Thread.sleep(6000);
+        Thread.sleep(8000);
         String url = driver.getCurrentUrl();
         System.out.println(url);
 
-        if (!url.equals(iit8077.urlsert)) {
+        //Check one of not cabinet
+        if (!url.contains("/iit/cabinet")) {
             String test;
             Thread.sleep(1300);
             test = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-footer > button")).getAttribute("clientTop");
@@ -48,29 +62,6 @@ public class EnterAndExit {
         }
 
     }
-
-    public static void loggingCerts8080(String login, WebDriver driver) throws InterruptedException {
-        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        System.out.println("Login: " + login);
-        Thread.sleep(1200);
-        driver.findElement(By.className("auth__tab-item--right")).click();
-        Element.WaitElementToBeClickableAndClick(1, "//*[@id=\"keyModal_body\"]/option[" + login + "]", driver);
-        Thread.sleep(1000);
-        driver.findElement(By.className("btnSelectKey")).click();
-        Thread.sleep(6000);
-        String url = driver.getCurrentUrl();
-        if (!url.equals(testedo.urlsert)) {
-            String test;
-            Thread.sleep(400);
-            test = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-footer > button")).getAttribute("clientTop");
-            Thread.sleep(400);
-            if (test.equals("1")) {
-                driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-footer > button")).click();
-            }
-            Thread.sleep(5000);
-        }
-    }
-
     public static void RoleSwitch(int i, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         switch (i) {
@@ -170,4 +161,23 @@ public class EnterAndExit {
         driver.findElement(By.cssSelector("Form.text-right > button:nth-child(1)")).click();
         Thread.sleep(1000);
     }
+
+
+    public static ArrayList getCert(String certsName) {
+        List cert = new ArrayList();
+        if(!certsName.equals("")){
+
+            for (String retval : certsName.split("<")) {
+                if(retval.contains("value")){
+                    retval = retval.substring(56);
+                    cert.add(retval);
+                }
+            }
+/*            for (Object element: cert) {
+                System.out.println(element);
+            }*/
+        }
+        return (ArrayList) cert;
+    }
+
 }

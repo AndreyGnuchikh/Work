@@ -24,7 +24,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);

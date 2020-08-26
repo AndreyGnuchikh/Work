@@ -1,4 +1,4 @@
-package iitFirefox.User8077;
+package iitFirefox.UserTestedo;
 
 import iitAdd.Drivers;
 import iitAdd.iit8077;
@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class N_SaveDocumentInPc_Test14 extends iit8077 {
+public class N_SaveDocumentInPc_Test14 extends testedo {
     WebDriver driver;
     String test, test2;
 

@@ -35,7 +35,7 @@ public class A_SigningOfReceipts_Test1 extends testedo {
     @Order(1)
     void A_UPDSigningObviouslySChF_Test1() {
         try {
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
@@ -59,7 +59,7 @@ public class A_SigningOfReceipts_Test1 extends testedo {
     @Order(2)
     void B_UPDSigningNoObviouslySChF_Test2() {
         try {
-            EnterAndExit.loggingCerts8080(upd2, driver);
+            EnterAndExit.loggingCerts(upd2, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
@@ -83,7 +83,7 @@ public class A_SigningOfReceipts_Test1 extends testedo {
     @Order(3)
     void C_UPDSigningObviouslySChFDOP_Test3() {
         try {
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
@@ -109,7 +109,7 @@ public class A_SigningOfReceipts_Test1 extends testedo {
     @Order(4)
     void D_UPDSigningNoObviouslySChFDOP_Test4() {
         try {
-            EnterAndExit.loggingCerts8080(upd2, driver);
+            EnterAndExit.loggingCerts(upd2, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
@@ -158,7 +158,7 @@ public class A_SigningOfReceipts_Test1 extends testedo {
     @Order(6)
     void F_PushRememberMyLate_Test6() {
         try {
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             Thread.sleep(1500);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);

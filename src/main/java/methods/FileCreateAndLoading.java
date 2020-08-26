@@ -291,7 +291,7 @@ public class FileCreateAndLoading {
         EnterAndExit.loggingCerts(upd2, driver);
         }
         if(url.equals(testedo.url)){
-        EnterAndExit.loggingCerts8080(upd2, driver);
+        EnterAndExit.loggingCerts(upd2, driver);
         }
         EnterAndExit.RoleSwitch(2, driver);
         EnterAndExit.startEndingCertAndSendingFiles(driver);

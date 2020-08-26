@@ -23,7 +23,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
         try {
             driver = Drivers.ff();
             driver.get(url);
-            EnterAndExit.loggingCerts8080(upd, driver);
+            EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
         } catch (Throwable e) {

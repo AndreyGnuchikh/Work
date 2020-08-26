@@ -33,10 +33,7 @@ public class Cabinet {
                 File dir = new File("C:\\Tools\\TestFile\\"); //path указывает на директорию
                 HelpUser.DeletedFiles(dir);
                 Thread.sleep(500);
-                // TODO: 18.08.2020  js code deleted DOM elements
-                JavascriptExecutor js = (JavascriptExecutor)driver;
-                js.executeScript("return document.getElementsByClassName('navbar-fixed-top')[0].remove();");
-
+                DOMElementDeleted(driver);
                 driver.findElement(By.id("cm-open_text")).click();
                 break;
             case (3):
@@ -176,7 +173,8 @@ public class Cabinet {
     public static void Up(WebDriver driver){
         ((JavascriptExecutor)driver).executeScript("scroll(0,0)");
     }
-    public static void Down(WebDriver driver){
-        ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+    public static void Down(WebDriver driver){ ((JavascriptExecutor)driver).executeScript("scroll(0,400)"); }
+    public static void DOMElementDeleted(WebDriver driver){ ((JavascriptExecutor)driver).executeScript("return document.getElementsByClassName('navbar-fixed-top')[0].remove();");
+
     }
 }
