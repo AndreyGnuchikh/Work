@@ -216,7 +216,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
             Thread.sleep(7500);
             String test = driver.findElement(By.cssSelector(".result > h4:nth-child(1)")).getText();
-            Check.CheckExit("Все документы успешно подписаны УСИЛЕННОЙ ЭП!", test, driver);
+            Check.CheckExit("Все документы успешно подписаны ЭП!", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
