@@ -82,11 +82,10 @@ public class CompleteForm {
         driver.findElement(By.cssSelector("input.col-md-12")).sendKeys("555");
         String test = driver.findElement(By.cssSelector("div.input-group:nth-child(1)")).getAttribute("outerHTML");
         test = test.substring(256, 267);
-        if (test.contains("\"")) {
-            test = test.substring(0, 10);
-        }
-        if (test.contains("\"")) {
-            test = test.substring(0, 9);
+
+        while (test.contains("\"")) {
+            int length = test.length();
+            test = test.substring(0, length-1);
         }
 
         System.out.println(test);

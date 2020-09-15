@@ -111,9 +111,9 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             Thread.sleep(500);
             FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
-            driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+
             Thread.sleep(1500);
-            test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("innerText");
+            test2 = driver.findElement(By.cssSelector("h3.resptext:nth-child(4)")).getAttribute("innerText");
             System.out.println(test2);
             Check.CheckingContainsExit(", для Вас не заполнена информация, необходимая для подписания УПД. Для добавления необходимых сведений нажмите на Ваше ФИО в правом верхнем углу Личного кабинета и заполните блок \"Настроить область полномочий\" и сохраните изменения. Либо свяжитесь с технической поддержкой ООО \"ИИТ\": e-mail: support@iit.ru тел: 8 (499) 262-24-25", test2, driver);
         } catch (Throwable e) {

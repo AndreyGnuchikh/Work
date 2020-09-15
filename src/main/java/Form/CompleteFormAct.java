@@ -86,7 +86,9 @@ public class CompleteFormAct {
         if (test.contains("\"")) {
             test = test.substring(0, 9);
         }
-
+        if (test.contains("\"")) {
+            test = test.substring(0, 8);
+        }
         System.out.println(test);
         Thread.sleep(500);
         driver.findElement(By.id(test)).click();

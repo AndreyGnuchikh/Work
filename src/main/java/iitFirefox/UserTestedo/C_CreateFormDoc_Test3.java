@@ -53,7 +53,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 24);
+            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -88,7 +88,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 24);
+            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -126,7 +126,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 24);
+            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -157,7 +157,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 24);
+            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
         } catch (Throwable e) {
@@ -192,7 +192,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
             Thread.sleep(500);
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 24);
+            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
         } catch (Throwable e) {
@@ -228,7 +228,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 24);
+            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
         } catch (Throwable e) {
@@ -265,7 +265,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 24);
+            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -303,7 +303,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 24);
+            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
