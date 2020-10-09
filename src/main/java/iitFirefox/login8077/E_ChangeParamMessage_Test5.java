@@ -46,9 +46,9 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
 
             //add file
             FileCreateAndLoading.AddFileAndClickMenu(12, "1.html", driver);
-            Thread.sleep(1000);
+            Thread.sleep(3000);
             Cabinet.SendCabinet("Тест все хорошо", "Переименованный кабинет", driver);
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             Email.Email(iit8077.testIitTest2, iit8077.EmailPass, driver);
             Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             Thread.sleep(500);

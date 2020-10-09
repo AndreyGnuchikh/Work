@@ -141,12 +141,13 @@ public class Email {
         if (!driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).isEnabled()) {
             System.out.println("isEnabled");
         } else {
-            Thread.sleep(500);
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
             driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
             boolean boo = driver.findElements(By.cssSelector("button.control:nth-child(2)")).size() > 0;
             System.out.println("Много писем " + boo);
             if (boo) {
+                Thread.sleep(2000);
                 driver.findElement(By.cssSelector("button.control:nth-child(2)")).click();
             }
         }

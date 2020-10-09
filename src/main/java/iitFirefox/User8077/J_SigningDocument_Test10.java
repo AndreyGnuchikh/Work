@@ -1,22 +1,20 @@
 package iitFirefox.User8077;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.HelpUser;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
+import methods.*;
 import iitAdd.iit8077;
-import methods.Check;
-import methods.FileCreateAndLoading;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 
 import static java.lang.Runtime.getRuntime;
+import static methods.EnterAndExit.getCert;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class J_SigningDocument_Test10 extends iit8077 {
@@ -34,8 +32,8 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(5000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Thread.sleep(15000);
+            Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
@@ -54,8 +52,8 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(2000);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(5000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Thread.sleep(15000);
+            Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
@@ -74,8 +72,8 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(5000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Thread.sleep(15000);
+            Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
@@ -95,8 +93,8 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(5000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Thread.sleep(15000);
+            Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Cabinet.ClickMenuFirstElement(14, driver);
             test2 = driver.findElement(By.cssSelector("#cm-del-full")).getAttribute("aria-disabled");
@@ -116,8 +114,8 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(3000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Thread.sleep(15000);
+            Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Thread.sleep(500);
             Cabinet.ClickMenuFirstElement(6, driver);
@@ -159,8 +157,8 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(3500);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Thread.sleep(15000);
+            Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Cabinet.ClickMenuFirstElement(6, driver);
             Thread.sleep(1500);
@@ -233,8 +231,8 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(5000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Thread.sleep(15000);
+            Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
@@ -257,7 +255,19 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#sign-readers")).click();
-            driver.findElement(By.cssSelector("#sign-readers > option:nth-child("+fio10+")")).click();
+
+            String certsName = driver.findElement(By.id("sign-readers")).getAttribute("outerHTML");
+            ArrayList CertList = getCert(certsName);
+            //If element some name cert
+            for (int i = 0; i <CertList.size() ; i++) {
+                if(CertList.get(i).toString().contains(fio10)){
+                    System.out.println("Find cert " +CertList.get(i).toString() + " number"+i);
+                    Element.WaitElementToBeClickableAndClick(1, "//*[@id=\"sign-readers\"]/option[" + ++i + "]", driver);
+                    break;
+                }
+
+            }
+
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
             Thread.sleep(1000);
             getRuntime().exec("taskkill /im nmcades.exe");

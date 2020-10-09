@@ -11,7 +11,6 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class L_CompletedEDWithSideCustomer_Test12 extends testedo {
     WebDriver driver;

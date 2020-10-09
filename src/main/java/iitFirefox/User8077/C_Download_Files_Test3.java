@@ -68,29 +68,29 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
-    @Order(4)
-    void D_AddFileUPDDownloadWrong_IDOTPR_Test4() {
-        try {
-            FileCreateAndLoading.AddFileUPDError("3.xml", driver);
-            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Ошибка валидации, ИдФайла указан не правильно. Файл 3.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
-        } catch (Throwable e) {
-            Cabinet.Catch(driver, e);
-        }
-    }
+//    @Test
+//    @Order(4)
+//    void D_AddFileUPDDownloadWrong_IDOTPR_Test4() {
+//        try {
+//            FileCreateAndLoading.AddFileUPDError("3.xml", driver);
+//            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+//            Check.CheckExit("Ошибка валидации, ИдФайла указан не правильно. Файл 3.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+//        } catch (Throwable e) {
+//            Cabinet.Catch(driver, e);
+//        }
+//    }
 
-    @Test
-    @Order(5)
-    void E_AddFileUPDDownloadWrong_IDPOL_Test5() {
-        try {
-            FileCreateAndLoading.AddFileUPDError("4.xml", driver);
-            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("ИдПол не соответствует реквизитам покупателя. Файл 4.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
-        } catch (Throwable e) {
-            Cabinet.Catch(driver, e);
-        }
-    }
+//    @Test
+//    @Order(5)
+//    void E_AddFileUPDDownloadWrong_IDPOL_Test5() {
+//        try {
+//            FileCreateAndLoading.AddFileUPDError("4.xml", driver);
+//            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+//            Check.CheckExit("ИдПол не соответствует реквизитам покупателя. Файл 4.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+//        } catch (Throwable e) {
+//            Cabinet.Catch(driver, e);
+//        }
+//    }
 
     @Test
     @Order(6)
@@ -140,17 +140,17 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
-    @Order(10)
-    void J_AddFileUPDDownloadWrong_IDFILEWrongFilled_Test10() {
-        try {
-            FileCreateAndLoading.AddFileUPDError("9.xml", driver);
-            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Ошибка валидации, ИдФайла указан не правильно. Файл 9.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
-        } catch (Throwable e) {
-            Cabinet.Catch(driver, e);
-        }
-    }
+//     @Test
+//    @Order(10)
+//    void J_AddFileUPDDownloadWrong_IDFILEWrongFilled_Test10() {
+//        try {
+//            FileCreateAndLoading.AddFileUPDError("9.xml", driver);
+//            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+//            Check.CheckExit("Ошибка валидации, ИдФайла указан не правильно. Файл 9.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+//        } catch (Throwable e) {
+//            Cabinet.Catch(driver, e);
+//        }
+//    }
 
     @Test
     @Order(11)
