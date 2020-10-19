@@ -86,7 +86,7 @@ public class K_WatchingED_Test11 extends testedo {
             Thread.sleep(3500);
             test = driver.findElement(By.cssSelector(".result > h4:nth-child(1)")).getText();
             System.out.println(test);
-            Check.CheckExit("Все документы успешно подписаны УСИЛЕННОЙ ЭП!", test, driver);
+            Check.CheckExit("Все документы успешно подписаны УСОВЕРШЕНСТВОВАННОЙ ЭП!", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

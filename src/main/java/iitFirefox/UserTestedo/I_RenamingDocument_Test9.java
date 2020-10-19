@@ -110,7 +110,7 @@ public class I_RenamingDocument_Test9 extends testedo {
                 driver.findElement(By.cssSelector("#rename-newName")).clear();
                 Thread.sleep(400);
             }
-            Check.CheckExit("Поле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
+            Check.CheckExit("Поле не может быть пустым и не может содержать \\,:,?,<,>,|,*", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -152,7 +152,7 @@ public class I_RenamingDocument_Test9 extends testedo {
             Thread.sleep(1000);
             test = driver.findElement(By.cssSelector("h3.resptext")).getText();
             System.out.println(test);
-            Check.CheckExit("Недопустимое имя файла . Поле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
+            Check.CheckExit("Недопустимое имя файла . Поле не может быть пустым и не может содержать \\,:,?,<,>,|,*", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
