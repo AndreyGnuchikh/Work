@@ -88,7 +88,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
 
     @Test
     @Order(5)
-    void E_UserIsBlock_Test5() {
+    void D_UserIsBlock_Test4() {
         try {
             EnterAndExit.loggingCerts(fio5, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
@@ -102,7 +102,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
 
     @Test
     @Order(6)
-    void F_UserNoHaveRole_Test6() {
+    void E_UserNoHaveRole_Test5() {
         try {
             EnterAndExit.loggingCerts(fio6, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
@@ -154,7 +154,7 @@ public class B_LoginCerts_Test2 extends iit8077 {
 
     @Test
     @Order(10)
-    void J_KeyDontInput10() {
+    void F_KeyDontInput6() {
         try {
             EnterAndExit.loggingCerts(fio10, driver);
             getRuntime().exec("taskkill /im nmcades.exe");
@@ -162,19 +162,6 @@ public class B_LoginCerts_Test2 extends iit8077 {
             checking = driver.findElement(By.cssSelector("p.text-center")).getText();
             System.out.println(checking);
             Check.CheckExit("Ошибка авторизации", checking, driver);
-        } catch (Throwable e) {
-            Cabinet.Catch(driver, e);
-        }
-    }
-
-    @Test
-    @Order(11)
-    void K_Test_Test11() {
-        try {
-            driver.get(url);
-            System.out.println("11 тест Doesn't actual. If cert is does not correct it doesn't collect");
-            System.out.println("Test is successful");
-            driver.quit();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

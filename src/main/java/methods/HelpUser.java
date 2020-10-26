@@ -13,8 +13,7 @@ import java.util.Locale;
 
 
 import static java.lang.Runtime.getRuntime;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+
 
 
 public class HelpUser {

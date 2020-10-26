@@ -27,7 +27,7 @@ public class Z_TestSleep60min_For_Test9 extends iit8077 {
         }
     }
 
-    @Ignore
+    @Test
     @Order(1)
     void A_Exit_LongTime_Test2() {
         try {

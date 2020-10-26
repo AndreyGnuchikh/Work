@@ -84,7 +84,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
 
     @Test
     @Order(5)
-    void E_UserIsBlockedTest5() {
+    void D_UserIsBlockedTest4() {
         try {
             EnterAndExit.LogPass(log5log, pass, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
@@ -98,7 +98,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
 
     @Test
     @Order(6)
-    void F_UserDontHaveRole6() {
+    void E_UserDontHaveRole5() {
         try {
             EnterAndExit.LogPass(log6log, pass, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
@@ -125,7 +125,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
 
     @Test
     @Order(8)
-    void H_WrongLogPass8() {
+    void F_WrongLogPass6() {
         try {
             EnterAndExit.LogPass(wrong7log, wrong7log, driver);
             checking = driver.findElement(By.id("alertMessage")).getText();
