@@ -122,10 +122,11 @@ public class D_ChooseRoleAndCabinet_Test4 extends testedo {
             Thread.sleep(1000);
             checking = driver.findElement(By.className("select2-results__options")).getAttribute("innerText");
             System.out.println(checking + "/");
-            Check.CheckExit("Бухгалтерия ООО \"Ромашка\"\n" +
-                    "Unused cabinet\n" +
-                    "Отдел кадров ООО \"Ромашка\"\n" +
-                    "TestContractor2Cabinet1", checking, driver);
+            Check.CheckExit("Переименованный кабинет\n" +
+                    "Кабинет Все хорошо\n" +
+                    "Все хорошо кабинет\n" +
+                    "Все хорошо тест бд\n" +
+                    "Тест 150", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

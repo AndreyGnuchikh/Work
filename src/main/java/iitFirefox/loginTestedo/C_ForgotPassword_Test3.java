@@ -62,6 +62,7 @@ public class C_ForgotPassword_Test3 extends testedo {
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
             }
+            Thread.sleep(500);
             driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".js-toolbar-item-title-delete")).click();

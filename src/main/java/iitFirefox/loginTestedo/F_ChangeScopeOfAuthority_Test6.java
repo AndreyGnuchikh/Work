@@ -41,7 +41,7 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
 
     @Test
     @Order(2)
-    void B_Change2paragtaph_Test2() {
+    void B_Change2paragraph_Test2() {
         try {
             role(2, "Лицо, ответственное за подписание счетов-фактур");
         } catch (Throwable e) {
@@ -51,7 +51,7 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
 
     @Test
     @Order(3)
-    void C_Change3paragtaph_Test3() {
+    void C_Change3paragraph_Test3() {
         try {
             role(3, "Лицо, совершившее сделку, операцию");
         } catch (Throwable e) {
@@ -61,7 +61,7 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
 
     @Test
     @Order(4)
-    void D_Change4paragtaph_Test4() {
+    void D_Change4paragraph_Test4() {
         try {
             role(4, "Лицо, совершившее сделку, операцию и ответственное за ее оформление");
         } catch (Throwable e) {
@@ -71,7 +71,7 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
 
     @Test
     @Order(5)
-    void E_Change5paragtaph_Test5() {
+    void E_Change5paragraph_Test5() {
         try {
             role(5, "Лицо, ответственное за оформление свершившегося события");
         } catch (Throwable e) {
@@ -81,7 +81,7 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
 
     @Test
     @Order(6)
-    void F_Change6paragtaph_Test6() {
+    void F_Change6paragraph_Test6() {
         try {
             role(6, "Лицо, совершившее сделку, операцию и ответственное за подписание счетов-фактур");
         } catch (Throwable e) {
@@ -91,7 +91,7 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
 
     @Test
     @Order(7)
-    void G_Change7paragtaph_Test7() {
+    void G_Change7paragraph_Test7() {
         try {
             role(7, "Лицо, совершившее сделку, операцию и ответственное за ее оформление и за подписание счетов-фактур");
         } catch (Throwable e) {
@@ -101,7 +101,7 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
 
     @Test
     @Order(8)
-    void H_Change8paragtaph_Test8() {
+    void H_Change8paragraph_Test8() {
         try {
             role(8, "Лицо, ответственное за оформление свершившегося события и за подписание счетов-фактур");
         } catch (Throwable e) {

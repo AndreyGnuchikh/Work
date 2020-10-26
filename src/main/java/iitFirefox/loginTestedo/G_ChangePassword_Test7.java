@@ -47,7 +47,7 @@ public class G_ChangePassword_Test7 extends testedo {
 
     @Test
     @Order(2)
-    void B_PasswordWritesecontWrong_Test2() {
+    void B_PasswordWriteSecondWrong_Test2() {
         try {
             log(pass7log, pass7log, wrong7log);
             String checkingTest = driver.findElement(By.cssSelector("div.col-md-7:nth-child(3) > input:nth-child(2)")).getAttribute("outerHTML");

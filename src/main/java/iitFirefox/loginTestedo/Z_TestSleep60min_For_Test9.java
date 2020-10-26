@@ -6,11 +6,7 @@ import iitAdd.testedo;
 import methods.Cabinet;
 import methods.Check;
 import methods.EnterAndExit;
-import org.junit.Ignore;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +27,7 @@ public class Z_TestSleep60min_For_Test9 extends testedo {
         }
     }
 
-    @Ignore
+    @Test
     @Order(1)
     void A_Exit_LongTime_Test2() {
         try {
