@@ -287,7 +287,7 @@ public class CompleteFormDopSchF {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("#commentUPD")).sendKeys("" + date);
         driver.findElement(By.cssSelector("#commentUPDModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Thread.sleep(500);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         Thread.sleep(3000);
         String test2 = "" + date;

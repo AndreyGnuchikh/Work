@@ -78,6 +78,10 @@ public class HelpUser {
             rerurningTest = dre[number];
 
         }
+        while (rerurningTest.contains("<")){
+            rerurningTest = rerurningTest.substring(0,rerurningTest.length() - 1);
+            System.out.println(rerurningTest);
+        }
         return rerurningTest;
     }
     public static String Time() {

@@ -52,7 +52,7 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -87,7 +87,7 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -125,7 +125,7 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -156,7 +156,7 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
         } catch (Throwable e) {
@@ -191,7 +191,7 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
             Thread.sleep(500);
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
         } catch (Throwable e) {
@@ -227,7 +227,7 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
         } catch (Throwable e) {
@@ -264,7 +264,7 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -302,8 +302,7 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
-            System.out.println(test);
+            test = HelpUser.Krutilka(arrive, numberElement);
             Check.CheckExit(test2, test, driver);
 
 
