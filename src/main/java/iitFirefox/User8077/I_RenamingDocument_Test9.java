@@ -110,7 +110,7 @@ public class I_RenamingDocument_Test9 extends iit8077 {
                 Thread.sleep(400);
                 test = driver.findElement(By.cssSelector("#rename-newName")).getAttribute("data-content");
                 System.out.println(test);
-                Check.Check("Поле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
+                Check.Check("Поле не может быть пустым и не может содержать \\,:,?,<,>,|,*", test, driver);
                 driver.findElement(By.cssSelector("#rename-newName")).clear();
                 Thread.sleep(400);
             }
@@ -146,8 +146,8 @@ public class I_RenamingDocument_Test9 extends iit8077 {
     }*/
 
     @Test
-    @Order(6)
-    void F_EmptyNameFile_Test6() {
+    @Order(5)
+    void E_EmptyNameFile_Test5() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(4, "1.html", driver);
             driver.findElement(By.cssSelector("#rename-newName")).sendKeys(" ");
@@ -156,7 +156,7 @@ public class I_RenamingDocument_Test9 extends iit8077 {
             Thread.sleep(1000);
             test = driver.findElement(By.cssSelector("h3.resptext")).getText();
             System.out.println(test);
-            Check.CheckExit("Поле не может быть пустым и не может содержать \\,:,?,<,>,|,*", test, driver);
+            Check.CheckExit("Недопустимое имя файла . Поле не может быть пустым и не может содержать \\,:,?,<,>,|,*", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

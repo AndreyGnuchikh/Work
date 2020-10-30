@@ -2,6 +2,7 @@ package iitFirefox.User8077.SoapTest1;
 
 
 import iitAdd.iit8077;
+import org.openqa.selenium.WebDriver;
 
 import javax.xml.soap.*;
 import java.io.ByteArrayOutputStream;
@@ -10,11 +11,11 @@ import java.util.Date;
 public class AddDocumentUPDUserASChF_Test1 extends iit8077 {
     static String DocumentAddResult;
 
-    public static String add() {
+    public static String add(WebDriver driver) {
 
         String soapEndpointUrl = urlsoap;
         String soapAction = urlsoap;
-        callSoapWebService(soapEndpointUrl, soapAction);
+        callSoapWebService(soapEndpointUrl, soapAction,driver);
 
 
         return DocumentAddResult;
@@ -68,7 +69,7 @@ public class AddDocumentUPDUserASChF_Test1 extends iit8077 {
 
     }
 
-    private static String callSoapWebService(String soapEndpointUrl, String soapAction) {
+    private static String callSoapWebService(String soapEndpointUrl, String soapAction,WebDriver driver) {
         try {
             // Create SOAP Connection
             SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
@@ -92,6 +93,7 @@ public class AddDocumentUPDUserASChF_Test1 extends iit8077 {
         } catch (Exception e) {
             System.err.println("\nError occurred while sending SOAP Request to Server!\nMake sure you have the correct endpoint URL and SOAPAction!\n");
             e.printStackTrace();
+            driver.quit();
         }
         return DocumentAddResult;
     }

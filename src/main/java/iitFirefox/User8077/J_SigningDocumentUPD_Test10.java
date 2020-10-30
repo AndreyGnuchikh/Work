@@ -30,16 +30,23 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
     void A_Signing_Schf_Document_Test1() {
         try {
             setUp();
-            FileCreateAndLoading.AddFile("upd\\0.xml", driver);
-            Cabinet.ClickMenuFirstElement(5, driver);
-            Thread.sleep(5000);
-            driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(5000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("1", driver);
+            EnterAndExit.Exit(driver);
+
+            driver.get(url);
+            EnterAndExit.loggingCerts(upd2, driver);
+            Thread.sleep(1500);
+            EnterAndExit.RoleSwitch(2, driver);
+            Thread.sleep(3000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            Cabinet.ClickMenuFirstElement(5, driver);
-            test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
-            Check.CheckExit("true", test2, driver);
+            Thread.sleep(1000);
+            Cabinet.OpenNameFolder("СЧФ", driver);
+            Thread.sleep(5200);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(1000);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            String test = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Check.CheckExit("Все хорошо 2.0", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -214,9 +221,9 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             }
             Thread.sleep(5000);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(7500);
+            Thread.sleep(10000);
             String test = driver.findElement(By.cssSelector(".result > h4:nth-child(1)")).getText();
-            Check.CheckExit("Все документы успешно подписаны ЭП!", test, driver);
+            Check.CheckExit("Все документы успешно подписаны УСИЛЕННОЙ ЭП!", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

@@ -235,7 +235,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         try {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
 
-            test2 = AddDocumentUPDUserASChF_Test1.add();
+            test2 = AddDocumentUPDUserASChF_Test1.add(driver);
             Cabinet.OpenNameFolder("Ñ×Ô 321", driver);
             Thread.sleep(500);
             CheckDisableButton();
@@ -250,7 +250,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         try {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
 
-            test2 = AddDocumentUPDUserACT.add();
+            test2 = AddDocumentUPDUserACT.add(driver);
             Cabinet.OpenNameFolder("ÀÊÒ", driver);
 
             Thread.sleep(500);
@@ -266,7 +266,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         try {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
 
-            test2 = AddDocumentUPDUserASChFDop_Test3.add();
+            test2 = AddDocumentUPDUserASChFDop_Test3.add(driver);
             Cabinet.OpenNameFolder("Òåñò 3", driver);
             Thread.sleep(500);
             CheckDisableButton();

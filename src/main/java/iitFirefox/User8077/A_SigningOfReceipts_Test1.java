@@ -40,7 +40,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChF_Test1.add();
+            test = AddDocumentUPDUserASChF_Test1.add(driver);
             Cabinet.OpenNameFolder("Ñ×Ô 321", driver);
             Thread.sleep(1500);
             Sign.SignFirstFileUDP(test, driver);
@@ -64,7 +64,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChF_Test2.add();
+            test = AddDocumentUPDUserASChF_Test2.add(driver);
             Thread.sleep(2500);
             Cabinet.OpenNameFolder("Ñ×Ô Íàèìåíîâàíèå", driver);
             Sign.SignFirstFileUDP(test, driver);
@@ -89,7 +89,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
 
-            test = AddDocumentUPDUserASChFDop_Test3.add();
+            test = AddDocumentUPDUserASChFDop_Test3.add(driver);
             Thread.sleep(1500);
             Cabinet.OpenNameFolder("Òåñò 3", driver);
             Sign.SignFirstFileUDP(test, driver);
@@ -114,7 +114,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChFDop_Test4.add();
+            test = AddDocumentUPDUserASChFDop_Test4.add(driver);
             Cabinet.OpenNameFolder("ÓÏÄ 123", driver);
 
             Sign.SignFirstFileUDP(test, driver);
@@ -138,7 +138,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChF_Test5.add();
+            test = AddDocumentUPDUserASChF_Test5.add(driver);
             Thread.sleep(1500);
             Cabinet.OpenNameFolder("Ñ×Ô",driver);
             Actions builder = new Actions(driver);
@@ -163,7 +163,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChF_Test1.add();
+            test = AddDocumentUPDUserASChF_Test1.add(driver);
             Cabinet.OpenNameFolder("Ñ×Ô 321", driver);
 
             Sign.SignFirstFileUDP(test, driver);
