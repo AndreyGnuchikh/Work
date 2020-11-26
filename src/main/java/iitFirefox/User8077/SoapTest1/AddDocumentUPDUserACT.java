@@ -5,7 +5,7 @@ import iitAdd.iit8077;
 import methods.Cabinet;
 import org.openqa.selenium.WebDriver;
 
-import javax.xml.soap.*;
+import org.apache.xmlbeans.impl.soap.*;
 import java.io.ByteArrayOutputStream;
 import java.util.Date;
 

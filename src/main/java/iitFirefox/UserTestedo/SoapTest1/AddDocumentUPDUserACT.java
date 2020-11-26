@@ -4,7 +4,7 @@ package iitFirefox.UserTestedo.SoapTest1;
 import iitAdd.iit8077;
 import iitAdd.testedo;
 
-import javax.xml.soap.*;
+import org.apache.xmlbeans.impl.soap.*;
 import java.io.ByteArrayOutputStream;
 import java.util.Date;
 

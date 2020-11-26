@@ -4,7 +4,7 @@ package iitFirefox.User8077.SoapTest1;
 import iitAdd.iit8077;
 import org.openqa.selenium.WebDriver;
 
-import javax.xml.soap.*;
+import org.apache.xmlbeans.impl.soap.*;
 import java.io.ByteArrayOutputStream;
 import java.util.Date;
 
