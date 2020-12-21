@@ -6,8 +6,8 @@
     <groupId>work</groupId>
     <artifactId>work</artifactId>
     <version>1.0-SNAPSHOT</version>
-	
-	<packaging>jar</packaging>
+
+    <packaging>jar</packaging>
 
     <name>AisaTest</name>
     <url>http://maven.apache.org</url>
@@ -88,32 +88,12 @@
             <version>${allure-junit5.version}</version>
         </dependency>
         <!-- Замена Thread.sleep https://search.maven.org/artifact/org.awaitility/awaitility/4.0.1/jar -->
-        <dependency>
-            <groupId>org.awaitility</groupId>
-            <artifactId>awaitility</artifactId>
-            <version>4.0.1</version>
-        </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M2</version>
-                <configuration>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>

@@ -51,7 +51,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             System.out.println(test);
             Check.CheckExit("У вас есть неподписанные квитанции для следующих документов:", test, driver);
         } catch (Throwable e) {
-            Cabinet.Catch(driver, e);
+        Cabinet.Catch(driver, e);
         }
     }
 
