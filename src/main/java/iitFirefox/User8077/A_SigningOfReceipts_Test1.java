@@ -1,12 +1,9 @@
 package iitFirefox.User8077;
 
 import iitFirefox.User8077.SoapTest1.*;
-import iitAdd.Drivers; 
-import methods.Cabinet;
-import methods.EnterAndExit;
+import iitAdd.Drivers;
+import methods.*;
 import iitAdd.iit8077;
-import methods.Check;
-import methods.Sign;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -40,7 +37,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChF_Test1.add(driver);
+            test = AddDocumentUPDUserASChF_Test1.add();
             Cabinet.OpenNameFolder("Ñ×Ô 321", driver);
             Thread.sleep(1500);
             Sign.SignFirstFileUDP(test, driver);
@@ -64,7 +61,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChF_Test2.add(driver);
+            test = AddDocumentUPDUserASChF_Test2.add();
             Thread.sleep(2500);
             Cabinet.OpenNameFolder("Ñ×Ô Íàèìåíîâàíèå", driver);
             Sign.SignFirstFileUDP(test, driver);
@@ -89,7 +86,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
 
-            test = AddDocumentUPDUserASChFDop_Test3.add(driver);
+            test = AddDocumentUPDUserASChFDop_Test3.add();
             Thread.sleep(1500);
             Cabinet.OpenNameFolder("Òåñò 3", driver);
             Sign.SignFirstFileUDP(test, driver);
@@ -114,7 +111,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChFDop_Test4.add(driver);
+            test = AddDocumentUPDUserASChFDop_Test4.add();
             Cabinet.OpenNameFolder("ÓÏÄ 123", driver);
 
             Sign.SignFirstFileUDP(test, driver);
@@ -138,7 +135,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChF_Test5.add(driver);
+            test = AddDocumentUPDUserASChF_Test5.add();
             Thread.sleep(1500);
             Cabinet.OpenNameFolder("Ñ×Ô",driver);
             Actions builder = new Actions(driver);
@@ -163,7 +160,7 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            test = AddDocumentUPDUserASChF_Test1.add(driver);
+            test = AddDocumentUPDUserASChF_Test1.add();
             Cabinet.OpenNameFolder("Ñ×Ô 321", driver);
 
             Sign.SignFirstFileUDP(test, driver);
