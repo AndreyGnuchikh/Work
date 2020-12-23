@@ -26,25 +26,25 @@ public class EnterAndExit {
     public static void loggingCerts(String login, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         System.out.println("Login: " + login);
-        Thread.sleep(1500);
-        driver.findElement(By.className("auth__tab-item--right")).click();
         Thread.sleep(2000);
-
+        driver.findElement(By.className("auth__tab-item--right")).click();
+        Thread.sleep(5000);
         String certsName = driver.findElement(By.id("keyModal_body")).getAttribute("outerHTML");
         ArrayList CertList = getCert(certsName);
         //If element some name cert
         for (int i = 0; i <CertList.size() ; i++) {
             if(CertList.get(i).toString().contains(login)){
+                Thread.sleep(100);
                 System.out.println("Find cert " +CertList.get(i).toString() + " number"+i);
                 Element.WaitElementToBeClickableAndClick(1, "//*[@id=\"keyModal_body\"]/option[" + ++i + "]", driver);
+                Thread.sleep(100);
                 break;
             }
 
         }
-
-        Thread.sleep(500);
+        Thread.sleep(3000);
         driver.findElement(By.className("btnSelectKey")).click();
-        Thread.sleep(8000);
+        Thread.sleep(6000);
         String url = driver.getCurrentUrl();
         System.out.println(url);
 
@@ -114,9 +114,14 @@ public class EnterAndExit {
         if (driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).isDisplayed()) {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#operatorModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(2)")).click();
+
             Thread.sleep(3000);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(15000);
+
+            Element.WaitElementToBeClickableAndClick("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)",driver);
+            Thread.sleep(1000);
+
             Element.WaitElementToBeClickableAndClick("button.btn:nth-child(5)",driver);
             System.out.println("receipts Signing");
         }

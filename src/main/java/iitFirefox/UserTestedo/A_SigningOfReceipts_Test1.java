@@ -140,7 +140,7 @@ public class A_SigningOfReceipts_Test1 extends testedo {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             test = AddDocumentUPDUserASChF_Test5.add();
             Thread.sleep(1500);
-            Cabinet.OpenNameFolder("явт",driver);
+            Cabinet.OpenNameFolder("явт", driver);
             Actions builder = new Actions(driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#grid-basic2-row-" + test)).click();

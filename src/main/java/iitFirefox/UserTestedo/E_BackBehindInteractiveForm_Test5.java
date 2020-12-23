@@ -1,10 +1,10 @@
 package iitFirefox.UserTestedo;
 
-import iitAdd.Drivers;
-import iitAdd.testedo;
 import Form.CompleteForm;
 import Form.CompleteFormAct;
 import Form.CompleteFormDopSchF;
+import iitAdd.Drivers;
+import iitAdd.testedo;
 import methods.Cabinet;
 import methods.Check;
 import methods.EnterAndExit;
@@ -42,7 +42,7 @@ public class E_BackBehindInteractiveForm_Test5 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteForm.SCHF("NO",driver);
+            CompleteForm.SCHF("NO", driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);
@@ -73,7 +73,7 @@ public class E_BackBehindInteractiveForm_Test5 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            CompleteFormAct.Act("NO",driver);
+            CompleteFormAct.Act("NO", driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);
@@ -103,7 +103,7 @@ public class E_BackBehindInteractiveForm_Test5 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
-            CompleteFormDopSchF.DopSchF("NO",driver);
+            CompleteFormDopSchF.DopSchF("NO", driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(1000);

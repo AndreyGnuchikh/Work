@@ -22,11 +22,26 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
 
         <!-- build aspectjweaver and allure-junit5-->
-        <aspectj.version>1.9.0</aspectj.version>
+
         <allure.version>2.13.0</allure.version>
     </properties>
 
     <dependencies>
+
+        <!-- Pull in as a traditional dependency -->
+        <dependency>
+            <groupId>com.konghq</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>3.11.04</version>
+        </dependency>
+
+        <!-- OR as a snazzy new standalone jar with shaded dependencies -->
+        <dependency>
+            <groupId>com.konghq</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>3.11.04</version>
+            <classifier>standalone</classifier>
+        </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -88,7 +103,11 @@
             <version>${allure-junit5.version}</version>
         </dependency>
         <!-- Замена Thread.sleep https://search.maven.org/artifact/org.awaitility/awaitility/4.0.1/jar -->
-
+        <dependency>
+            <groupId>com.sun.xml.messaging.saaj</groupId>
+            <artifactId>saaj-impl</artifactId>
+            <version>1.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>

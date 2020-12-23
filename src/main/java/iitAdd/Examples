@@ -147,7 +147,7 @@ driver.findElement(By.id("cm-send_text")).click();
 
                                  // TODO: 18.08.2020  js code deleted DOM elements
                                     JavascriptExecutor js = (JavascriptExecutor)driver;
-                                    js.executeScript("return document.getElementsByClassName('navbar-fixed-top')[0].remove();");
+                                    js.executeScript("return document.getElementsByClassName('javascript:void('div')')[0].remove();");
 
      ****************************************Tap up and down and deleted elements*************************
 

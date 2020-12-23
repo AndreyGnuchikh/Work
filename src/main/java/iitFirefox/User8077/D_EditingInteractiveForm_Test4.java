@@ -1,19 +1,14 @@
 package iitFirefox.User8077;
 
-import iitAdd.Drivers; 
-import methods.Cabinet;
-
-import methods.EnterAndExit;
-import iitAdd.iit8077;
 import Form.CompleteForm;
 import Form.CompleteFormAct;
 import Form.CompleteFormDopSchF;
+import iitAdd.Drivers;
+import iitAdd.iit8077;
 import iitFirefox.User8077.SoapTest1.AddDocumentUPDUserACT;
 import iitFirefox.User8077.SoapTest1.AddDocumentUPDUserASChFDop_Test3;
 import iitFirefox.User8077.SoapTest1.AddDocumentUPDUserASChF_Test1;
-import methods.Check;
-import methods.FileCreateAndLoading;
-import methods.Sign;
+import methods.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -54,7 +49,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ñ÷ô
-            test2 = CompleteForm.SCHF("Yes",driver);
+            test2 = CompleteForm.SCHF("Yes", driver);
             Cabinet.ClickMenuFirstElement(3, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#numberSf")).clear();
@@ -96,7 +91,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormAct.Act("Yes",driver);
+            test2 = CompleteFormAct.Act("Yes", driver);
             Cabinet.ClickMenuFirstElement(3, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#numberActEW")).clear();
@@ -137,7 +132,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormDopSchF.DopSchF("YES",driver);
+            test2 = CompleteFormDopSchF.DopSchF("YES", driver);
             Thread.sleep(2000);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(1000);
@@ -175,7 +170,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
-            test2 = CompleteForm.SCHF("Yes",driver);
+            test2 = CompleteForm.SCHF("Yes", driver);
             CheckDisableButtonSign();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -196,7 +191,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
-            test2 = CompleteFormAct.Act("Yes",driver);
+            test2 = CompleteFormAct.Act("Yes", driver);
             CheckDisableButtonSign();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -218,7 +213,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormDopSchF.DopSchF("YES",driver);
+            test2 = CompleteFormDopSchF.DopSchF("YES", driver);
             Thread.sleep(2000);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(1000);
@@ -235,7 +230,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         try {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
 
-            test2 = AddDocumentUPDUserASChF_Test1.add(driver);
+            test2 = AddDocumentUPDUserASChF_Test1.add();
             Cabinet.OpenNameFolder("Ñ×Ô 321", driver);
             Thread.sleep(500);
             CheckDisableButton();
@@ -250,7 +245,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         try {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
 
-            test2 = AddDocumentUPDUserACT.add(driver);
+            test2 = AddDocumentUPDUserACT.add();
             Cabinet.OpenNameFolder("ÀÊÒ", driver);
 
             Thread.sleep(500);
@@ -266,7 +261,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         try {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
 
-            test2 = AddDocumentUPDUserASChFDop_Test3.add(driver);
+            test2 = AddDocumentUPDUserASChFDop_Test3.add();
             Cabinet.OpenNameFolder("Òåñò 3", driver);
             Thread.sleep(500);
             CheckDisableButton();

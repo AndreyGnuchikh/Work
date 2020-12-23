@@ -1,10 +1,10 @@
 package iitFirefox.UserTestedo;
 
-import iitAdd.Drivers;
-import iitAdd.testedo;
 import Form.CompleteForm;
 import Form.CompleteFormAct;
 import Form.CompleteFormDopSchF;
+import iitAdd.Drivers;
+import iitAdd.testedo;
 import iitFirefox.UserTestedo.SoapTest1.AddDocumentUPDUserACT;
 import iitFirefox.UserTestedo.SoapTest1.AddDocumentUPDUserASChFDop_Test3;
 import iitFirefox.UserTestedo.SoapTest1.AddDocumentUPDUserASChF_Test1;
@@ -49,7 +49,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            test2 = CompleteForm.SCHF("Yes",driver);
+            test2 = CompleteForm.SCHF("Yes", driver);
             Cabinet.ClickMenuFirstElement(3, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#numberSf")).clear();
@@ -91,7 +91,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormAct.Act("Yes",driver);
+            test2 = CompleteFormAct.Act("Yes", driver);
             Cabinet.ClickMenuFirstElement(3, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#numberActEW")).clear();
@@ -132,7 +132,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormDopSchF.DopSchF("YES",driver);
+            test2 = CompleteFormDopSchF.DopSchF("YES", driver);
             Thread.sleep(2000);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(1000);
@@ -170,7 +170,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
-            test2 = CompleteForm.SCHF("Yes",driver);
+            test2 = CompleteForm.SCHF("Yes", driver);
             CheckDisableButtonSign();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -191,7 +191,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
-            test2 = CompleteFormAct.Act("Yes",driver);
+            test2 = CompleteFormAct.Act("Yes", driver);
             CheckDisableButtonSign();
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -213,7 +213,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormDopSchF.DopSchF("YES",driver);
+            test2 = CompleteFormDopSchF.DopSchF("YES", driver);
             Thread.sleep(2000);
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
             Thread.sleep(1000);

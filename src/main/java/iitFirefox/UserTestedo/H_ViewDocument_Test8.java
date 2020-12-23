@@ -1,8 +1,8 @@
 package iitFirefox.UserTestedo;
 
+import Form.CompleteFormDopSchF;
 import iitAdd.Drivers;
 import iitAdd.testedo;
-import Form.CompleteFormDopSchF;
 import methods.*;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -25,6 +25,33 @@ public class H_ViewDocument_Test8 extends testedo {
     public WebDriver driver;
     public String test2;
 
+    public static WebDriver ffWithoutAddon() {
+        FirefoxProfile profile = new FirefoxProfile();
+        // Убрать вывод
+        //System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
+        //System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
+
+        profile.setPreference("browser.download.folderList", 2);
+        profile.setPreference("browser.download.dir", "C:\\Tools\\TestFile");
+        profile.setPreference("browser.download.useDownloadDir", true);
+        // Указывает тип документа по умолчанию которые скачиваются без всплывающего окна
+
+        //Добавление Плазина Крипто про
+        profile.addExtension(
+                new File("C:\\Tools\\cryptopro_extension_for_cades_browser_plug_in-1.1.1-an+fx-windows.xpi"));
+
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.setLogLevel(Level.OFF);
+        firefoxOptions.setProfile(profile);
+        if (Drivers.headless) {
+            firefoxOptions.addArguments("--headless"); //////////////////////////////////////
+        }
+        WebDriver driver = new FirefoxDriver(firefoxOptions);
+
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        return driver;
+    }
 
     @Test
     @Order(1)
@@ -97,7 +124,7 @@ public class H_ViewDocument_Test8 extends testedo {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
-            CompleteFormDopSchF.DopSchF("YES",driver);
+            CompleteFormDopSchF.DopSchF("YES", driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".active-file")).click();
             Thread.sleep(1000);
@@ -125,34 +152,6 @@ public class H_ViewDocument_Test8 extends testedo {
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
-    }
-
-    public static WebDriver ffWithoutAddon() {
-        FirefoxProfile profile = new FirefoxProfile();
-        // Убрать вывод
-        //System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
-        //System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
-
-        profile.setPreference("browser.download.folderList", 2);
-        profile.setPreference("browser.download.dir", "C:\\Tools\\TestFile");
-        profile.setPreference("browser.download.useDownloadDir", true);
-        // Указывает тип документа по умолчанию которые скачиваются без всплывающего окна
-
-        //Добавление Плазина Крипто про
-        profile.addExtension(
-                new File("C:\\Tools\\cryptopro_extension_for_cades_browser_plug_in-1.1.1-an+fx-windows.xpi"));
-
-        FirefoxOptions firefoxOptions = new FirefoxOptions();
-        firefoxOptions.setLogLevel(Level.OFF);
-        firefoxOptions.setProfile(profile);
-        if (Drivers.headless) {
-            firefoxOptions.addArguments("--headless"); //////////////////////////////////////
-        }
-        WebDriver driver = new FirefoxDriver(firefoxOptions);
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        return driver;
     }
 }
 
