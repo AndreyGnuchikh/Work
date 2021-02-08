@@ -21,7 +21,7 @@ public class G_ChangePassword_Test7 extends testedo {
             driver = Drivers.ff();
             driver.get(url);
             EnterAndExit.LogPass(q7log, pass7log, driver);
-            Element.visibleElement180SecToWait("#user-nav",driver);
+            Element.VisibleElement180SecToWait("#user-nav",driver);
             Thread.sleep(1500);
             driver.findElement(By.id("user-nav")).click();
             Thread.sleep(2800);

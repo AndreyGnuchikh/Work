@@ -2,9 +2,9 @@ package EDOSF.iitFirefox.UserTestedo;
 
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
-import EDOSF.Form.CompleteForm;
-import EDOSF.Form.CompleteFormAct;
-import EDOSF.Form.CompleteFormDopSchF;
+import EDOSF.Forms.CompleteForm;
+import EDOSF.Forms.CompleteFormAct;
+import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;

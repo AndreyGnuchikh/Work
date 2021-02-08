@@ -1,4 +1,4 @@
-package EDOSF.methods;
+package OFD.methods;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -6,10 +6,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-
 public class Element {
-    //https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/support/ui/ExpectedConditions.html
+    public static void ClickElementByName(String name, WebDriver driver) {
+        driver.findElement(By.xpath("//*[contains(text(), '"+name+"')]")).click();
+    }
+    public static String GetElementByName(String name, WebDriver driver) throws InterruptedException {
+        String gatName;
+        Thread.sleep(500);
+        gatName = driver.findElement(By.xpath("//*[contains(text(), '"+name+"')]")).getText();
+        return gatName;
+    }
+
+
     public static void WaitElementToBeClickableAndClick(String link, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName() + " " + link);
         WebDriverWait wait = new WebDriverWait(driver, 60);
@@ -27,8 +35,7 @@ public class Element {
         Thread.sleep(500);
         driver.findElement(By.xpath(link)).click();
     }
-
-    public static void VisibleElement180SecToWait(String link, WebDriver driver) throws InterruptedException {
+    public static void visibleElement180SecToWait(String link, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         for (int i = 0; i < 30; i++) {
             System.out.println(i);
@@ -46,7 +53,7 @@ public class Element {
         }
     }
 
-    public static void VisibleElement180SecToWait(Integer sec, String link, WebDriver driver) throws InterruptedException {
+    public static void visibleElementNUMSecToWait(Integer sec, String link, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         for (int i = 0; i < sec; i++) {
             System.out.println(i);
@@ -62,19 +69,5 @@ public class Element {
             }
 
         }
-    }
-
-    public static void isDisableAndClickIfNot(String link, WebDriver driver) throws InterruptedException {
-        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        String isDisabled;
-        for (int i = 0; i <50 ; i++) {
-            isDisabled = driver.findElement(By.cssSelector(link)).getAttribute("outerHTML");
-            if (isDisabled.contains("disabled")) {
-                Thread.sleep(1000);
-            }else{
-                break;
-            }
-        }
-        driver.findElement(By.cssSelector(link)).click();
     }
 }

@@ -90,7 +90,7 @@ public class EnterAndExit {
                 Thread.sleep(1000);
                 driver.findElement(By.cssSelector("#selectRole")).click();
                 Thread.sleep(1000);
-                driver.findElement(By.xpath("/html/body/main/section/div/div[2]/EDOSF.Form/div[2]/div/div/span/span[1]/span")).click();
+                driver.findElement(By.xpath("/html/body/main/section/div/div[2]/form/div[2]/div/div/span/span[1]/span")).click();
                 Thread.sleep(1000);
 
                 driver.findElement(By.cssSelector("li.select2-results__option:nth-child(1)")).click();
@@ -161,7 +161,7 @@ public class EnterAndExit {
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#user-nav")).click();
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("EDOSF.Form.text-right > button:nth-child(1)")).click();
+        driver.findElement(By.cssSelector("form.text-right > button:nth-child(1)")).click();
         Thread.sleep(1000);
     }
 

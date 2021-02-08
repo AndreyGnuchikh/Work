@@ -1,4 +1,4 @@
-package EDOSF.Form;
+package EDOSF.Forms;
 
 import EDOSF.methods.Element;
 import org.openqa.selenium.By;

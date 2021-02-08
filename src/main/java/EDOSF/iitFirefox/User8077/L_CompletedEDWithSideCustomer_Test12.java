@@ -68,7 +68,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             test = driver.findElement(By.id("org-name")).getAttribute("value");
             Check.Check("Все хорошо 2,0", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
-            Check.Check("d", test, driver);
+            Check.Check("1", test, driver);
             test = driver.findElement(By.id("shipment-info")).getAttribute("value");
             Check.CheckExit("Замечаний нет", test, driver);
 
@@ -134,7 +134,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             test = driver.findElement(By.id("org-name")).getAttribute("value");
             Check.Check("Все хорошо 2,0", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
-            Check.Check("d", test, driver);
+            Check.Check("1", test, driver);
             test = driver.findElement(By.id("shipment-info")).getAttribute("value");
             Check.CheckExit("Замечаний нет", test, driver);
 
@@ -172,7 +172,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
             test = driver.findElement(By.id("position")).getAttribute("value");
             Check.CheckingContains("Должность", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
-            Check.Check("d", test, driver);
+            Check.Check("1", test, driver);
             test = driver.findElement(By.id("shipment-info")).getAttribute("value");
             Check.CheckExit("Замечаний нет", test, driver);
         }catch (Throwable e){

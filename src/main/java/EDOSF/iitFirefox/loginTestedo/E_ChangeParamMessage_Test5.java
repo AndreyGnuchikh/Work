@@ -46,7 +46,7 @@ public class E_ChangeParamMessage_Test5 extends testedo {
             Cabinet.SendCabinet("Тест все хорошо", "Переименованный кабинет", driver);
             Thread.sleep(2000);
             Email.Email(testIitTest2, EmailPass, driver);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             Thread.sleep(500);
             String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
             System.out.println(test1);
@@ -89,7 +89,7 @@ public class E_ChangeParamMessage_Test5 extends testedo {
             driver.findElement(By.cssSelector("#modalSendConfirm")).click();
             Thread.sleep(1000);
             Email.Email(testIitTest2, EmailPass, driver);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             Thread.sleep(500);
             String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
             System.out.println(test1);
@@ -132,7 +132,7 @@ public class E_ChangeParamMessage_Test5 extends testedo {
             Thread.sleep(1000);
             Email.Email(testIitTest2, EmailPass, driver);
             Thread.sleep(1000);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             Thread.sleep(1000);
             String test1 = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
             System.out.println(test1);

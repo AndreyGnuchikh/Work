@@ -6,7 +6,7 @@ import EDOSF.methods.HelpUser;
 import EDOSF.methods.EnterAndExit;
 
 import EDOSF.iitAdd.iit8077;
-import EDOSF.Form.CompleteFormDopSchF;
+import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
 import org.junit.jupiter.api.MethodOrderer;

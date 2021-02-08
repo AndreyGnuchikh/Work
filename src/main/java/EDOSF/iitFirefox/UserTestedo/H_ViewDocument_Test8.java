@@ -1,6 +1,6 @@
 package EDOSF.iitFirefox.UserTestedo;
 
-import EDOSF.Form.CompleteFormDopSchF;
+import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;

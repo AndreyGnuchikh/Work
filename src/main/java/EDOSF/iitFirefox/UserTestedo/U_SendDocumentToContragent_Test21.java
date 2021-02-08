@@ -1,6 +1,6 @@
 package EDOSF.iitFirefox.UserTestedo;
 
-import EDOSF.Form.CompleteFormAct;
+import EDOSF.Forms.CompleteFormAct;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
@@ -299,7 +299,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             EnterAndExit.Exit(driver);
             //Email
             Email.EmailTest4(testIitTest4,EmailPass,driver);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject",driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject",driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject")).click();
             Thread.sleep(1000);

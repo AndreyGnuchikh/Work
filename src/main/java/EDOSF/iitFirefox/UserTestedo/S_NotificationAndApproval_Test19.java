@@ -90,7 +90,7 @@ public class S_NotificationAndApproval_Test19 extends testedo {
             Element.WaitElementToBeClickableAndClick("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) > span:nth-child(1)", driver);
             EnterAndExit.Exit(driver);
             Email.Email(testIitTest2, EmailPass, driver);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             Thread.sleep(2000);
             test = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
 
@@ -194,7 +194,7 @@ public class S_NotificationAndApproval_Test19 extends testedo {
             Element.WaitElementToBeClickableAndClick("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) > span:nth-child(1)", driver);
             EnterAndExit.Exit(driver);
             Email.Email(testIitTest2, EmailPass, driver);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
             Thread.sleep(500);
@@ -255,7 +255,7 @@ public class S_NotificationAndApproval_Test19 extends testedo {
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) ")).click();
             EnterAndExit.Exit(driver);
             Email.Email(testIitTest2, EmailPass, driver);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).click();
             Thread.sleep(500);
 
@@ -281,7 +281,7 @@ public class S_NotificationAndApproval_Test19 extends testedo {
             driver.findElement(By.cssSelector("div.modal.fade.in div.modal-footer button")).click();
             EnterAndExit.Exit(driver);
             Email.Email(testIitTest2, EmailPass, driver);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).click();
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector(".mail-Message-Body-Content")).getAttribute("innerText");
@@ -331,7 +331,7 @@ public class S_NotificationAndApproval_Test19 extends testedo {
             EnterAndExit.Exit(driver);
             Email.Email(testIitTest2, EmailPass, driver);
             Thread.sleep(1500);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             Thread.sleep(1000);
             test = driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).getText();
 
@@ -360,7 +360,7 @@ public class S_NotificationAndApproval_Test19 extends testedo {
             driver.findElement(By.cssSelector("div.modal.fade.in div.modal-footer button")).click();
             EnterAndExit.Exit(driver);
             Email.Email(testIitTest2, EmailPass, driver);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).click();
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector(".mail-Message-Body-Content")).getAttribute("innerText");
@@ -411,7 +411,7 @@ public class S_NotificationAndApproval_Test19 extends testedo {
             driver.findElement(By.cssSelector("div.modal.fade.in div.modal-footer button")).click();
             EnterAndExit.Exit(driver);
             Email.EmailTest3(testIitTest3, EmailPass, driver);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).click();
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector(".mail-Message-Body-Content")).getAttribute("innerText");

@@ -164,7 +164,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
             }
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#uploadModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(2)")).click();
-            Element.visibleElement180SecToWait(".glyphicon-ok-sign", driver);
+            Element.VisibleElement180SecToWait(".glyphicon-ok-sign", driver);
             Thread.sleep(20000);
             test = driver.findElement(By.cssSelector("h3.resptext")).getText();
             System.out.println(test);

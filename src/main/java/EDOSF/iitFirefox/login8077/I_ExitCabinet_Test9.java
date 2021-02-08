@@ -33,7 +33,7 @@ public class I_ExitCabinet_Test9 extends iit8077 {
             driver.findElement(By.id("selectRole")).click();
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
             Thread.sleep(2000);
-            driver.findElement(By.cssSelector("EDOSF.Form.text-right > button:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("form.text-right > button:nth-child(1)")).click();
             text = driver.findElement(By.className("auth__title")).getText();
             Check.CheckExit("¬ход в личный кабинет", text, driver);
         } catch (Throwable e) {

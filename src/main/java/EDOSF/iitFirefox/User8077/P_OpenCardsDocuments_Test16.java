@@ -70,7 +70,7 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(3)")).getText();
             Check.CheckingContains("УПД 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(4)")).getText();
-            Check.CheckExit("Д", test, driver);
+            Check.CheckExit("УПД", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -101,8 +101,8 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(3)")).getText();
             Check.Check("Должность", test, driver);
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(5)")).getText();
-            Check.CheckExit("02B465C000DBABADA5475C22EDB52EB92F\n" +
-                    "с 15.06.2020 по 15.09.2020", test, driver);
+            Check.CheckExit("02EC299F0095AC929F493BE30E05D136F8\n" +
+                    "с 18.12.2020 по 18.03.2021", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

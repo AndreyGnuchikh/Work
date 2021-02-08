@@ -1,9 +1,9 @@
 package EDOSF.iitFirefox.User8077;
 
 import EDOSF.iitAdd.*;
-import EDOSF.Form.CompleteForm;
-import EDOSF.Form.CompleteFormAct;
-import EDOSF.Form.CompleteFormDopSchF;
+import EDOSF.Forms.CompleteForm;
+import EDOSF.Forms.CompleteFormAct;
+import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;

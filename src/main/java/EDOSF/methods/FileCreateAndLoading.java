@@ -77,7 +77,7 @@ public class FileCreateAndLoading {
     public static void AddFileUPDError(String fileName, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file UPD Error
-        Element.visibleElement180SecToWait(".createDocument",driver);
+        Element.VisibleElement180SecToWait(".createDocument",driver);
         Thread.sleep(200);
         driver.findElement(By.cssSelector(".createDocument")).click();
         Thread.sleep(500);
@@ -85,7 +85,7 @@ public class FileCreateAndLoading {
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
         Thread.sleep(200);
         String x = driver.getCurrentUrl();
-        if(x.contains("8077")){
+        if(!x.contains("8080")){
             upload.sendKeys("C:\\Tools\\upd\\" + fileName);
             Thread.sleep(500);
         }else {

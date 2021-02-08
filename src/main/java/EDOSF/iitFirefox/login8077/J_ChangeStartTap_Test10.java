@@ -83,7 +83,7 @@ public class J_ChangeStartTap_Test10 extends iit8077 {
             driver.findElement(By.className("btn-primary")).click();
             Thread.sleep(5000);
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
-            driver.findElement(By.cssSelector("EDOSF.Form.text-right > button:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("form.text-right > button:nth-child(1)")).click();
             test = driver.getCurrentUrl();
             System.out.println(test);
             Check.CheckExit(url, test, driver);

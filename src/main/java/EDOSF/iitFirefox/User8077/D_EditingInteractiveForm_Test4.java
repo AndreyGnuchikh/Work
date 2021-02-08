@@ -1,8 +1,8 @@
 package EDOSF.iitFirefox.User8077;
 
-import EDOSF.Form.CompleteForm;
-import EDOSF.Form.CompleteFormAct;
-import EDOSF.Form.CompleteFormDopSchF;
+import EDOSF.Forms.CompleteForm;
+import EDOSF.Forms.CompleteFormAct;
+import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserACT;

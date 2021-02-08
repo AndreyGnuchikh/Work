@@ -69,9 +69,9 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
         try {
             EnterAndExit.LogPass(logBilling, pass, driver);
             Thread.sleep(2000);
-            checking = driver.findElement(By.cssSelector("#bilLev1")).getText();
+            checking = driver.findElement(By.cssSelector(".d-none")).getText();
             System.out.println(checking);
-            Check.CheckExit("Биллинг", checking, driver);
+            Check.CheckExit("БИЛ", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

@@ -44,7 +44,7 @@ public class C_ForgotPassword_Test3 extends testedo {
             Check.Check("Пароль был успешно восстановлен и был выслан на указанную почту", checking, driver);
             Email.Email(testIitTest,EmailPass,driver);
             Thread.sleep(1000);
-            Element.visibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
+            Element.VisibleElement180SecToWait(".mail-MessageSnippet-Item_subject > span:nth-child(1)", driver);
             driver.findElement(By.cssSelector("a.ns-view-folder:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(5500);
             driver.findElement(By.cssSelector(".mail-MessageSnippet-Item_subject > span:nth-child(1)")).click();

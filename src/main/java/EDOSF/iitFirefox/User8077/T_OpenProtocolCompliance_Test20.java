@@ -136,7 +136,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
             test = driver.getCurrentUrl();
             System.out.println(test);
             Thread.sleep(500);
-            Check.CheckingContainsExit("10.48.0.13:8077/iit/compliance?idf=", test, driver);
+            Check.CheckingContainsExit("10.48.0.13/iit/compliance?idf=", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

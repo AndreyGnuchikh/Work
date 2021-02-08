@@ -65,8 +65,7 @@ public class H_ChangeRoles_Test8 extends iit8077 {
             Admin();
 
             EnterAndExit.RoleSwitch(4, driver);
-
-            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            checking = driver.findElement(By.cssSelector("div.v-list-item__title:nth-child(2)")).getText();
             Check.CheckExit("Биллинг", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -113,7 +112,7 @@ public class H_ChangeRoles_Test8 extends iit8077 {
             User();
 
             EnterAndExit.RoleSwitch(4, driver);
-            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            checking = driver.findElement(By.cssSelector("div.v-list-item__title:nth-child(2)")).getText();
             Check.CheckExit("Биллинг", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -162,7 +161,7 @@ public class H_ChangeRoles_Test8 extends iit8077 {
             Support();
 
             EnterAndExit.RoleSwitch(4, driver);
-            checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            checking = driver.findElement(By.cssSelector("div.v-list-item__title:nth-child(2)")).getText();
             Check.CheckExit("Биллинг", checking, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -175,9 +174,9 @@ public class H_ChangeRoles_Test8 extends iit8077 {
         try {
             EnterAndExit.LogPass(LogAll, pass, driver);
             EnterAndExit.RoleSwitch(4, driver);
-            driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
+            driver.findElement(By.cssSelector("div.row:nth-child(2) > div:nth-child(10)")).click();
             Thread.sleep(1000);
-            driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("button.blue--text:nth-child(1)")).click();
 
             EnterAndExit.RoleSwitch(1, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
@@ -193,9 +192,9 @@ public class H_ChangeRoles_Test8 extends iit8077 {
         try {
             EnterAndExit.LogPass(LogAll, pass, driver);
             EnterAndExit.RoleSwitch(4, driver);
-            driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
+            driver.findElement(By.cssSelector("div.row:nth-child(2) > div:nth-child(10)")).click();
             Thread.sleep(1000);
-            driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("button.blue--text:nth-child(1)")).click();
 
             EnterAndExit.RoleSwitch(2, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
@@ -212,9 +211,9 @@ public class H_ChangeRoles_Test8 extends iit8077 {
         try {
             EnterAndExit.LogPass(LogAll, pass, driver);
             EnterAndExit.RoleSwitch(4, driver);
-            driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
+            driver.findElement(By.cssSelector("div.row:nth-child(2) > div:nth-child(10)")).click();
             Thread.sleep(1000);
-            driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
+            driver.findElement(By.cssSelector("button.blue--text:nth-child(1)")).click();
 
             EnterAndExit.RoleSwitch(3, driver);
             checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
