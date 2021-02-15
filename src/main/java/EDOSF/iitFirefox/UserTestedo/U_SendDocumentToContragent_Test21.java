@@ -20,8 +20,8 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
     WebDriver driver;
     String test,test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp(){

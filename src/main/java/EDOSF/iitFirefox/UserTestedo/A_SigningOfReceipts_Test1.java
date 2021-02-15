@@ -23,8 +23,8 @@ public class A_SigningOfReceipts_Test1 extends testedo {
     public String test;
     public String test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
 
     @BeforeEach

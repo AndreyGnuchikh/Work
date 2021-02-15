@@ -25,8 +25,8 @@ public class S_NotificationAndApproval_Test19 extends iit8077 {
     String check;
 
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUP() {

@@ -16,8 +16,8 @@ public class R_WatchReceipts_Test18 extends testedo {
     WebDriver driver;
     String test, test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUP() {

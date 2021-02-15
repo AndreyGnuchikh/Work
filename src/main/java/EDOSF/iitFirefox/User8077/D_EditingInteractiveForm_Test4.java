@@ -23,8 +23,8 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
     public String row;
     String test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

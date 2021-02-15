@@ -26,8 +26,8 @@ public class J_SigningDocument_Test10 extends iit8077 {
     public String test, test2, checking;
 
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @Test
     @Order(1)

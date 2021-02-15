@@ -20,8 +20,8 @@ public class F_ChangeScopeOfAuthority_Test6 extends testedo {
     WebDriver driver;
     String test;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void SetUp() {

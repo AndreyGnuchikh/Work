@@ -23,8 +23,8 @@ public class B_File_CreateAndLoading_Test2 extends testedo {
     public String testid;
 
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

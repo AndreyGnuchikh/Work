@@ -19,8 +19,8 @@ public class S_NotificationAndApproval_Test19 extends testedo {
     String check;
 
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUP() {

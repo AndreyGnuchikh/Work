@@ -27,9 +27,6 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
     public String testid;
 
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
-
     @BeforeEach
     void setUp() {
         try {

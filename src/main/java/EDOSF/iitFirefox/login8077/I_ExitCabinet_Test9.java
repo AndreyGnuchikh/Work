@@ -18,8 +18,8 @@ public class I_ExitCabinet_Test9 extends iit8077 {
     private WebDriver driver;
     private String text;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

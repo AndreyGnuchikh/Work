@@ -29,8 +29,8 @@ public class H_ViewDocument_Test8 extends testedo {
     public WebDriver driver;
     public String test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     public static WebDriver ffWithoutAddon() {
         FirefoxProfile profile = new FirefoxProfile();

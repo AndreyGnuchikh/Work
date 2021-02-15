@@ -23,8 +23,8 @@ public class I_RenamingDocument_Test9 extends iit8077 {
     public String test;
     public String row;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

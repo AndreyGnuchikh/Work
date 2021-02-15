@@ -21,8 +21,8 @@ public class Z_TestSleep60min_For_Test9 extends iit8077 {
     public String text;
     public int qty;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

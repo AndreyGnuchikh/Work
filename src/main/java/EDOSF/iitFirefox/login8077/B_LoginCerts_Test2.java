@@ -19,8 +19,8 @@ import static java.lang.Runtime.getRuntime;
 public class B_LoginCerts_Test2 extends iit8077 {
     public String checking;
     private WebDriver driver;
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void Before() {

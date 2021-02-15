@@ -23,8 +23,8 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
     WebDriver driver;
     String date, test2, save;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

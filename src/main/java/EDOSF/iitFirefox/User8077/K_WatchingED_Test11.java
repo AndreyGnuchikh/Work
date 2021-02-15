@@ -24,8 +24,8 @@ public class K_WatchingED_Test11 extends iit8077 {
     WebDriver driver;
     String test, test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

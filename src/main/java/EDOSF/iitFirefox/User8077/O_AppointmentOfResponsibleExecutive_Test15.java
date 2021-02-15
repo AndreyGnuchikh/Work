@@ -19,8 +19,8 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
     public String check;
     public String row;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

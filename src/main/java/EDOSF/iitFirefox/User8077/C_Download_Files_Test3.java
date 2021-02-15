@@ -19,8 +19,8 @@ public class C_Download_Files_Test3 extends iit8077 {
     WebDriver driver;
     String test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

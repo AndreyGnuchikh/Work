@@ -20,8 +20,8 @@ public class B_LoginCerts_Test2 extends testedo {
     public String checking;
     private WebDriver driver;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void Before() {

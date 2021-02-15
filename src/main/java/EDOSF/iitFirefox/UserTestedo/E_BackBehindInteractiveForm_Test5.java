@@ -21,8 +21,8 @@ public class E_BackBehindInteractiveForm_Test5 extends testedo {
     WebDriver driver;
     String test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

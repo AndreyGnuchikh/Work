@@ -22,8 +22,8 @@ public class C_CreateFormDoc_Test3 extends testedo {
     WebDriver driver;
     String test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

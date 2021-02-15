@@ -33,8 +33,8 @@ public class H_ViewDocument_Test8 extends iit8077 {
     public String test2;
 
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @Test
     @Order(1)

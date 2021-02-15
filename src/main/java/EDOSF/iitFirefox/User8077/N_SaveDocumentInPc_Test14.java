@@ -20,8 +20,8 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
     WebDriver driver;
     String test, test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

@@ -19,8 +19,8 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 extends iit8077 {
     WebDriver driver;
     String test0, test, test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

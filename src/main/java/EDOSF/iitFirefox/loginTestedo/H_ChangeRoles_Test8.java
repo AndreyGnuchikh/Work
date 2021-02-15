@@ -18,8 +18,8 @@ public class H_ChangeRoles_Test8 extends testedo {
     private WebDriver driver;
     public String checking;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void upSet() {

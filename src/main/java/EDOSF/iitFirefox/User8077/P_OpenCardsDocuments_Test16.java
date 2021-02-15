@@ -25,8 +25,8 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
     WebDriver driver;
     String test, test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

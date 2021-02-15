@@ -22,8 +22,8 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
     String test2;
     String urlSubstring = url.substring(0, 22);
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

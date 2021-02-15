@@ -21,8 +21,8 @@ public class C_ForgotPassword_Test3 extends testedo {
     public String newpass;
     public String checking;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

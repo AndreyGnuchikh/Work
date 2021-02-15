@@ -23,8 +23,8 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
     public String row;
     String test2;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

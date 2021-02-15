@@ -17,8 +17,8 @@ import static EDOSF.iitAdd.Settings.NumFail;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class A_LoginLogPass_Test1 extends testedo {
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     public WebDriver driver;
     public String checking;

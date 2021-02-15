@@ -18,8 +18,8 @@ public class J_ChangeStartTap_Test10 extends iit8077 {
     private WebDriver driver;
     public String test;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

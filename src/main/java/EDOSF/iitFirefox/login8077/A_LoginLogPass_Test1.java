@@ -20,8 +20,8 @@ public class A_LoginLogPass_Test1 extends iit8077 {
     public WebDriver driver;
     public String checking;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

@@ -23,8 +23,8 @@ public class K_DownloadMaterial_Test11 extends testedo {
     public Boolean test;
     public String checking;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

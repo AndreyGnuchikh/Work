@@ -26,8 +26,8 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
     String test2;
     String urlSubstring = url.substring(0,18);
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

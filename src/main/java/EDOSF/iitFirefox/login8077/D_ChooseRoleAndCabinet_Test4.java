@@ -18,8 +18,8 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
     private WebDriver driver;
     public String checking;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void setUp() {

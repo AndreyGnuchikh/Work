@@ -19,8 +19,8 @@ public class G_ChangePassword_Test7 extends iit8077 {
     private WebDriver driver;
     public String sleep;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void Before() {

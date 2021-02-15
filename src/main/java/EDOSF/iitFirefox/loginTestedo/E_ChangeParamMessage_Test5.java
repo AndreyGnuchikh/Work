@@ -20,8 +20,8 @@ public class E_ChangeParamMessage_Test5 extends testedo {
     public String check;
     public String row;
 
-    @Rule
-    public RetryRule rule = new RetryRule(NumFail);
+
+
 
     @BeforeEach
     void A_DelatedCheckboxs() {
