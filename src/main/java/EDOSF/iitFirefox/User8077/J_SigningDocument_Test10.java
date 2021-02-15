@@ -3,8 +3,6 @@ package EDOSF.iitFirefox.User8077;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.methods.*;
 import EDOSF.iitAdd.iit8077;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +13,8 @@ import java.util.Arrays;
 import java.util.List;
 
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 import static java.lang.Runtime.getRuntime;
 import static EDOSF.methods.EnterAndExit.getCert;
 
@@ -29,7 +28,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
 
 
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_Signing_Schf_Document_Test1() {
         try {
@@ -49,7 +48,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_Signing_Dop_Document_Test2() {
         try {
@@ -69,7 +68,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_Signing_Schf_DopDocument_Test3() {
         try {
@@ -90,7 +89,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_SigningDocument_Test4() {
         try {
@@ -111,7 +110,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_Signing_Dop_Documentml2_Test5() {
         try {
@@ -154,7 +153,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_Signing_SchfDop_Documentxml2_Test6() {
         try {
@@ -206,7 +205,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-//    @Test
+//    @RetryingTest(NUM_FAIL)
 //    @Order(7)
 //    void G_NoCerts_Test7() {
 //        try {
@@ -227,7 +226,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
 //        }
 //    }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(7)
     void G_No_Second_Signing_Test7() {
         try {
@@ -249,7 +248,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(8)
     void H_Error_Test8() {
         try {
@@ -286,7 +285,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(9)
     void I_CloseWindow_Test9() {
         try {
@@ -303,7 +302,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(10)
     void J_NoPermitSigningUPD_Test10() {
         try {

@@ -5,13 +5,12 @@ import EDOSF.iitAdd.testedo;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class I_ExitCabinet_Test9 extends testedo {
@@ -32,7 +31,7 @@ public class I_ExitCabinet_Test9 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_Exit_Test1() {
         try {

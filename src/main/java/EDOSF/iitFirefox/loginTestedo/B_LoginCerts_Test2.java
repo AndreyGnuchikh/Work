@@ -6,13 +6,12 @@ import EDOSF.iitAdd.testedo;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.junitpioneer.jupiter.RetryingTest;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
 import static java.lang.Runtime.getRuntime;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -33,7 +32,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_ValidDate_Test1() {
         try {
@@ -47,7 +46,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_ContragentIsDisconnect_Test2() {
         try {
@@ -60,7 +59,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_ContragentIsBlock_Test3() {
         try {
@@ -73,7 +72,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-/*    @Test
+/*    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_UserNoCabinet_Test4() {
         try {
@@ -92,7 +91,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }*/
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void D_UserIsBlock_Test4() {
         try {
@@ -106,7 +105,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void E_UserNoHaveRole_Test5() {
         try {
@@ -120,7 +119,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }
 
-   /* @Test
+   /* @RetryingTest(NUM_FAIL)
     @Order(7)
     void G_UserNoHaveCabinetTest7() {
         try {
@@ -133,7 +132,7 @@ public class B_LoginCerts_Test2 extends testedo {
         }
     }*/
 
-    //    @Test
+    //    @RetryingTest(NUM_FAIL)
     //@Order(8)
 //    void H_NoValidation_Test8() {
 //    try {
@@ -145,7 +144,7 @@ public class B_LoginCerts_Test2 extends testedo {
 //             Cabinet.Catch(driver, e);
 //         }
 //    }
-/*    @Test
+/*    @RetryingTest(NUM_FAIL)
     //@Order(9)
    try {
     void I_NoConnectUser_Test9() {
@@ -158,7 +157,7 @@ public class B_LoginCerts_Test2 extends testedo {
          }
     }*/
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(10)
     void F_KeyDontInput6() {
         try {

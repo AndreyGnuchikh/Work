@@ -4,13 +4,12 @@ import EDOSF.iitAdd.Drivers;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.*;
 import EDOSF.iitAdd.iit8077;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
@@ -32,7 +31,7 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_AppointmentTable_Test1() {
         try {
@@ -61,7 +60,7 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_AppointmentCard_Test2() {
         try {
@@ -86,7 +85,7 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
         }
     }
     /*
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_AppointmentExecutive_Test3(){
     try {
@@ -114,7 +113,7 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
         Cabinet.Catch(driver,e);
     }
 }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_AppointmentEmailSend_Test4() throws Exception{
     try {

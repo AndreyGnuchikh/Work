@@ -7,12 +7,15 @@ import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junitpioneer.jupiter.RetryingTest;
 import org.openqa.selenium.*;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
 
 public class A_CreateContrAgentset extends iit8077{
 
@@ -30,7 +33,7 @@ public class A_CreateContrAgentset extends iit8077{
 
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     void A_CreateContragent_Test1() throws NoSuchElementException {
         try {
         EnterAndExit.LogPass(log1log, pass, driver);
@@ -53,7 +56,7 @@ public class A_CreateContrAgentset extends iit8077{
     }
 }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     void B_CreateContragentInn_Test2()  throws NoSuchElementException {
         try {
         EnterAndExit.LogPass(log1log, pass, driver);
@@ -81,7 +84,7 @@ public class A_CreateContrAgentset extends iit8077{
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     void C_CreateContragentServiceiden_Test3() throws NoSuchElementException {
         try {
         EnterAndExit.LogPass(log1log, pass, driver);
@@ -114,7 +117,7 @@ public class A_CreateContrAgentset extends iit8077{
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     void D_CreateContragentGreateCabinet1_Test4() throws NoSuchElementException {
         try {
         EnterAndExit.LogPass(log1log, pass, driver);
@@ -137,7 +140,7 @@ public class A_CreateContrAgentset extends iit8077{
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     void D_CreateContragentGreatePersonalManager_Test5() throws NoSuchElementException {
         try {
         EnterAndExit.LogPass(log1log, pass, driver);

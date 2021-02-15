@@ -6,13 +6,12 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
 import EDOSF.methods.FileCreateAndLoading;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class L_CompletedEDWithSideCustomer_Test12 extends testedo {
@@ -35,7 +34,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_CompletedCoworker_DOP_Test1() {
         try {
@@ -52,7 +51,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_RepresentativeOfTheOrganization_DOP_Test2() {
         try {
@@ -83,7 +82,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_Individual_DOP_Test3() {
         try {
@@ -101,7 +100,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_CompletedCoworker_SchfDOP_Test4() {
         try {
@@ -118,7 +117,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_RepresentativeOfTheOrganization_SchfDOP_Test5() {
         try {
@@ -149,7 +148,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_Individual_SchfDOP_Test6() {
         try {

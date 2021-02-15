@@ -8,8 +8,6 @@ import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
 import EDOSF.methods.Sign;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -18,7 +16,8 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -31,7 +30,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
 
 
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_Signing_Schf_Document_Test1() {
         try {
@@ -58,7 +57,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_Signing_Dop_Document_Test2() {
         try {
@@ -84,7 +83,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_Signing_SchfDOP_Document_Test3() {
         try {
@@ -114,7 +113,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_Signing_Schf_Error_Test4() {
         try {
@@ -137,7 +136,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_Signing_SchfDOP_Error_Test5() {
         try {
@@ -162,7 +161,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_Signing_ErrorCertRole_Test6() {
         try {
@@ -186,7 +185,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(7)
     void G_Signing_Dop_5_seconds_Test7() {
         try {
@@ -235,7 +234,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(8)
     void H_Signing_Dop_Elements_Test8() {
         try {
@@ -274,7 +273,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(9)
     void I_Signing_SchfDOP_Elements_Test9() {
         try {

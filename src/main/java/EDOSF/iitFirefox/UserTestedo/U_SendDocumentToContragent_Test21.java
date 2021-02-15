@@ -4,8 +4,6 @@ import EDOSF.Forms.CompleteFormAct;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,7 +11,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.Date;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class U_SendDocumentToContragent_Test21 extends testedo {
@@ -36,7 +35,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_GetFileName_Test1(){
         try {
@@ -48,7 +47,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_AddTextInFile_Test2(){
         try {
@@ -69,7 +68,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_CheckCabinetRecipient_Test3(){
         try {
@@ -88,7 +87,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_CheckCoworkerRecipient_Test4(){
         try {
@@ -109,7 +108,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_AddTextInFileAndOpenInRecipientLk_Test5(){
         try {
@@ -137,7 +136,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_CheckCabinetRecipientInRecipientLk_Test6(){
         try {
@@ -163,7 +162,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(7)
     void G_CheckCoworkerRecipientInRecipientLk_Test7(){
         try {
@@ -189,7 +188,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(8)
     void H_CheckCabinetSenderInRecipientLk_Test8(){
         try {
@@ -215,7 +214,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(9)
     void I_CheckCoworkerSenderInRecipientLk_Test9(){
         try {
@@ -241,7 +240,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(10)
     void J_CheckStatus_Test10(){
         try {
@@ -262,7 +261,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(11)
     void K_SendEmailRecipient_Test11(){
         try {
@@ -318,7 +317,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(12)
     void L_WrongSellerNoSignSendUDPDocument_Test12(){
         try {
@@ -336,7 +335,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(13)
     void M_SendUDPNoSignDocument_Test13(){
         try {
@@ -354,7 +353,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(14)
     void N_SendSignUPDDocument_Test14(){
         try {
@@ -375,7 +374,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(15)
     void O_SendUPDDocumentWith2Sign_Test15(){
         try{
@@ -392,7 +391,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(16)
     void P_ChoseIitSendUPD_Test16(){
         try{
@@ -413,7 +412,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
             Cabinet.Catch(driver,e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(17)
     void Q_DocSendingSecondDocument_Test17(){
             try{

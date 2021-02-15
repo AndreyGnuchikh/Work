@@ -5,13 +5,13 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.EnterAndExit;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
+import org.junitpioneer.jupiter.RetryingTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
+
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -33,7 +33,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
             Cabinet.Catch(driver, e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_AllRightTest1() {
         try {
@@ -46,7 +46,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_ContragentIsDisconnectedTest2() {
         try {
@@ -60,7 +60,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_ContragentIsBlockedTest3() {
         try {
@@ -74,7 +74,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         }
     }
 
-/*    @Test
+/*    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_UserDontCatchtoContragentTest4() {
         try {
@@ -88,7 +88,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         }
     }*/
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void D_UserIsBlockedTest4() {
         try {
@@ -102,7 +102,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void E_UserDontHaveRole5() {
         try {
@@ -116,7 +116,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         }
     }
 
- /*   @Test
+ /*   @RetryingTest(NUM_FAIL)
     @Order(7)
     void G_UserDontHaveCabinet7() {
         try {
@@ -129,7 +129,7 @@ public class A_LoginLogPass_Test1 extends iit8077 {
         }
     }*/
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(8)
     void F_WrongLogPass6() {
         try {

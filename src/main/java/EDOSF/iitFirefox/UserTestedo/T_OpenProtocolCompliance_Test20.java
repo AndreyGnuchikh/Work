@@ -3,8 +3,6 @@ package EDOSF.iitFirefox.UserTestedo;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +11,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class T_OpenProtocolCompliance_Test20 extends testedo {
@@ -39,7 +38,7 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_NameCardED_Test1() {
         try {
@@ -54,7 +53,7 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_NameCardED_Test2() {
         try {
@@ -72,7 +71,7 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_SignCardED_Test3() {
         try {
@@ -95,7 +94,7 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_OperatorCardED_Test4() {
         try {
@@ -110,7 +109,7 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_EmailIITCardED_Test5() {
         try {
@@ -125,7 +124,7 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_CardEDCheckNewWindow_Test6() {
         try {

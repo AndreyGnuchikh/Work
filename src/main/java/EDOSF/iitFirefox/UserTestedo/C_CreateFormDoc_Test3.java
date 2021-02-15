@@ -9,13 +9,12 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
 import EDOSF.methods.HelpUser;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class C_CreateFormDoc_Test3 extends testedo {
@@ -39,7 +38,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
     }
 
     //Add UPD
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_AddSCHF_Test1() {
         try {
@@ -70,7 +69,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_AddACT_Test2() {
         try {
@@ -106,7 +105,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_AddSChFDOP_Test3() {
         try {
@@ -144,7 +143,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
     }
 
     //Add UPD IP
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_AddSCHF_IP_Test4() {
         try {
@@ -173,7 +172,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_AddACT_IP_Test5() {
         try {
@@ -208,7 +207,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_AddSChFDOP_IP_Test6() {
         try {
@@ -245,7 +244,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
     }
 
     //3 page blocs
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(7)
     void G_AddSChFDOP_IP_3Page_2bloc_Test7() {
         try {
@@ -283,7 +282,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(8)
     void H_AddSChFDOP_IP_3Page_3bloc_Test8() {
         try {

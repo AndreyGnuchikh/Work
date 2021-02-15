@@ -5,8 +5,6 @@ import EDOSF.iitAdd.testedo;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.HelpUser;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +13,8 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class K_DownloadMaterial_Test11 extends testedo {
@@ -37,7 +36,7 @@ public class K_DownloadMaterial_Test11 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_TestDownloadFile_Test1() {
         try {
@@ -60,7 +59,7 @@ public class K_DownloadMaterial_Test11 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_TestLink_Test2() {
         try {

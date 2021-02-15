@@ -7,15 +7,14 @@ import EDOSF.iitAdd.iit8077;
 
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @RunWith(JUnitPlatform.class)
@@ -40,7 +39,7 @@ public class K_WatchingED_Test11 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_CheckAllButton_Test1() {
         try {
@@ -59,7 +58,7 @@ public class K_WatchingED_Test11 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_CheckFill_Test2() {
         try {
@@ -82,7 +81,7 @@ public class K_WatchingED_Test11 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_CheckSign_Test3() {
         try {
@@ -99,7 +98,7 @@ public class K_WatchingED_Test11 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_CheckSkip_Test4() {
         try {

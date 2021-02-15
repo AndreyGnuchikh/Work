@@ -9,13 +9,12 @@ import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserACT;
 import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserASChFDop_Test3;
 import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserASChF_Test1;
 import EDOSF.methods.*;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class D_EditingInteractiveForm_Test4 extends iit8077 {
@@ -45,7 +44,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_EditingSCHF_Test1() {
         try {
@@ -83,7 +82,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_EditingACT_Test2() {
         try {
@@ -124,7 +123,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_EditingSChFDOP_Test3() {
         try {
@@ -167,7 +166,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
     }
 
     // Not New
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_EditingSCHF_NotNew_Test4() {
         try {
@@ -184,7 +183,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_EditingACT_NotNew_Test5() {
         try {
@@ -205,7 +204,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_EditingSChFDOP_NotNew_Test6() {
         try {
@@ -231,7 +230,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
     }
 
     // add Soap
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(7)
     void G_EditingSCHF_Soap_Test7() {
         try {
@@ -246,7 +245,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(8)
     void H_EditingACT_Soap_Test8() {
         try {
@@ -262,7 +261,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(9)
     void I_EditingSChFDOP_Soap_Test9() {
         try {
@@ -278,7 +277,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
     }
 
     // add files
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(10)
     void J_EditingSChF_addFiles_Test10() {
         try {
@@ -291,7 +290,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(11)
     void K_EditingDop_addFiles_Test11() {
         try {
@@ -304,7 +303,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(12)
     void L_EditingSchFDop_addFiles_Test12() {
         try {

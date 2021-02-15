@@ -9,11 +9,8 @@ import EDOSF.iitAdd.iit8077;
 import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -25,7 +22,8 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class H_ViewDocument_Test8 extends iit8077 {
@@ -36,7 +34,7 @@ public class H_ViewDocument_Test8 extends iit8077 {
 
 
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_DownloadFile_Test1() {
         try {
@@ -60,7 +58,7 @@ public class H_ViewDocument_Test8 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_DownloadFileSecondWindow_Test2() {
         try {
@@ -92,7 +90,7 @@ public class H_ViewDocument_Test8 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_OpenUPD_Test3() {
         try {

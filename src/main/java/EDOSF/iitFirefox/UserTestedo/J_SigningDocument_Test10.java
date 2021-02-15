@@ -3,11 +3,8 @@ package EDOSF.iitFirefox.UserTestedo;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +13,8 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 import static java.lang.Runtime.getRuntime;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -29,7 +27,7 @@ public class J_SigningDocument_Test10 extends testedo {
 
 
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_Signing_Schf_Document_Test1() {
         try {
@@ -49,7 +47,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_Signing_Dop_Document_Test2() {
         try {
@@ -69,7 +67,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_Signing_Schf_DopDocument_Test3() {
         try {
@@ -90,7 +88,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_SigningDocument_Test4() {
         try {
@@ -111,7 +109,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_Signing_Dop_Documentml2_Test5() {
         try {
@@ -154,7 +152,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_Signing_SchfDop_Documentxml2_Test6() {
         try {
@@ -206,7 +204,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-     /*@Test
+     /*@RetryingTest(NUM_FAIL)
     @Order(7)
     void G_NoCerts_Test7() {
         try {
@@ -228,7 +226,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }*/
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(8)
     void H_No_Second_Signing_Test8() {
         try {
@@ -250,7 +248,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(9)
     void I_Error_Test9() {
         try {
@@ -275,7 +273,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(10)
     void J_CloseWindow_Test10() {
         try {
@@ -292,7 +290,7 @@ public class J_SigningDocument_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(11)
     void K_NoPermitSigningUPD_Test11() {
         try {

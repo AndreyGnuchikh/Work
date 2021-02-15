@@ -8,13 +8,12 @@ import EDOSF.Forms.CompleteForm;
 import EDOSF.Forms.CompleteFormAct;
 import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.methods.Check;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
@@ -38,7 +37,7 @@ public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_BackBehindInteractiveFormSchF_Test1() {
         try {
@@ -65,7 +64,7 @@ public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_BackBehindInteractiveFormACT_Test2() {
         try {
@@ -96,7 +95,7 @@ public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_BackBehindInteractiveFormSCHFDOP_Test3() {
         try {

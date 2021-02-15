@@ -4,13 +4,12 @@ package EDOSF.iitFirefox.login8077;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.methods.*;
 import EDOSF.iitAdd.iit8077;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
+import org.junitpioneer.jupiter.RetryingTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class C_ForgotPassword_Test3 extends iit8077 {
@@ -32,7 +31,7 @@ public class C_ForgotPassword_Test3 extends iit8077 {
             Cabinet.Catch(driver, e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_ForgetPassword() {
         try {
@@ -85,7 +84,7 @@ public class C_ForgotPassword_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_ForgetPassword2() {
 

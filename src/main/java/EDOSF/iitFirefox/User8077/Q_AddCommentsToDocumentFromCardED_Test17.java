@@ -6,13 +6,12 @@ import EDOSF.methods.EnterAndExit;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class Q_AddCommentsToDocumentFromCardED_Test17 extends iit8077 {
@@ -35,7 +34,7 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_add50Comments_Test1() {
         try {
@@ -70,7 +69,7 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_addLongComment_Test2() {
         try {
@@ -91,7 +90,7 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_addCommentInCabinet_Test3() {
         try {

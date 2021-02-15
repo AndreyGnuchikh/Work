@@ -6,13 +6,12 @@ import EDOSF.methods.EnterAndExit;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class C_Download_Files_Test3 extends iit8077 {
@@ -37,7 +36,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_AddFileUPDDownload_Successful_Test1() throws NoSuchElementException {
         try {
@@ -50,7 +49,7 @@ public class C_Download_Files_Test3 extends iit8077 {
     }
 
     //Download Wrong
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_AddFileUPDDownloadWrong_Seller_Test2() {
         try {
@@ -62,7 +61,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_AddFileUPDDownloadWrong_Validation820and189_Test3() {
         try {
@@ -74,7 +73,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_AddFileUPDDownloadWrong_IDOTPR_Test4() {
         try {
@@ -86,7 +85,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_AddFileUPDDownloadWrong_IDPOL_Test5() {
         try {
@@ -98,7 +97,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_AddFileUPDDownloadWrong_DoesNotFindSellerInSystem_Test6() {
         try {
@@ -110,7 +109,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(7)
     void G_AddFileUPDDownloadWrong_DoesNotFindTypeDocument_Test7() {
         try {
@@ -122,7 +121,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(8)
     void H_AddFileUPDDownloadWrong_IDEDO_Test8() {
         try {
@@ -134,7 +133,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(9)
     void I_AddFileUPDDownloadWrong_IDFILE_Test9() {
         try {
@@ -146,7 +145,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-     @Test
+     @RetryingTest(NUM_FAIL)
     @Order(10)
     void J_AddFileUPDDownloadWrong_IDFILEWrongFilled_Test10() {
         try {
@@ -160,7 +159,7 @@ public class C_Download_Files_Test3 extends iit8077 {
 
 
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(11)
     void Ê_AddFileUPDDownloadWrong_ValidationFile_Test11() {
         try {
@@ -182,7 +181,7 @@ public class C_Download_Files_Test3 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(12)
     void L_AddFileUPDDownloadWrong_andCheckReceipts_Test12() {
         try {
@@ -208,7 +207,7 @@ public class C_Download_Files_Test3 extends iit8077 {
             Cabinet.Catch(driver, e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(13)
     void M_AddFileUPDDownload_155_Test13() {
         try {

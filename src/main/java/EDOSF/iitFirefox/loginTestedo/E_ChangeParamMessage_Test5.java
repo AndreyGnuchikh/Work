@@ -3,15 +3,14 @@ package EDOSF.iitFirefox.loginTestedo;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
+import org.junitpioneer.jupiter.RetryingTest;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Date;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class E_ChangeParamMessage_Test5 extends testedo {
@@ -32,7 +31,7 @@ public class E_ChangeParamMessage_Test5 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_SendingLetterAboutSendingFile_Test1() {
         try {
@@ -72,7 +71,7 @@ public class E_ChangeParamMessage_Test5 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_SendingLetterAboutReportHarmonization_Test2() {
         try {
@@ -116,7 +115,7 @@ public class E_ChangeParamMessage_Test5 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_SendingLetterAboutResponsibilityPerformer_Test3() {
         try {

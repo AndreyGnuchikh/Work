@@ -5,13 +5,12 @@ import EDOSF.iitAdd.testedo;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class J_ChangeStartTap_Test10 extends testedo {
@@ -31,7 +30,7 @@ public class J_ChangeStartTap_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_ChangeStartTap_Test1() {
         try {
@@ -45,7 +44,7 @@ public class J_ChangeStartTap_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_ChangeStartTapLogin1_Test2() {
         try {
@@ -61,7 +60,7 @@ public class J_ChangeStartTap_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_ChangeStartTapLogin2_Test3() {
         try {
@@ -81,7 +80,7 @@ public class J_ChangeStartTap_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_ChangeStartTapLogout1_Test4() {
         try {
@@ -99,7 +98,7 @@ public class J_ChangeStartTap_Test10 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_ChangeStartTapLogout2_Test5() {
         try {

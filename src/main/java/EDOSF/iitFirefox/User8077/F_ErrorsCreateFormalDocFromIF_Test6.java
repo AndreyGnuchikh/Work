@@ -8,7 +8,7 @@ import EDOSF.Forms.CompleteForm;
 import EDOSF.Forms.CompleteFormAct;
 import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.methods.Check;
-import OFD.methods.RetryRule;
+
 import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -16,7 +16,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
@@ -41,7 +42,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_ErrorsFormSchFFirstPage_Test1() {
         try {
@@ -75,7 +76,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_ErrorsFormSchFSecondPage_Test2() {
         try {
@@ -101,7 +102,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_ErrorsFormACTFirstPage_Test3() {
         try {
@@ -136,7 +137,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_ErrorsFormACTSecondPage_Test4() {
         try {
@@ -166,7 +167,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_ErrorsFormACTThreePage_Test5_Tap1() {
         try {
@@ -203,7 +204,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_ErrorsFormACTThreePage_Test6_Tap2() {
         try {
@@ -246,7 +247,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(7)
     void G_ErrorsFormACTThreePage_Test7_Tap3() {
         try {
@@ -286,7 +287,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(8)
     void H_ErrorsFormSchFDOPFirstPage_Test8() {
         try {
@@ -325,7 +326,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(9)
     void I_ErrorsFormSchFDOPSecondPage_Test9() {
         try {
@@ -362,7 +363,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(10)
     void K_ErrorsFormSchFDOPThreePage_Test10_Tap1() {
         try {
@@ -399,7 +400,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(11)
     void L_ErrorsFormSchFDOPThreePage_Test11_Tap2() {
         try {
@@ -442,7 +443,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(12)
     void M_ErrorsFormSchFDOPThreePage_Test12_Tap3() {
         try {

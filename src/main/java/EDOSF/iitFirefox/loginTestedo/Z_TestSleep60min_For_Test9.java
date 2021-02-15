@@ -5,15 +5,14 @@ import EDOSF.iitAdd.testedo;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
-import OFD.methods.RetryRule;
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import org.junitpioneer.jupiter.RetryingTest;
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class Z_TestSleep60min_For_Test9 extends testedo {

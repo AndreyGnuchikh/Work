@@ -7,8 +7,6 @@ import EDOSF.methods.EnterAndExit;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -17,7 +15,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Date;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class B_File_CreateAndLoading_Test2 extends iit8077 {
@@ -39,7 +38,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_AddFilePositive_Test1() {
         try {
@@ -56,7 +55,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_AddFileComment_Test2() {
         try {
@@ -80,7 +79,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_AddFileOtherFolder_Test3() {
         try {
@@ -114,7 +113,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_AddFileMore50mbError_Test4() {
         try {
@@ -132,7 +131,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(5)
     void E_AddFileMore400files_Test5() {
         try {
@@ -153,7 +152,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_AddFile400files_Test6() {
         try {
@@ -178,7 +177,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(7)
     void J_AddWrongFile_Test7() {
         try {

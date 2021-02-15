@@ -6,13 +6,12 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.Element;
 import EDOSF.methods.EnterAndExit;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class G_ChangePassword_Test7 extends testedo {
@@ -38,7 +37,7 @@ public class G_ChangePassword_Test7 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_Old_PasswordInCabinet_Test1() {
         try {
@@ -51,7 +50,7 @@ public class G_ChangePassword_Test7 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_PasswordWriteSecondWrong_Test2() {
         try {
@@ -64,7 +63,7 @@ public class G_ChangePassword_Test7 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_OldPasswordWrittenWrong_Test3() {
         try {
@@ -77,7 +76,7 @@ public class G_ChangePassword_Test7 extends testedo {
             Cabinet.Catch(driver, e);
         }
     }
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_Change_PasswordInCabinet_Test4() {
         try {

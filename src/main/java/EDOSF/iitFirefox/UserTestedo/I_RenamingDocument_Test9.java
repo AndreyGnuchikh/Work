@@ -3,15 +3,14 @@ package EDOSF.iitFirefox.UserTestedo;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
-import OFD.methods.RetryRule;
-import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import static EDOSF.iitAdd.Settings.NumFail;
+import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class I_RenamingDocument_Test9 extends testedo {
@@ -36,7 +35,7 @@ public class I_RenamingDocument_Test9 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_RenamingDocument_Test1() {
         try {
@@ -57,7 +56,7 @@ public class I_RenamingDocument_Test9 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_SignDocumentAndCheck_Test2() {
         try {
@@ -85,7 +84,7 @@ public class I_RenamingDocument_Test9 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(3)
     void C_DoteInName_Test3() {
         try {
@@ -102,7 +101,7 @@ public class I_RenamingDocument_Test9 extends testedo {
         }
     }
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(4)
     void D_WrongSymbols_Test4() {
         try {
@@ -124,7 +123,7 @@ public class I_RenamingDocument_Test9 extends testedo {
     }
 
 /*    -- Отменено в 4.1 релизе
-@Test
+@RetryingTest(NUM_FAIL)
     @Order(5)
     void E_WrongNames_Test5() {
         try {
@@ -148,7 +147,7 @@ public class I_RenamingDocument_Test9 extends testedo {
         }
     }*/
 
-    @Test
+    @RetryingTest(NUM_FAIL)
     @Order(6)
     void F_EmptyNameFile_Test6() {
         try {
