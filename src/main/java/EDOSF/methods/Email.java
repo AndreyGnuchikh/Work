@@ -143,13 +143,13 @@ public class Email {
 
     public static void DeletedEmail(WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        boolean winterBrandAD;
-        String buttonIsEnable;
+        boolean winterBrandAD,HaveSomeLetters;
 
-        Thread.sleep(1500);
-        buttonIsEnable = driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > input:nth-child(1)")).getAttribute("disabled");
+
+        Thread.sleep(2000);
+        HaveSomeLetters = driver.findElements(By.cssSelector("a.ns-view-folder:nth-child(1) > div:nth-child(3)")).size() > 0;
         //If don't have disabled attribute, we will continue this thread.
-        if(!buttonIsEnable.equals("true")){
+        if(HaveSomeLetters){
         winterBrandAD = driver.findElements(By.cssSelector("button.control:nth-child(1)")).size() > 0;
         if(winterBrandAD){
             driver.findElement(By.cssSelector("button.control:nth-child(1)")).click();
@@ -166,6 +166,7 @@ public class Email {
             if (boo) {
                 Thread.sleep(2000);
                 driver.findElement(By.cssSelector("button.control:nth-child(2)")).click();
+
             }
         }
         }

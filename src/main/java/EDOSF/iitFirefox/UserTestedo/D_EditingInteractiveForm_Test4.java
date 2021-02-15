@@ -9,15 +9,22 @@ import EDOSF.iitFirefox.UserTestedo.Soap.AddDocumentUPDUserACT;
 import EDOSF.iitFirefox.UserTestedo.Soap.AddDocumentUPDUserASChFDop_Test3;
 import EDOSF.iitFirefox.UserTestedo.Soap.AddDocumentUPDUserASChF_Test1;
 import EDOSF.methods.*;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class D_EditingInteractiveForm_Test4 extends testedo {
     public static WebDriver driver;
     public String row;
     String test2;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

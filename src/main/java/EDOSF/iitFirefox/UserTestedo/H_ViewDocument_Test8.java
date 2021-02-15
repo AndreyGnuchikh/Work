@@ -4,6 +4,8 @@ import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -20,10 +22,15 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import static EDOSF.iitAdd.Settings.NumFail;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class H_ViewDocument_Test8 extends testedo {
     public WebDriver driver;
     public String test2;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     public static WebDriver ffWithoutAddon() {
         FirefoxProfile profile = new FirefoxProfile();

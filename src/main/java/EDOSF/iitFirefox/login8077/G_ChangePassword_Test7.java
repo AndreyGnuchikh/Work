@@ -6,14 +6,21 @@ import EDOSF.methods.Element;
 import EDOSF.methods.EnterAndExit;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class G_ChangePassword_Test7 extends iit8077 {
     private WebDriver driver;
     public String sleep;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void Before() {

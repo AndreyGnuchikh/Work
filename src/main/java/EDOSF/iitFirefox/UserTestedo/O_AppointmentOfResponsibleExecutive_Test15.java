@@ -6,9 +6,13 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
 import EDOSF.methods.FileCreateAndLoading;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class O_AppointmentOfResponsibleExecutive_Test15 extends testedo {
@@ -16,6 +20,9 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends testedo {
     String test, test2;
     public String check;
     public String row;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

@@ -7,6 +7,8 @@ import EDOSF.methods.EnterAndExit;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -15,6 +17,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Date;
 
+import static EDOSF.iitAdd.Settings.NumFail;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class B_File_CreateAndLoading_Test2 extends iit8077 {
     public WebDriver driver;
@@ -22,6 +26,9 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
     public String test2;
     public String testid;
 
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

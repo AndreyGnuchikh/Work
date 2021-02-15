@@ -6,16 +6,22 @@ import EDOSF.iitAdd.testedo;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static EDOSF.iitAdd.Settings.NumFail;
 import static java.lang.Runtime.getRuntime;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class B_LoginCerts_Test2 extends testedo {
     public String checking;
     private WebDriver driver;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void Before() {

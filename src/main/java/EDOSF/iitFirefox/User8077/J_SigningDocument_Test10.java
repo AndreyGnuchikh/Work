@@ -3,6 +3,8 @@ package EDOSF.iitFirefox.User8077;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.methods.*;
 import EDOSF.iitAdd.iit8077;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
+import static EDOSF.iitAdd.Settings.NumFail;
 import static java.lang.Runtime.getRuntime;
 import static EDOSF.methods.EnterAndExit.getCert;
 
@@ -22,6 +25,9 @@ public class J_SigningDocument_Test10 extends iit8077 {
     public WebDriver driver;
     public String test, test2, checking;
 
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @Test
     @Order(1)

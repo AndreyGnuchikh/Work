@@ -3,6 +3,8 @@ package EDOSF.iitFirefox.UserTestedo;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,12 +13,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import static EDOSF.iitAdd.Settings.NumFail;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class T_OpenProtocolCompliance_Test20 extends testedo {
     WebDriver driver;
     String test;
     String test2;
     String urlSubstring = url.substring(0, 22);
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

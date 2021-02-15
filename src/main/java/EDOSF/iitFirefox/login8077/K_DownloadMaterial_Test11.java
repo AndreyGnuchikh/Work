@@ -5,6 +5,8 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.HelpUser;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,11 +15,16 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
+import static EDOSF.iitAdd.Settings.NumFail;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class K_DownloadMaterial_Test11 extends iit8077 {
     public WebDriver driver;
     public Boolean test;
     public String checking;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

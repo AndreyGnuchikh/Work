@@ -3,9 +3,13 @@ package EDOSF.iitFirefox.UserTestedo;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class S_NotificationAndApproval_Test19 extends testedo {
@@ -14,6 +18,9 @@ public class S_NotificationAndApproval_Test19 extends testedo {
     String checkbox2;
     String check;
 
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUP() {

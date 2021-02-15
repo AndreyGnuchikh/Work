@@ -9,6 +9,8 @@ import EDOSF.iitAdd.iit8077;
 import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -23,11 +25,16 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import static EDOSF.iitAdd.Settings.NumFail;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class H_ViewDocument_Test8 extends iit8077 {
     public WebDriver driver;
     public String test2;
 
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @Test
     @Order(1)

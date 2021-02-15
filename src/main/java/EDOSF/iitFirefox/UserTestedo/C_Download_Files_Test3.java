@@ -6,15 +6,22 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
 import EDOSF.methods.FileCreateAndLoading;
+import OFD.methods.RetryRule;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class C_Download_Files_Test3 extends testedo {
     WebDriver driver;
     String test2;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

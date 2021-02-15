@@ -7,11 +7,15 @@ import EDOSF.methods.EnterAndExit;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Email;
 import EDOSF.methods.FileCreateAndLoading;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Date;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class E_ChangeParamMessage_Test5 extends iit8077 {
@@ -19,6 +23,9 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
     public String sleep;
     public String check;
     public String row;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void A_DelatedCheckboxs() {

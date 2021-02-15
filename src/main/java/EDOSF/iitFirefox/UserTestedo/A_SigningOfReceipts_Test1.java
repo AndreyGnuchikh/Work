@@ -7,17 +7,24 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
 import EDOSF.methods.Sign;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import static EDOSF.iitAdd.Settings.NumFail;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class A_SigningOfReceipts_Test1 extends testedo {
     public WebDriver driver;
     public String test;
     public String test2;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
 
     @BeforeEach

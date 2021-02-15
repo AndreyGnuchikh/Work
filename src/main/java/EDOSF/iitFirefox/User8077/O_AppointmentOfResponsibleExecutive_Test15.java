@@ -4,9 +4,13 @@ import EDOSF.iitAdd.Drivers;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.*;
 import EDOSF.iitAdd.iit8077;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
@@ -14,6 +18,9 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
     String test, test2;
     public String check;
     public String row;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

@@ -4,11 +4,15 @@ import EDOSF.iitFirefox.User8077.Soap.*;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.methods.*;
 import EDOSF.iitAdd.iit8077;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class A_SigningOfReceipts_Test1 extends iit8077 {
@@ -16,6 +20,9 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
     public String test;
     public String test2;
 
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

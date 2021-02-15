@@ -3,11 +3,15 @@ package EDOSF.iitFirefox.loginTestedo;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Date;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class E_ChangeParamMessage_Test5 extends testedo {
@@ -15,6 +19,9 @@ public class E_ChangeParamMessage_Test5 extends testedo {
     public String sleep;
     public String check;
     public String row;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void A_DelatedCheckboxs() {

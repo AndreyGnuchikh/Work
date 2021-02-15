@@ -5,14 +5,21 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.EnterAndExit;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class J_ChangeStartTap_Test10 extends iit8077 {
     private WebDriver driver;
     public String test;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

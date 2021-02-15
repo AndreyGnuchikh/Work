@@ -7,11 +7,15 @@ import EDOSF.iitAdd.iit8077;
 
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @RunWith(JUnitPlatform.class)
@@ -19,6 +23,9 @@ import org.openqa.selenium.WebDriver;
 public class K_WatchingED_Test11 extends iit8077 {
     WebDriver driver;
     String test, test2;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

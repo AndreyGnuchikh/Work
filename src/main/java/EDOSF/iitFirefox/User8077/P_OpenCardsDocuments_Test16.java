@@ -6,6 +6,8 @@ import EDOSF.methods.EnterAndExit;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,10 +18,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import static EDOSF.iitAdd.Settings.NumFail;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class P_OpenCardsDocuments_Test16 extends iit8077 {
     WebDriver driver;
     String test, test2;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

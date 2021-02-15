@@ -4,12 +4,19 @@ package EDOSF.iitFirefox.login8077;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.methods.*;
 import EDOSF.iitAdd.iit8077;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static EDOSF.iitAdd.Settings.NumFail;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class C_ForgotPassword_Test3 extends iit8077 {
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     private WebDriver driver;
     public String sleep;

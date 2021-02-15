@@ -3,6 +3,8 @@ package EDOSF.iitFirefox.UserTestedo;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.testedo;
 import EDOSF.methods.*;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
+import static EDOSF.iitAdd.Settings.NumFail;
 import static java.lang.Runtime.getRuntime;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -22,6 +25,9 @@ public class J_SigningDocument_Test10 extends testedo {
     public WebDriver driver;
     public String test, test2, checking;
 
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @Test
     @Order(1)

@@ -3,6 +3,8 @@ package EDOSF.iitFirefox.User8077;
 import EDOSF.iitAdd.Drivers;
 import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.*;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,10 +13,15 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static EDOSF.iitAdd.Settings.NumFail;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class N_SaveDocumentInPc_Test14 extends iit8077 {
     WebDriver driver;
     String test, test2;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

@@ -14,8 +14,8 @@
     <!-- properties-->
     <properties>
         <project.build.sourceEncoding>WINDOWS-1251</project.build.sourceEncoding>
-        <junit-jupiter.version>5.6.2</junit-jupiter.version>
-        <allure-junit5.version>2.13.5</allure-junit5.version>
+        <junit-jupiter.version>5.7.0</junit-jupiter.version>
+        <allure-junit5.version>2.13.8</allure-junit5.version>
 
         <java.version>1.8</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -23,7 +23,7 @@
 
         <!-- build aspectjweaver and allure-junit5-->
 
-        <allure.version>2.13.0</allure.version>
+        <allure.version>2.13.8</allure.version>
     </properties>
 
     <dependencies>
@@ -94,7 +94,7 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-reporting</artifactId>
-            <version>1.5.2</version>
+            <version>1.7.1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5 -->
         <dependency>

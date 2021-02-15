@@ -8,14 +8,21 @@ import EDOSF.Forms.CompleteForm;
 import EDOSF.Forms.CompleteFormAct;
 import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.methods.Check;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static EDOSF.iitAdd.Settings.NumFail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
     WebDriver driver;
     String test2;
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @BeforeEach
     void setUp() {

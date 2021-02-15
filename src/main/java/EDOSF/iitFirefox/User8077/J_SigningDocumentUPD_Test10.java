@@ -8,6 +8,8 @@ import EDOSF.iitAdd.iit8077;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
 import EDOSF.methods.Sign;
+import OFD.methods.RetryRule;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -16,6 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 
+import static EDOSF.iitAdd.Settings.NumFail;
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -24,6 +27,9 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
     public WebDriver driver;
     public String test, test2, checking;
 
+
+    @Rule
+    public RetryRule rule = new RetryRule(NumFail);
 
     @Test
     @Order(1)
