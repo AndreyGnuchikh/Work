@@ -22,6 +22,7 @@ public class U_SendDocumentToContragent_Test21 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp(){
         try {

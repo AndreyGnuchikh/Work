@@ -23,6 +23,7 @@ public class A_LoginLogPass_Test1 extends testedo {
     public String checking;
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

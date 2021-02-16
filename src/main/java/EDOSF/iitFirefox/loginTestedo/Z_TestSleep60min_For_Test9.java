@@ -23,6 +23,7 @@ public class Z_TestSleep60min_For_Test9 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
 

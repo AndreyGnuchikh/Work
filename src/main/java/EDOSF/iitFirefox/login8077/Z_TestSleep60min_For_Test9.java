@@ -23,6 +23,7 @@ public class Z_TestSleep60min_For_Test9 extends iit8077 {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
 
@@ -34,7 +35,7 @@ public class Z_TestSleep60min_For_Test9 extends iit8077 {
     }
 
     @Ignore
-    void A_Exit_LongTime_Test2() {
+    void A_Exit_LongTime_Test1() {
         try {
             driver.get(url);
             EnterAndExit.LogPass(LogAll, pass, driver);

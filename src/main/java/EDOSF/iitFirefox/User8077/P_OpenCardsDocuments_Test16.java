@@ -27,6 +27,7 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

@@ -21,6 +21,7 @@ public class I_RenamingDocument_Test9 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

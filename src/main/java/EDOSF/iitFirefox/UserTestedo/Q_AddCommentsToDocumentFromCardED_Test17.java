@@ -21,6 +21,7 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

@@ -25,6 +25,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

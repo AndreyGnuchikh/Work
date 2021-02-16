@@ -23,6 +23,7 @@ public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

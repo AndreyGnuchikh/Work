@@ -27,6 +27,7 @@ public class S_NotificationAndApproval_Test19 extends iit8077 {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUP() {
         try {

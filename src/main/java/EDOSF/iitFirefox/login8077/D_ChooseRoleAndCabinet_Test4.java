@@ -20,6 +20,7 @@ public class D_ChooseRoleAndCabinet_Test4 extends iit8077 {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

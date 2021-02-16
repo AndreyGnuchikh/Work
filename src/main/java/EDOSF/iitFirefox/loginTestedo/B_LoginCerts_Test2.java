@@ -22,6 +22,7 @@ public class B_LoginCerts_Test2 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void Before() {
         try {

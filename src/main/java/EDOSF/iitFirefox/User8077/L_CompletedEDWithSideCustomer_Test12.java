@@ -22,6 +22,7 @@ public class L_CompletedEDWithSideCustomer_Test12 extends iit8077 {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

@@ -22,6 +22,7 @@ public class R_WatchReceipts_Test18 extends iit8077 {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUP() {
         try {

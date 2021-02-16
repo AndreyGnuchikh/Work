@@ -21,6 +21,7 @@ public class C_Download_Files_Test3 extends iit8077 {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

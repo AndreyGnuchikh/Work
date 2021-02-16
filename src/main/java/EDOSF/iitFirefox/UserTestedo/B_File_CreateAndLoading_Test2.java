@@ -25,6 +25,7 @@ public class B_File_CreateAndLoading_Test2 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

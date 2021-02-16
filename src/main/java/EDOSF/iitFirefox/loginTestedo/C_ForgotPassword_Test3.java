@@ -23,6 +23,7 @@ public class C_ForgotPassword_Test3 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

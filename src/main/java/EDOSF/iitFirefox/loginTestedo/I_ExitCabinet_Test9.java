@@ -20,6 +20,7 @@ public class I_ExitCabinet_Test9 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
 

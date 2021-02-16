@@ -24,6 +24,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp(){
         try {

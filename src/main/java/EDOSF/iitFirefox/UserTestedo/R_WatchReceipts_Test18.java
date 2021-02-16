@@ -18,6 +18,7 @@ public class R_WatchReceipts_Test18 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUP() {
         try {

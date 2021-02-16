@@ -26,6 +26,7 @@ public class A_SigningOfReceipts_Test1 extends testedo {
 
 
 
+    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {
