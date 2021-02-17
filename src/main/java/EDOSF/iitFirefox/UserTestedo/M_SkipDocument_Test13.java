@@ -24,7 +24,6 @@ public class M_SkipDocument_Test13 extends testedo {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

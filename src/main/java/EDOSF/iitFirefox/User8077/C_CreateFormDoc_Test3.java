@@ -23,7 +23,6 @@ public class C_CreateFormDoc_Test3 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

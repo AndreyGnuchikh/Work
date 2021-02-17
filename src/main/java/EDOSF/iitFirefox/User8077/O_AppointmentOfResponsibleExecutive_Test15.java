@@ -21,7 +21,6 @@ public class O_AppointmentOfResponsibleExecutive_Test15 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

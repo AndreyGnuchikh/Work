@@ -14,16 +14,12 @@ import static EDOSF.iitAdd.Settings.NUM_FAIL;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class C_ForgotPassword_Test3 extends iit8077 {
 
-
-
-
     private WebDriver driver;
     public String sleep;
     public Boolean isPresent;
     public String newpass;
     public String checking;
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

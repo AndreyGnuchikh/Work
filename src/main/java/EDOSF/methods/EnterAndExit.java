@@ -158,7 +158,8 @@ public class EnterAndExit {
 
     public static void Exit(WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        Thread.sleep(2000);
+        EnterAndExit.startEndingCertAndSendingFiles("skip",driver);
+        Thread.sleep(1300);
         driver.findElement(By.cssSelector("#user-nav")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("form.text-right > button:nth-child(1)")).click();

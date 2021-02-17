@@ -22,7 +22,6 @@ public class E_ChangeParamMessage_Test5 extends testedo {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void A_DelatedCheckboxs() {
         try {

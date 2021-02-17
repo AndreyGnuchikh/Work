@@ -26,7 +26,6 @@ public class E_ChangeParamMessage_Test5 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void A_DelatedCheckboxs() {
         try {

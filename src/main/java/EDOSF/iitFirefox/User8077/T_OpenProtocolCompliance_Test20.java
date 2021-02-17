@@ -28,7 +28,6 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

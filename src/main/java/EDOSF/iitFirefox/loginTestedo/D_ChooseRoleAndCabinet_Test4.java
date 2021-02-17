@@ -20,7 +20,6 @@ public class D_ChooseRoleAndCabinet_Test4 extends testedo {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

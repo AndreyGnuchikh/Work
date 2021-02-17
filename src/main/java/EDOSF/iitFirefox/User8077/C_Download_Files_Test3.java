@@ -11,17 +11,13 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 import static EDOSF.iitAdd.Settings.NUM_FAIL; 
- import org.junitpioneer.jupiter.RetryingTest;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class C_Download_Files_Test3 extends iit8077 {
     WebDriver driver;
     String test2;
 
-
-
-
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {
@@ -30,8 +26,6 @@ public class C_Download_Files_Test3 extends iit8077 {
             EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
-
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

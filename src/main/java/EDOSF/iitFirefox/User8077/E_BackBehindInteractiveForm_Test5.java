@@ -23,11 +23,11 @@ public class E_BackBehindInteractiveForm_Test5 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {
             driver = Drivers.ff();
+            Thread.sleep(200);
             driver.get(url);
             EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);

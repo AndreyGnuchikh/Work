@@ -21,7 +21,6 @@ public class L_CompletedEDWithSideCustomer_Test12 extends testedo {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

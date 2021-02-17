@@ -22,7 +22,6 @@ public class F_ChangeScopeOfAuthority_Test6 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void SetUp() {
         try {

@@ -21,7 +21,6 @@ public class G_ChangePassword_Test7 extends testedo {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void Before() {
         try {

@@ -23,7 +23,7 @@ public class Z_TestSleep60min_For_Test9 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
+
     @BeforeEach
     void setUp() {
 

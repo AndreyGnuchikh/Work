@@ -20,7 +20,6 @@ public class J_ChangeStartTap_Test10 extends testedo {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
 

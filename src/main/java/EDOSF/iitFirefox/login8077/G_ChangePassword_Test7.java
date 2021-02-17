@@ -20,8 +20,6 @@ public class G_ChangePassword_Test7 extends iit8077 {
 
 
 
-
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void Before() {
         try {

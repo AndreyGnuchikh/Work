@@ -22,7 +22,6 @@ public class C_Download_Files_Test3 extends testedo {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

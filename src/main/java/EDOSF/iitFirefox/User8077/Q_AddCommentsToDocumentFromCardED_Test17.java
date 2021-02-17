@@ -44,6 +44,7 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 extends iit8077 {
             Thread.sleep(1500);
             for (int i = 0; i < 50; i++) {
                 test0 = "Test";
+                Thread.sleep(100);
                 driver.findElement(By.cssSelector("#cf-newcomm")).sendKeys(test0);
                 driver.findElement(By.cssSelector(".glyphicon-plus")).click();
                 Thread.sleep(1000);

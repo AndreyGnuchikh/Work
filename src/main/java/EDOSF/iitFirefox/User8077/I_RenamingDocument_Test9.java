@@ -25,7 +25,6 @@ public class I_RenamingDocument_Test9 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

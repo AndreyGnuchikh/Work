@@ -24,7 +24,6 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp(){
         try {
@@ -186,7 +185,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.findElement(By.name("id51890")).click();
             test = driver.findElement(By.cssSelector("#grid-basic2-row-"+test2+" > table:nth-child(1) > tr:nth-child(1) > td:nth-child(8)")).getText();
 
-            Check.CheckExit("УПД Должность 2",test,driver);
+            Check.CheckExit("УПД 2 усиленная",test,driver);
         }catch (Throwable e) {
             Cabinet.Catch(driver,e);
         }
@@ -238,7 +237,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.findElement(By.name("id51890")).click();
             test = driver.findElement(By.cssSelector("#grid-basic2-row-"+test2+" > table:nth-child(1) > tr:nth-child(1) > td:nth-child(5)")).getText();
 
-            Check.CheckExit("ИП",test,driver);
+            Check.CheckExit("Гнучих Андрей Владимирович",test,driver);
         }catch (Throwable e) {
             Cabinet.Catch(driver,e);
         }
@@ -276,7 +275,8 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.get(url);
             EnterAndExit.loggingCerts(upd2,driver);
             EnterAndExit.RoleSwitch(2,driver);
-            EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
+            EnterAndExit.startEndingCertAndSendingFiles("Skip",driver);
+            Thread.sleep(1500);
             driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
             driver.findElement(By.cssSelector("div.statistic:nth-child(4) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)")).click();
             String checkbox2 = driver.findElement(By.xpath("//*[@id=\"not-1\"]")).getAttribute("checked");
@@ -288,7 +288,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             EnterAndExit.Exit(driver);
             Email.Email(testIitTest4,EmailPass,driver);
-            Thread.sleep(500);
+            Thread.sleep(3000);
             Email.DeletedEmail(driver);
             //AddAndSend
             driver.get(url);
@@ -315,7 +315,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             test = driver.findElement(By.cssSelector(".mail-Message-Body-Content")).getAttribute("textContent");
             test = test.substring(273);
             dateText = date.toString();
-            Check.CheckExit(dateText,test,driver);
+            Check.CheckingContainsExit(dateText,test,driver);
         }catch (Throwable e) {
             Cabinet.Catch(driver,e);
         }
@@ -472,7 +472,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.findElement(By.cssSelector(".selectize-input")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".selectize-input > input:nth-child(1)")).sendKeys("Все хорошо 2");
-            Thread.sleep(1000);
+            Thread.sleep(1200);
             driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1)")).click();

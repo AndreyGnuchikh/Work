@@ -20,7 +20,6 @@ public class J_ChangeStartTap_Test10 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
 

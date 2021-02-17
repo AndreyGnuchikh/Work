@@ -27,7 +27,6 @@ public class P_OpenCardsDocuments_Test16 extends testedo {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

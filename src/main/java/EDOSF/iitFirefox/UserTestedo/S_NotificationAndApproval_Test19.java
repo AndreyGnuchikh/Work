@@ -21,7 +21,6 @@ public class S_NotificationAndApproval_Test19 extends testedo {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUP() {
         try {

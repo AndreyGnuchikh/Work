@@ -11,7 +11,7 @@ public class Email {
     public static void Email(String email, String pass, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         Thread.sleep(2000);
-        boolean isPresentLog, isPresentPass, isNormal,isPresentPhoneNumber;
+        boolean isPresentLog, isPresentPass, isNormal,isPresentPhoneNumber,NumPhone;
         driver.get("https://passport.yandex.ru/auth?from=mail&origin=hostroot_homer_auth_ru&retpath=https%3A%2F%2Fmail.yandex.ru%2F%3Fnoretpath%3D1&backpath=https%3A%2F%2Fmail.yandex.ru%3Fnoretpath%3D1");
         Thread.sleep(1000);
 
@@ -56,7 +56,7 @@ public class Email {
     public static void EmailTest3(String testIitTest3, String EmailPass, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         Thread.sleep(2000);
-        boolean isPresentLog, isPresentPass, isNormal, SecondPart;
+        boolean isPresentLog, isPresentPass, isNormal, SecondPart,NumPhone;
         driver.get("https://passport.yandex.ru/auth?from=mail&origin=hostroot_homer_auth_ru&retpath=https%3A%2F%2Fmail.yandex.ru%2F%3Fnoretpath%3D1&backpath=https%3A%2F%2Fmail.yandex.ru%3Fnoretpath%3D1");
         SecondPart = driver.findElements(By.xpath("//*[contains(text(),'testiit.test3')]")).size() > 0;
         System.out.println("Выбор Тест 3 " + SecondPart);
@@ -100,14 +100,13 @@ public class Email {
     public static void EmailTest4(String testIitTest4, String EmailPass, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         Thread.sleep(2000);
-        boolean isPresentLog, isPresentPass, isNormal, SecondPart;
+        boolean isPresentLog, isPresentPass, isNormal, SecondPart,NumPhone;
         driver.get("https://passport.yandex.ru/auth?from=mail&origin=hostroot_homer_auth_ru&retpath=https%3A%2F%2Fmail.yandex.ru%2F%3Fnoretpath%3D1&backpath=https%3A%2F%2Fmail.yandex.ru%3Fnoretpath%3D1");
         SecondPart = driver.findElements(By.xpath("//*[contains(text(),'testiit.test4')]")).size() > 0;
         System.out.println("Выбор Тест 4 " + SecondPart);
         if (SecondPart) {
-            driver.findElement(By.xpath("//*[contains(text(),'testiit.test4')][contains(@class, 'passp-account-list-item__login')]")).click();
-        }
-
+            driver.findElement(By.xpath("//*[contains(text(),'testiit.test4')][contains(@class, 'AuthAccountListItem-displayName')]")).click();
+        }else {
         Thread.sleep(1000);
         SecondPart = driver.findElements(By.cssSelector("li.passp-account-list-item_block:nth-child(3) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) > span:nth-child(2)")).size() > 0;
         System.out.println(SecondPart);
@@ -138,6 +137,7 @@ public class Email {
         if (isPresentPass) {
             driver.findElement(By.id("passp-field-passwd")).sendKeys(EmailPass);
             driver.findElement(By.cssSelector(".Button2_type_submit")).click();
+        }
         }
     }
 
@@ -207,4 +207,5 @@ public class Email {
         Email.DeletedEmail(driver);
         driver.quit();
     }
+
 }
