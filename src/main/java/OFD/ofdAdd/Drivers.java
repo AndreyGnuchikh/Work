@@ -14,8 +14,11 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import static OFD.ofdAdd.OfdStand.HEAD_LESS;
+import static OFD.ofdAdd.OfdStand.LOGS;
 
-public class Drivers extends Settings {
+
+public class Drivers {
 
 
     // TODO WebDriver add
@@ -42,7 +45,7 @@ public class Drivers extends Settings {
         FirefoxProfile profile = new FirefoxProfile();
         System.setProperty("webdriver.gecko.driver", "C:\\Tools\\geckodriver.exe");
 
-        if (logs) {
+        if (LOGS) {
             System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
             System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
         }
@@ -62,8 +65,8 @@ public class Drivers extends Settings {
         firefoxOptions.setLogLevel(Level.OFF);
         firefoxOptions.setProfile(profile);
 
-        if (headless) {
-            firefoxOptions.addArguments("--headless"); //////////////////////////////////////
+        if (HEAD_LESS) {
+            firefoxOptions.addArguments("--headless");
         }
 /*        firefoxOptions.addArguments("--window-size=1920,1080");
         firefoxOptions.addArguments("--width=1920");

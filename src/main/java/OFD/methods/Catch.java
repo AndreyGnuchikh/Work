@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class Catch {
-    public static void Catch(WebDriver driver, Throwable e) {
+    public static void catching(WebDriver driver, Throwable e) {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         driver.quit();
         e.printStackTrace();

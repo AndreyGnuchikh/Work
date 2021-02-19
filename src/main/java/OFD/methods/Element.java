@@ -3,22 +3,35 @@ package OFD.methods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+
 public class Element {
-    public static void ClickElementByName(String name, WebDriver driver) {
+    public static void clickElementByName(String name, WebDriver driver) {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         driver.findElement(By.xpath("//*[contains(text(), '"+name+"')]")).click();
     }
-    public static String GetElementByName(String name, WebDriver driver) throws InterruptedException {
+    public static void doubleClickElementByName(String name, WebDriver driver) {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        Actions actions = new Actions(driver);
+        WebElement elementLocator =   driver.findElement(By.xpath("//*[contains(text(), '"+name+"')]"));
+        actions.doubleClick(elementLocator).perform();
+
+    }
+    public static String getNameElement(String name, WebDriver driver) throws InterruptedException {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         String gatName;
-        Thread.sleep(500);
+        Thread.sleep(800);
         gatName = driver.findElement(By.xpath("//*[contains(text(), '"+name+"')]")).getText();
         return gatName;
     }
 
 
-    public static void WaitElementToBeClickableAndClick(String link, WebDriver driver) throws InterruptedException {
+    public static void waitElementToBeClickableAndClick(String link, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName() + " " + link);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         Thread.sleep(1500);
@@ -27,7 +40,7 @@ public class Element {
         driver.findElement(By.cssSelector(link)).click();
     }
 
-    public static void WaitElementToBeClickableAndClick(int xpath, String link, WebDriver driver) throws InterruptedException {
+    public static void waitElementToBeClickableAndClick(int xpath, String link, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName() + " " + link);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         Thread.sleep(1100);
@@ -69,5 +82,22 @@ public class Element {
             }
 
         }
+    }
+
+    public static void ifElementExistClick(String elementCssSelector, WebDriver driver) {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        Boolean exist = driver.findElements(By.cssSelector(elementCssSelector)).size()>0;
+        if(exist){
+            driver.findElement(By.cssSelector(elementCssSelector)).click();
+        }
+    }
+    public static void GetIdAndIfElementExistClick(String elementClass, WebDriver driver) throws InterruptedException {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        String idElement =  driver.findElement(By.xpath("//div[@class='"+elementClass+"']")).getAttribute("id");
+        Boolean exist = driver.findElements(By.id(idElement)).size()>0;
+        if(exist){
+            driver.findElement(By.id(idElement)).click();
+        }
+        Thread.sleep(100);
     }
 }
