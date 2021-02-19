@@ -21,7 +21,6 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 extends iit8077 {
 
 
 
-    @RetryingTest(NUM_FAIL)
     @BeforeEach
     void setUp() {
         try {

@@ -25,6 +25,7 @@ public class C_Download_Files_Test3 extends iit8077 {
             driver.get(url);
             EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
             Thread.sleep(2000);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);

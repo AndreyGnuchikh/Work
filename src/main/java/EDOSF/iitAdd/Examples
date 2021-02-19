@@ -20,6 +20,10 @@ Boolean.parseBoolean(System.getProperty("headless", "true"))
 https://github.com/awaitility/awaitility
 await().atMost(5, SECONDS).until(customerStatusIsUpdated());
 
+       --------------------------------------find 1 elements from 3 in page and get all his array--------------------------------------
+            ArrayList<WebElement> GetFirstBlockElements =  (ArrayList<WebElement>) driver.findElements(By.className("noNeedRowBackground"));
+            ArrayList<WebElement> getItemsElement = (ArrayList<WebElement>) GetFirstBlockElements.get(0).findElements(By.tagName("td"));
+       --------------------------------------find 1 elements from 3 in page and get all his array--------------------------------------
 Правый клик мыши
        ****************************************click for id****************************************
 Actions builder = new Actions(driver);

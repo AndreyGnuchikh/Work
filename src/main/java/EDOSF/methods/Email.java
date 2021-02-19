@@ -161,12 +161,11 @@ public class Email {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
             driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
-            boolean boo = driver.findElements(By.cssSelector("button.control:nth-child(2)")).size() > 0;
+            boolean boo = driver.findElements(By.cssSelector("button.button2_tone_default:nth-child(2)")).size() > 0;
             System.out.println("Много писем " + boo);
             if (boo) {
                 Thread.sleep(2000);
-                driver.findElement(By.cssSelector("button.control:nth-child(2)")).click();
-
+                driver.findElement(By.cssSelector("button.button2_tone_default:nth-child(2)")).click();
             }
         }
         }

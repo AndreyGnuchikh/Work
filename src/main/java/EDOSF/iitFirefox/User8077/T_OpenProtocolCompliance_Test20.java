@@ -26,8 +26,6 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
     String urlSubstring = url.substring(0,18);
 
 
-
-
     @BeforeEach
     void setUp() {
         try {

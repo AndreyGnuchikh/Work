@@ -488,11 +488,11 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             driver.findElement(By.cssSelector(".selectize-input")).click();
             Thread.sleep(100);
             driver.findElement(By.cssSelector(".selectize-input > input:nth-child(1)")).sendKeys("Тест Все хорошо");
-            Thread.sleep(500);
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#sendModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1)")).click();
-            Thread.sleep(200);
+            Thread.sleep(1000);
             driver.findElement(By.xpath("//*[contains(text(), 'Переименованный кабинет')][contains(@class, 'option')]")).click();
             Thread.sleep(100);
             driver.findElement(By.cssSelector("#sendModal > div > div > div.modal-body > div:nth-child(4) > div > div.selectize-input.items.not-full.has-options")).click();

@@ -88,7 +88,6 @@ public class A_SigningOfReceipts_Test1 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-
             test = AddDocumentUPDUserASChFDop_Test3.add();
             Thread.sleep(1500);
             Cabinet.OpenNameFolder("Тест 3", driver);
