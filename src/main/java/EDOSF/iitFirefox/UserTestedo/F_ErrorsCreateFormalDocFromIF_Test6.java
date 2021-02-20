@@ -1,7 +1,7 @@
 package EDOSF.iitFirefox.UserTestedo;
 
-import EDOSF.iitAdd.Drivers;
-import EDOSF.iitAdd.testedo;
+import EDOSF.SettingsEDOSF.Drivers;
+import EDOSF.SettingsEDOSF.testedo;
 import EDOSF.Forms.CompleteForm;
 import EDOSF.Forms.CompleteFormAct;
 import EDOSF.Forms.CompleteFormDopSchF;
@@ -14,8 +14,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL; 
- import org.junitpioneer.jupiter.RetryingTest;
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
+
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {

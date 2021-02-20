@@ -1,7 +1,7 @@
 package EDOSF.iitFirefox.UserTestedo;
 
-import EDOSF.iitAdd.Drivers;
-import EDOSF.iitAdd.testedo;
+import EDOSF.SettingsEDOSF.Drivers;
+import EDOSF.SettingsEDOSF.testedo;
 import EDOSF.methods.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -11,8 +11,9 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Date;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL; 
- import org.junitpioneer.jupiter.RetryingTest;
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
+
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class B_File_CreateAndLoading_Test2 extends testedo {

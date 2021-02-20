@@ -1,10 +1,10 @@
 package EDOSF.iitFirefox.login8077;
 
-import EDOSF.iitAdd.Drivers;
+import EDOSF.SettingsEDOSF.Drivers;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Element;
 import EDOSF.methods.EnterAndExit;
-import EDOSF.iitAdd.iit8077;
+import EDOSF.SettingsEDOSF.iit8077;
 import EDOSF.methods.Email;
 import EDOSF.methods.FileCreateAndLoading;
 import org.junit.jupiter.api.*;
@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.Date;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL;
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class E_ChangeParamMessage_Test5 extends iit8077 {

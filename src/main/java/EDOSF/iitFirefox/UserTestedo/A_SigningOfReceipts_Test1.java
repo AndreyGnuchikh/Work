@@ -1,7 +1,7 @@
 package EDOSF.iitFirefox.UserTestedo;
 
-import EDOSF.iitAdd.Drivers;
-import EDOSF.iitAdd.testedo;
+import EDOSF.SettingsEDOSF.Drivers;
+import EDOSF.SettingsEDOSF.testedo;
 import EDOSF.iitFirefox.UserTestedo.Soap.*;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
@@ -13,8 +13,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL; 
- import org.junitpioneer.jupiter.RetryingTest;
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
+
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class A_SigningOfReceipts_Test1 extends testedo {

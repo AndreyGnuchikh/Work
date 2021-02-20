@@ -1,7 +1,7 @@
 package EDOSF.iitFirefox.UserTestedo.Soap;
 
 
-import EDOSF.iitAdd.testedo;
+import EDOSF.SettingsEDOSF.testedo;
 import EDOSF.methods.Soup;
 
 import java.io.IOException;

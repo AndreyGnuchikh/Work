@@ -1,7 +1,7 @@
 package EDOSF.methods;
 
 
-import EDOSF.iitAdd.Settings;
+import EDOSF.SettingsEDOSF.Settings;
 
 import java.io.File;
 import java.io.IOException;

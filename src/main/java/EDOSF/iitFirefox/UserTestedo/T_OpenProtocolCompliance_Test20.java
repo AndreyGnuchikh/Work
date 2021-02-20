@@ -1,7 +1,7 @@
 package EDOSF.iitFirefox.UserTestedo;
 
-import EDOSF.iitAdd.Drivers;
-import EDOSF.iitAdd.testedo;
+import EDOSF.SettingsEDOSF.Drivers;
+import EDOSF.SettingsEDOSF.testedo;
 import EDOSF.methods.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -11,8 +11,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL; 
- import org.junitpioneer.jupiter.RetryingTest;
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
+
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class T_OpenProtocolCompliance_Test20 extends testedo {

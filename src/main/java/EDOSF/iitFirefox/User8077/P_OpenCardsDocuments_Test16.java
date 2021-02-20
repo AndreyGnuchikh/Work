@@ -1,9 +1,9 @@
 package EDOSF.iitFirefox.User8077;
 
-import EDOSF.iitAdd.Drivers;
+import EDOSF.SettingsEDOSF.Drivers;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.EnterAndExit;
-import EDOSF.iitAdd.iit8077;
+import EDOSF.SettingsEDOSF.iit8077;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
 import org.junit.jupiter.api.*;
@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

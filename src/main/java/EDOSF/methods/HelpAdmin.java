@@ -1,4 +1,4 @@
-package EDOSF.iitAdd.Admin;
+package EDOSF.methods;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

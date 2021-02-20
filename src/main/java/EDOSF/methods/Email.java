@@ -1,6 +1,7 @@
 package EDOSF.methods;
 
-import EDOSF.iitAdd.Drivers;
+
+import EDOSF.SettingsEDOSF.Drivers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

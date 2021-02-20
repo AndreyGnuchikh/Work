@@ -1,7 +1,7 @@
 package EDOSF.iitFirefox.UserTestedo;
 
-import EDOSF.iitAdd.Drivers;
-import EDOSF.iitAdd.testedo;
+import EDOSF.SettingsEDOSF.Drivers;
+import EDOSF.SettingsEDOSF.testedo;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
@@ -12,8 +12,9 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL; 
- import org.junitpioneer.jupiter.RetryingTest;
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
+
+ import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @RunWith(JUnitPlatform.class)

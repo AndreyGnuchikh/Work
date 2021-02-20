@@ -1,7 +1,7 @@
 package EDOSF.iitFirefox.User8077.Soap;
 
 
-import EDOSF.iitAdd.iit8077;
+import EDOSF.SettingsEDOSF.iit8077;
 import EDOSF.methods.Soup;
 
 import java.io.IOException;

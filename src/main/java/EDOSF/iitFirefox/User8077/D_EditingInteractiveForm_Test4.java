@@ -3,8 +3,8 @@ package EDOSF.iitFirefox.User8077;
 import EDOSF.Forms.CompleteForm;
 import EDOSF.Forms.CompleteFormAct;
 import EDOSF.Forms.CompleteFormDopSchF;
-import EDOSF.iitAdd.Drivers;
-import EDOSF.iitAdd.iit8077;
+import EDOSF.SettingsEDOSF.Drivers;
+import EDOSF.SettingsEDOSF.iit8077;
 import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserACT;
 import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserASChFDop_Test3;
 import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserASChF_Test1;
@@ -13,7 +13,7 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

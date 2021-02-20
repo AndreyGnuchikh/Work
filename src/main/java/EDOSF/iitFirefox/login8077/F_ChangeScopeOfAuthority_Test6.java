@@ -1,18 +1,18 @@
 package EDOSF.iitFirefox.login8077;
 
-import EDOSF.iitAdd.Admin.HelpAdmin;
-import EDOSF.iitAdd.Drivers;
+import EDOSF.methods.HelpAdmin;
+import EDOSF.SettingsEDOSF.Drivers;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Element;
 import EDOSF.methods.EnterAndExit;
-import EDOSF.iitAdd.iit8077;
+import EDOSF.SettingsEDOSF.iit8077;
 import EDOSF.methods.Check;
 import org.junit.jupiter.api.*;
 import org.junitpioneer.jupiter.RetryingTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL;
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class F_ChangeScopeOfAuthority_Test6 extends iit8077 {

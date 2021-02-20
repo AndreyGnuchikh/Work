@@ -1,7 +1,7 @@
 package EDOSF.iitFirefox.loginTestedo;
 
-import EDOSF.iitAdd.Drivers;
-import EDOSF.iitAdd.testedo;
+import EDOSF.SettingsEDOSF.Drivers;
+import EDOSF.SettingsEDOSF.testedo;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 import org.junitpioneer.jupiter.RetryingTest;
 import org.openqa.selenium.WebDriver;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL;
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class D_ChooseRoleAndCabinet_Test4 extends testedo {

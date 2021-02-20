@@ -1,7 +1,7 @@
 package EDOSF.methods;
 
-import EDOSF.iitAdd.iit8077;
-import EDOSF.iitAdd.testedo;
+import EDOSF.SettingsEDOSF.iit8077;
+import EDOSF.SettingsEDOSF.testedo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

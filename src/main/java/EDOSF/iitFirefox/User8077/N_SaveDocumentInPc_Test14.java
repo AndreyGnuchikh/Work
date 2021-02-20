@@ -1,7 +1,7 @@
 package EDOSF.iitFirefox.User8077;
 
-import EDOSF.iitAdd.Drivers;
-import EDOSF.iitAdd.iit8077;
+import EDOSF.SettingsEDOSF.Drivers;
+import EDOSF.SettingsEDOSF.iit8077;
 import EDOSF.methods.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

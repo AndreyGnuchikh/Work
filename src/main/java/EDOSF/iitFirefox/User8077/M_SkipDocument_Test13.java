@@ -1,9 +1,9 @@
 package EDOSF.iitFirefox.User8077;
 
-import EDOSF.iitAdd.Drivers;
+import EDOSF.SettingsEDOSF.Drivers;
 import EDOSF.methods.Cabinet;
 import EDOSF.methods.EnterAndExit;
-import EDOSF.iitAdd.iit8077;
+import EDOSF.SettingsEDOSF.iit8077;
 import EDOSF.methods.Check;
 import EDOSF.methods.FileCreateAndLoading;
 import org.junit.jupiter.api.*;
@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import static EDOSF.iitAdd.Settings.NUM_FAIL; 
+import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
 
