@@ -6,4 +6,4 @@ target
 \bd\logopass
 *\test\*
 /.allure/
-/src/main/java/EDOSF/iitAdd/Settings.java
+/src/main/java/EDOSF/Setting/Settings.java
