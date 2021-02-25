@@ -10,22 +10,26 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static EDOSF.methods.Cabinet.*;
 import static EDOSF.methods.HelpUser.*;
 
 public class FileCreateAndLoading {
+    public static String path;
+
     public static String AddFile(String fileName, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file
         String row;
         Thread.sleep(3000);
         driver.findElement(By.cssSelector(".createDocument")).click();
-        Thread.sleep(2800);
+        Element.VisibleElement180SecToWait(20,"#create-doc-panel > div:nth-child(2) > i",driver);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
         Thread.sleep(200);
         System.out.println(fileName);
-        upload.sendKeys("C:\\Tools\\" + fileName);
+        path = GetPathTools(fileName);
+        upload.sendKeys(path);
         Thread.sleep(1600);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
         Thread.sleep(4000);
@@ -55,7 +59,8 @@ public class FileCreateAndLoading {
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
         Thread.sleep(200);
         System.out.println(fileName);
-        upload.sendKeys("C:\\Tools\\" + fileName);
+        path = GetPathTools();
+        upload.sendKeys(path + fileName);
         Thread.sleep(500);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
         Thread.sleep(4000);
@@ -85,11 +90,13 @@ public class FileCreateAndLoading {
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
         Thread.sleep(200);
         String x = driver.getCurrentUrl();
+        path = GetPathTools();
+
         if(!x.contains("8080")){
-            upload.sendKeys("C:\\Tools\\upd\\" + fileName);
+            upload.sendKeys(path+"upd\\" + fileName);
             Thread.sleep(500);
         }else {
-            upload.sendKeys("C:\\Tools\\upd8080\\" + fileName);
+            upload.sendKeys(path+"upd8080\\" + fileName);
             Thread.sleep(500);
         }
 
@@ -106,8 +113,9 @@ public class FileCreateAndLoading {
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-        Thread.sleep(200);
-        upload.sendKeys("C:\\Tools\\" + fileName);
+        System.out.println(fileName);
+        path = GetPathTools();
+        upload.sendKeys(path + fileName);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
         Thread.sleep(3500);
@@ -131,8 +139,8 @@ public class FileCreateAndLoading {
                 break;
             case (2):
                 //Удалить файлы в папке
-
-                File dir = new File("C:\\Tools\\TestFile\\"); //path указывает на директорию
+                path = GetPathTools("TestFile\\");
+                File dir = new File(path); //path указывает на директорию
                 DeletedFiles(dir);
 
                 driver.findElement(By.id("cm-open_text")).click();

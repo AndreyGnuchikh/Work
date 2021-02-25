@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Locale;
 
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static java.lang.Runtime.getRuntime;
 
 
@@ -31,18 +32,18 @@ public class HelpUser {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         Thread.sleep(2000);
         String NameFile, test, out;
-        File dir = new File("C:\\Tools\\TestFile");
+        File dir = new File(GetPathTools("TestFile"));
         File[] arrFiles = dir.listFiles();
         List<File> lst = Arrays.asList(arrFiles);
         Thread.sleep(1000);
         NameFile = lst.get(0).toString();
-        NameFile = NameFile.substring(18);
+        NameFile = NameFile.substring(NameFile.length()-14);
         System.out.println(NameFile);
-        test = "C:\\Program Files\\7-Zip\\7z.exe e C:\\Tools\\TestFile\\" + NameFile + " -o\"C:\\Tools\\TestFile\\\"";
+        test = "C:\\Program Files\\7-Zip\\7z.exe e "+GetPathTools("TestFile\\")+ NameFile + " -o\""+GetPathTools("TestFile")+"\\";
         System.out.println(test);
         getRuntime().exec(test);
         Thread.sleep(3500);
-        File dir2 = new File("C:\\Tools\\TestFile");
+        File dir2 = new File(GetPathTools("TestFile"));
         File[] arrFiles2 = dir2.listFiles();
         List<File> lst2 = Arrays.asList(arrFiles2);
         if (lst2.size() <= 2) {

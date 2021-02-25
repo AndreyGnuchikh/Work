@@ -15,6 +15,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Date;
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
@@ -24,7 +25,7 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
     public String test;
     public String test2;
     public String testid;
-
+    public String path;
 
     @BeforeEach
     void setUp() {
@@ -64,7 +65,8 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
             Add();
             WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
             Thread.sleep(200);
-            upload.sendKeys("C:\\Tools\\1.html");
+            path = GetPathTools();
+            upload.sendKeys(path + "1.html");
             Thread.sleep(100);
             driver.findElement(By.xpath("//*[@id=\"uploadComm\"]")).sendKeys("" + date);
             driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
@@ -88,7 +90,8 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
             Add();
             WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
             Thread.sleep(200);
-            upload.sendKeys("C:\\Tools\\1.html");
+            path = GetPathTools("1.html");
+            upload.sendKeys(path);
             Thread.sleep(100);
             driver.findElement(By.cssSelector("#uploadFiles > div:nth-child(4) > span > span.selection > span > span.select2-selection__arrow")).click();
             driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("2");
@@ -121,7 +124,8 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
             Add();
             WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
             Thread.sleep(200);
-            upload.sendKeys("C:\\Tools\\" + "File2.txt");
+            path = GetPathTools("File2.txt");
+            upload.sendKeys(path);
             Thread.sleep(100);
             test = driver.findElement(By.cssSelector("#errorBlock > ul:nth-child(2) > li:nth-child(1)")).getText();
             System.out.println(test);
@@ -139,11 +143,12 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
             Add();
             WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
             Thread.sleep(200);
+            path = GetPathTools("1.html");
             for (int i = 0; i < 27; i++) {
-                upload.sendKeys("C:\\Tools\\" + "1.html");
+                upload.sendKeys(path);
             }
             Thread.sleep(220000);
-            upload.sendKeys("C:\\Tools\\" + "1.html");
+            upload.sendKeys(path);
             Thread.sleep(100);
             test = driver.findElement(By.cssSelector("#errorBlock > ul:nth-child(2) > li:nth-child(1)")).getText();
             Check.CheckExit(" оличество выбранных файлов (406) превышает максимально допустимое количество 400.", test, driver);
@@ -161,7 +166,8 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
             Thread.sleep(200);
             for (int i = 0; i < 400; i++) {
                 WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-                upload.sendKeys("C:\\Tools\\" + "1.html");
+                path = GetPathTools("1.html");
+                upload.sendKeys(path);
                 upload.clear();
                 Thread.sleep(1);
             }
@@ -189,7 +195,8 @@ public class B_File_CreateAndLoading_Test2 extends iit8077 {
             for (int i = 0; i < 80; i++) {
                 WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
                 System.out.println(scripts[i]);
-                upload.sendKeys("C:\\Tools\\WrongFiles\\" + scripts[i]);
+                path = GetPathTools("WrongFiles\\");
+                upload.sendKeys(path + scripts[i]);
                 Thread.sleep(20);
                 if (i == 0) {
                     test = driver.findElement(By.cssSelector("#errorBlock > ul:nth-child(2) > li:nth-child(1)")).getText();

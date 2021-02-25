@@ -9,6 +9,8 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
+
 public class Cabinet {
 
     public static String ClickMenuFirstElement(int NumButtonsMenu, WebDriver driver) throws InterruptedException {
@@ -30,7 +32,7 @@ public class Cabinet {
                 break;
             case (2):
                 //Удалить файлы в папке
-                File dir = new File("C:\\Tools\\TestFile\\"); //path указывает на директорию
+                File dir = new File(GetPathTools("TestFile\\")); //path указывает на директорию
                 HelpUser.DeletedFiles(dir);
                 Thread.sleep(500);
                 DOMElementDeleted(driver);

@@ -13,6 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
@@ -33,16 +34,23 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
     void A_Signing_Schf_Document_Test1() {
         try {
             setUp();
-            FileCreateAndLoading.AddFile("upd\\0.xml", driver);
-            Cabinet.ClickMenuFirstElement(5, driver);
-            Thread.sleep(5000);
-            driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(5000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("1", driver);
+            EnterAndExit.Exit(driver);
+
+            driver.get(url);
+            EnterAndExit.loggingCerts(upd2, driver);
+            Thread.sleep(1500);
+            EnterAndExit.RoleSwitch(2, driver);
+            Thread.sleep(3000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            Cabinet.ClickMenuFirstElement(5, driver);
-            test2 = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
-            Check.CheckExit("true", test2, driver);
+            Thread.sleep(1000);
+            Cabinet.OpenNameFolder("СЧФ", driver);
+            Thread.sleep(5200);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            Thread.sleep(1000);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+            String test = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
+            Check.CheckExit("Все хорошо 2.0", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -117,9 +125,9 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             Thread.sleep(500);
             FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
-
+            driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(1500);
-            test2 = driver.findElement(By.cssSelector("h3.resptext:nth-child(4)")).getAttribute("innerText");
+            test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("innerText");
             System.out.println(test2);
             Check.CheckingContainsExit(", для Вас не заполнена информация, необходимая для подписания УПД. Для добавления необходимых сведений нажмите на Ваше ФИО в правом верхнем углу Личного кабинета и заполните блок \"Настроить область полномочий\" и сохраните изменения. Либо свяжитесь с технической поддержкой ООО \"ИИТ\": e-mail: support@iit.ru тел: 8 (499) 262-24-25", test2, driver);
         } catch (Throwable e) {
@@ -217,9 +225,9 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             }
             Thread.sleep(5000);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-            Thread.sleep(7500);
+            Thread.sleep(10000);
             String test = driver.findElement(By.cssSelector(".result > h4:nth-child(1)")).getText();
-            Check.CheckExit("Все документы успешно подписаны ЭП!", test, driver);
+            Check.CheckExit("Все документы успешно подписаны УСИЛЕННОЙ ЭП!", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -255,7 +263,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             Thread.sleep(500);
             test = driver.findElement(By.id("authority")).getAttribute("value");
             Thread.sleep(500);
-            Check.Check("d", test, driver);
+            Check.Check("1", test, driver);
             Thread.sleep(500);
             String test = driver.findElement(By.id("shipment-info")).getAttribute("value");
             Check.CheckExit("Замечаний нет", test, driver);
@@ -296,7 +304,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             test = driver.findElement(By.id("position")).getAttribute("value");
             Check.CheckingContains("Должность", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
-            Check.Check("d", test, driver);
+            Check.Check("1", test, driver);
             String test = driver.findElement(By.id("shipment-info")).getAttribute("value");
             Check.CheckExit("Замечаний нет", test, driver);
         } catch (Throwable e) {
@@ -315,7 +323,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            File dir = new File("C:\\Tools\\TestFile");
+            File dir = new File(GetPathTools("TestFile"));
             HelpUser.DeletedFiles(dir);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);

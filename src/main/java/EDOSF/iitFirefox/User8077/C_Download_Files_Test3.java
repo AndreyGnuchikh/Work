@@ -10,6 +10,7 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
@@ -165,8 +166,9 @@ public class C_Download_Files_Test3 extends iit8077 {
             driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
             WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
             Thread.sleep(200);
-            upload.sendKeys("C:\\Tools\\upd\\" + "0.xml");
-            upload.sendKeys("C:\\Tools\\upd\\" + "10.xml");
+            String path = GetPathTools();
+            upload.sendKeys(path+"upd\\0.xml");
+            upload.sendKeys(path+"upd\\10.xml");
             Thread.sleep(100);
             driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
             Thread.sleep(3000);

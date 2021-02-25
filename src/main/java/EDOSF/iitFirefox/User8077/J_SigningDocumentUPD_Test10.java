@@ -16,6 +16,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
@@ -324,7 +325,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            File dir = new File("C:\\Tools\\TestFile");
+            File dir = new File(GetPathTools("TestFile"));
             HelpUser.DeletedFiles(dir);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);

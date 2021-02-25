@@ -11,6 +11,7 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
@@ -20,9 +21,6 @@ public class C_Download_Files_Test3 extends testedo {
     WebDriver driver;
     String test2;
 
-
-
-
     @BeforeEach
     void setUp() {
         try {
@@ -30,9 +28,8 @@ public class C_Download_Files_Test3 extends testedo {
             driver.get(url);
             EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
-            Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-
+            Thread.sleep(2000);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -81,7 +78,7 @@ public class C_Download_Files_Test3 extends testedo {
         try {
             FileCreateAndLoading.AddFileUPDError("3.xml", driver);
             test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Ошибка валидации, ИдФайла указан не правильно. Файл 3.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
+            Check.CheckExit("ИдОтпр не соответствует реквизитам продавца. Файл 3.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -159,21 +156,11 @@ public class C_Download_Files_Test3 extends testedo {
         }
     }
 
+
+
     @RetryingTest(NUM_FAIL)
     @Order(11)
-    void K_AddFileUPDDownloadWrong__Test11() {
-        try {
-            FileCreateAndLoading.AddFileUPDError("10.xml", driver);
-            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Направляемый xml не соответствует xsd-схемам приказов: ФНС России от 19.12.2018г. № ММВ-7-15/820, ФНС России от 13.04.2016г. № ММВ-7-15/189. Файл 10.xml был успешно сохранен на Портал как неформализованный документ.", test2, driver);
-        } catch (Throwable e) {
-            Cabinet.Catch(driver, e);
-        }
-    }
-
-    @Ignore
-    @Order(12)
-    void L_AddFileUPDDownloadWrong_ValidationFile_Test12() {
+    void К_AddFileUPDDownloadWrong_ValidationFile_Test11() {
         try {
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".createDocument")).click();
@@ -181,21 +168,22 @@ public class C_Download_Files_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
             WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
             Thread.sleep(200);
-            upload.sendKeys("C:\\Tools\\upd\\" + "0.xml");
-            upload.sendKeys("C:\\Tools\\upd\\" + "10.xml");
+            String path = GetPathTools();
+            upload.sendKeys(path+"upd\\0.xml");
+            upload.sendKeys(path+"upd\\10.xml");
             Thread.sleep(100);
             driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
             Thread.sleep(3000);
             test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Файлы были успешно загружены Файлы 10.xml не прошли проверку на валидность. Файлы были успешно сохранены на Портал как неформализованный документ.", test2, driver);
+            Check.CheckExit("Файлы 10.xml, 0.xml, 0.xml были успешно загружены", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(13)
-    void M_AddFileUPDDownloadWrong_andCheckReceipts_Test13() {
+    @Order(12)
+    void L_AddFileUPDDownloadWrong_andCheckReceipts_Test12() {
         try {
             FileCreateAndLoading.AddFileUPDError("2.xml", driver);
             test2 = driver.findElement(By.cssSelector(".resptext")).getText();
@@ -219,10 +207,9 @@ public class C_Download_Files_Test3 extends testedo {
             Cabinet.Catch(driver, e);
         }
     }
-
     @RetryingTest(NUM_FAIL)
-    @Order(14)
-    void N_AddFileUPDDownload_155_Test14() {
+    @Order(13)
+    void M_AddFileUPDDownload_155_Test13() {
         try {
             FileCreateAndLoading.AddFileUPDError("11.xml", driver);
             test2 = driver.findElement(By.cssSelector(".resptext")).getText();

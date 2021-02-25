@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 import static java.lang.Runtime.getRuntime;
@@ -129,23 +130,22 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             Thread.sleep(1500);
-            File dir = new File("C:\\Tools\\TestFile");
+            File dir = new File(GetPathTools("TestFile"));
             File[] arrFiles = dir.listFiles();
             List<File> lst = Arrays.asList(arrFiles);
             String test = lst.get(0).toString();
-            test = test.substring(18);
+            test = test.substring(test.length()-14);
             System.out.println(test);
-            test2 = "C:\\Program Files\\7-Zip\\7z.exe e C:\\Tools\\TestFile\\" + test + " -o\"C:\\Tools\\TestFile\\\"";
+            test2 = "C:\\Program Files\\7-Zip\\7z.exe e "+GetPathTools("TestFile\\")+ test + " -o\""+GetPathTools("TestFile")+"\\";
             System.out.println(test2);
             getRuntime().exec(test2);
             Thread.sleep(1500);
-            File dir2 = new File("C:\\Tools\\TestFile");
+            File dir2 = new File(GetPathTools("TestFile"));
             File[] arrFiles2 = dir2.listFiles();
             List<File> lst2 = Arrays.asList(arrFiles2);
             String getingLst2 = lst2.get(1).toString();
             System.out.println(getingLst2);
             HelpUser.DeletedFiles(dir);
-            getingLst2 = getingLst2.substring(18, 45);
             System.out.println(getingLst2);
             Check.CheckingContainsExit("ON_NSCHFDOPPOK_2JH", getingLst2, driver);
         } catch (Throwable e) {
@@ -171,17 +171,17 @@ public class J_SigningDocument_Test10 extends iit8077 {
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             Thread.sleep(1500);
-            File dir = new File("C:\\Tools\\TestFile");
+            File dir = new File(GetPathTools("TestFile"));
             File[] arrFiles = dir.listFiles();
             List<File> lst = Arrays.asList(arrFiles);
             String test = lst.get(0).toString();
-            test = test.substring(18);
+            test = test.substring(test.length()-14);
             System.out.println(test);
-            test2 = "C:\\Program Files\\7-Zip\\7z.exe e C:\\Tools\\TestFile\\" + test + " -o\"C:\\Tools\\TestFile\\\"";
+            test2 = "C:\\Program Files\\7-Zip\\7z.exe e "+GetPathTools("TestFile\\")+ test + " -o\""+GetPathTools("TestFile")+"\\";
             System.out.println(test2);
             getRuntime().exec(test2);
             Thread.sleep(3500);
-            File dir2 = new File("C:\\Tools\\TestFile");
+            File dir2 = new File(GetPathTools("TestFile"));
             File[] arrFiles2 = dir2.listFiles();
             List<File> lst2 = Arrays.asList(arrFiles2);
             System.out.println(lst2.size());
@@ -191,12 +191,10 @@ public class J_SigningDocument_Test10 extends iit8077 {
                 getingLst2 = lst2.get(5).toString();
                 System.out.println(getingLst2);
                 HelpUser.DeletedFiles(dir);
-                getingLst2 = getingLst2.substring(18, 45);
             } else {
                 getingLst2 = lst2.get(1).toString();
                 System.out.println(getingLst2);
                 HelpUser.DeletedFiles(dir);
-                getingLst2 = getingLst2.substring(18, 45);
             }
             System.out.println(getingLst2);
             Check.CheckingContainsExit("ON_NSCHFDOPPOK_2JH", getingLst2, driver);
@@ -337,7 +335,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            File dir = new File("C:\\Tools\\TestFile");
+            File dir = new File(GetPathTools("TestFile"));
             HelpUser.DeletedFiles(dir);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);

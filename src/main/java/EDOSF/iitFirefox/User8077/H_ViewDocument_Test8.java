@@ -22,12 +22,14 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
- import org.junitpioneer.jupiter.RetryingTest;
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
+import static EDOSF.SettingsEDOSF.Settings.*;
+
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class H_ViewDocument_Test8 extends iit8077 {
-    public WebDriver driver;
+    public static WebDriver driver;
     public String test2;
 
 
@@ -45,7 +47,8 @@ public class H_ViewDocument_Test8 extends iit8077 {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             Thread.sleep(2000);
-            File dir = new File("C:\\Tools\\TestFile\\");
+
+            File dir = new File(GetPathTools("TestFile\\"));
             File[] arrFiles = dir.listFiles();
             List<File> lst = Arrays.asList(arrFiles);
             String test = lst.get(0).toString();
@@ -74,7 +77,7 @@ public class H_ViewDocument_Test8 extends iit8077 {
             Thread.sleep(500);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             Thread.sleep(2000);
-            File dir = new File("C:\\Tools\\TestFile\\");
+            File dir = new File(GetPathTools("TestFile\\"));
             File[] arrFiles = dir.listFiles();
             List<File> lst = Arrays.asList(arrFiles);
             try {
@@ -135,30 +138,41 @@ public class H_ViewDocument_Test8 extends iit8077 {
         }
     }
 
-    public static WebDriver ffWithoutAddon() {
+    public static WebDriver ffWithoutAddon() throws InterruptedException {
+            Thread.sleep(1000);
+
         FirefoxProfile profile = new FirefoxProfile();
-        // Убрать вывод
-        //System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
-        //System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
+        System.setProperty("webdriver.gecko.driver", "src/main/java/EDOSF/SettingsEDOSF/DriverElements/geckodriver.exe");
+
+        if (logs) {
+            System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+        }
 
         profile.setPreference("browser.download.folderList", 2);
-        profile.setPreference("browser.download.dir", "C:\\Tools\\TestFile");
+        profile.setPreference("browser.download.dir", GetPathTools("TestFile\\"));
         profile.setPreference("browser.download.useDownloadDir", true);
         // Указывает тип документа по умолчанию которые скачиваются без всплывающего окна
+        //profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "image/png, exe, application/zip, application/msword, application/xml, text/html ;charset=UTF-8");
+        //profile.setPreference("browser.helperApps.neverAsk.openFile", "image/png, exe, application/zip, application/msword,text/html,application/xml,text/plain;charset=UTF-8");
 
         //Добавление Плазина Крипто про
         profile.addExtension(
-                new File("C:\\Tools\\cryptopro_extension_for_cades_browser_plug_in-1.1.1-an+fx-windows.xpi"));
+                new File("Tools/cryptopro_extension_for_cades_browser_plug_in-1.1.1-an+fx-windows.xpi"));
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setLogLevel(Level.OFF);
         firefoxOptions.setProfile(profile);
-        if (Drivers.headless) {
+
+        if (headless) {
             firefoxOptions.addArguments("--headless"); //////////////////////////////////////
         }
-        WebDriver driver = new FirefoxDriver(firefoxOptions);
+/*        firefoxOptions.addArguments("--window-size=1920,1080");
+        firefoxOptions.addArguments("--width=1920");
+        firefoxOptions.addArguments("--height=1080");*/
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        WebDriver driver = new FirefoxDriver(firefoxOptions);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }

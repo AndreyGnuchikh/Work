@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class Check {
-    public static void CheckExit(String textStringForTest, String checking, WebDriver driver) throws InterruptedException {
+    public static void CheckExit(String test, String checking, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        System.out.println("Request  " + textStringForTest);
+        System.out.println("Request  " + test);
         System.out.println("Response " + checking);
-        if (checking.equals(textStringForTest)) {
+        if (checking.equals(test)) {
             System.out.println("Test is Successful");
             driver.quit();
             assertTrue(true);
@@ -39,7 +39,8 @@ public class Check {
 
     public static void CheckingContains(String test, String checking, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        System.out.println(test);
+        System.out.println("Request  " + test);
+        System.out.println("Response " + checking);
         if (checking.contains(test)) {
             System.out.println("Test check is Successful");
 
@@ -52,7 +53,8 @@ public class Check {
 
     public static void CheckingContainsExit(String test, String checking, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        System.out.println(test);
+        System.out.println("Request  " + test);
+        System.out.println("Response " + checking);
         if (checking.contains(test)) {
             System.out.println("Test check is Successful");
             driver.quit();
