@@ -29,9 +29,6 @@ public class J_SigningDocument_Test10 extends testedo {
     public String test, test2, checking;
 
 
-
-
-
     @RetryingTest(NUM_FAIL)
     @Order(1)
     void A_Signing_Schf_Document_Test1() {

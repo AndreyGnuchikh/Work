@@ -56,7 +56,7 @@ public class G_ChangePassword_Test7 extends iit8077 {
             log(pass7log, pass7log, wrong7log);
             String checkingTest = driver.findElement(By.cssSelector("div.col-md-7:nth-child(3) > input:nth-child(2)")).getAttribute("outerHTML");
             System.out.println(checkingTest);
-            Check.CheckingContains("border-color: red", checkingTest, driver);
+            Check.CheckingContainsExit("border-color: red", checkingTest, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

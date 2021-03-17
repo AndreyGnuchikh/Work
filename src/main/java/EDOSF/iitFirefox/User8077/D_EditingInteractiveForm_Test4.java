@@ -149,6 +149,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
             driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-cloud-upload")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();

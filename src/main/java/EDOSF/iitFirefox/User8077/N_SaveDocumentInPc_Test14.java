@@ -11,6 +11,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
@@ -18,9 +19,6 @@ import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
 public class N_SaveDocumentInPc_Test14 extends iit8077 {
     WebDriver driver;
     String test, test2;
-
-
-
 
     @BeforeEach
     void setUp() {
@@ -30,7 +28,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            File dir = new File("C:\\Tools\\TestFile");
+            File dir = new File(GetPathTools("TestFile"));
             HelpUser.DeletedFiles(dir);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
@@ -48,7 +46,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             test = HelpUser.ReZip(0);
-            Check.CheckExit("C:\\Tools\\TestFile\\0.pdf", test, driver);
+            Check.CheckingContainsExit("Tools\\TestFile\\0.pdf", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -65,8 +63,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             test = HelpUser.ReZip(1);
-            test = test.substring(0, 28);
-            Check.CheckExit("C:\\Tools\\TestFile\\compliance", test, driver);
+            Check.CheckingContainsExit("compliance", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -184,7 +181,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             SimpleDateFormat dateFormat = null;
             dateFormat = new SimpleDateFormat("y-MM-dd");
             test2 = dateFormat.format(currentDate);
-            Check.CheckExit("C:\\Tools\\TestFile\\" + test2 + ".zip", test, driver);
+            Check.CheckingContainsExit("Tools\\TestFile\\" + test2 + ".zip", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -201,7 +198,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             test = HelpUser.ReZip(1);
-            Check.CheckExit("C:\\Tools\\TestFile\\Dop.pdf", test, driver);
+            Check.CheckingContainsExit("Tools\\TestFile\\Dop.pdf", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -218,8 +215,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             test = HelpUser.ReZip(1);
-            test = test.substring(0, 28);
-            Check.CheckExit("C:\\Tools\\TestFile\\compliance", test, driver);
+            Check.CheckingContainsExit("Tools\\TestFile\\compliance", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -328,8 +324,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
             Element.WaitElementToBeClickableAndClick("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)",driver);
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
             Cabinet.ClickMenuFirstElement(6, driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#downloadDocument")).click();
@@ -337,7 +332,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             Thread.sleep(1000);
             test = HelpUser.ReZip(0);
-            Check.CheckExit("C:\\Tools\\TestFile\\1.html", test, driver);
+            Check.CheckingContainsExit("1.html", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -348,8 +343,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
             Element.WaitElementToBeClickableAndClick("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)",driver);
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
             Cabinet.ClickMenuFirstElement(6, driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#downloadCompliance")).click();
@@ -357,8 +351,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             Thread.sleep(1000);
             test = HelpUser.ReZip(1);
-            test = test.substring(0, 28);
-            Check.CheckExit("C:\\Tools\\TestFile\\compliance", test, driver);
+            Check.CheckingContainsExit("Tools\\TestFile\\compliance", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -370,8 +363,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
             Element.WaitElementToBeClickableAndClick("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)",driver);
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
             Cabinet.ClickMenuFirstElement(6, driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#downloadp7s")).click();
@@ -379,7 +371,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             Thread.sleep(1000);
             test = HelpUser.ReZip(0);
-            Check.CheckExit("C:\\Tools\\TestFile\\1.p7s", test, driver);
+            Check.CheckingContainsExit("1.p7s", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -391,8 +383,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
             Element.WaitElementToBeClickableAndClick("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)",driver);
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
             Cabinet.ClickMenuFirstElement(6, driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#downloadp7s")).click();
@@ -413,8 +404,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
             Element.WaitElementToBeClickableAndClick("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)",driver);
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
             Cabinet.ClickMenuFirstElement(6, driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#downloadp7s")).click();
@@ -435,8 +425,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
             Element.WaitElementToBeClickableAndClick("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)",driver);
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
             Cabinet.ClickMenuFirstElement(6, driver);
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#downloadp7s")).click();
@@ -468,7 +457,7 @@ public class N_SaveDocumentInPc_Test14 extends iit8077 {
             SimpleDateFormat dateFormat = null;
             dateFormat = new SimpleDateFormat("y-MM-dd");
             test2 = dateFormat.format(currentDate);
-            Check.CheckExit("C:\\Tools\\TestFile\\" + test2 + ".zip", test, driver);
+            Check.CheckingContainsExit("Tools\\TestFile\\" + test2 + ".zip", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

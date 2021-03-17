@@ -73,7 +73,7 @@ public class A_SigningOfReceipts_Test1 extends testedo {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             test = AddDocumentUPDUserASChF_Test2.add();
             Thread.sleep(2500);
-            Cabinet.OpenNameFolder("СЧФ Наименование", driver);
+            Cabinet.OpenNameFolder("СЧФ", driver);
             Sign.SignFirstFileUDP(test, driver);
             Thread.sleep(60000);
             Cabinet.ClickMenuFirstElement(9, driver);

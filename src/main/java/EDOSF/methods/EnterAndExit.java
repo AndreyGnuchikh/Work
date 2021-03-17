@@ -42,7 +42,7 @@ public class EnterAndExit {
             }
 
         }
-        Thread.sleep(3000);
+        Thread.sleep(3500);
         driver.findElement(By.className("btnSelectKey")).click();
         Thread.sleep(6000);
         String url = driver.getCurrentUrl();
@@ -74,8 +74,7 @@ public class EnterAndExit {
             case 2:
                 // Two
                 System.out.println("Role:" + i);
-                Thread.sleep(1600);
-                driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
+                Element.WaitElementToBeClickableAndClick(".select2-selection__arrow",driver);
                 Thread.sleep(1000);
                 driver.findElement(By.cssSelector(".select2-results__option:nth-child(2)")).click();
                 Thread.sleep(500);
@@ -84,8 +83,7 @@ public class EnterAndExit {
             case 3:
                 System.out.println("Role:" + i);
                 // Three
-                Thread.sleep(1000);
-                driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
+                Element.WaitElementToBeClickableAndClick(".select2-selection__arrow",driver);
                 driver.findElement(By.cssSelector(".select2-results__option:nth-child(3)")).click();
                 Thread.sleep(1000);
                 driver.findElement(By.cssSelector("#selectRole")).click();
@@ -99,8 +97,7 @@ public class EnterAndExit {
             case 4:
                 System.out.println("Role:" + i);
                 // Four
-                Thread.sleep(500);
-                driver.findElement(By.cssSelector(".select2-selection__arrow")).click();
+                Element.WaitElementToBeClickableAndClick(".select2-selection__arrow",driver);
                 driver.findElement(By.cssSelector(".select2-results__option:nth-child(4)")).click();
                 driver.findElement(By.cssSelector("#selectRole")).click();
                 break;
@@ -119,7 +116,7 @@ public class EnterAndExit {
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(1000);
             //DisableOrNot
-            Element.isDisableAndClickIfNot("button.btn:nth-child(5)",driver);
+            Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
             Thread.sleep(1000);
             System.out.println("receipts Signing");
         }

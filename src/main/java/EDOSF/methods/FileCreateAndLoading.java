@@ -92,7 +92,7 @@ public class FileCreateAndLoading {
         String x = driver.getCurrentUrl();
         path = GetPathTools();
 
-        if(!x.contains("8080")){
+        if(!x.contains("testedo")){
             upload.sendKeys(path+"upd\\" + fileName);
             Thread.sleep(500);
         }else {
@@ -208,8 +208,7 @@ public class FileCreateAndLoading {
 
         Thread.sleep(4000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-        Thread.sleep(6000);
-        driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+        Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
         Thread.sleep(1000);
         EnterAndExit.startEndingCertAndSendingFiles(driver);
         if (!upd.equals("upd\\Dop.xml")) {
@@ -240,8 +239,7 @@ public class FileCreateAndLoading {
         ClickMenuFirstElement(5, driver);
         Thread.sleep(5000);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+        Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
         Thread.sleep(1000);
         EnterAndExit.startEndingCertAndSendingFiles(driver);
         if (!upd.equals("upd\\Dop.xml")) {
@@ -279,8 +277,7 @@ public class FileCreateAndLoading {
 
         Thread.sleep(4200);
         driver.findElement(By.cssSelector(".glyphicon-edit")).click();
-        Thread.sleep(6000);
-        driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+        Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
         Thread.sleep(1000);
         EnterAndExit.startEndingCertAndSendingFiles(driver);
         if (!upd.equals("upd\\Dop.xml")) {
@@ -330,7 +327,7 @@ public class FileCreateAndLoading {
             for (int i = 0; i < 20; i++) {
                 Thread.sleep(500);
                 driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
-                Thread.sleep(500);
+                Thread.sleep(1500);
                 driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
                 Thread.sleep(2000);
                 Actions builder2 = new Actions(driver);

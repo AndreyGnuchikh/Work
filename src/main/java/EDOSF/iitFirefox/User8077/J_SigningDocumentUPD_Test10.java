@@ -141,6 +141,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
     @Order(5)
     void E_Signing_SchfDOP_Error_Test5() {
         try {
+            System.out.println("опх хглемемхх ондохяэ ялнрперэ мю рн йюйни сверйе опелемърэ мсфмн й тхн 1.1");
             driver = Drivers.ff();
             driver.get(url);
             EnterAndExit.loggingCerts(fio, driver);

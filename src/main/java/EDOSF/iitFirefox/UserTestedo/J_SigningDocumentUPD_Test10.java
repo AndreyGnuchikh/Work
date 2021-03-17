@@ -304,7 +304,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             test = driver.findElement(By.id("position")).getAttribute("value");
             Check.CheckingContains("Должность", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
-            Check.Check("1", test, driver);
+            Check.Check("d", test, driver);
             String test = driver.findElement(By.id("shipment-info")).getAttribute("value");
             Check.CheckExit("Замечаний нет", test, driver);
         } catch (Throwable e) {

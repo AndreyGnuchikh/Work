@@ -101,7 +101,7 @@ public class R_WatchReceipts_Test18 extends testedo {
             EnterAndExit.RoleSwitch(2, driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Thread.sleep(20000);
-            Cabinet.OpenNameFolder("СЧФ Наименование", driver);
+            Cabinet.OpenNameFolder("СЧФ", driver);
 
             Cabinet.ClickMenuFirstElement(9, driver);
             Thread.sleep(2000);

@@ -113,7 +113,7 @@ public class I_RenamingDocument_Test9 extends testedo {
                 Thread.sleep(400);
                 test = driver.findElement(By.cssSelector("#rename-newName")).getAttribute("data-content");
                 System.out.println(test);
-                Check.Check("ѕоле не может быть пустым и не может содержать \\,/,:,?,<,>,|,*,\"", test, driver);
+                Check.Check("ѕоле не может быть пустым и не может содержать \\,:,?,<,>,|,*", test, driver);
                 driver.findElement(By.cssSelector("#rename-newName")).clear();
                 Thread.sleep(400);
             }

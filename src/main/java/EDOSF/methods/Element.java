@@ -3,6 +3,8 @@ package EDOSF.methods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -64,7 +66,7 @@ public class Element {
         }
     }
 
-    public static void isDisableAndClickIfNot(String link, WebDriver driver) throws InterruptedException {
+    public static void WaitElementIsDisableAndClickIfNot(String link, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         String isDisabled;
         for (int i = 0; i <50 ; i++) {
@@ -77,4 +79,21 @@ public class Element {
         }
         driver.findElement(By.cssSelector(link)).click();
     }
+
+    public static void clickElementByName(String name, WebDriver driver) {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        driver.findElement(By.xpath("//*[contains(text(), '"+name+"')]")).click();
+    }
+    public static void doubleClickElementByName(String name, WebDriver driver) {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        Actions actions = new Actions(driver);
+        WebElement elementLocator =   driver.findElement(By.xpath("//*[contains(text(), '"+name+"')]"));
+        actions.doubleClick(elementLocator).perform();
+    }
+    public static String CreateXpathNameForElement(String name) {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        String returnName = "//*[contains(text(), '" + name + "')]";
+        return returnName;
+    }
+
 }

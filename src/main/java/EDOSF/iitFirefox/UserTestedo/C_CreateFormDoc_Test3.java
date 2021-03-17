@@ -50,7 +50,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            test2 = CompleteForm.SCHF("Yes", driver);
+            test2 = CompleteForm.SCHF("Yes",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -60,7 +60,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -69,7 +69,6 @@ public class C_CreateFormDoc_Test3 extends testedo {
             Cabinet.Catch(driver, e);
         }
     }
-
     @RetryingTest(NUM_FAIL)
     @Order(2)
     void B_AddACT_Test2() {
@@ -85,7 +84,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add act
-            test2 = CompleteFormAct.Act("Yes", driver);
+            test2 = CompleteFormAct.Act("Yes",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -96,7 +95,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -121,7 +120,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
             // Add ρχτ
-            test2 = CompleteFormDopSchF.DopSchF("YES", driver);
+            test2 = CompleteFormDopSchF.DopSchF("YES",driver);
             Thread.sleep(2000);
             String row;
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
@@ -134,7 +133,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -155,7 +154,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            test2 = CompleteForm.SCHF("IP", driver);
+            test2 = CompleteForm.SCHF("IP",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -165,7 +164,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
         } catch (Throwable e) {
@@ -188,7 +187,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1000);
             // Add ρχτ
-            test2 = CompleteFormAct.Act("IP", driver);
+            test2 = CompleteFormAct.Act("IP",driver);
             Thread.sleep(2000);
             String row;
             row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
@@ -200,7 +199,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
             Thread.sleep(500);
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
         } catch (Throwable e) {
@@ -223,7 +222,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
             // Add ρχτ
-            test2 = CompleteFormDopSchF.DopSchF("IP", driver);
+            test2 = CompleteFormDopSchF.DopSchF("IP",driver);
             Thread.sleep(2000);
             String row;
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
@@ -236,7 +235,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
         } catch (Throwable e) {
@@ -260,7 +259,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
             // Add ρχτ
-            test2 = CompleteFormDopSchF.DopSchF_IP_3Page(1, driver);
+            test2 = CompleteFormDopSchF.DopSchF_IP_3Page(1,driver);
             Thread.sleep(2000);
             String row;
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
@@ -273,7 +272,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
+            test = HelpUser.Krutilka(arrive, numberElement);
             System.out.println(test);
             Check.CheckExit(test2, test, driver);
 
@@ -298,7 +297,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             driver.findElement(By.cssSelector("#create")).click();
             Thread.sleep(1500);
             // Add ρχτ
-            test2 = CompleteFormDopSchF.DopSchF_IP_3Page(2, driver);
+            test2 = CompleteFormDopSchF.DopSchF_IP_3Page(2,driver);
             Thread.sleep(2000);
             String row;
             driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
@@ -311,8 +310,7 @@ public class C_CreateFormDoc_Test3 extends testedo {
             String arrive, test;
             int numberElement = 35;
             arrive = driver.findElement(By.cssSelector("#grid-basic2-row-" + row)).getAttribute("innerHTML");
-            test = HelpUser.Krutilka(arrive, numberElement).substring(0, 25);
-            System.out.println(test);
+            test = HelpUser.Krutilka(arrive, numberElement);
             Check.CheckExit(test2, test, driver);
 
 
