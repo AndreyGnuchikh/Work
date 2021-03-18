@@ -42,7 +42,7 @@ public class EnterAndExit {
             }
 
         }
-        Thread.sleep(3500);
+        Thread.sleep(3600);
         driver.findElement(By.className("btnSelectKey")).click();
         Thread.sleep(6000);
         String url = driver.getCurrentUrl();
