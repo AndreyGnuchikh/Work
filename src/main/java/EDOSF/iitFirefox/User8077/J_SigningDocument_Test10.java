@@ -275,7 +275,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
             getRuntime().exec("taskkill /im nmcades.exe");
             Thread.sleep(1000);
             getRuntime().exec("taskkill /im nmcades.exe");
-            Thread.sleep(1000);
+            Thread.sleep(1500);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getText();
             Check.CheckExit("3: Ошибка при создании подписи", test2, driver);
         } catch (Throwable e) {

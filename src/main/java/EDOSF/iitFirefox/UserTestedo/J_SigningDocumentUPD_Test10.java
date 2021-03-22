@@ -139,6 +139,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
     @Order(5)
     void E_Signing_SchfDOP_Error_Test5() {
         try {
+
             driver = Drivers.ff();
             driver.get(url);
             EnterAndExit.loggingCerts(fio, driver);
@@ -146,12 +147,12 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             EnterAndExit.RoleSwitch(2, driver);
 
             Thread.sleep(2000);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
-            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
+            EnterAndExit.startEndingCertAndSendingFiles("",driver);
+            FileCreateAndLoading.AddFile("Skip","upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-            Thread.sleep(500);
+            Element.WaitElementToBeClickable("button.btn:nth-child(5)",driver);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("textContent");
             System.out.println(test2);
             Check.CheckExit("9: Ошибка! У Вас отсутствует допуск для подписания формализованных документов", test2, driver);
@@ -171,11 +172,11 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
+            FileCreateAndLoading.AddFile("Skip","upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-            Thread.sleep(500);
+            Element.WaitElementToBeClickable("button.btn:nth-child(5)",driver);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("textContent");
             System.out.println(test2);
             Check.CheckExit("9: Ошибка! У Вас отсутствует допуск для подписания формализованных документов", test2, driver);
@@ -304,7 +305,7 @@ public class J_SigningDocumentUPD_Test10 extends testedo {
             test = driver.findElement(By.id("position")).getAttribute("value");
             Check.CheckingContains("Должность", test, driver);
             test = driver.findElement(By.id("authority")).getAttribute("value");
-            Check.Check("d", test, driver);
+            Check.Check("1", test, driver);
             String test = driver.findElement(By.id("shipment-info")).getAttribute("value");
             Check.CheckExit("Замечаний нет", test, driver);
         } catch (Throwable e) {

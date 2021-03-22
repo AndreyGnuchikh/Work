@@ -141,7 +141,7 @@ public class H_ViewDocument_Test8 extends testedo {
         FirefoxProfile profile = new FirefoxProfile();
         System.setProperty("webdriver.gecko.driver", "src/main/java/EDOSF/SettingsEDOSF/DriverElements/geckodriver.exe");
 
-        if (logs) {
+        if (LOGS) {
             System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
             System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
         }
@@ -161,7 +161,7 @@ public class H_ViewDocument_Test8 extends testedo {
         firefoxOptions.setLogLevel(Level.OFF);
         firefoxOptions.setProfile(profile);
 
-        if (headless) {
+        if (HEADLESS) {
             firefoxOptions.addArguments("--headless"); //////////////////////////////////////
         }
 /*        firefoxOptions.addArguments("--window-size=1920,1080");

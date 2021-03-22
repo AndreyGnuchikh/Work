@@ -107,8 +107,8 @@ public class P_OpenCardsDocuments_Test16 extends iit8077 {
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(3)")).getText();
             Check.Check("Должность", test, driver);
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(5)")).getText();
-            Check.CheckExit("02EC299F0095AC929F493BE30E05D136F8\n" +
-                    "с 18.12.2020 по 18.03.2021", test, driver);
+            Check.CheckExit("02610BE800EFACB998457DDBED0020554C\n" +
+                    "с 18.03.2021 по 18.06.2021", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

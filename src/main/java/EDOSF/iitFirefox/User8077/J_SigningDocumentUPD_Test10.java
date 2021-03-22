@@ -1,13 +1,8 @@
 package EDOSF.iitFirefox.User8077;
 
 import EDOSF.SettingsEDOSF.Drivers;
-import EDOSF.methods.Cabinet;
-import EDOSF.methods.HelpUser;
-import EDOSF.methods.EnterAndExit;
+import EDOSF.methods.*;
 import EDOSF.SettingsEDOSF.iit8077;
-import EDOSF.methods.Check;
-import EDOSF.methods.FileCreateAndLoading;
-import EDOSF.methods.Sign;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -141,7 +136,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
     @Order(5)
     void E_Signing_SchfDOP_Error_Test5() {
         try {
-            System.out.println("ПРИ ИЗМЕНЕНИИ ПОДПИСЬ СМОТРЕТЬ НА ТО КАКОЙ УЧЕТКЕ ПРЕМЕНЯТЬ НУЖНО К ФИО 1.1");
+
             driver = Drivers.ff();
             driver.get(url);
             EnterAndExit.loggingCerts(fio, driver);
@@ -149,12 +144,12 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
 
             Thread.sleep(2000);
-            EnterAndExit.startEndingCertAndSendingFiles(driver);
-            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
+            EnterAndExit.startEndingCertAndSendingFiles("",driver);
+            FileCreateAndLoading.AddFile("Skip","upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-            Thread.sleep(500);
+            Element.WaitElementToBeClickable("button.btn:nth-child(5)",driver);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("textContent");
             System.out.println(test2);
             Check.CheckExit("9: Ошибка! У Вас отсутствует допуск для подписания формализованных документов", test2, driver);
@@ -174,11 +169,11 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
+            FileCreateAndLoading.AddFile("Skip","upd\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-            Thread.sleep(500);
+            Element.WaitElementToBeClickable("button.btn:nth-child(5)",driver);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getAttribute("textContent");
             System.out.println(test2);
             Check.CheckExit("9: Ошибка! У Вас отсутствует допуск для подписания формализованных документов", test2, driver);

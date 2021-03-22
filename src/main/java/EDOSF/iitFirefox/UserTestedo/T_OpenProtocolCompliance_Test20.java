@@ -20,9 +20,7 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
     WebDriver driver;
     String test;
     String test2;
-    String urlSubstring = url.substring(0, 22);
-
-
+    String urlSubstring = url.substring(0,18);
 
 
     @BeforeEach
@@ -82,14 +80,14 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector("#signatures > tr > td:nth-child(2)")).getText();
             Thread.sleep(500);
-            Check.Check("УПД 1", test, driver);
+            Check.CheckingContains("УПД 1", test, driver);
             test = driver.findElement(By.cssSelector("#signatures > tr > td:nth-child(4)")).getText();
             Thread.sleep(500);
             Check.Check("Должность", test, driver);
             test = driver.findElement(By.cssSelector("#signatures > tr > td:nth-child(5)")).getText();
             Thread.sleep(500);
-            Check.CheckExit("0179F1A80022AB9F954F6140530460C324\n" +
-                    "с 13.12.2019 по 13.03.2020", test, driver);
+            Check.CheckExit("02610BE800EFACB998457DDBED0020554C\n" +
+                    "с 18.03.2021 по 18.06.2021", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -139,7 +137,7 @@ public class T_OpenProtocolCompliance_Test20 extends testedo {
             test = driver.getCurrentUrl();
             System.out.println(test);
             Thread.sleep(500);
-            Check.CheckingContainsExit("10.48.0.13/iit/compliance?idf=", test, driver);
+            Check.CheckingContainsExit("10.48.0.13//iit/compliance?idf=", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

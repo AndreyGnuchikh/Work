@@ -5,9 +5,9 @@ import EDOSF.Forms.CompleteFormAct;
 import EDOSF.Forms.CompleteFormDopSchF;
 import EDOSF.SettingsEDOSF.Drivers;
 import EDOSF.SettingsEDOSF.testedo;
-import EDOSF.iitFirefox.UserTestedo.Soap.AddDocumentUPDUserACT;
-import EDOSF.iitFirefox.UserTestedo.Soap.AddDocumentUPDUserASChFDop_Test3;
-import EDOSF.iitFirefox.UserTestedo.Soap.AddDocumentUPDUserASChF_Test1;
+import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserACT;
+import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserASChFDop_Test3;
+import EDOSF.iitFirefox.User8077.Soap.AddDocumentUPDUserASChF_Test1;
 import EDOSF.methods.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -36,7 +36,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            Thread.sleep(300);
+            Thread.sleep(500);
             driver.findElement(By.cssSelector(".active-file")).click();
             Thread.sleep(1500);
 
@@ -150,6 +150,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
             driver.findElement(By.cssSelector(".list-group > a:nth-child(1) > li:nth-child(1) > span:nth-child(2)")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(3) > li:nth-child(1) > span:nth-child(2)")).click();
+            Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-cloud-upload")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
@@ -283,6 +284,7 @@ public class D_EditingInteractiveForm_Test4 extends testedo {
     void J_EditingSChF_addFiles_Test10() {
         try {
             FileCreateAndLoading.AddFileUPDError("0.xml", driver);
+            Thread.sleep(500);
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(500);
             CheckDisableButton();

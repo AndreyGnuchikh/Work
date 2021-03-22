@@ -24,7 +24,9 @@ public class FileCreateAndLoading {
         Thread.sleep(3000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         Element.VisibleElement180SecToWait(20,"#create-doc-panel > div:nth-child(2) > i",driver);
+        Thread.sleep(200);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
+        Thread.sleep(100);
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
         Thread.sleep(200);
         System.out.println(fileName);
@@ -32,7 +34,7 @@ public class FileCreateAndLoading {
         upload.sendKeys(path);
         Thread.sleep(1600);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
-        Thread.sleep(4000);
+        Thread.sleep(4500);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         EnterAndExit.startEndingCertAndSendingFiles(driver);
         // Click and found first element

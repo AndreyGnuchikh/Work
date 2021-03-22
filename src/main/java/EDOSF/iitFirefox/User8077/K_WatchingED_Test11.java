@@ -89,7 +89,7 @@ public class K_WatchingED_Test11 extends iit8077 {
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalSign")).click();
-            Thread.sleep(3500);
+            Thread.sleep(4500);
             test = driver.findElement(By.cssSelector(".result > h4:nth-child(1)")).getText();
             System.out.println(test);
             Check.CheckExit("Все документы успешно подписаны УСИЛЕННОЙ ЭП!", test, driver);

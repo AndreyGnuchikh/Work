@@ -283,6 +283,7 @@ public class D_EditingInteractiveForm_Test4 extends iit8077 {
     void J_EditingSChF_addFiles_Test10() {
         try {
             FileCreateAndLoading.AddFileUPDError("0.xml", driver);
+            Thread.sleep(500);
             driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(500);
             CheckDisableButton();

@@ -20,7 +20,12 @@ public class Element {
         Thread.sleep(1200);
         driver.findElement(By.cssSelector(link)).click();
     }
-
+    public static void WaitElementToBeClickable(String link, WebDriver driver) throws InterruptedException {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName() + " " + link);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        Thread.sleep(1500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector(link))));
+    }
     public static void WaitElementToBeClickableAndClick(int xpath, String link, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName() + " " + link);
         WebDriverWait wait = new WebDriverWait(driver, 60);

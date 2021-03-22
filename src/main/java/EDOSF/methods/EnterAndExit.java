@@ -51,7 +51,7 @@ public class EnterAndExit {
         //Check one of not cabinet
         if (!url.contains("/iit/cabinet")) {
             String test;
-            Thread.sleep(1300);
+            Thread.sleep(1600);
             test = driver.findElement(By.cssSelector("#ErrorOkMessageModal > div > div > div.modal-footer > button")).getAttribute("clientTop");
             Thread.sleep(1000);
             if (test.equals("1")) {
@@ -74,6 +74,7 @@ public class EnterAndExit {
             case 2:
                 // Two
                 System.out.println("Role:" + i);
+                Thread.sleep(500);
                 Element.WaitElementToBeClickableAndClick(".select2-selection__arrow",driver);
                 Thread.sleep(1000);
                 driver.findElement(By.cssSelector(".select2-results__option:nth-child(2)")).click();
