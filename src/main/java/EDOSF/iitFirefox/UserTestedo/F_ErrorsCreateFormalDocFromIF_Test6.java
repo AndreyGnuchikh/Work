@@ -61,6 +61,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 extends testedo {
             Region("#change_seller");
             inn("#change_seller");
             CheckdateFirstPage("#");
+            Thread.sleep(500);
             Check("#numberSf");
             //Check("#numbercorSf");
             Checkdate("#dateSf");

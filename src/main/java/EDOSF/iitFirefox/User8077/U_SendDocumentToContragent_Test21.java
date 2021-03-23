@@ -129,7 +129,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
-            driver.findElement(By.name("id51890")).click();
+            Cabinet.OpenNameFolder("не",driver);
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector("#grid-basic2-row-"+test2+" > table:nth-child(1) > tr:nth-child(1) > td:nth-child(13)")).getText();
             String DateText = date.toString();
@@ -156,7 +156,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
-            driver.findElement(By.name("id51890")).click();
+            Cabinet.OpenNameFolder("не",driver);
             test = driver.findElement(By.cssSelector("#grid-basic2-row-"+test2+" > table:nth-child(1) > tr:nth-child(1) > td:nth-child(7)")).getText();
 
             Check.CheckExit("Все хорошо 2.0",test,driver);
@@ -182,7 +182,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
-            driver.findElement(By.name("id51890")).click();
+            Cabinet.OpenNameFolder("не",driver);
             test = driver.findElement(By.cssSelector("#grid-basic2-row-"+test2+" > table:nth-child(1) > tr:nth-child(1) > td:nth-child(8)")).getText();
 
             Check.CheckExit("УПД 2 усиленная",test,driver);
@@ -208,7 +208,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
-            driver.findElement(By.name("id51890")).click();
+            Cabinet.OpenNameFolder("не",driver);
             test = driver.findElement(By.cssSelector("#grid-basic2-row-"+test2+" > table:nth-child(1) > tr:nth-child(1) > td:nth-child(4)")).getText();
 
             Check.CheckExit("Кабинет 1",test,driver);
@@ -234,7 +234,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
             test();
             Thread.sleep(500);
-            driver.findElement(By.name("id51890")).click();
+            Cabinet.OpenNameFolder("не",driver);
             test = driver.findElement(By.cssSelector("#grid-basic2-row-"+test2+" > table:nth-child(1) > tr:nth-child(1) > td:nth-child(5)")).getText();
 
             Check.CheckExit("Гнучих Андрей Владимирович",test,driver);

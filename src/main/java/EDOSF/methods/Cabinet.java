@@ -96,7 +96,7 @@ public class Cabinet {
         }
         Thread.sleep(3800);
         EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
-        Thread.sleep(1000);
+        Thread.sleep(1200);
         driver.findElement(By.cssSelector("[foldername=\"" + name + "\"]")).click();
         Thread.sleep(4000);
         EnterAndExit.startEndingCertAndSendingFiles("SkipSingFiles",driver);

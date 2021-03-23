@@ -152,6 +152,7 @@ public class EnterAndExit {
                 }
             }
         }
+        Thread.sleep(1500);
     }
 
     public static void Exit(WebDriver driver) throws InterruptedException {

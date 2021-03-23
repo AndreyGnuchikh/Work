@@ -77,7 +77,7 @@ public class P_OpenCardsDocuments_Test16 extends testedo {
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(3)")).getText();
             Check.CheckingContains("сод 1", test, driver);
             test = driver.findElement(By.cssSelector("#cf-confirmBody > tr:nth-child(1) > td:nth-child(4)")).getText();
-            Check.CheckExit("сод", test, driver);
+            Check.CheckExit("д", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

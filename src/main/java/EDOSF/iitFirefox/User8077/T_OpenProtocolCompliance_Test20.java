@@ -23,7 +23,6 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
     WebDriver driver;
     String test;
     String test2;
-    String urlSubstring = url.substring(0,18);
 
 
     @BeforeEach
@@ -31,7 +30,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
         try {
             driver = Drivers.ff();
             Thread.sleep(500);
-            driver.get(urlSubstring + "/auth?error=noauth");
+            driver.get(url);
             EnterAndExit.loggingCerts(upd, driver);
             EnterAndExit.RoleSwitch(2, driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
@@ -45,7 +44,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
     void A_NameCardED_Test1() {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);
-            driver.get(urlSubstring + "/iit/compliance?idf=" + test2);
+            driver.get(urlIdf + test2);
             Thread.sleep(500);
             test = driver.findElement(By.id("file")).getText();
             Thread.sleep(500);
@@ -61,7 +60,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
         try {
             Date date = new Date();
             test2 = FileCreateAndLoading.AddFile("1.html", driver);
-            driver.get(urlSubstring + "/iit/compliance?idf=" + test2);
+            driver.get(urlIdf + test2);
             Thread.sleep(500);
             SimpleDateFormat dateFormat = null;
             dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
@@ -79,7 +78,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);
             Sign.SignFirstFile(driver);
-            driver.get(urlSubstring + "/iit/compliance?idf=" + test2);
+            driver.get(urlIdf + test2);
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector("#signatures > tr > td:nth-child(2)")).getText();
             Thread.sleep(500);
@@ -101,7 +100,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
     void D_OperatorCardED_Test4() {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);
-            driver.get(urlSubstring + "/iit/compliance?idf=" + test2);
+            driver.get(urlIdf + test2);
             Thread.sleep(500);
             test = driver.findElement(By.cssSelector("div.p:nth-child(6) > span:nth-child(1)")).getText();
             Thread.sleep(500);
@@ -116,7 +115,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
     void E_EmailIITCardED_Test5() {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);
-            driver.get(urlSubstring + "/iit/compliance?idf=" + test2);
+            driver.get(urlIdf + test2);
             Thread.sleep(500);
             test = driver.findElement(By.id("mail")).getText();
             Thread.sleep(500);
@@ -140,7 +139,7 @@ public class T_OpenProtocolCompliance_Test20 extends iit8077 {
             test = driver.getCurrentUrl();
             System.out.println(test);
             Thread.sleep(500);
-            Check.CheckingContainsExit("10.48.0.13//iit/compliance?idf=", test, driver);
+            Check.CheckingContainsExit(urlIdf, test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

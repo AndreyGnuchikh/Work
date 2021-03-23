@@ -149,7 +149,7 @@ public class A_SigningOfReceipts_Test1 extends testedo {
             Thread.sleep(1500);
             Cabinet.OpenNameFolder("явт", driver);
             Actions builder = new Actions(driver);
-            Thread.sleep(1500);
+            Thread.sleep(2200);
             driver.findElement(By.cssSelector("#grid-basic2-row-" + test)).click();
             builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + test))
             ).sendKeys(Keys.ARROW_DOWN).build().perform();

@@ -307,7 +307,7 @@ public class FileCreateAndLoading {
 
         switch (upd) {
             case ("upd\\0.xml"):
-                OpenNameFolder("СЧФ Наименование", driver);
+                OpenNameFolder("СЧФ", driver);
                 break;
             case ("upd\\Dop.xml"):
                 OpenNameFolder("АКТ", driver);
