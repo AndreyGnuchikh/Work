@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 
-import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
+import static EDOSF.methods.Path.GetPathTools;
 
 public class Cabinet {
 

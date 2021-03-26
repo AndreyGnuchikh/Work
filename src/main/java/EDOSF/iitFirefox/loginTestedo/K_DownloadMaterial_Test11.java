@@ -13,7 +13,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
+import static EDOSF.methods.Path.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 

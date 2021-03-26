@@ -6,15 +6,14 @@ import EDOSF.methods.Cabinet;
 import EDOSF.methods.Check;
 import EDOSF.methods.EnterAndExit;
 import EDOSF.methods.FileCreateAndLoading;
-import org.junit.Ignore;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
-import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
+import static EDOSF.methods.Path.GetPathTools;
 
- import org.junitpioneer.jupiter.RetryingTest;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class C_Download_Files_Test3 extends testedo {

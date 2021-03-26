@@ -11,9 +11,9 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
+import static EDOSF.methods.Path.GetPathTools;
 import static EDOSF.SettingsEDOSF.Settings.NUM_FAIL;
- import org.junitpioneer.jupiter.RetryingTest;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class N_SaveDocumentInPc_Test14 extends iit8077 {

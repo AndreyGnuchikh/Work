@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 
-import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
+import static EDOSF.methods.Path.GetPathTools;
 import static EDOSF.methods.Cabinet.*;
 import static EDOSF.methods.HelpUser.*;
 

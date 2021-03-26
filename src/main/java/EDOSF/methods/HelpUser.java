@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Locale;
 
 
-import static EDOSF.SettingsEDOSF.Drivers.GetPathTools;
+import static EDOSF.methods.Path.GetPathTools;
 import static java.lang.Runtime.getRuntime;
 
 
