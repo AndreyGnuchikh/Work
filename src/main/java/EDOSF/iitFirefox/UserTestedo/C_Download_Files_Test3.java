@@ -169,13 +169,13 @@ public class C_Download_Files_Test3 extends testedo {
             WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
             Thread.sleep(200);
             String path = GetPathTools();
-            upload.sendKeys(path+"upd\\0.xml");
-            upload.sendKeys(path+"upd\\10.xml");
+            upload.sendKeys(path+updOR8080+"\\0.xml");
+            upload.sendKeys(path+updOR8080+"\\10.xml");
             Thread.sleep(100);
             driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
             Thread.sleep(3000);
             test2 = driver.findElement(By.cssSelector(".resptext")).getText();
-            Check.CheckExit("Файлы 10.xml, 0.xml, 0.xml были успешно загружены", test2, driver);
+            Check.CheckExit("Файлы 0.xml, 10.xml, 0.xml были успешно загружены", test2, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

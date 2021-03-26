@@ -324,7 +324,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(12)
     void L_WrongSellerNoSignSendUDPDocument_Test12(){
         try {
-            FileCreateAndLoading.AddFile("upd\\IPSchfDop.xml",driver);
+            FileCreateAndLoading.AddFile(updOR8080+"\\IPSchfDop.xml",driver);
 
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood1();
@@ -342,7 +342,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(13)
     void M_SendUDPNoSignDocument_Test13(){
         try {
-            FileCreateAndLoading.AddFile("upd\\IPSchfDop.xml",driver);
+            FileCreateAndLoading.AddFile(updOR8080+"\\IPSchfDop.xml",driver);
 
             test2 = Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();
@@ -360,7 +360,7 @@ public class U_SendDocumentToContragent_Test21 extends iit8077 {
     @Order(14)
     void N_SendSignUPDDocument_Test14(){
         try {
-            test = FileCreateAndLoading.AddFile("upd\\IPSchfDop.xml",driver);
+            test = FileCreateAndLoading.AddFile(updOR8080+"\\IPSchfDop.xml",driver);
             Sign.SignFirstFileUDP(test,driver);
             Cabinet.ClickMenuFirstElement(12,driver);
             sendAllGood2();

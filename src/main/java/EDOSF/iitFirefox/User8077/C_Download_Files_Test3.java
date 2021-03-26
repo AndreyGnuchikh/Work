@@ -167,8 +167,8 @@ public class C_Download_Files_Test3 extends iit8077 {
             WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
             Thread.sleep(200);
             String path = GetPathTools();
-            upload.sendKeys(path+"upd\\0.xml");
-            upload.sendKeys(path+"upd\\10.xml");
+            upload.sendKeys(path+updOR8080+"\\0.xml");
+            upload.sendKeys(path+updOR8080+"\\10.xml");
             Thread.sleep(100);
             driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
             Thread.sleep(3000);

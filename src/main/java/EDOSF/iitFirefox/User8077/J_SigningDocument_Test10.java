@@ -34,7 +34,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
     void A_Signing_Schf_Document_Test1() {
         try {
             setUp();
-            FileCreateAndLoading.AddFile("upd\\0.xml", driver);
+            FileCreateAndLoading.AddFile(updOR8080+"\\0.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
@@ -54,7 +54,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
     void B_Signing_Dop_Document_Test2() {
         try {
             setUp();
-            FileCreateAndLoading.AddFile("upd\\Dop.xml", driver);
+            FileCreateAndLoading.AddFile(updOR8080+"\\Dop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(2000);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
@@ -74,7 +74,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
     void C_Signing_Schf_DopDocument_Test3() {
         try {
             setUp();
-            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
+            FileCreateAndLoading.AddFile(updOR8080+"\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
@@ -116,7 +116,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
     void E_Signing_Dop_Documentml2_Test5() {
         try {
             setUp();
-            FileCreateAndLoading.AddFile("upd\\Dop.xml", driver);
+            FileCreateAndLoading.AddFile(updOR8080+"\\Dop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
@@ -158,7 +158,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
     void F_Signing_SchfDop_Documentxml2_Test6() {
         try {
             setUp();
-            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
+            FileCreateAndLoading.AddFile(updOR8080+"\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
@@ -273,7 +273,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
             driver.findElement(By.cssSelector(".glyphicon-edit")).click();
             Thread.sleep(1000);
             getRuntime().exec("taskkill /im nmcades.exe");
-            Thread.sleep(1000);
+            Thread.sleep(3000);
             getRuntime().exec("taskkill /im nmcades.exe");
             Thread.sleep(1500);
             test2 = driver.findElement(By.cssSelector("#sign-fname-error > li:nth-child(1) > i:nth-child(2)")).getText();
@@ -310,7 +310,7 @@ public class J_SigningDocument_Test10 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(1000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            FileCreateAndLoading.AddFile("upd\\Dop.xml", driver);
+            FileCreateAndLoading.AddFile(updOR8080+"\\Dop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();

@@ -120,7 +120,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             EnterAndExit.RoleSwitch(2,driver);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             Thread.sleep(500);
-            FileCreateAndLoading.AddFile("upd\\SchfDop.xml", driver);
+            FileCreateAndLoading.AddFile(updOR8080+"\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(1500);
@@ -145,7 +145,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
 
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles("",driver);
-            FileCreateAndLoading.AddFile("Skip","upd\\SchfDop.xml", driver);
+            FileCreateAndLoading.AddFile("Skip",updOR8080+"\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
@@ -169,7 +169,7 @@ public class J_SigningDocumentUPD_Test10 extends iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
-            FileCreateAndLoading.AddFile("Skip","upd\\SchfDop.xml", driver);
+            FileCreateAndLoading.AddFile("Skip",updOR8080+"\\SchfDop.xml", driver);
             Cabinet.ClickMenuFirstElement(5, driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();

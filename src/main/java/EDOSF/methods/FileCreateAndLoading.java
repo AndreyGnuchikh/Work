@@ -27,13 +27,7 @@ public class FileCreateAndLoading {
         Thread.sleep(200);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
         Thread.sleep(100);
-        WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-        Thread.sleep(200);
-        System.out.println(fileName);
-        path = GetPathTools(fileName);
-        upload.sendKeys(path);
-        Thread.sleep(1600);
-        driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
+        testEdoOr8077(fileName,driver);
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         EnterAndExit.startEndingCertAndSendingFiles(driver);
@@ -58,13 +52,7 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector(".createDocument")).click();
         Thread.sleep(2500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
-        WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-        Thread.sleep(200);
-        System.out.println(fileName);
-        path = GetPathTools();
-        upload.sendKeys(path + fileName);
-        Thread.sleep(500);
-        driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
+        testEdoOr8077(fileName,driver);
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         EnterAndExit.startEndingCertAndSendingFiles("Skip",driver);
@@ -89,20 +77,7 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector(".createDocument")).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
-        WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-        Thread.sleep(200);
-        String x = driver.getCurrentUrl();
-        path = GetPathTools();
-
-        if(!x.contains("testedo")){
-            upload.sendKeys(path+"upd\\" + fileName);
-            Thread.sleep(500);
-        }else {
-            upload.sendKeys(path+"upd8080\\" + fileName);
-            Thread.sleep(500);
-        }
-
-        driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
+        testEdoOr8077(fileName,driver);
         Thread.sleep(3000);
     }
 
@@ -114,12 +89,7 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector(".createDocument")).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#create-doc-panel > div:nth-child(2) > i")).click();
-        WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
-        System.out.println(fileName);
-        path = GetPathTools();
-        upload.sendKeys(path + fileName);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
+        testEdoOr8077(fileName,driver);
         Thread.sleep(3500);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         // Click and found first element
@@ -192,17 +162,18 @@ public class FileCreateAndLoading {
 
     public static String CreateFirstUPDDocumentAndSign(String upd, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+
         // 1 SchF 2 DOP 3 SchFDOP
         String test2;
         switch (upd) {
             case ("1"):
-                upd = "upd\\0.xml";
+                upd = "0.xml";
                 break;
             case ("2"):
-                upd = "upd\\Dop.xml";
+                upd = "Dop.xml";
                 break;
             case ("3"):
-                upd = "upd\\SchfDop.xml";
+                upd = "SchfDop.xml";
                 break;
         }
         test2 = AddFile(upd, driver);
@@ -213,7 +184,7 @@ public class FileCreateAndLoading {
         Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
         Thread.sleep(1000);
         EnterAndExit.startEndingCertAndSendingFiles(driver);
-        if (!upd.equals("upd\\Dop.xml")) {
+        if (!upd.equals("Dop.xml")) {
             Thread.sleep(15000);
             driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
             Thread.sleep(1500);
@@ -228,13 +199,13 @@ public class FileCreateAndLoading {
         String test, test2;
         switch (upd) {
             case ("1"):
-                upd = "upd\\0.xml";
+                upd = "0.xml";
                 break;
             case ("2"):
-                upd = "upd\\Dop.xml";
+                upd = "Dop.xml";
                 break;
             case ("3"):
-                upd = "upd\\SchfDop.xml";
+                upd = "SchfDop.xml";
                 break;
         }
         test2 = AddFile(upd, driver);
@@ -244,7 +215,7 @@ public class FileCreateAndLoading {
         Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
         Thread.sleep(1000);
         EnterAndExit.startEndingCertAndSendingFiles(driver);
-        if (!upd.equals("upd\\Dop.xml")) {
+        if (!upd.equals("Dop.xml")) {
             Thread.sleep(12000);
             driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
             Thread.sleep(1500);
@@ -260,18 +231,19 @@ public class FileCreateAndLoading {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         // 1 SchF 2 DOP 3 SchFDOP
         String test, row;
+
         switch (upd) {
             case ("1"):
-                upd = "upd\\0.xml";
+                upd = "0.xml";
                 break;
             case ("2"):
-                upd = "upd\\Dop.xml";
+                upd = "Dop.xml";
                 break;
             case ("3"):
-                upd = "upd\\SchfDop.xml";
+                upd = "SchfDop.xml";
                 break;
             case ("4"):
-                upd = "upd\\IPSchfDop.xml";
+                upd = "IPSchfDop.xml";
                 break;
         }
         row = AddFile(upd, driver);
@@ -282,7 +254,7 @@ public class FileCreateAndLoading {
         Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
         Thread.sleep(1000);
         EnterAndExit.startEndingCertAndSendingFiles(driver);
-        if (!upd.equals("upd\\Dop.xml")) {
+        if (!upd.equals("Dop.xml")) {
             Thread.sleep(12000);
             driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
             Thread.sleep(1500);
@@ -306,14 +278,14 @@ public class FileCreateAndLoading {
 
 
         switch (upd) {
-            case ("upd\\0.xml"):
+            case ("0.xml"):
                 OpenNameFolder("Ñ×Ô", driver);
                 break;
-            case ("upd\\Dop.xml"):
+            case ("Dop.xml"):
                 OpenNameFolder("ÀÊÒ", driver);
                 break;
-            case ("upd\\SchfDop.xml"):
-            case ("upd\\IPSchfDop.xml"):
+            case ("SchfDop.xml"):
+            case ("IPSchfDop.xml"):
                 Thread.sleep(500);
                 OpenNameFolder("ÓÏÄ 123", driver);
                 break;
@@ -325,7 +297,7 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
         Element.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
         Thread.sleep(1000);
-        if (!upd.equals("upd\\0.xml")) {
+        if (!upd.equals("0.xml")) {
             for (int i = 0; i < 20; i++) {
                 Thread.sleep(500);
                 driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
@@ -351,5 +323,16 @@ public class FileCreateAndLoading {
 
         }
         return row;
+    }
+
+    public static void testEdoOr8077(String fileName,WebDriver driver) throws InterruptedException {
+        WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
+        Thread.sleep(200);
+        System.out.println(fileName);
+        path = GetPathTools(fileName,driver);
+        System.out.println(path);
+        upload.sendKeys(path);
+        Thread.sleep(1600);
+        driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
     }
 }
