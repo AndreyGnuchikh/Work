@@ -40,6 +40,7 @@ public class A_SigningOfReceipts_Test1 implements Testedo {
 
     @RetryingTest(NUM_FAIL)
     @Order(1)
+    @DisplayName("Подписание СЧФ с отображением квитанций в фоновом режиме.")
     void A_UPDSigningObviouslySChF_Test1() {
         try {
             EnterAndExit.loggingCerts(UPD, driver);
@@ -64,6 +65,7 @@ public class A_SigningOfReceipts_Test1 implements Testedo {
 
     @RetryingTest(NUM_FAIL)
     @Order(2)
+    @DisplayName("Подписание СЧФ в скрытом режиме.")
     void B_UPDSigningNoObviouslySChF_Test2() {
         try {
             EnterAndExit.loggingCerts(UPD2, driver);
@@ -88,6 +90,7 @@ public class A_SigningOfReceipts_Test1 implements Testedo {
 
     @RetryingTest(NUM_FAIL)
     @Order(3)
+    @DisplayName("Подписание СЧФДОП с отображением квитанций в фоновом режиме.")
     void C_UPDSigningObviouslySChFDOP_Test3() {
         try {
             EnterAndExit.loggingCerts(UPD, driver);
@@ -114,6 +117,7 @@ public class A_SigningOfReceipts_Test1 implements Testedo {
 
     @RetryingTest(NUM_FAIL)
     @Order(4)
+    @DisplayName("Подписание СЧФДОП в скрытом режиме.")
     void D_UPDSigningNoObviouslySChFDOP_Test4() {
         try {
             EnterAndExit.loggingCerts(UPD2, driver);
@@ -138,6 +142,7 @@ public class A_SigningOfReceipts_Test1 implements Testedo {
 
     @RetryingTest(NUM_FAIL)
     @Order(5)
+    @DisplayName("Проверка отсутствия формирования квитанций без подписи.")
     void E_UPDNoSigningSChF_Test5() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -163,6 +168,7 @@ public class A_SigningOfReceipts_Test1 implements Testedo {
 
     @RetryingTest(NUM_FAIL)
     @Order(6)
+    @DisplayName("Проверка появления надписи Напомнить мне позже.")
     void F_PushRememberMyLate_Test6() {
         try {
             EnterAndExit.loggingCerts(UPD, driver);

@@ -1,9 +1,13 @@
 package edosf.iitFirefox.user8077;
 
-import edosf.iitFirefox.user8077.soap.*;
 import edosf.settingsEdo.Drivers;
-import edosf.methods.*;
 import edosf.settingsEdo.Iit8077;
+import edosf.settingsEdo.Testedo;
+import edosf.iitFirefox.userTestedo.soap.*;
+import edosf.methods.Cabinet;
+import edosf.methods.Check;
+import edosf.methods.EnterAndExit;
+import edosf.methods.Sign;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,13 +15,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
- import org.junitpioneer.jupiter.RetryingTest;
+
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class A_SigningOfReceipts_Test1 implements Iit8077 {
     public WebDriver driver;
     public String test;
     public String test2;
+
+
+
 
 
     @BeforeEach
@@ -33,6 +41,7 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(1)
+    @DisplayName("Подписание СЧФ с отображением квитанций в фоновом режиме.")
     void A_UPDSigningObviouslySChF_Test1() {
         try {
             EnterAndExit.loggingCerts(UPD, driver);
@@ -51,12 +60,13 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
             System.out.println(test);
             Check.CheckExit("У вас есть неподписанные квитанции для следующих документов:", test, driver);
         } catch (Throwable e) {
-        Cabinet.Catch(driver, e);
+            Cabinet.Catch(driver, e);
         }
     }
 
     @RetryingTest(NUM_FAIL)
     @Order(2)
+    @DisplayName("Подписание СЧФ в скрытом режиме.")
     void B_UPDSigningNoObviouslySChF_Test2() {
         try {
             EnterAndExit.loggingCerts(UPD2, driver);
@@ -66,7 +76,7 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             test = AddDocumentUPDUserASChF_Test2.add();
             Thread.sleep(2500);
-            Cabinet.OpenNameFolder("СЧФ Наименование", driver);
+            Cabinet.OpenNameFolder("СЧФ", driver);
             Sign.SignFirstFileUDP(test, driver);
             Thread.sleep(60000);
             Cabinet.ClickMenuFirstElement(9, driver);
@@ -81,6 +91,7 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(3)
+    @DisplayName("Подписание СЧФДОП с отображением квитанций в фоновом режиме.")
     void C_UPDSigningObviouslySChFDOP_Test3() {
         try {
             EnterAndExit.loggingCerts(UPD, driver);
@@ -88,6 +99,7 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
             EnterAndExit.RoleSwitch(2, driver);
             Thread.sleep(2000);
             EnterAndExit.startEndingCertAndSendingFiles(driver);
+
             test = AddDocumentUPDUserASChFDop_Test3.add();
             Thread.sleep(1500);
             Cabinet.OpenNameFolder("Тест 3", driver);
@@ -106,6 +118,7 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(4)
+    @DisplayName("Подписание СЧФДОП в скрытом режиме.")
     void D_UPDSigningNoObviouslySChFDOP_Test4() {
         try {
             EnterAndExit.loggingCerts(UPD2, driver);
@@ -130,6 +143,7 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(5)
+    @DisplayName("Проверка отсутствия формирования квитанций без подписи.")
     void E_UPDNoSigningSChF_Test5() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -139,9 +153,9 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
             EnterAndExit.startEndingCertAndSendingFiles(driver);
             test = AddDocumentUPDUserASChF_Test5.add();
             Thread.sleep(1500);
-            Cabinet.OpenNameFolder("СЧФ",driver);
+            Cabinet.OpenNameFolder("СЧФ", driver);
             Actions builder = new Actions(driver);
-            Thread.sleep(1700);
+            Thread.sleep(2200);
             driver.findElement(By.cssSelector("#grid-basic2-row-" + test)).click();
             builder.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + test))
             ).sendKeys(Keys.ARROW_DOWN).build().perform();
@@ -155,6 +169,7 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(6)
+    @DisplayName("Проверка появления надписи Напомнить мне позже.")
     void F_PushRememberMyLate_Test6() {
         try {
             EnterAndExit.loggingCerts(UPD, driver);

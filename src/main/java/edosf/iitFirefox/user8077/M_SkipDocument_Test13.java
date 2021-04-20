@@ -41,7 +41,7 @@ public class M_SkipDocument_Test13 implements Iit8077 {
     @Order(1)
     void A_SkipDocument_DOP_Test1() {
         try {
-            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndTwo(URL, UPD2, "2", driver);
+            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo( UPD2, "2", driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
             Thread.sleep(1500);
@@ -62,7 +62,7 @@ public class M_SkipDocument_Test13 implements Iit8077 {
     @Order(2)
     void B_SkipDocument_SchfDOP_Test2() {
         try {
-            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndTwo(URL, UPD2, "3", driver);
+            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "3", driver);
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
             Thread.sleep(1500);
@@ -83,7 +83,7 @@ public class M_SkipDocument_Test13 implements Iit8077 {
     @Order(3)
     void C_SkipDocument_Schf_Test3() {
         try {
-            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndTwo(URL, UPD2, "1", driver);
+            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "1", driver);
             Actions builder2 = new Actions(driver);
             driver.findElement(By.cssSelector("#grid-basic2-row-" + test2)).click();
             builder2.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + test2))

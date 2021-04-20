@@ -165,17 +165,7 @@ public class FileCreateAndLoading {
 
         // 1 SchF 2 DOP 3 SchFDOP
         String test2;
-        switch (upd) {
-            case ("1"):
-                upd = "0.xml";
-                break;
-            case ("2"):
-                upd = "Dop.xml";
-                break;
-            case ("3"):
-                upd = "SchfDop.xml";
-                break;
-        }
+        upd = switchFiles(upd);
         test2 = AddFile(upd, driver);
         ClickMenuFirstElement(5, driver);
 
@@ -197,17 +187,7 @@ public class FileCreateAndLoading {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         // 1 SchF 2 DOP 3 SchFDOP
         String test, test2;
-        switch (upd) {
-            case ("1"):
-                upd = "0.xml";
-                break;
-            case ("2"):
-                upd = "Dop.xml";
-                break;
-            case ("3"):
-                upd = "SchfDop.xml";
-                break;
-        }
+        upd = switchFiles(upd);
         test2 = AddFile(upd, driver);
         ClickMenuFirstElement(5, driver);
         Thread.sleep(5000);
@@ -227,25 +207,11 @@ public class FileCreateAndLoading {
         return test2;
     }
 
-    public static String CreateFirstUDPDocumentAndSignOneAndTwo(String url, String upd2, String upd, WebDriver driver) throws InterruptedException {
+    public static String CreateFirstUDPDocumentAndSignOneAndOpenTwo(String upd2, String upd, WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         // 1 SchF 2 DOP 3 SchFDOP
         String test, row;
-
-        switch (upd) {
-            case ("1"):
-                upd = "0.xml";
-                break;
-            case ("2"):
-                upd = "Dop.xml";
-                break;
-            case ("3"):
-                upd = "SchfDop.xml";
-                break;
-            case ("4"):
-                upd = "IPSchfDop.xml";
-                break;
-        }
+        upd = switchFiles(upd);
         row = AddFile(upd, driver);
         ClickMenuFirstElement(5, driver);
 
@@ -265,31 +231,21 @@ public class FileCreateAndLoading {
         SendCabinet("Все хорошо 2", "Все хорошо 2.0", driver);
         Thread.sleep(500);
         EnterAndExit.Exit(driver);
-        driver.get(url);
-        if(url.equals(Iit8077.URL)){
+        String name = driver.getCurrentUrl();
+        if(name.contains(Iit8077.URL)){
         EnterAndExit.loggingCerts(upd2, driver);
         }
-        if(url.equals(Testedo.URL)){
+        if(name.equals(Testedo.URL)){
         EnterAndExit.loggingCerts(upd2, driver);
         }
+        Thread.sleep(1000);
         EnterAndExit.RoleSwitch(2, driver);
+        Thread.sleep(1000);
         EnterAndExit.startEndingCertAndSendingFiles(driver);
         Thread.sleep(1500);
 
+        switchFolders(upd, driver);
 
-        switch (upd) {
-            case ("0.xml"):
-                OpenNameFolder("СЧФ", driver);
-                break;
-            case ("Dop.xml"):
-                OpenNameFolder("АКТ", driver);
-                break;
-            case ("SchfDop.xml"):
-            case ("IPSchfDop.xml"):
-                Thread.sleep(500);
-                OpenNameFolder("УПД 123", driver);
-                break;
-        }
         EnterAndExit.startEndingCertAndSendingFiles(driver);
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
@@ -324,7 +280,84 @@ public class FileCreateAndLoading {
         }
         return row;
     }
+    public static String CreateFirstUDPDocumentAndSignOneAndSignTwo(String upd2, String upd, WebDriver driver) throws InterruptedException {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        // 1 SchF 2 DOP 3 SchFDOP
+        String test, row;
+        upd = switchFiles(upd);
+        row = AddFile(upd, driver);
+        ClickMenuFirstElement(5, driver);
 
+        Thread.sleep(4200);
+        driver.findElement(By.cssSelector(".glyphicon-edit")).click();
+        Element.WaitElementIsDisableAndClickIfNot("button.btn:nth-child(5)",driver);
+        Thread.sleep(1000);
+        EnterAndExit.startEndingCertAndSendingFiles(driver);
+        if (!upd.equals("Dop.xml")) {
+            Thread.sleep(20000);
+            driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
+            Thread.sleep(1500);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+        }
+        ClickMenuFirstElement(12, driver);
+        Thread.sleep(2000);
+        SendCabinet("Все хорошо 2", "Все хорошо 2.0", driver);
+        Thread.sleep(500);
+        EnterAndExit.Exit(driver);
+        String name = driver.getCurrentUrl();
+        if(name.contains(Iit8077.URL)){
+            EnterAndExit.loggingCerts(upd2, driver);
+        }
+        if(name.equals(Testedo.URL)){
+            EnterAndExit.loggingCerts(upd2, driver);
+        }
+        Thread.sleep(1000);
+        EnterAndExit.RoleSwitch(2, driver);
+        Thread.sleep(1000);
+        EnterAndExit.startEndingCertAndSendingFiles(driver);
+        Thread.sleep(1500);
+
+        switchFolders(upd, driver);
+
+        EnterAndExit.startEndingCertAndSendingFiles(driver);
+        Thread.sleep(3000);
+        driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
+        Element.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
+        Thread.sleep(1000);
+        if (!upd.equals("0.xml")) {
+            for (int i = 0; i < 20; i++) {
+                Thread.sleep(500);
+                driver.findElement(By.cssSelector("button.btn-default:nth-child(3) > span:nth-child(2)")).click();
+                Thread.sleep(1500);
+                driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
+                Thread.sleep(2000);
+                Actions builder2 = new Actions(driver);
+                Element.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
+                Thread.sleep(500);
+                builder2.contextClick(driver.findElement(By.cssSelector("#grid-basic2-row-" + row))
+                ).moveByOffset(-15, -15).sendKeys(Keys.ARROW_DOWN).build().perform();
+                test = driver.findElement(By.cssSelector("#cm-sign")).getAttribute("aria-disabled");
+                System.out.println(test);
+                driver.findElement(By.id("cm-sign_text")).click();
+                Thread.sleep(500);
+                if (test.equals("false")) {
+                    i = 21;
+                    System.out.println(i);
+                }
+            }
+            Thread.sleep(3000);
+            driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
+            Thread.sleep(15000);
+            driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
+            Thread.sleep(2000);
+            EnterAndExit.startEndingCertAndSendingFiles(driver);
+
+        }
+        switchFolders(upd, driver);
+        return row;
+    }
     public static void testEdoOr8077(String fileName,WebDriver driver) throws InterruptedException {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         WebElement upload = driver.findElement(By.xpath("//*[@id=\"fileUpload\"]"));
@@ -336,4 +369,45 @@ public class FileCreateAndLoading {
         Thread.sleep(1600);
         driver.findElement(By.xpath("//*[@id=\"upload\"]")).click();
     }
+
+
+    private static void switchFolders(String upd, WebDriver driver) throws InterruptedException {
+        System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
+        String folder = driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1)")).getAttribute("className");
+        System.out.println(folder);
+        if(folder.contains("collapsed")){
+            driver.findElement(By.cssSelector("ul.jqueryFileTree:nth-child(1) > li:nth-child(1) > a:nth-child(1)")).click();
+        }
+        switch (upd) {
+            case ("0.xml"):
+                OpenNameFolder("СЧФ", driver);
+                break;
+            case ("Dop.xml"):
+                OpenNameFolder("АКТ", driver);
+                break;
+            case ("SchfDop.xml"):
+            case ("IPSchfDop.xml"):
+                Thread.sleep(500);
+                OpenNameFolder("УПД 123", driver);
+                break;
+        }
+    }
+    private static String switchFiles(String upd) throws InterruptedException {
+        switch (upd) {
+            case ("1"):
+                upd = "0.xml";
+                break;
+            case ("2"):
+                upd = "Dop.xml";
+                break;
+            case ("3"):
+                upd = "SchfDop.xml";
+                break;
+            case ("4"):
+                upd = "IPSchfDop.xml";
+                break;
+        }
+        return upd;
+    }
+
 }

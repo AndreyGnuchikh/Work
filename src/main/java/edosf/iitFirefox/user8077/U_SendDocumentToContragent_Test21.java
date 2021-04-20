@@ -381,7 +381,7 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
     @Order(15)
     void O_SendUPDDocumentWith2Sign_Test15(){
         try{
-            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndTwo(URL, UPD2,"4",driver);
+            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo( UPD2,"4",driver);
             Thread.sleep(10000);
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
             Thread.sleep(500);

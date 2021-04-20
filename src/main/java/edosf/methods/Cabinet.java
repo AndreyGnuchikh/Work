@@ -72,12 +72,13 @@ public class Cabinet {
                 driver.findElement(By.id("cm-send_text")).click();
                 break;
             case (13):
-                driver.findElement(By.id("cm-folder_text")).click();
+                driver.findElement(By.id("cm-pretension_text")).click();
                 break;
             case (14):
-                driver.findElement(By.id("cm-del-full_text")).click();
+                driver.findElement(By.id("cm-folder_text")).click();
                 break;
             case (15):
+                driver.findElement(By.id("cm-del-full_text")).click();
                 break;
 
         }
@@ -96,7 +97,7 @@ public class Cabinet {
         }
         Thread.sleep(3800);
         EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
-        Thread.sleep(1200);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("[foldername=\"" + name + "\"]")).click();
         Thread.sleep(4000);
         EnterAndExit.startEndingCertAndSendingFiles("SkipSingFiles",driver);
@@ -108,8 +109,8 @@ public class Cabinet {
     }
     public static void Catch(WebDriver driver, Throwable e) {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
-        driver.quit();
         e.printStackTrace();
+        driver.quit();
         String srt = null;
         if(e.toString().contains("org.openqa.selenium.NoSuchElementException:")){
             srt = e.toString();
@@ -139,7 +140,9 @@ public class Cabinet {
         Assertions.fail(srt);
     }
     public static void SendCabinet(String who, String cabinet, WebDriver driver) throws InterruptedException {
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector(".selectize-input")).click();
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".selectize-input > input:nth-child(1)")).sendKeys(who);
         Thread.sleep(1500);
         driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();
@@ -155,6 +158,7 @@ public class Cabinet {
     public static void SendCabinet(String who, String cabinet, String coworker, WebDriver driver) throws InterruptedException {
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".selectize-input")).click();
+        Thread.sleep(500);
         driver.findElement(By.cssSelector(".selectize-input > input:nth-child(1)")).sendKeys(who);
         Thread.sleep(2000);
         driver.findElement(By.cssSelector(".selectize-dropdown-content > div:nth-child(1)")).click();

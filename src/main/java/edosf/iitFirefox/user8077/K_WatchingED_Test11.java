@@ -43,7 +43,7 @@ public class K_WatchingED_Test11 implements Iit8077 {
     @Order(1)
     void A_CheckAllButton_Test1() {
         try {
-            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndTwo(URL, UPD2, "2", driver);
+            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo( UPD2, "2", driver);
             test2 = driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).getText();
             Check.Check("Просмотреть", test2, driver);
             test2 = driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).getText();
@@ -62,7 +62,7 @@ public class K_WatchingED_Test11 implements Iit8077 {
     @Order(2)
     void B_CheckFill_Test2() {
         try {
-            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndTwo(URL, UPD2, "2", driver);
+            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "2", driver);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
             test = driver.findElement(By.cssSelector("#serviceModalQuestUPDModalEdit")).getText();
             Check.Check("Заполнить", test, driver);
@@ -85,7 +85,7 @@ public class K_WatchingED_Test11 implements Iit8077 {
     @Order(3)
     void C_CheckSign_Test3() {
         try {
-            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndTwo(URL, UPD2, "2", driver);
+            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo( UPD2, "2", driver);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalSign")).click();
@@ -102,7 +102,7 @@ public class K_WatchingED_Test11 implements Iit8077 {
     @Order(4)
     void D_CheckSkip_Test4() {
         try {
-            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndTwo(URL, UPD2, "2", driver);
+            test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "2", driver);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalShowDoc")).click();
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#serviceModalQuestUPDModalSpace")).click();

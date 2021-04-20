@@ -216,4 +216,26 @@ public class C_Download_Files_Test3 implements Iit8077 {
             Cabinet.Catch(driver, e);
         }
     }
+    @RetryingTest(NUM_FAIL)
+    @Order(14)
+    void A_AddFileUPDDopDownload_Successful_Test14() {
+        try {
+            FileCreateAndLoading.AddFileUPDError("Dop.xml", driver);
+            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+            Check.CheckExit("Файл Dop.xml был успешно сохранен", test2, driver);
+        } catch (Throwable e) {
+            Cabinet.Catch(driver, e);
+        }
+    }
+    @RetryingTest(NUM_FAIL)
+    @Order(15)
+    void A_AddFileUPDSchfDopDownload_Successful_Test15() {
+        try {
+            FileCreateAndLoading.AddFileUPDError("SchfDop.xml", driver);
+            test2 = driver.findElement(By.cssSelector(".resptext")).getText();
+            Check.CheckExit("Файл SchfDop.xml был успешно сохранен", test2, driver);
+        } catch (Throwable e) {
+            Cabinet.Catch(driver, e);
+        }
+    }
 }

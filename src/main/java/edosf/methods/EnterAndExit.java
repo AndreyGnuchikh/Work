@@ -74,7 +74,7 @@ public class EnterAndExit {
             case 2:
                 // Two
                 System.out.println("Role:" + i);
-                Thread.sleep(500);
+                Thread.sleep(700);
                 Element.WaitElementToBeClickableAndClick(".select2-selection__arrow",driver);
                 Thread.sleep(1000);
                 driver.findElement(By.cssSelector(".select2-results__option:nth-child(2)")).click();
