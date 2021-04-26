@@ -6,11 +6,12 @@ import edosf.methods.EnterAndExit;
 import edosf.settingsEdo.Iit8077;
 import edosf.methods.Check;
 import org.junit.jupiter.api.*;
-import org.junitpioneer.jupiter.RetryingTest;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class D_ChooseRoleAndCabinet_Test4 implements Iit8077 {
@@ -32,6 +33,7 @@ public class D_ChooseRoleAndCabinet_Test4 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(1)
+    @DisplayName("¬ход пользовател€ с 1 кабинетом и 1 роль User.")
     void A_UserWithOneCabinet_Test1() {
         try {
             EnterAndExit.LogPass(LOG_USER, PASS, driver);
@@ -45,6 +47,7 @@ public class D_ChooseRoleAndCabinet_Test4 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(2)
+    @DisplayName("¬ход пользовател€ с 1 кабинетом и 1 ролью Admin.")
     void B_WithOneCabinet_Test2() {
         try {
             EnterAndExit.LogPass(LOG_ADMIN, PASS, driver);
@@ -58,6 +61,7 @@ public class D_ChooseRoleAndCabinet_Test4 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(3)
+    @DisplayName("¬ход пользовател€ с 1 кабинетом и 1 ролью Support\n")
     void C_WithOneSupport_Test3() {
         try {
             EnterAndExit.LogPass(LOG_SUPPORT, PASS, driver);
@@ -71,6 +75,7 @@ public class D_ChooseRoleAndCabinet_Test4 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(4)
+    @DisplayName("¬ход пользовател€ с 1 кабинетом и 1 ролью BillingEditor")
     void D_WithOneBylling_Test4() {
         try {
             EnterAndExit.LogPass(LOG_BILLING, PASS, driver);
@@ -85,6 +90,7 @@ public class D_ChooseRoleAndCabinet_Test4 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(5)
+    @DisplayName("¬ход пользовател€ с 1 кабинетом и 2 рол€ми BillingEditor и Admin")
     void E_WithAB_Test5() {
         try {
             EnterAndExit.LogPass(LOG_ADMIN_BILLING, PASS, driver);
@@ -100,6 +106,7 @@ public class D_ChooseRoleAndCabinet_Test4 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(6)
+    @DisplayName("¬ход пользовател€ со всеми рол€ми")
     void F_WithALL_Test6() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -117,6 +124,7 @@ public class D_ChooseRoleAndCabinet_Test4 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(7)
+    @DisplayName("¬ход пользовател€ с 4 кабинетами")
     void G_User4cabinet_Test7() {
         try {
             EnterAndExit.LogPass(LOG_MANY_CABINETS, PASS, driver);

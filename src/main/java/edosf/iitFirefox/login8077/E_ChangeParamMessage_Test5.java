@@ -8,13 +8,14 @@ import edosf.settingsEdo.Iit8077;
 import edosf.methods.Email;
 import edosf.methods.FileCreateAndLoading;
 import org.junit.jupiter.api.*;
-import org.junitpioneer.jupiter.RetryingTest;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Date;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class E_ChangeParamMessage_Test5 implements Iit8077 {
@@ -37,6 +38,7 @@ public class E_ChangeParamMessage_Test5 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(1)
+    @DisplayName("Проверка получения письма: Извещение о пересылке документа")
     void A_SendingLetterAboutSendingFile_Test1() {
         try {
             driver = Drivers.ff();
@@ -77,6 +79,7 @@ public class E_ChangeParamMessage_Test5 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(2)
+    @DisplayName("Проверка получения письма: Извещение о согласовании документа")
     void B_SendingLetterAboutReportHarmonization_Test2() {
         try {
             Date date = new Date();
@@ -121,6 +124,7 @@ public class E_ChangeParamMessage_Test5 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(3)
+    @DisplayName("Проверка получения письма: Изменение ответственного исполнителя")
     void C_SendingLetterAboutResponsibilityPerformer_Test3() {
         try {
             driver = Drivers.ff();

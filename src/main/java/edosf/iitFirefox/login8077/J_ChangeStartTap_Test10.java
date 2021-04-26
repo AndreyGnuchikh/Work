@@ -6,11 +6,12 @@ import edosf.methods.EnterAndExit;
 import edosf.settingsEdo.Iit8077;
 import edosf.methods.Check;
 import org.junit.jupiter.api.*;
-import org.junitpioneer.jupiter.RetryingTest;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class J_ChangeStartTap_Test10 implements Iit8077 {
@@ -32,6 +33,7 @@ public class J_ChangeStartTap_Test10 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(1)
+    @DisplayName("ѕроверка перехода на главную страницу из меню логина")
     void A_ChangeStartTap_Test1() {
         try {
             driver.get(URL_9);
@@ -46,6 +48,7 @@ public class J_ChangeStartTap_Test10 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(2)
+    @DisplayName("ѕроверка перехода из главной страницы в роль пользовател€ (при логине пользовател€ в системе)")
     void B_ChangeStartTapLogin1_Test2() {
         try {
             driver.get(URL);
@@ -62,6 +65,7 @@ public class J_ChangeStartTap_Test10 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(3)
+    @DisplayName("ѕроверка перехода из главной страницы в роль админа (при логине админа в системе)")
     void C_ChangeStartTapLogin2_Test3() {
         try {
             driver.get(URL);
@@ -82,6 +86,7 @@ public class J_ChangeStartTap_Test10 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(4)
+    @DisplayName("ѕроверка перехода из главной страницы в роль пользовател€ (при разлогине пользовател€ в системе)")
     void D_ChangeStartTapLogout1_Test4() {
         try {
             driver.get(URL);
@@ -100,6 +105,7 @@ public class J_ChangeStartTap_Test10 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(5)
+    @DisplayName("ѕроверка перехода из главной страницы в роль админа (при разлогине админа в системе)")
     void E_ChangeStartTapLogout2_Test5() {
         try {
             driver.get(URL);

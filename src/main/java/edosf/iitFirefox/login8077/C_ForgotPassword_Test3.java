@@ -5,11 +5,12 @@ import edosf.settingsEdo.Drivers;
 import edosf.methods.*;
 import edosf.settingsEdo.Iit8077;
 import org.junit.jupiter.api.*;
-import org.junitpioneer.jupiter.RetryingTest;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class C_ForgotPassword_Test3 implements Iit8077 {
@@ -30,6 +31,7 @@ public class C_ForgotPassword_Test3 implements Iit8077 {
     }
     @RetryingTest(NUM_FAIL)
     @Order(1)
+    @DisplayName("Проверка логина и пароля из письма с напоминанием пароля. Вход в кабинет.")
     void A_ForgetPassword() {
         try {
             Email.Email(TEST_IIT_TEST, EMAIL_PASS,driver);
@@ -83,6 +85,7 @@ public class C_ForgotPassword_Test3 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(2)
+    @DisplayName("Проверка ввода ошибки не корректной почты.\n")
     void B_ForgetPassword2() {
 
         try {

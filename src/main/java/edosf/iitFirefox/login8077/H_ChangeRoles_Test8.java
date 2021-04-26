@@ -6,11 +6,12 @@ import edosf.methods.Cabinet;
 import edosf.methods.Check;
 import edosf.methods.EnterAndExit;
 import org.junit.jupiter.api.*;
-import org.junitpioneer.jupiter.RetryingTest;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class H_ChangeRoles_Test8 implements Iit8077 {
@@ -32,6 +33,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(1)
+    @DisplayName("Изменение роли Admin на User")
     void A_TestChangeRoleAdminToUser_Test1() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -48,6 +50,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(2)
+    @DisplayName("Изменение роли Admin на Support")
     void B_TestChangeRoleAdminToSupport_Test2() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -64,6 +67,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(3)
+    @DisplayName("Изменение роли Admin на BillingEditor")
     void C_TestChangeRoleAdminToBillingEditor_Test3() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -80,6 +84,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(4)
+    @DisplayName("Изменение роли User на Admin")
     void D_TestChangeRoleUserTo_Admin_Test4() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -96,6 +101,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(5)
+    @DisplayName("Изменение роли User на Support")
     void E_TestChangeRoleUserTo_Support_Test5() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -111,6 +117,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(6)
+    @DisplayName("Изменение роли User на BillingEditor")
     void F_TestChangeRoleUserTo_BillingEditor_Test6() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -127,6 +134,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(7)
+    @DisplayName("Изменение роли Support на Admin")
     void G_TestChangeRoleSupportTo_Admin_Test7() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -144,6 +152,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(8)
+    @DisplayName("Изменение роли Support на User")
     void H_TestChangeRoleSupportTo_User_Test8() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -160,6 +169,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(9)
+    @DisplayName("Изменение роли Support на BillingEditor")
     void I_TestChangeRoleSupportTo_BillingEditor_Test9() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -176,6 +186,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(10)
+    @DisplayName("Изменение роли BillingEditor на Admin")
     void J_TestChangeRoleBillingEditorToAdmin__Test10() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -194,6 +205,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(11)
+    @DisplayName("Изменение роли BillingEditor на User")
     void K_TestChangeRoleBillingEditorToUser__Test11() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -213,6 +225,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(12)
+    @DisplayName("Изменение роли BillingEditor на Support")
     void L_TestChangeRoleBillingEditorToSupport__Test12() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -230,7 +243,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
         }
     }
 
-    void Admin() throws InterruptedException {
+    private void Admin() throws InterruptedException {
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Check.Check("Все контрагенты", checking, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();
@@ -239,7 +252,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
     }
 
-    void User() throws InterruptedException {
+    private void User() throws InterruptedException {
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Check.Check("Кабинет Все хорошо", checking, driver);
         Thread.sleep(500);
@@ -248,7 +261,7 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
         driver.findElement(By.cssSelector(".change-cabin > button:nth-child(1)")).click();
     }
 
-    void Support() throws InterruptedException {
+    private void Support() throws InterruptedException {
         checking = driver.findElement(By.cssSelector(".pad > h1:nth-child(1)")).getText();
         Check.Check(SUPPORT_CABINET, checking, driver);
         driver.findElement(By.xpath("//*[@id=\"user-nav\"]")).click();

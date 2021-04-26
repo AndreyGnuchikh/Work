@@ -5,12 +5,13 @@ import edosf.methods.Cabinet;
 import edosf.methods.EnterAndExit;
 import edosf.settingsEdo.Iit8077;
 import edosf.methods.Check;
+
 import org.junit.jupiter.api.*;
-import org.junitpioneer.jupiter.RetryingTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 
 
@@ -35,6 +36,7 @@ public class A_LoginLogPass_Test1 implements Iit8077 {
     }
     @RetryingTest(NUM_FAIL)
     @Order(1)
+    @DisplayName("Проверка отсутствия формирования квитанций без подписи.")
     void A_AllRightTest1() {
         try {
             EnterAndExit.LogPass(LOG1LOG, PASS, driver);
@@ -48,6 +50,7 @@ public class A_LoginLogPass_Test1 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(2)
+    @DisplayName("Проверка ошибки при входе пользователя с отключенным контрагентом.")
     void B_ContragentIsDisconnectedTest2() {
         try {
             EnterAndExit.LogPass(LOG2LOG, PASS, driver);
@@ -62,6 +65,7 @@ public class A_LoginLogPass_Test1 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(3)
+    @DisplayName("Проверка ошибки при входе пользователя с заблокированным контрагентом.")
     void C_ContragentIsBlockedTest3() {
         try {
             EnterAndExit.LogPass(LOG3LOG, PASS, driver);
@@ -76,6 +80,7 @@ public class A_LoginLogPass_Test1 implements Iit8077 {
 
 /*    @RetryingTest(NUM_FAIL)
     @Order(4)
+    @DisplayName("Проверка ошибки при входе пользователя, если он был заблокирован.")
     void D_UserDontCatchtoContragentTest4() {
         try {
             Enter.LogPass(log4log, pass, driver);
@@ -89,7 +94,8 @@ public class A_LoginLogPass_Test1 implements Iit8077 {
     }*/
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
+    @Order(4)
+    @DisplayName("Проверка ошибки при входе заблокированного пользователя.")
     void D_UserIsBlockedTest4() {
         try {
             EnterAndExit.LogPass(LOG5LOG, PASS, driver);
@@ -103,7 +109,8 @@ public class A_LoginLogPass_Test1 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
+    @Order(5)
+
     void E_UserDontHaveRole5() {
         try {
             EnterAndExit.LogPass(LOG6LOG, PASS, driver);
@@ -130,7 +137,8 @@ public class A_LoginLogPass_Test1 implements Iit8077 {
     }*/
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
+    @Order(6)
+    @DisplayName("Проверка ошибки при входе пользователя с ошибкой в логине или пароле.")
     void F_WrongLogPass6() {
         try {
             EnterAndExit.LogPass(WRONG_7_LOG, WRONG_7_LOG, driver);

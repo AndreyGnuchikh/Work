@@ -21,6 +21,7 @@ public class FileCreateAndLoading {
         System.out.println("-----Start method " + Thread.currentThread().getStackTrace()[1].getMethodName());
         // Add file
         String row;
+        EnterAndExit.startEndingCertAndSendingFiles(driver);
         Thread.sleep(3000);
         driver.findElement(By.cssSelector(".createDocument")).click();
         Element.VisibleElement180SecToWait(20,"#create-doc-panel > div:nth-child(2) > i",driver);
@@ -324,6 +325,7 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
+        Thread.sleep(500);
         Element.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
         Thread.sleep(1000);
         if (!upd.equals("0.xml")) {

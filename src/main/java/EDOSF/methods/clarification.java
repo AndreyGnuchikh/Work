@@ -119,7 +119,7 @@ public class Clarification {
         }
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".modal-sm > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
-        Thread.sleep(2000);
+        Thread.sleep(2300);
         driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         String row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
         return row;

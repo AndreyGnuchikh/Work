@@ -6,7 +6,7 @@ import edosf.methods.HelpUser;
 import edosf.settingsEdo.Iit8077;
 import edosf.methods.Check;
 import org.junit.jupiter.api.*;
-import org.junitpioneer.jupiter.RetryingTest;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,6 +16,7 @@ import java.util.List;
 
 import static edosf.methods.Path.GetPathTools;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
+import org.junitpioneer.jupiter.RetryingTest;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class K_DownloadMaterial_Test11 implements Iit8077 {
@@ -41,6 +42,7 @@ public class K_DownloadMaterial_Test11 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(1)
+    @DisplayName("Проверка скачивания файла")
     void A_TestDownloadFile_Test1() {
         try {
             driver.get(URL10);
@@ -59,6 +61,7 @@ public class K_DownloadMaterial_Test11 implements Iit8077 {
 
     @RetryingTest(NUM_FAIL)
     @Order(2)
+    @DisplayName("Проверка перехода по ссылке.")
     void B_TestLink_Test2() {
         try {
             driver.get(URL10);

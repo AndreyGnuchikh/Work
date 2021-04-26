@@ -32,6 +32,7 @@ public class Z_TestSleep60min_For_Test9 implements Iit8077 {
     }
 
     @Ignore
+    @DisplayName("Проверка авто выхода через 60 минут")
     void A_Exit_LongTime_Test1() {
         try {
             driver.get(URL);
