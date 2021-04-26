@@ -14,7 +14,7 @@ import static edosf.methods.Path.GetPathTools;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class C_Download_Files_Test3 implements Iit8077 {
     WebDriver driver;
     String test2;
@@ -34,7 +34,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_AddFileUPDDownload_Successful_Test1() throws NoSuchElementException {
         try {
             FileCreateAndLoading.AddFileUPDError("0.xml", driver);
@@ -47,7 +46,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
 
     //Download Wrong
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_AddFileUPDDownloadWrong_Seller_Test2() {
         try {
             FileCreateAndLoading.AddFileUPDError("1.xml", driver);
@@ -59,7 +57,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_AddFileUPDDownloadWrong_Validation820and189_Test3() {
         try {
             FileCreateAndLoading.AddFileUPDError("2.xml", driver);
@@ -71,7 +68,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_AddFileUPDDownloadWrong_IDOTPR_Test4() {
         try {
             FileCreateAndLoading.AddFileUPDError("3.xml", driver);
@@ -83,7 +79,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_AddFileUPDDownloadWrong_IDPOL_Test5() {
         try {
             FileCreateAndLoading.AddFileUPDError("4.xml", driver);
@@ -95,7 +90,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_AddFileUPDDownloadWrong_DoesNotFindSellerInSystem_Test6() {
         try {
             FileCreateAndLoading.AddFileUPDError("5.xml", driver);
@@ -107,7 +101,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_AddFileUPDDownloadWrong_DoesNotFindTypeDocument_Test7() {
         try {
             FileCreateAndLoading.AddFileUPDError("6.xml", driver);
@@ -119,7 +112,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     void H_AddFileUPDDownloadWrong_IDEDO_Test8() {
         try {
             FileCreateAndLoading.AddFileUPDError("7.xml", driver);
@@ -131,7 +123,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(9)
     void I_AddFileUPDDownloadWrong_IDFILE_Test9() {
         try {
             FileCreateAndLoading.AddFileUPDError("8.xml", driver);
@@ -143,7 +134,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
      @RetryingTest(NUM_FAIL)
-    @Order(10)
     void J_AddFileUPDDownloadWrong_IDFILEWrongFilled_Test10() {
         try {
             FileCreateAndLoading.AddFileUPDError("9.xml", driver);
@@ -157,7 +147,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
 
 
     @RetryingTest(NUM_FAIL)
-    @Order(11)
     void Ê_AddFileUPDDownloadWrong_ValidationFile_Test11() {
         try {
             Thread.sleep(1500);
@@ -180,7 +169,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(12)
     void L_AddFileUPDDownloadWrong_andCheckReceipts_Test12() {
         try {
             FileCreateAndLoading.AddFileUPDError("2.xml", driver);
@@ -206,7 +194,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(13)
     void M_AddFileUPDDownload_155_Test13() {
         try {
             FileCreateAndLoading.AddFileUPDError("11.xml", driver);
@@ -217,7 +204,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(14)
     void A_AddFileUPDDopDownload_Successful_Test14() {
         try {
             FileCreateAndLoading.AddFileUPDError("Dop.xml", driver);
@@ -228,7 +214,6 @@ public class C_Download_Files_Test3 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(15)
     void A_AddFileUPDSchfDopDownload_Successful_Test15() {
         try {
             FileCreateAndLoading.AddFileUPDError("SchfDop.xml", driver);

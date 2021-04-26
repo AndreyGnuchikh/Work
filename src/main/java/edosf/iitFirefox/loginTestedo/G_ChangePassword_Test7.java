@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class G_ChangePassword_Test7 implements Testedo {
     private WebDriver driver;
     public String sleep;
@@ -38,7 +38,6 @@ public class G_ChangePassword_Test7 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_Old_PasswordInCabinet_Test1() {
         try {
             log(PASS_7LOG, PASS_7LOG, PASS_7LOG);
@@ -51,7 +50,6 @@ public class G_ChangePassword_Test7 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_PasswordWriteSecondWrong_Test2() {
         try {
             log(PASS_7LOG, PASS_7LOG, WRONG_7LOG);
@@ -64,7 +62,6 @@ public class G_ChangePassword_Test7 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_OldPasswordWrittenWrong_Test3() {
         try {
             log(WRONG_7LOG, PASS_7LOG, PASS_7LOG);
@@ -77,7 +74,6 @@ public class G_ChangePassword_Test7 implements Testedo {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_Change_PasswordInCabinet_Test4() {
         try {
             log(PASS_7LOG, NEW_PASS_7LOG, NEW_PASS_7LOG);

@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class D_ChooseRoleAndCabinet_Test4 implements Testedo {
     private WebDriver driver;
     public String checking;
@@ -31,7 +31,6 @@ public class D_ChooseRoleAndCabinet_Test4 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_UserWithOneCabinet_Test1() {
         try {
             EnterAndExit.LogPass(LOG_USER, PASS, driver);
@@ -44,7 +43,6 @@ public class D_ChooseRoleAndCabinet_Test4 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_WithOneCabinet_Test2() {
         try {
             EnterAndExit.LogPass(LOG_ADMIN, PASS, driver);
@@ -57,7 +55,6 @@ public class D_ChooseRoleAndCabinet_Test4 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_WithOneSupport_Test3() {
         try {
             EnterAndExit.LogPass(LOG_SUPPORT, PASS, driver);
@@ -70,7 +67,6 @@ public class D_ChooseRoleAndCabinet_Test4 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_WithOneBylling_Test4() {
         try {
             EnterAndExit.LogPass(LOG_BILLING, PASS, driver);
@@ -84,7 +80,6 @@ public class D_ChooseRoleAndCabinet_Test4 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_WithAB_Test5() {
         try {
             EnterAndExit.LogPass(LOG_ADMIN_BILLING, PASS, driver);
@@ -99,7 +94,6 @@ public class D_ChooseRoleAndCabinet_Test4 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_WithALL_Test6() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -116,7 +110,6 @@ public class D_ChooseRoleAndCabinet_Test4 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_User4cabinet_Test7() {
         try {
             EnterAndExit.LogPass(LOG_MANY_CABINETS, PASS, driver);

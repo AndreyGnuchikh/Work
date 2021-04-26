@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class Q_AddCommentsToDocumentFromCardED_Test17 implements Iit8077 {
     WebDriver driver;
     String test0, test, test2;
@@ -35,7 +35,6 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_add50Comments_Test1() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -71,7 +70,6 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_addLongComment_Test2() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -92,7 +90,6 @@ public class Q_AddCommentsToDocumentFromCardED_Test17 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_addCommentInCabinet_Test3() {
         try {
 

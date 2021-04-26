@@ -16,7 +16,7 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class E_BackBehindInteractiveForm_Test5 implements Testedo {
     WebDriver driver;
     String test2;
@@ -39,7 +39,6 @@ public class E_BackBehindInteractiveForm_Test5 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_BackBehindInteractiveFormSchF_Test1() {
         try {
             Thread.sleep(2000);
@@ -66,7 +65,6 @@ public class E_BackBehindInteractiveForm_Test5 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_BackBehindInteractiveFormACT_Test2() {
         try {
             Thread.sleep(2000);
@@ -97,7 +95,6 @@ public class E_BackBehindInteractiveForm_Test5 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_BackBehindInteractiveFormSCHFDOP_Test3() {
         try {
             Thread.sleep(2000);

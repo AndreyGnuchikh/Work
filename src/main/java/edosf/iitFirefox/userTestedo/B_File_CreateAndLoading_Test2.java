@@ -16,7 +16,7 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class B_File_CreateAndLoading_Test2 implements Testedo {
     public WebDriver driver;
     public String test;
@@ -37,7 +37,6 @@ public class B_File_CreateAndLoading_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_AddFilePositive_Test1() {
         try {
             //Проверка имени Сотрудник отправителя и названия файла
@@ -54,7 +53,6 @@ public class B_File_CreateAndLoading_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_AddFileComment_Test2() {
         try {
             //Проверка комментария
@@ -79,7 +77,6 @@ public class B_File_CreateAndLoading_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_AddFileOtherFolder_Test3() {
         try {
             //Проверка перемещения файла в другую папку.
@@ -114,7 +111,6 @@ public class B_File_CreateAndLoading_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_AddFileMore50mbError_Test4() {
         try {
             //Файл больше 50 мегабайт выпадает ошибка
@@ -133,7 +129,6 @@ public class B_File_CreateAndLoading_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_AddFileMore400files_Test5() {
         try {
             //Загрузка файлов больше 400
@@ -155,7 +150,6 @@ public class B_File_CreateAndLoading_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_AddFile400files_Test6() {
         try {
             //Загрузка файлов = 400
@@ -181,7 +175,6 @@ public class B_File_CreateAndLoading_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     void J_AddWrongFile_Test7() {
         try {
             //Загрузка файлов = 400

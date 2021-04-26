@@ -16,7 +16,7 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class N_SaveDocumentInPc_Test14 implements Testedo {
     WebDriver driver;
     String test, test2;
@@ -37,7 +37,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_SaveDocument_Test1() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
@@ -54,7 +53,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_SaveCompliance_Test2() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
@@ -71,7 +69,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_SaveP7SFormat_Test3() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
@@ -88,7 +85,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_SaveP7SFormatAndDocument_Test4() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
@@ -107,7 +103,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_SaveP7SFormatAndCompliance_Test5() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
@@ -126,7 +121,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_SaveAll_Test6() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
@@ -147,7 +141,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_SaveComplianceAndDocument_Test7() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
@@ -168,7 +161,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     void H_DatesName_Test8() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
@@ -189,7 +181,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(9)
     void I_DOP_SaveDocument_Test9() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("2", driver);
@@ -206,7 +197,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(10)
     void J_DOP_SaveCompliance_Test10() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("2", driver);
@@ -223,7 +213,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(11)
     void K_DOP_SaveP7SFormat_Test11() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("2", driver);
@@ -240,7 +229,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(12)
     void L_DOP_SaveP7SFormatAndDocument_Test12() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("2", driver);
@@ -260,7 +248,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(13)
     void M_DOP_SaveP7SFormatAndCompliance_Test13() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("2", driver);
@@ -279,7 +266,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(14)
     void N_DOP_SaveAll_Test14() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("2", driver);
@@ -300,7 +286,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(15)
     void O_DOP_SaveComplianceAndDocument_Test15() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUPDDocumentAndSign("2", driver);
@@ -320,7 +305,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(16)
     void P_NoFormat_SaveDocument_Test16() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
@@ -339,7 +323,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(17)
     void Q_NoFormat_SaveCompliance_Test17() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
@@ -359,7 +342,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(18)
     void R_NoFormat_SaveP7s_Test18() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
@@ -379,7 +361,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(19)
     void S_NoFormat_SaveP7SFormatAndDocument_Test19() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
@@ -400,7 +381,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(20)
     void T_NoFormat_SaveP7SFormatAndCompliance_Test20() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
@@ -421,7 +401,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(21)
     void U_NoFormat_SaveAll_Test21() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(5, "1.html", driver);
@@ -444,7 +423,6 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(22)
     void V_NoFormat_NoSaveP7s_Test22() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(6, "1.html", driver);

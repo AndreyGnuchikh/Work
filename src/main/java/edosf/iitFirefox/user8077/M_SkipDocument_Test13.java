@@ -16,7 +16,7 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class M_SkipDocument_Test13 implements Iit8077 {
     WebDriver driver;
     String test, test2;
@@ -38,7 +38,6 @@ public class M_SkipDocument_Test13 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_SkipDocument_DOP_Test1() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo( UPD2, "2", driver);
@@ -59,7 +58,6 @@ public class M_SkipDocument_Test13 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_SkipDocument_SchfDOP_Test2() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "3", driver);
@@ -80,7 +78,6 @@ public class M_SkipDocument_Test13 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_SkipDocument_Schf_Test3() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "1", driver);

@@ -15,7 +15,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     WebDriver driver;
     String test;
@@ -36,7 +36,6 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     @DisplayName("Проверка изменений в карточке Клиента для параметра: Не выбрано")
     void A_DontChange_Test1() {
         try {
@@ -47,7 +46,6 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     @DisplayName("Проверка изменений в карточке Клиента для параметра: Лицо, ответственное за подписание счетов-фактур")
     void B_Change2paragraph_Test2() {
         try {
@@ -58,7 +56,6 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     @DisplayName("Проверка изменений в карточке Клиента для параметра: Лицо, совершившее сделку, операцию\n")
     void C_Change3paragraph_Test3() {
         try {
@@ -69,7 +66,6 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     @DisplayName("Проверка изменений в карточке Клиента для параметра: Лицо, совершившее сделку, операцию и ответственное за ее оформление\n")
     void D_Change4paragraph_Test4() {
         try {
@@ -80,7 +76,6 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     @DisplayName("Проверка изменений в карточке Клиента для параметра: Лицо, ответственное за оформление свершившегося события\n")
     void E_Change5paragraph_Test5() {
         try {
@@ -91,7 +86,6 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     @DisplayName("Проверка изменений в карточке Клиента для параметра: Лицо, совершившее сделку, операцию и ответственное за подписание счетов-фактур\n")
     void F_Change6paragraph_Test6() {
         try {
@@ -102,7 +96,6 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     @DisplayName("Проверка изменений в карточке Клиента для параметра: Лицо, совершившее сделку, операцию и ответственное за ее оформление и за подписание счетов-фактур\n")
     void G_Change7paragraph_Test7() {
         try {
@@ -113,7 +106,6 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     @DisplayName("Проверка изменений в карточке Клиента для параметра: Лицо, ответственное за оформление свершившегося события и за подписание счетов-фактур\n")
     void H_Change8paragraph_Test8() {
         try {
@@ -124,7 +116,6 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(9)
     @DisplayName("Проверка сохранения поля Основание полномочий\n")
     void I_ChangeBasisOfAuthority_Test9() {
         try {

@@ -12,7 +12,7 @@ import java.util.Date;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class E_ChangeParamMessage_Test5 implements Testedo {
     private WebDriver driver;
     public String sleep;
@@ -32,7 +32,6 @@ public class E_ChangeParamMessage_Test5 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_SendingLetterAboutSendingFile_Test1() {
         try {
             driver = Drivers.ff();
@@ -72,7 +71,6 @@ public class E_ChangeParamMessage_Test5 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_SendingLetterAboutReportHarmonization_Test2() {
         try {
             Date date = new Date();
@@ -116,7 +114,6 @@ public class E_ChangeParamMessage_Test5 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_SendingLetterAboutResponsibilityPerformer_Test3() {
         try {
             driver = Drivers.ff();

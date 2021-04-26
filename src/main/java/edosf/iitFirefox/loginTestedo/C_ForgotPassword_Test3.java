@@ -11,7 +11,7 @@ import org.junitpioneer.jupiter.RetryingTest;
 
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class C_ForgotPassword_Test3 implements Testedo {
 
     private WebDriver driver;
@@ -32,7 +32,6 @@ public class C_ForgotPassword_Test3 implements Testedo {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_ForgetPassword() {
         try {
             Email.Email(TEST_IIT_TEST, EMAIL_PASS,driver);
@@ -85,7 +84,6 @@ public class C_ForgotPassword_Test3 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_ForgetPassword2() {
 
         try {

@@ -5,13 +5,13 @@ import edosf.methods.Cabinet;
 import edosf.methods.EnterAndExit;
 import edosf.settingsEdo.Iit8077;
 import edosf.methods.Check;
-import org.junit.Ignore;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class Z_TestSleep60min_For_Test9 implements Iit8077 {
     private WebDriver driver;
     public String text;
@@ -31,7 +31,7 @@ public class Z_TestSleep60min_For_Test9 implements Iit8077 {
         }
     }
 
-    @Ignore
+    @Disabled("Disabled long test!")
     @DisplayName("Проверка авто выхода через 60 минут")
     void A_Exit_LongTime_Test1() {
         try {

@@ -19,7 +19,7 @@ import static edosf.methods.Path.GetPathTools;
 
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class H_ViewDocument_Test8 implements Testedo {
     public static WebDriver driver;
     public String test2;
@@ -40,7 +40,6 @@ public class H_ViewDocument_Test8 implements Testedo {
 
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_DownloadFile_Test1() {
         try {
             setUP();
@@ -65,7 +64,6 @@ public class H_ViewDocument_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_DownloadFileSecondWindow_Test2() {
         try {
             driver = Drivers.ffWithoutAddon();
@@ -96,7 +94,6 @@ public class H_ViewDocument_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_OpenUPD_Test3() {
         try {
             setUP();

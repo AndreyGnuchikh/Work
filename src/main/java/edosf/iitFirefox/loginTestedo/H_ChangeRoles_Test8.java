@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class H_ChangeRoles_Test8 implements Testedo {
     private WebDriver driver;
     public String checking;
@@ -31,7 +31,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_TestChangeRoleAdminToUser_Test1() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -47,7 +46,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_TestChangeRoleAdminToSupport_Test2() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -63,7 +61,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_TestChangeRoleAdminToBillingEditor_Test3() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -79,7 +76,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_TestChangeRoleUserTo_Admin_Test4() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -95,7 +91,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_TestChangeRoleUserTo_Support_Test5() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -110,7 +105,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_TestChangeRoleUserTo_BillingEditor_Test6() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -126,7 +120,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_TestChangeRoleSupportTo_Admin_Test7() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -143,7 +136,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     void H_TestChangeRoleSupportTo_User_Test8() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -159,7 +151,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(9)
     void I_TestChangeRoleSupportTo_BillingEditor_Test9() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -175,7 +166,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(10)
     void J_TestChangeRoleBillingEditorToAdmin__Test10() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -193,7 +183,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(11)
     void K_TestChangeRoleBillingEditorToUser__Test11() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);
@@ -212,7 +201,6 @@ public class H_ChangeRoles_Test8 implements Testedo {
 
 
     @RetryingTest(NUM_FAIL)
-    @Order(12)
     void L_TestChangeRoleBillingEditorToSupport__Test12() {
         try {
             EnterAndExit.LogPass(LOG_ALL, PASS, driver);

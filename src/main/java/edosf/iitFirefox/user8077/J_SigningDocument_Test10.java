@@ -19,7 +19,7 @@ import org.junitpioneer.jupiter.RetryingTest;
 import static java.lang.Runtime.getRuntime;
 import static edosf.methods.EnterAndExit.getCert;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class J_SigningDocument_Test10 implements Iit8077 {
 
     public WebDriver driver;
@@ -30,7 +30,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
 
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_Signing_Schf_Document_Test1() {
         try {
             setUp();
@@ -50,7 +49,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_Signing_Dop_Document_Test2() {
         try {
             setUp();
@@ -70,7 +68,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_Signing_Schf_DopDocument_Test3() {
         try {
             setUp();
@@ -91,7 +88,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_SigningDocument_Test4() {
         try {
             setUp();
@@ -112,7 +108,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_Signing_Dop_Documentml2_Test5() {
         try {
             setUp();
@@ -154,7 +149,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_Signing_SchfDop_Documentxml2_Test6() {
         try {
             setUp();
@@ -225,7 +219,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
 //    }
 
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_No_Second_Signing_Test7() {
         try {
             setUp();
@@ -247,7 +240,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     void H_Error_Test8() {
         try {
             driver = Drivers.ff();
@@ -284,7 +276,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(9)
     void I_CloseWindow_Test9() {
         try {
             setUp();
@@ -301,7 +292,6 @@ public class J_SigningDocument_Test10 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(10)
     void J_NoPermitSigningUPD_Test10() {
         try {
             driver = Drivers.ff();

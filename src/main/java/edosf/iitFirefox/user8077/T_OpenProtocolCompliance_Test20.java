@@ -18,7 +18,7 @@ import java.util.Locale;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class T_OpenProtocolCompliance_Test20 implements Iit8077 {
     WebDriver driver;
     String test;
@@ -40,7 +40,6 @@ public class T_OpenProtocolCompliance_Test20 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_NameCardED_Test1() {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);
@@ -55,7 +54,6 @@ public class T_OpenProtocolCompliance_Test20 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_NameCardED_Test2() {
         try {
             Date date = new Date();
@@ -73,7 +71,6 @@ public class T_OpenProtocolCompliance_Test20 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_SignCardED_Test3() {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);
@@ -96,7 +93,6 @@ public class T_OpenProtocolCompliance_Test20 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_OperatorCardED_Test4() {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);
@@ -111,7 +107,6 @@ public class T_OpenProtocolCompliance_Test20 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_EmailIITCardED_Test5() {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);
@@ -126,7 +121,6 @@ public class T_OpenProtocolCompliance_Test20 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_CardEDCheckNewWindow_Test6() {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);

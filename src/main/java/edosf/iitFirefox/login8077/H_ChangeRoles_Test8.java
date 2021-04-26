@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class H_ChangeRoles_Test8 implements Iit8077 {
     private WebDriver driver;
     public String checking;
@@ -32,7 +32,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     @DisplayName("Изменение роли Admin на User")
     void A_TestChangeRoleAdminToUser_Test1() {
         try {
@@ -49,7 +48,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     @DisplayName("Изменение роли Admin на Support")
     void B_TestChangeRoleAdminToSupport_Test2() {
         try {
@@ -66,7 +64,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     @DisplayName("Изменение роли Admin на BillingEditor")
     void C_TestChangeRoleAdminToBillingEditor_Test3() {
         try {
@@ -83,7 +80,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     @DisplayName("Изменение роли User на Admin")
     void D_TestChangeRoleUserTo_Admin_Test4() {
         try {
@@ -100,7 +96,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     @DisplayName("Изменение роли User на Support")
     void E_TestChangeRoleUserTo_Support_Test5() {
         try {
@@ -116,7 +111,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     @DisplayName("Изменение роли User на BillingEditor")
     void F_TestChangeRoleUserTo_BillingEditor_Test6() {
         try {
@@ -133,7 +127,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     @DisplayName("Изменение роли Support на Admin")
     void G_TestChangeRoleSupportTo_Admin_Test7() {
         try {
@@ -151,7 +144,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     @DisplayName("Изменение роли Support на User")
     void H_TestChangeRoleSupportTo_User_Test8() {
         try {
@@ -168,7 +160,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(9)
     @DisplayName("Изменение роли Support на BillingEditor")
     void I_TestChangeRoleSupportTo_BillingEditor_Test9() {
         try {
@@ -185,7 +176,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(10)
     @DisplayName("Изменение роли BillingEditor на Admin")
     void J_TestChangeRoleBillingEditorToAdmin__Test10() {
         try {
@@ -204,7 +194,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(11)
     @DisplayName("Изменение роли BillingEditor на User")
     void K_TestChangeRoleBillingEditorToUser__Test11() {
         try {
@@ -224,7 +213,6 @@ public class H_ChangeRoles_Test8 implements Iit8077 {
 
 
     @RetryingTest(NUM_FAIL)
-    @Order(12)
     @DisplayName("Изменение роли BillingEditor на Support")
     void L_TestChangeRoleBillingEditorToSupport__Test12() {
         try {

@@ -5,13 +5,12 @@ import edosf.settingsEdo.Testedo;
 import edosf.methods.Cabinet;
 import edosf.methods.Check;
 import edosf.methods.EnterAndExit;
-import org.junit.Ignore;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class Z_TestSleep60min_For_Test9 implements Testedo {
     private WebDriver driver;
     public String text;
@@ -29,8 +28,7 @@ public class Z_TestSleep60min_For_Test9 implements Testedo {
             Cabinet.Catch(driver, e);
         }
     }
-    @Ignore
-    @Order(1)
+    @Disabled("Disabled long test!")
     void A_Exit_LongTime_Test2() {
         try {
             driver.get(URL);

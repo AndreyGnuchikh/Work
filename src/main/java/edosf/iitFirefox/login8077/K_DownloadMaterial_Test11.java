@@ -18,7 +18,7 @@ import static edosf.methods.Path.GetPathTools;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class K_DownloadMaterial_Test11 implements Iit8077 {
     public WebDriver driver;
     public Boolean test;
@@ -41,7 +41,6 @@ public class K_DownloadMaterial_Test11 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     @DisplayName("Проверка скачивания файла")
     void A_TestDownloadFile_Test1() {
         try {
@@ -60,7 +59,6 @@ public class K_DownloadMaterial_Test11 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     @DisplayName("Проверка перехода по ссылке.")
     void B_TestLink_Test2() {
         try {

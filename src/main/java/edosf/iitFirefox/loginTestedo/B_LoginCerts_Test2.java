@@ -14,7 +14,7 @@ import org.junitpioneer.jupiter.RetryingTest;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import static java.lang.Runtime.getRuntime;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class B_LoginCerts_Test2 implements Testedo {
     public String checking;
     private WebDriver driver;
@@ -33,7 +33,6 @@ public class B_LoginCerts_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_ValidDate_Test1() {
         try {
             EnterAndExit.loggingCerts(FIO, driver);
@@ -47,7 +46,6 @@ public class B_LoginCerts_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_ContragentIsDisconnect_Test2() {
         try {
             EnterAndExit.loggingCerts(FIO2, driver);
@@ -60,7 +58,6 @@ public class B_LoginCerts_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_ContragentIsBlock_Test3() {
         try {
             EnterAndExit.loggingCerts(FIO3, driver);
@@ -73,7 +70,6 @@ public class B_LoginCerts_Test2 implements Testedo {
     }
 
 /*    @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_UserNoCabinet_Test4() {
         try {
             Enter.loggingCerts(fio4, driver);
@@ -92,7 +88,6 @@ public class B_LoginCerts_Test2 implements Testedo {
     }*/
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void D_UserIsBlock_Test4() {
         try {
             EnterAndExit.loggingCerts(FIO5, driver);
@@ -106,7 +101,6 @@ public class B_LoginCerts_Test2 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void E_UserNoHaveRole_Test5() {
         try {
             EnterAndExit.loggingCerts(FIO6, driver);
@@ -120,7 +114,6 @@ public class B_LoginCerts_Test2 implements Testedo {
     }
 
    /* @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_UserNoHaveCabinetTest7() {
         try {
             Enter.loggingCerts(fio7, driver);
@@ -158,7 +151,6 @@ public class B_LoginCerts_Test2 implements Testedo {
     }*/
 
     @RetryingTest(NUM_FAIL)
-    @Order(10)
     void F_KeyDontInput6() {
         try {
             EnterAndExit.loggingCerts(FIO10, driver);

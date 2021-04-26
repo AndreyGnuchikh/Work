@@ -14,7 +14,7 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class L_CompletedEDWithSideCustomer_Test12 implements Testedo {
     WebDriver driver;
     String test, test2;
@@ -36,7 +36,6 @@ public class L_CompletedEDWithSideCustomer_Test12 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_CompletedCoworker_DOP_Test1() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "2", driver);
@@ -53,7 +52,6 @@ public class L_CompletedEDWithSideCustomer_Test12 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_RepresentativeOfTheOrganization_DOP_Test2() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo( UPD2, "2", driver);
@@ -84,7 +82,6 @@ public class L_CompletedEDWithSideCustomer_Test12 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_Individual_DOP_Test3() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "2", driver);
@@ -102,7 +99,6 @@ public class L_CompletedEDWithSideCustomer_Test12 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_CompletedCoworker_SchfDOP_Test4() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo( UPD2, "3", driver);
@@ -119,7 +115,6 @@ public class L_CompletedEDWithSideCustomer_Test12 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_RepresentativeOfTheOrganization_SchfDOP_Test5() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "3", driver);
@@ -150,7 +145,6 @@ public class L_CompletedEDWithSideCustomer_Test12 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_Individual_SchfDOP_Test6() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "3", driver);

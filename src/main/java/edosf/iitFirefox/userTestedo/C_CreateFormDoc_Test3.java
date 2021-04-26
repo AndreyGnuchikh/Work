@@ -17,7 +17,7 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class C_CreateFormDoc_Test3 implements Testedo {
     WebDriver driver;
     String test2;
@@ -40,7 +40,6 @@ public class C_CreateFormDoc_Test3 implements Testedo {
 
     //Add UPD
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_AddSCHF_Test1() {
         try {
             Thread.sleep(2000);
@@ -70,7 +69,6 @@ public class C_CreateFormDoc_Test3 implements Testedo {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_AddACT_Test2() {
         try {
             Thread.sleep(2000);
@@ -106,7 +104,6 @@ public class C_CreateFormDoc_Test3 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_AddSChFDOP_Test3() {
         try {
             Thread.sleep(2000);
@@ -144,7 +141,6 @@ public class C_CreateFormDoc_Test3 implements Testedo {
 
     //Add UPD IP
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_AddSCHF_IP_Test4() {
         try {
             Thread.sleep(2500);
@@ -173,7 +169,6 @@ public class C_CreateFormDoc_Test3 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_AddACT_IP_Test5() {
         try {
             Thread.sleep(2000);
@@ -208,7 +203,6 @@ public class C_CreateFormDoc_Test3 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_AddSChFDOP_IP_Test6() {
         try {
             Thread.sleep(2000);
@@ -245,7 +239,6 @@ public class C_CreateFormDoc_Test3 implements Testedo {
 
     //3 page blocs
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_AddSChFDOP_IP_3Page_2bloc_Test7() {
         try {
             Thread.sleep(2000);
@@ -283,7 +276,6 @@ public class C_CreateFormDoc_Test3 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     void H_AddSChFDOP_IP_3Page_3bloc_Test8() {
         try {
             Thread.sleep(2000);

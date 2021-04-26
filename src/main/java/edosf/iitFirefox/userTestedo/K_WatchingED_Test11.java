@@ -7,8 +7,6 @@ import edosf.methods.Check;
 import edosf.methods.EnterAndExit;
 import edosf.methods.FileCreateAndLoading;
 import org.junit.jupiter.api.*;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,8 +14,8 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@RunWith(JUnitPlatform.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
+
 
 public class K_WatchingED_Test11 implements Testedo {
     WebDriver driver;
@@ -40,7 +38,6 @@ public class K_WatchingED_Test11 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_CheckAllButton_Test1() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "2", driver);
@@ -59,7 +56,6 @@ public class K_WatchingED_Test11 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_CheckFill_Test2() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "2", driver);
@@ -82,7 +78,6 @@ public class K_WatchingED_Test11 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_CheckSign_Test3() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo(UPD2, "2", driver);
@@ -99,7 +94,6 @@ public class K_WatchingED_Test11 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_CheckSkip_Test4() {
         try {
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo( UPD2, "2", driver);

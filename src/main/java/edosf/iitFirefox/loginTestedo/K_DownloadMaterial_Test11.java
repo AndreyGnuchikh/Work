@@ -17,7 +17,7 @@ import static edosf.methods.Path.GetPathTools;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class K_DownloadMaterial_Test11 implements Testedo {
     public WebDriver driver;
     public Boolean test;
@@ -40,7 +40,6 @@ public class K_DownloadMaterial_Test11 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_TestDownloadFile_Test1() {
         try {
             driver.get(url10);
@@ -58,7 +57,6 @@ public class K_DownloadMaterial_Test11 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_TestLink_Test2() {
         try {
             driver.get(url10);

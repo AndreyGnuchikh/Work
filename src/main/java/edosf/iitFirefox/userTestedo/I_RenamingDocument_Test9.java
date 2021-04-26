@@ -13,7 +13,7 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class I_RenamingDocument_Test9 implements Testedo {
     public WebDriver driver;
     public String test;
@@ -37,7 +37,6 @@ public class I_RenamingDocument_Test9 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_RenamingDocument_Test1() {
         try {
             row = FileCreateAndLoading.AddFileAndClickMenu(4, "1.html", driver);
@@ -58,7 +57,6 @@ public class I_RenamingDocument_Test9 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_SignDocumentAndCheck_Test2() {
         try {
             EnterAndExit.Exit(driver);
@@ -86,7 +84,6 @@ public class I_RenamingDocument_Test9 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_DoteInName_Test3() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(4, "1.html", driver);
@@ -103,7 +100,6 @@ public class I_RenamingDocument_Test9 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_WrongSymbols_Test4() {
         try {
             String[] d = {"/", "\\", ":", "*", "?", "<", ">", "|"};
@@ -125,7 +121,6 @@ public class I_RenamingDocument_Test9 implements Testedo {
 
 /*    -- Отменено в 4.1 релизе
 @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_WrongNames_Test5() {
         try {
             String[] d = {"+", "#", "%", "&", "{", "}", "$", "!", "‘", "`", "@", "="};
@@ -149,7 +144,6 @@ public class I_RenamingDocument_Test9 implements Testedo {
     }*/
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_EmptyNameFile_Test6() {
         try {
             FileCreateAndLoading.AddFileAndClickMenu(4, "1.html", driver);

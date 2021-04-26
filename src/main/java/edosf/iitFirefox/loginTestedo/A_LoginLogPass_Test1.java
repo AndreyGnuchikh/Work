@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class A_LoginLogPass_Test1 implements Testedo {
 
 
@@ -34,7 +34,6 @@ public class A_LoginLogPass_Test1 implements Testedo {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_AllRightTest1() {
         try {
             EnterAndExit.LogPass(LOG1LOG, PASS, driver);
@@ -47,7 +46,6 @@ public class A_LoginLogPass_Test1 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_ContragentIsDisconnectedTest2() {
         try {
             EnterAndExit.LogPass(LOG2LOG, PASS, driver);
@@ -61,7 +59,6 @@ public class A_LoginLogPass_Test1 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_ContragentIsBlockedTest3() {
         try {
             EnterAndExit.LogPass(LOG3LOG, PASS, driver);
@@ -75,7 +72,6 @@ public class A_LoginLogPass_Test1 implements Testedo {
     }
 
 /*    @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_UserDontCatchtoContragentTest4() {
         try {
             Enter.LogPass(log4log, pass, driver);
@@ -89,7 +85,6 @@ public class A_LoginLogPass_Test1 implements Testedo {
     }*/
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void D_UserIsBlockedTest4() {
         try {
             EnterAndExit.LogPass(LOG5LOG, PASS, driver);
@@ -103,7 +98,6 @@ public class A_LoginLogPass_Test1 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void E_UserDontHaveRole5() {
         try {
             EnterAndExit.LogPass(LOG6LOG, PASS, driver);
@@ -117,7 +111,6 @@ public class A_LoginLogPass_Test1 implements Testedo {
     }
 
  /*   @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_UserDontHaveCabinet7() {
         try {
             Enter.LogPass(log7log, pass, driver);
@@ -130,7 +123,6 @@ public class A_LoginLogPass_Test1 implements Testedo {
     }*/
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     void F_WrongLogPass6() {
         try {
             EnterAndExit.LogPass(WRONG_7LOG, WRONG_7LOG, driver);

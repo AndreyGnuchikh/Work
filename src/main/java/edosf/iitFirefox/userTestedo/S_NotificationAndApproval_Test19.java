@@ -11,7 +11,7 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
 
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class S_NotificationAndApproval_Test19 implements Testedo {
     WebDriver driver;
     String test, test2;
@@ -52,7 +52,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_NotificationOpenCart_Test1() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -74,7 +73,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_NotificationOpenEmail_Test2() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -96,7 +94,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_NotificationOpenNoEmail_Test3() {
         try {
             Thread.sleep(1000);
@@ -132,7 +129,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_CommentNotificationOpenCart_Test4() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -155,7 +151,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_SkipNotificationOpenCart_Test5() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -177,7 +172,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_SkiNotificationOpenEmail_Test6() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -200,7 +194,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_SkiNotificationOpenNoEmail_Test7() {
         try {
             Thread.sleep(1000);
@@ -237,7 +230,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     void H_CommentSkiNotificationOpenEmail_Test8() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -263,7 +255,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(9)
     void I_CommentTextSkiNotificationOpenEmail_Test9() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -289,7 +280,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(10)
     void J_RejectOpenCart_Test10() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -312,7 +302,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(11)
     void K_RejectOpenEmail_Test11() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -337,7 +326,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(12)
     void L_CommentTextReject_Test12() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -367,7 +355,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(13)
     void M_CommentSendAnotherUser_Test13() {
         try {
             Email.EmailTest3(TEST_IIT_TEST3, EMAIL_PASS, driver);
@@ -418,7 +405,6 @@ public class S_NotificationAndApproval_Test19 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(14)
     void N_ResolutionOpenCart_Test14() {
         try {
             test2 = FileCreateAndLoading.AddFile("1.html", driver);

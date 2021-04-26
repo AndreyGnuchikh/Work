@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class O_AppointmentOfResponsibleExecutive_Test15 implements Iit8077 {
     WebDriver driver;
     String test, test2;
@@ -32,7 +32,6 @@ public class O_AppointmentOfResponsibleExecutive_Test15 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_AppointmentTable_Test1() {
         try {
             EnterAndExit.loggingCerts(UPD, driver);
@@ -61,7 +60,6 @@ public class O_AppointmentOfResponsibleExecutive_Test15 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_AppointmentCard_Test2() {
         try {
             EnterAndExit.loggingCerts(UPD, driver);
@@ -86,7 +84,6 @@ public class O_AppointmentOfResponsibleExecutive_Test15 implements Iit8077 {
     }
     /*
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_AppointmentExecutive_Test3(){
     try {
         Enter.loggingCerts(upd, driver);
@@ -114,7 +111,6 @@ public class O_AppointmentOfResponsibleExecutive_Test15 implements Iit8077 {
     }
 }
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_AppointmentEmailSend_Test4() throws Exception{
     try {
     Enter.LogPass(pass5log, pass5log, driver);

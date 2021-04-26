@@ -16,7 +16,7 @@ import java.util.Date;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class U_SendDocumentToContragent_Test21 implements Iit8077 {
     WebDriver driver;
     String test,test2;
@@ -38,7 +38,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_GetFileName_Test1(){
         try {
             FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
@@ -50,7 +49,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_AddTextInFile_Test2(){
         try {
             Date date = new Date();
@@ -71,7 +69,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_CheckCabinetRecipient_Test3(){
         try {
             FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
@@ -90,7 +87,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_CheckCoworkerRecipient_Test4(){
         try {
 
@@ -111,7 +107,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_AddTextInFileAndOpenInRecipientLk_Test5(){
         try {
             Date date = new Date();
@@ -139,7 +134,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_CheckCabinetRecipientInRecipientLk_Test6(){
         try {
             FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
@@ -165,7 +159,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_CheckCoworkerRecipientInRecipientLk_Test7(){
         try {
             FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
@@ -191,7 +184,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(8)
     void H_CheckCabinetSenderInRecipientLk_Test8(){
         try {
             FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
@@ -217,7 +209,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(9)
     void I_CheckCoworkerSenderInRecipientLk_Test9(){
         try {
             FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
@@ -243,7 +234,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(10)
     void J_CheckStatus_Test10(){
         try {
             FileCreateAndLoading.AddFile("SkipSignFiles","1.html",driver);
@@ -264,7 +254,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(11)
     void K_SendEmailRecipient_Test11(){
         try {
             Date date = new Date();
@@ -321,7 +310,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(12)
     void L_WrongSellerNoSignSendUDPDocument_Test12(){
         try {
             FileCreateAndLoading.AddFile("\\IPSchfDop.xml",driver);
@@ -339,7 +327,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(13)
     void M_SendUDPNoSignDocument_Test13(){
         try {
             FileCreateAndLoading.AddFile("\\IPSchfDop.xml",driver);
@@ -357,7 +344,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(14)
     void N_SendSignUPDDocument_Test14(){
         try {
             test = FileCreateAndLoading.AddFile("\\IPSchfDop.xml",driver);
@@ -378,7 +364,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(15)
     void O_SendUPDDocumentWith2Sign_Test15(){
         try{
             test2 = FileCreateAndLoading.CreateFirstUDPDocumentAndSignOneAndOpenTwo( UPD2,"4",driver);
@@ -395,7 +380,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(16)
     void P_ChoseIitSendUPD_Test16(){
         try{
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -416,7 +400,6 @@ public class U_SendDocumentToContragent_Test21 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(17)
     void Q_DocSendingSecondDocument_Test17(){
             try{
                 EnterAndExit.Exit(driver);

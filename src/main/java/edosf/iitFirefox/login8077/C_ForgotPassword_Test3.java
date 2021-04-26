@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class C_ForgotPassword_Test3 implements Iit8077 {
 
     private WebDriver driver;
@@ -30,7 +30,6 @@ public class C_ForgotPassword_Test3 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     @DisplayName("Проверка логина и пароля из письма с напоминанием пароля. Вход в кабинет.")
     void A_ForgetPassword() {
         try {
@@ -84,7 +83,6 @@ public class C_ForgotPassword_Test3 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     @DisplayName("Проверка ввода ошибки не корректной почты.\n")
     void B_ForgetPassword2() {
 

@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class R_WatchReceipts_Test18 implements Iit8077 {
     WebDriver driver;
     String test, test2;
@@ -36,7 +36,6 @@ public class R_WatchReceipts_Test18 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_ReceiptOneSignAndDataSchF_Test1() {
         try {
             FileCreateAndLoading.CreateFirstUPDDocumentAndSign("1", driver);
@@ -56,7 +55,6 @@ public class R_WatchReceipts_Test18 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_ReceiptOneSignAndDataSchFDop_Test2() {
         try {
             FileCreateAndLoading.CreateFirstUPDDocumentAndSign("3", driver);
@@ -79,7 +77,6 @@ public class R_WatchReceipts_Test18 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_NoReceiptAndDataDop_Test3() {
         try {
             FileCreateAndLoading.CreateFirstUPDDocumentAndSign("2", driver);
@@ -95,7 +92,6 @@ public class R_WatchReceipts_Test18 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_AllReceiptAndDataSchF_Test4() {
         try {
             FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("1", driver);
@@ -142,7 +138,6 @@ public class R_WatchReceipts_Test18 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_AllReceiptAndDataSchFDOP_Test5() {
         try {
             FileCreateAndLoading.CreateFirstUPDDocumentAndSignAndSand("3", driver);
@@ -189,7 +184,6 @@ public class R_WatchReceipts_Test18 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     void F_NoReceiptAndDataNoFormalDocument_Test6() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);

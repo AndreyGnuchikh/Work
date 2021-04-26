@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class I_ExitCabinet_Test9 implements Testedo {
     private WebDriver driver;
     private String text;
@@ -32,7 +32,6 @@ public class I_ExitCabinet_Test9 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_Exit_Test1() {
         try {
             driver.get(URL);

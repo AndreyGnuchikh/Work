@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class J_ChangeStartTap_Test10 implements Testedo {
     private WebDriver driver;
     public String test;
@@ -31,7 +31,6 @@ public class J_ChangeStartTap_Test10 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_ChangeStartTap_Test1() {
         try {
             driver.get(URL_9);
@@ -45,7 +44,6 @@ public class J_ChangeStartTap_Test10 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_ChangeStartTapLogin1_Test2() {
         try {
             driver.get(URL);
@@ -61,7 +59,6 @@ public class J_ChangeStartTap_Test10 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_ChangeStartTapLogin2_Test3() {
         try {
             driver.get(URL);
@@ -81,7 +78,6 @@ public class J_ChangeStartTap_Test10 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_ChangeStartTapLogout1_Test4() {
         try {
             driver.get(URL);
@@ -99,7 +95,6 @@ public class J_ChangeStartTap_Test10 implements Testedo {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_ChangeStartTapLogout2_Test5() {
         try {
             driver.get(URL);

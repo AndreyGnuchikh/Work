@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class G_ChangePassword_Test7 implements Iit8077 {
     private WebDriver driver;
     public String sleep;
@@ -38,7 +38,6 @@ public class G_ChangePassword_Test7 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     @DisplayName("Проверка ошибки: Новый пароль не должен совпадать со старым!")
     void A_Old_PasswordInCabinet_Test1() {
         try {
@@ -52,7 +51,6 @@ public class G_ChangePassword_Test7 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     @DisplayName("Проверка ошибки красной рамки ввода неправильного, 2 пароля")
     void B_PasswordWriteSecondWrong_Test2() {
         try {
@@ -66,7 +64,6 @@ public class G_ChangePassword_Test7 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     @DisplayName("Проверка ошибки ввода старого пароля(всплывающее окно)")
     void C_OldPasswordWrittenWrong_Test3() {
         try {
@@ -80,7 +77,6 @@ public class G_ChangePassword_Test7 implements Iit8077 {
         }
     }
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     @DisplayName("Проверка успешного изменения пароля.")
     void D_Change_PasswordInCabinet_Test4() {
         try {

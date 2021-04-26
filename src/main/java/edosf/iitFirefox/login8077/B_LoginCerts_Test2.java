@@ -16,7 +16,7 @@ import static edosf.settingsEdo.Settings.NUM_FAIL;
 import org.junitpioneer.jupiter.RetryingTest;
 import static java.lang.Runtime.getRuntime;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class B_LoginCerts_Test2 implements Iit8077 {
     public String checking;
     private WebDriver driver;
@@ -34,7 +34,6 @@ public class B_LoginCerts_Test2 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     @DisplayName("Положительный тест успешной загрузки по ключу ЭП")
     void A_ValidDate_Test1() {
         try {
@@ -49,7 +48,6 @@ public class B_LoginCerts_Test2 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     @DisplayName("Проверка ошибки при входе пользователя с отключенным контрагентом.\n")
     void B_ContragentIsDisconnect_Test2() {
         try {
@@ -63,7 +61,6 @@ public class B_LoginCerts_Test2 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     @DisplayName("Проверка ошибки при входе пользователя с заблокированным контрагентом.\n")
     void C_ContragentIsBlock_Test3() {
         try {
@@ -77,7 +74,6 @@ public class B_LoginCerts_Test2 implements Iit8077 {
     }
 
 /*    @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_UserNoCabinet_Test4() {
         try {
             Enter.loggingCerts(fio4, driver);
@@ -96,7 +92,6 @@ public class B_LoginCerts_Test2 implements Iit8077 {
     }*/
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     @DisplayName("Проверка ошибки при входе пользователя, если он был заблокирован.\n")
     void D_UserIsBlock_Test4() {
         try {
@@ -111,7 +106,6 @@ public class B_LoginCerts_Test2 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     @DisplayName("Проверка ошибки при входе пользователя, у которого нет роли.\n")
     void E_UserNoHaveRole_Test5() {
         try {
@@ -126,7 +120,6 @@ public class B_LoginCerts_Test2 implements Iit8077 {
     }
 
    /* @RetryingTest(NUM_FAIL)
-    @Order(7)
     void G_UserNoHaveCabinetTest7() {
         try {
             Enter.loggingCerts(fio7, driver);
@@ -164,7 +157,6 @@ public class B_LoginCerts_Test2 implements Iit8077 {
     }*/
 
     @RetryingTest(NUM_FAIL)
-    @Order(6)
     @DisplayName("Проверка ошибки при входе пользователя, если пароль не был введен.\n")
     void F_KeyDontInput6() {
         try {

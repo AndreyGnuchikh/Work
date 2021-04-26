@@ -19,7 +19,7 @@ import java.util.Locale;
 import static edosf.settingsEdo.Settings.NUM_FAIL;
  import org.junitpioneer.jupiter.RetryingTest;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class P_OpenCardsDocuments_Test16 implements Iit8077 {
     WebDriver driver;
     String test, test2;
@@ -41,7 +41,6 @@ public class P_OpenCardsDocuments_Test16 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(1)
     void A_OpenCardFirstBlock_Test1() {
         try {
             Date currentDate = new Date();
@@ -83,7 +82,6 @@ public class P_OpenCardsDocuments_Test16 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(2)
     void B_OpenCardSecondBlock_Test2() {
         try {
             Date currentDate = new Date();
@@ -115,7 +113,6 @@ public class P_OpenCardsDocuments_Test16 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(3)
     void C_OpenCardThirdBlock_Test3() {
         try {
             Date currentDate = new Date();
@@ -146,7 +143,6 @@ public class P_OpenCardsDocuments_Test16 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(4)
     void D_OpenCardComments_Test4() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
@@ -177,7 +173,6 @@ public class P_OpenCardsDocuments_Test16 implements Iit8077 {
     }
 
     @RetryingTest(NUM_FAIL)
-    @Order(5)
     void E_OpenCardDoubleClick_Test5() {
         try {
             FileCreateAndLoading.AddFile("1.html", driver);
