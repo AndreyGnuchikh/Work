@@ -3,7 +3,6 @@ package edosf.methods;
 import edosf.settingsEdo.Iit8077;
 import edosf.settingsEdo.Testedo;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class Clarification {

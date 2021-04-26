@@ -6,7 +6,7 @@ target
 \bd\logopass
 *\test\*
 /.allure/
-/src/main/java/edosf/settingsEdo/Settings.java
-/src/main/java/edosf/settingsEdo/Drivers.java
-/src/main/java/edosf/settingsEdo/savedHelp/Examples.txt
-/src/main/java/edosf/settingsEdo/savedHelp/Description
+/src/test/java/edosf/settingsEdo/Settings.java
+/src/test/java/edosf/settingsEdo/Drivers.java
+/src/test/java/edosf/settingsEdo/savedHelp/Examples.txt
+/src/test/java/edosf/settingsEdo/savedHelp/Description

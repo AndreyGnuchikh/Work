@@ -34,7 +34,7 @@ public class FileCreateAndLoading {
         EnterAndExit.startEndingCertAndSendingFiles(driver);
         // Click and found first element
         Thread.sleep(1000);
-        Cabinet.Up(driver);
+        Up(driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         Thread.sleep(1200);
@@ -58,7 +58,7 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         EnterAndExit.startEndingCertAndSendingFiles("Skip",driver);
         Thread.sleep(1000);
-        Cabinet.Up(driver);
+        Up(driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         Thread.sleep(1200);
@@ -95,7 +95,7 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
         // Click and found first element
         Thread.sleep(1000);
-        Cabinet.Up(driver);
+        Up(driver);
         Thread.sleep(500);
         driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         Thread.sleep(1200);

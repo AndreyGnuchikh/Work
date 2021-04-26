@@ -5,7 +5,6 @@ import edosf.methods.Cabinet;
 import edosf.methods.EnterAndExit;
 import edosf.settingsEdo.Iit8077;
 import edosf.methods.Check;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

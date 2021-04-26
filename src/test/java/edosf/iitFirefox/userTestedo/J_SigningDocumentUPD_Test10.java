@@ -4,7 +4,6 @@ import edosf.settingsEdo.Drivers;
 import edosf.settingsEdo.Testedo;
 import edosf.methods.*;
 import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

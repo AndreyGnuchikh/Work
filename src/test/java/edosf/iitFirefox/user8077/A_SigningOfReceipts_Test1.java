@@ -2,7 +2,6 @@ package edosf.iitFirefox.user8077;
 
 import edosf.settingsEdo.Drivers;
 import edosf.settingsEdo.Iit8077;
-import edosf.settingsEdo.Testedo;
 import edosf.iitFirefox.userTestedo.soap.*;
 import edosf.methods.Cabinet;
 import edosf.methods.Check;
@@ -23,10 +22,6 @@ public class A_SigningOfReceipts_Test1 implements Iit8077 {
     public WebDriver driver;
     public String test;
     public String test2;
-
-
-
-
 
     @BeforeEach
     void setUp() {
