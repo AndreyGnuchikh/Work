@@ -66,6 +66,13 @@
             <artifactId>allure-junit5</artifactId>
             <version>2.13.8</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.11.1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.junit-pioneer</groupId>
