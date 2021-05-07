@@ -22,3 +22,11 @@ services:
     ports:
       - 8000:8080
     network_mode: bridge
+
+  jira:
+    image: atlassian/jira-software
+    volumes:
+      - "C:/Users/fors/IdeaProjects/work/work/jira:/var/atlassian/application-data/jira"
+    ports:
+      - "9999:8080"
+    network_mode: bridge
