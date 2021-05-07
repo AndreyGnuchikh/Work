@@ -28,5 +28,5 @@ services:
     volumes:
       - "C:/Users/fors/IdeaProjects/work/work/jira:/var/atlassian/application-data/jira"
     ports:
-      - "9999:8080"
+      - "8088:8080"
     network_mode: bridge
