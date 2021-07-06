@@ -66,8 +66,8 @@ public class C_ForgotPassword_Test3 implements Testedo {
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
                 driver.findElement(By.cssSelector(".ns-view-toolbar-button-delete")).click();
             }
-            Thread.sleep(500);
-            driver.findElement(By.cssSelector(".ns-view-toolbar-button-main-select-all > label:nth-child(1) > span:nth-child(2)")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.cssSelector("button.button2_tone_default:nth-child(2)")).click();
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".js-toolbar-item-title-delete")).click();
             Thread.sleep(1000);

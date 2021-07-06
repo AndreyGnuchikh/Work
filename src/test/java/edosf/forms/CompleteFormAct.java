@@ -125,6 +125,7 @@ public class CompleteFormAct {
         driver.findElement(By.cssSelector("#itemTransfer-date")).click();
         driver.findElement(By.cssSelector("div.acceptanceCert-table-row:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)")).click();
         //Работник организации
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("#recvInfo_worker > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Фамилия");
         driver.findElement(By.cssSelector("#recvInfo_worker > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Имя");
         driver.findElement(By.cssSelector("#recvInfo_worker > div:nth-child(4) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Отчество");

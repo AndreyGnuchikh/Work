@@ -9,13 +9,16 @@ public class Path {
     public static String GetPathTools() {
         String path;
         path = Drivers.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        path = path.substring(1,path.length() - 16).concat("/Tools/").replace("/","\\");
+        path = whiles(path);
+        path = path.substring(1).concat("/Tools/").replace("/","\\");
+        System.out.println(path);
         return path;
     }
     public static String GetPathTools(String addText) {
         String path;
         path = Drivers.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        path = path.substring(1,path.length() - 16).concat("/Tools/"+addText).replace("/","\\");
+        path = whiles(path);
+        path = path.substring(1).concat("/Tools/"+addText).replace("/","\\");
         return path;
     }
     public static String GetPathTools(String addText, WebDriver driver)    throws InterruptedException {
@@ -30,7 +33,14 @@ public class Path {
         }
         String path;
         path = Drivers.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        path = path.substring(1,path.length() - 16).concat("/Tools/"+addText).replace("/","\\");
+        path = whiles(path);
+        path = path.substring(1).concat("/Tools/"+addText).replace("/","\\");
+        return path;
+    }
+    public static String whiles(String path){
+        while (path.contains("work/")){
+            path = path.substring(0, path.length() - 1);
+        }
         return path;
     }
 }

@@ -106,8 +106,8 @@ public class P_OpenCardsDocuments_Test16 implements Testedo {
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(3)")).getText();
             Check.Check("Должность", test, driver);
             test = driver.findElement(By.cssSelector("#cf-signBody > tr:nth-child(1) > td:nth-child(5)")).getText();
-            Check.CheckExit("02610BE800EFACB998457DDBED0020554C\n" +
-                    "с 18.03.2021 по 18.06.2021", test, driver);
+            Check.CheckExit("024789D3004BAD4FAC412678563F929C3B\n" +
+                    "с 18.06.2021 по 18.09.2021", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

@@ -82,8 +82,8 @@ public class T_OpenProtocolCompliance_Test20 implements Testedo {
             Check.Check("Должность", test, driver);
             test = driver.findElement(By.cssSelector("#signatures > tr > td:nth-child(5)")).getText();
             Thread.sleep(500);
-            Check.CheckExit("02610BE800EFACB998457DDBED0020554C\n" +
-                    "с 18.03.2021 по 18.06.2021", test, driver);
+            Check.CheckExit("024789D3004BAD4FAC412678563F929C3B\n" +
+                    "с 18.06.2021 по 18.09.2021", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }

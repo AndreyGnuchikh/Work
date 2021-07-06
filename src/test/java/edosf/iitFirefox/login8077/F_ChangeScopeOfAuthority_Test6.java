@@ -152,8 +152,7 @@ public class F_ChangeScopeOfAuthority_Test6 implements Iit8077 {
         EnterAndExit.Exit(driver);
         Thread.sleep(1000);
         EnterAndExit.LogPass(LOG_ALL, PASS, driver);
-        EnterAndExit.RoleSwitch(1, driver);
-        driver.findElement(By.cssSelector("#user")).click();
+        EnterAndExit.RoleSwitch(1, driver);driver.findElement(By.cssSelector("#user")).click();
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#user-search")).sendKeys("Все Все");
         Thread.sleep(2100);
