@@ -39,7 +39,7 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector(".active-file > span:nth-child(2)")).click();
         Thread.sleep(1200);
         row = driver.findElement(By.cssSelector("#grid-basic2 > div:nth-child(2) > div:nth-child(1)")).getAttribute("textContent");
-        Thread.sleep(800);
+        Thread.sleep(1000);
         row = row.substring(0, 36);
         Element.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
         return row;
@@ -252,6 +252,7 @@ public class FileCreateAndLoading {
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("#grid-basic2-header > tr:nth-child(1) > th:nth-child(1) > div:nth-child(1) > input:nth-child(1)")).click();
+        Thread.sleep(500);
         Element.WaitElementToBeClickableAndClick("#grid-basic2-row-" + row, driver);
         Thread.sleep(1000);
         if (!upd.equals("0.xml")) {

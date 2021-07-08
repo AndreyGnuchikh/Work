@@ -116,7 +116,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 implements Testedo {
             System.out.println(date);
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
-            Thread.sleep(500);
+            Thread.sleep(600);
 
             Region("#change_seller");
             inn("#change_seller");
@@ -150,7 +150,7 @@ public class F_ErrorsCreateFormalDocFromIF_Test6 implements Testedo {
             System.out.println(date);
             Thread.sleep(500);
             driver.findElement(By.cssSelector(".list-group > a:nth-child(2) > li:nth-child(1)")).click();
-            Thread.sleep(1500);
+            Thread.sleep(1600);
             driver.findElement(By.cssSelector("#interActEWdoc > div:nth-child(1) > div:nth-child(4) > div:nth-child(10) > div:nth-child(3) > div:nth-child(1)")).click();
             Thread.sleep(500);
             page2Name("#change_seller");

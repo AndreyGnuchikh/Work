@@ -69,7 +69,7 @@ public class Sign {
         driver.findElement(By.cssSelector("#recvInfo_worker > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)")).sendKeys("Èìÿ2");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("#serviceModalQuestUPDModalSign")).click();
-        Thread.sleep(7000);
+        Thread.sleep(8000);
         driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
         Thread.sleep(500);
         EnterAndExit.startEndingCertAndSendingFiles(driver);

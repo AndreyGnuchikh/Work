@@ -78,7 +78,7 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             test = HelpUser.ReZip(1);
-            Check.CheckExit("9", test, driver);
+            Check.CheckExit("7", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -96,7 +96,7 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
             Thread.sleep(1500);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             test = HelpUser.ReZip(1);
-            Check.CheckExit("10", test, driver);
+            Check.CheckExit("8", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -114,7 +114,7 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             test = HelpUser.ReZip(0);
-            Check.CheckExit("10", test, driver);
+            Check.CheckExit("8", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
@@ -134,7 +134,7 @@ public class N_SaveDocumentInPc_Test14 implements Testedo {
             Thread.sleep(1000);
             driver.findElement(By.cssSelector("#queued-download-button")).click();
             test = HelpUser.ReZip(1);
-            Check.CheckExit("11", test, driver);
+            Check.CheckExit("9", test, driver);
         } catch (Throwable e) {
             Cabinet.Catch(driver, e);
         }
