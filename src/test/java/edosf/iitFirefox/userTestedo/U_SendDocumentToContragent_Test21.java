@@ -28,7 +28,7 @@ public class U_SendDocumentToContragent_Test21 implements Testedo {
         try {
             driver = Drivers.ff();
             driver.get(URL);
-           EnterAndExit.loggingCerts(IP,driver);
+            EnterAndExit.loggingCerts(IP,driver);
             EnterAndExit.RoleSwitch(2,driver);
             EnterAndExit.startEndingCertAndSendingFiles("SkipSignFiles",driver);
         }catch (Throwable e) {

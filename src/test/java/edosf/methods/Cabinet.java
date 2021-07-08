@@ -152,7 +152,7 @@ public class Cabinet {
         driver.findElement(By.xpath("//*[contains(text(), '" + cabinet + "')][contains(@class, 'option')]")).click();
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#modalSendButton")).click();
-        Thread.sleep(4000);
+        Thread.sleep(4200);
         driver.findElement(By.cssSelector("#ErrorOkMessageModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) > span:nth-child(1)")).click();
     }
     public static void SendCabinet(String who, String cabinet, String coworker, WebDriver driver) throws InterruptedException {

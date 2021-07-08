@@ -350,7 +350,7 @@ public class FileCreateAndLoading {
                     System.out.println(i);
                 }
             }
-            Thread.sleep(3000);
+            Thread.sleep(3200);
             driver.findElement(By.cssSelector("#signModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1)")).click();
             Thread.sleep(15000);
             driver.findElement(By.cssSelector("button.btn:nth-child(5)")).click();
